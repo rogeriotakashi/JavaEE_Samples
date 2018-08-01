@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="org.springframework.spring">
+
+	<resources>
+		<resource-root path="spring-beans-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-context-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-core-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-tx-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-expression-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-jdbc-3.2.0.RELEASE.jar" />
+				
+		<resource-root path="spring-aop-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-aspects-3.2.0.RELEASE.jar" />
+
+		<resource-root path="spring-web-3.2.0.RELEASE.jar" />
+		<resource-root path="spring-webmvc-3.2.0.RELEASE.jar" />
+		
+		<resource-root path="spring-security-core-3.1.4.RELEASE.jar" />
+		<resource-root path="spring-security-config-3.1.4.RELEASE.jar" />
+		<resource-root path="spring-security-acl-3.1.4.RELEASE.jar" />
+		<resource-root path="spring-security-web-3.1.4.RELEASE.jar" />
+		<resource-root path="spring-security-taglibs-3.1.4.RELEASE.jar" />		
+	</resources>
+
+	<dependencies>
+		<module name="org.aopalliance" />
+		<module name="org.apache.commons.logging" />
+		<module name="javaee.api" />		
+		<module name="javax.api" export="true"/> 	
+		<module name="org.codehaus.jackson.jackson-core-asl" />			
+		<module name="org.codehaus.jackson.jackson-mapper-asl" />			
+		<module name="org.jboss.vfs"/> 
+		<module name="org.apache.commons.fileupload"/>
+	</dependencies>
+
+</module>

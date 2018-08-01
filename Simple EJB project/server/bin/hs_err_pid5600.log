@@ -1,0 +1,1653 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 269484032 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2756), pid=5600, tid=140229306480384
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_80-b15) (build 1.7.0_80-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.80-b11 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f89c406e000):  VMThread [stack: 0x00007f89adeff000,0x00007f89ae000000] [id=5612]
+
+Stack: [0x00007f89adeff000,0x00007f89ae000000],  sp=0x00007f89adffe1e0,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x9a320a]  VMError::report_and_die()+0x2ea
+V  [libjvm.so+0x498d3b]  report_vm_out_of_memory(char const*, int, unsigned long, char const*)+0x9b
+V  [libjvm.so+0x82191e]  os::Linux::commit_memory_impl(char*, unsigned long, bool)+0xfe
+V  [libjvm.so+0x821e69]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x29
+V  [libjvm.so+0x81bb6a]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2a
+V  [libjvm.so+0x88d623]  PSVirtualSpace::expand_by(unsigned long)+0x53
+V  [libjvm.so+0x87ca80]  PSOldGen::expand(unsigned long)+0x170
+V  [libjvm.so+0x87cc8b]  PSOldGen::resize(unsigned long)+0x1cb
+V  [libjvm.so+0x885951]  PSParallelCompact::invoke_no_policy(bool)+0x9b1
+V  [libjvm.so+0x88b8cd]  PSScavenge::invoke()+0x1ad
+V  [libjvm.so+0x843f40]  ParallelScavengeHeap::failed_mem_allocate(unsigned long)+0x70
+V  [libjvm.so+0x9a4a97]  VM_ParallelGCFailedAllocation::doit()+0x97
+V  [libjvm.so+0x9abf35]  VM_Operation::evaluate()+0x55
+V  [libjvm.so+0x9aa2fa]  VMThread::evaluate_operation(VM_Operation*)+0xba
+V  [libjvm.so+0x9aa67e]  VMThread::loop()+0x1ce
+V  [libjvm.so+0x9aaaf0]  VMThread::run()+0x70
+V  [libjvm.so+0x8238c8]  java_start(Thread*)+0x108
+
+VM_Operation (0x00007f8934b3d570): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007f89584be000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f89400c9000 JavaThread "pool-12-thread-1" [_thread_blocked, id=5955, stack(0x00007f8933ada000,0x00007f8933bdb000)]
+  0x00007f895843e000 JavaThread "ServerService Thread Pool -- 117" [_thread_blocked, id=5954, stack(0x00007f8933bdb000,0x00007f8933cdc000)]
+  0x00007f89646ea000 JavaThread "ServerService Thread Pool -- 118" [_thread_blocked, id=5953, stack(0x00007f8933cdc000,0x00007f8933ddd000)]
+  0x00007f895c260000 JavaThread "ServerService Thread Pool -- 114" [_thread_blocked, id=5952, stack(0x00007f8931ec8000,0x00007f8931fc9000)]
+  0x00007f8968269800 JavaThread "ServerService Thread Pool -- 121" [_thread_blocked, id=5951, stack(0x00007f89331db000,0x00007f89332dc000)]
+  0x00007f8968268000 JavaThread "ServerService Thread Pool -- 120" [_thread_blocked, id=5950, stack(0x00007f89332dc000,0x00007f89333dd000)]
+  0x00007f8968266800 JavaThread "ServerService Thread Pool -- 115" [_thread_blocked, id=5948, stack(0x00007f89320ca000,0x00007f89321cb000)]
+  0x00007f89646e9000 JavaThread "ServerService Thread Pool -- 116" [_thread_blocked, id=5947, stack(0x00007f893d045000,0x00007f893d146000)]
+  0x00007f89646e8800 JavaThread "ServerService Thread Pool -- 113" [_thread_blocked, id=5946, stack(0x00007f893cf44000,0x00007f893d045000)]
+  0x00007f896045a800 JavaThread "pool-11-thread-1" [_thread_blocked, id=5945, stack(0x00007f89329d3000,0x00007f8932ad4000)]
+  0x00007f8968321000 JavaThread "ServerService Thread Pool -- 111" [_thread_blocked, id=5943, stack(0x00007f89330da000,0x00007f89331db000)]
+  0x00007f896831f800 JavaThread "ServerService Thread Pool -- 110" [_thread_blocked, id=5942, stack(0x00007f8932dd7000,0x00007f8932ed8000)]
+  0x00007f896831e000 JavaThread "ServerService Thread Pool -- 109" [_thread_blocked, id=5941, stack(0x00007f89328d2000,0x00007f89329d3000)]
+  0x00007f896831c800 JavaThread "ServerService Thread Pool -- 108" [_thread_blocked, id=5940, stack(0x00007f8931dc7000,0x00007f8931ec8000)]
+  0x00007f896831b000 JavaThread "ServerService Thread Pool -- 107" [_thread_blocked, id=5939, stack(0x00007f8932bd5000,0x00007f8932cd6000)]
+  0x00007f8968319800 JavaThread "ServerService Thread Pool -- 106" [_thread_blocked, id=5938, stack(0x00007f89333dd000,0x00007f89334de000)]
+  0x00007f8968318000 JavaThread "ServerService Thread Pool -- 105" [_thread_blocked, id=5937, stack(0x00007f8932fd9000,0x00007f89330da000)]
+  0x00007f8968316800 JavaThread "ServerService Thread Pool -- 104" [_thread_blocked, id=5936, stack(0x00007f89325cf000,0x00007f89326d0000)]
+  0x00007f8968315000 JavaThread "ServerService Thread Pool -- 103" [_thread_blocked, id=5935, stack(0x00007f89327d1000,0x00007f89328d2000)]
+  0x00007f8968313800 JavaThread "ServerService Thread Pool -- 102" [_thread_blocked, id=5934, stack(0x00007f8932cd6000,0x00007f8932dd7000)]
+  0x00007f8968312800 JavaThread "ServerService Thread Pool -- 101" [_thread_blocked, id=5933, stack(0x00007f8931bc5000,0x00007f8931cc6000)]
+  0x00007f8968311800 JavaThread "ServerService Thread Pool -- 100" [_thread_blocked, id=5932, stack(0x00007f8932ad4000,0x00007f8932bd5000)]
+  0x00007f89780aa000 JavaThread "pool-9-thread-1" [_thread_blocked, id=5931, stack(0x00007f8931fc9000,0x00007f89320ca000)]
+  0x00007f898e6fd800 JavaThread "pool-8-thread-1" [_thread_blocked, id=5930, stack(0x00007f89323cd000,0x00007f89324ce000)]
+  0x00007f89501e3000 JavaThread "AsyncAppender-Dispatcher-Thread-133" daemon [_thread_blocked, id=5903, stack(0x00007f89318c2000,0x00007f89319c3000)]
+  0x00007f89501e2000 JavaThread "AsyncAppender-Dispatcher-Thread-132" daemon [_thread_blocked, id=5902, stack(0x00007f89319c3000,0x00007f8931ac4000)]
+  0x00007f8958444000 JavaThread "ServerService Thread Pool -- 95" [_thread_blocked, id=5898, stack(0x00007f8931ac4000,0x00007f8931bc5000)]
+  0x00007f89682cf800 JavaThread "ServerService Thread Pool -- 97" [_thread_blocked, id=5896, stack(0x00007f8931cc6000,0x00007f8931dc7000)]
+  0x00007f89682cc800 JavaThread "ServerService Thread Pool -- 90" [_thread_blocked, id=5891, stack(0x00007f89321cb000,0x00007f89322cc000)]
+  0x00007f896c1de800 JavaThread "ServerService Thread Pool -- 92" [_thread_blocked, id=5890, stack(0x00007f89322cc000,0x00007f89323cd000)]
+  0x00007f8958443800 JavaThread "ServerService Thread Pool -- 75" [_thread_blocked, id=5888, stack(0x00007f89324ce000,0x00007f89325cf000)]
+  0x00007f899c002800 JavaThread "ServerService Thread Pool -- 73" [_thread_blocked, id=5872, stack(0x00007f8933e11000,0x00007f8933f12000)]
+  0x00007f897014a800 JavaThread "AsyncAppender-Dispatcher-Thread-104" daemon [_thread_blocked, id=5867, stack(0x00007f8933f34000,0x00007f8934035000)]
+  0x00007f897004f800 JavaThread "AsyncAppender-Dispatcher-Thread-103" daemon [_thread_blocked, id=5866, stack(0x00007f8934035000,0x00007f8934136000)]
+  0x00007f8970274000 JavaThread "AsyncAppender-Dispatcher-Thread-102" daemon [_thread_blocked, id=5865, stack(0x00007f8934136000,0x00007f8934237000)]
+  0x00007f8968286800 JavaThread "AsyncAppender-Dispatcher-Thread-101" daemon [_thread_blocked, id=5864, stack(0x00007f8934237000,0x00007f8934338000)]
+  0x00007f895c217000 JavaThread "ServerService Thread Pool -- 68" [_thread_blocked, id=5863, stack(0x00007f8934338000,0x00007f8934439000)]
+  0x00007f896c103800 JavaThread "ServerService Thread Pool -- 70" [_thread_blocked, id=5862, stack(0x00007f8934439000,0x00007f893453a000)]
+  0x00007f89602c6000 JavaThread "ServerService Thread Pool -- 72" [_thread_blocked, id=5861, stack(0x00007f893453a000,0x00007f893463b000)]
+  0x00007f89602c4000 JavaThread "ServerService Thread Pool -- 71" [_thread_blocked, id=5860, stack(0x00007f893463b000,0x00007f893473c000)]
+  0x00007f89602c2000 JavaThread "ServerService Thread Pool -- 69" [_thread_blocked, id=5859, stack(0x00007f893473c000,0x00007f893483d000)]
+  0x00007f89602c0000 JavaThread "ServerService Thread Pool -- 67" [_thread_blocked, id=5858, stack(0x00007f893483d000,0x00007f893493e000)]
+  0x00007f89602a3800 JavaThread "ServerService Thread Pool -- 60" [_thread_blocked, id=5857, stack(0x00007f893493e000,0x00007f8934a3f000)]
+  0x00007f89584be000 JavaThread "ServerService Thread Pool -- 59" [_thread_blocked, id=5856, stack(0x00007f8934a3f000,0x00007f8934b40000)]
+  0x00007f895c215000 JavaThread "ServerService Thread Pool -- 66" [_thread_blocked, id=5855, stack(0x00007f8934b40000,0x00007f8934c41000)]
+  0x00007f895c213000 JavaThread "ServerService Thread Pool -- 65" [_thread_blocked, id=5854, stack(0x00007f8934c41000,0x00007f8934d42000)]
+  0x00007f895c211000 JavaThread "ServerService Thread Pool -- 64" [_thread_blocked, id=5853, stack(0x00007f8934d42000,0x00007f8934e43000)]
+  0x00007f895c20e800 JavaThread "ServerService Thread Pool -- 63" [_thread_blocked, id=5852, stack(0x00007f8934e43000,0x00007f8934f44000)]
+  0x00007f895c20c800 JavaThread "ServerService Thread Pool -- 62" [_thread_blocked, id=5851, stack(0x00007f8934f44000,0x00007f8935045000)]
+  0x00007f895c20a800 JavaThread "ServerService Thread Pool -- 61" [_thread_blocked, id=5850, stack(0x00007f8935045000,0x00007f8935146000)]
+  0x00007f895c208000 JavaThread "ServerService Thread Pool -- 58" [_thread_blocked, id=5849, stack(0x00007f8935146000,0x00007f8935247000)]
+  0x00007f895c207800 JavaThread "ServerService Thread Pool -- 57" [_thread_blocked, id=5848, stack(0x00007f8935247000,0x00007f8935348000)]
+  0x00007f89584bc800 JavaThread "ServerService Thread Pool -- 56" [_thread_blocked, id=5847, stack(0x00007f8935348000,0x00007f8935449000)]
+  0x00007f894c020800 JavaThread "ServerService Thread Pool -- 55" [_thread_blocked, id=5822, stack(0x00007f89356da000,0x00007f89357db000)]
+  0x00007f89980bb800 JavaThread "Buffer reclamation thread" daemon [_thread_blocked, id=5799, stack(0x00007f8935efe000,0x00007f8935fff000)]
+  0x00007f89b8086800 JavaThread "Remoting "campinas:MANAGEMENT" task-16" [_thread_blocked, id=5784, stack(0x00007f893623a000,0x00007f893633b000)]
+  0x00007f89b8084800 JavaThread "Remoting "campinas:MANAGEMENT" task-15" [_thread_blocked, id=5783, stack(0x00007f893633b000,0x00007f893643c000)]
+  0x00007f89b8083000 JavaThread "Remoting "campinas:MANAGEMENT" task-14" [_thread_blocked, id=5780, stack(0x00007f893643c000,0x00007f893653d000)]
+  0x00007f89b8081800 JavaThread "Remoting "campinas:MANAGEMENT" task-13" [_thread_blocked, id=5779, stack(0x00007f893653d000,0x00007f893663e000)]
+  0x00007f89b807f800 JavaThread "Remoting "campinas:MANAGEMENT" task-12" [_thread_blocked, id=5769, stack(0x00007f893663e000,0x00007f893673f000)]
+  0x00007f89b807e000 JavaThread "Remoting "campinas:MANAGEMENT" task-11" [_thread_blocked, id=5767, stack(0x00007f893673f000,0x00007f8936840000)]
+  0x00007f89b807c800 JavaThread "Remoting "campinas:MANAGEMENT" task-10" [_thread_blocked, id=5765, stack(0x00007f8936840000,0x00007f8936941000)]
+  0x00007f89b807a000 JavaThread "Remoting "campinas:MANAGEMENT" task-9" [_thread_blocked, id=5761, stack(0x00007f8936941000,0x00007f8936a42000)]
+  0x00007f8970157800 JavaThread "ServerService Thread Pool -- 53" [_thread_blocked, id=5758, stack(0x00007f8936a42000,0x00007f8936b43000)]
+  0x00007f89680f2000 JavaThread "ServerService Thread Pool -- 54" [_thread_blocked, id=5756, stack(0x00007f8936b43000,0x00007f8936c44000)]
+  0x00007f89680ec800 JavaThread "ServerService Thread Pool -- 52" [_thread_blocked, id=5755, stack(0x00007f8936c44000,0x00007f8936d45000)]
+  0x00007f89680ea800 JavaThread "ServerService Thread Pool -- 51" [_thread_blocked, id=5752, stack(0x00007f8936d77000,0x00007f8936e78000)]
+  0x00007f896c0a0000 JavaThread "ServerService Thread Pool -- 50" [_thread_blocked, id=5751, stack(0x00007f8936e81000,0x00007f8936f82000)]
+  0x00007f8958018800 JavaThread "Remoting "campinas:MANAGEMENT" task-8" [_thread_blocked, id=5748, stack(0x00007f89371be000,0x00007f89372bf000)]
+  0x00007f895c01a000 JavaThread "Remoting "campinas:MANAGEMENT" task-7" [_thread_blocked, id=5747, stack(0x00007f89372bf000,0x00007f89373c0000)]
+  0x00007f89b8078000 JavaThread "Remoting "campinas:MANAGEMENT" task-6" [_thread_blocked, id=5746, stack(0x00007f89373e9000,0x00007f89374ea000)]
+  0x00007f89b8076000 JavaThread "Remoting "campinas:MANAGEMENT" task-5" [_thread_blocked, id=5744, stack(0x00007f89374ea000,0x00007f89375eb000)]
+  0x00007f89b8073800 JavaThread "Remoting "campinas:MANAGEMENT" task-4" [_thread_blocked, id=5742, stack(0x00007f8937653000,0x00007f8937754000)]
+  0x00007f89b8071800 JavaThread "Remoting "campinas:MANAGEMENT" task-3" [_thread_blocked, id=5741, stack(0x00007f8937754000,0x00007f8937855000)]
+  0x00007f89b8070000 JavaThread "Remoting "campinas:MANAGEMENT" task-2" [_thread_blocked, id=5738, stack(0x00007f8937867000,0x00007f8937968000)]
+  0x00007f89b806f000 JavaThread "Remoting "campinas:MANAGEMENT" task-1" [_thread_blocked, id=5737, stack(0x00007f8937c99000,0x00007f8937d9a000)]
+  0x00007f89680db000 JavaThread "Thread-67" [_thread_blocked, id=5729, stack(0x00007f8937d9a000,0x00007f8937e9b000)]
+  0x00007f89680a7000 JavaThread "server-timer" daemon [_thread_blocked, id=5728, stack(0x00007f8937eff000,0x00007f8938000000)]
+  0x00007f89600fc000 JavaThread "JCA PoolFiller" daemon [_thread_blocked, id=5722, stack(0x00007f893c03e000,0x00007f893c13f000)]
+  0x00007f89701e4800 JavaThread "Transaction Reaper Worker 0" daemon [_thread_blocked, id=5716, stack(0x00007f893c608000,0x00007f893c709000)]
+  0x00007f89701e3800 JavaThread "Transaction Reaper" daemon [_thread_blocked, id=5715, stack(0x00007f893c754000,0x00007f893c855000)]
+  0x00007f89a0265800 JavaThread "http-/0.0.0.0:8080-1" daemon [_thread_blocked, id=5714, stack(0x00007f893c865000,0x00007f893c966000)]
+  0x00007f89701c0000 JavaThread "Periodic Recovery" [_thread_blocked, id=5713, stack(0x00007f893c966000,0x00007f893ca67000)]
+  0x00007f89701bf000 JavaThread "Transaction Expired Entry Monitor" daemon [_thread_blocked, id=5712, stack(0x00007f893ca67000,0x00007f893cb68000)]
+  0x00007f8958226800 JavaThread "http-/0.0.0.0:8080-Acceptor-0" daemon [_thread_in_native, id=5711, stack(0x00007f893cb68000,0x00007f893cc69000)]
+  0x00007f8958216000 JavaThread "http-/0.0.0.0:8080-Poller" daemon [_thread_blocked, id=5710, stack(0x00007f893cc78000,0x00007f893cd79000)]
+  0x00007f895c134000 JavaThread "Timer-0" [_thread_blocked, id=5707, stack(0x00007f893ce29000,0x00007f893cf2a000)]
+  0x00007f895c131000 JavaThread "ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon [_thread_blocked, id=5704, stack(0x00007f893d151000,0x00007f893d252000)]
+  0x00007f895c0cf000 JavaThread "IdleRemover" daemon [_thread_blocked, id=5703, stack(0x00007f893d2db000,0x00007f893d3dc000)]
+  0x00007f8970097000 JavaThread "ConnectionValidator" daemon [_thread_blocked, id=5702, stack(0x00007f893d3dc000,0x00007f893d4dd000)]
+  0x00007f895001c000 JavaThread "Remoting "campinas" write-1" [_thread_in_native, id=5701, stack(0x00007f893d4f2000,0x00007f893d5f3000)]
+  0x00007f895001a800 JavaThread "Remoting "campinas" read-1" [_thread_in_native, id=5700, stack(0x00007f893d5f3000,0x00007f893d6f4000)]
+  0x00007f894841c800 JavaThread "ServerService Thread Pool -- 49" [_thread_blocked, id=5699, stack(0x00007f893d6f4000,0x00007f893d7f5000)]
+  0x00007f8948418800 JavaThread "ServerService Thread Pool -- 48" [_thread_blocked, id=5698, stack(0x00007f893d7f5000,0x00007f893d8f6000)]
+  0x00007f8948415800 JavaThread "ServerService Thread Pool -- 47" [_thread_blocked, id=5697, stack(0x00007f893d8f6000,0x00007f893d9f7000)]
+  0x00007f8948413800 JavaThread "ServerService Thread Pool -- 46" [_thread_blocked, id=5696, stack(0x00007f893d9f7000,0x00007f893daf8000)]
+  0x00007f8948411800 JavaThread "ServerService Thread Pool -- 45" [_thread_blocked, id=5695, stack(0x00007f893daf8000,0x00007f893dbf9000)]
+  0x00007f894840f000 JavaThread "ServerService Thread Pool -- 44" [_thread_blocked, id=5694, stack(0x00007f893dbf9000,0x00007f893dcfa000)]
+  0x00007f894840d800 JavaThread "ServerService Thread Pool -- 43" [_thread_blocked, id=5693, stack(0x00007f893dcfa000,0x00007f893ddfb000)]
+  0x00007f894840b000 JavaThread "ServerService Thread Pool -- 42" [_thread_blocked, id=5692, stack(0x00007f893ddfb000,0x00007f893defc000)]
+  0x00007f8948409000 JavaThread "ServerService Thread Pool -- 41" [_thread_blocked, id=5691, stack(0x00007f893defc000,0x00007f893dffd000)]
+  0x00007f8948406800 JavaThread "ServerService Thread Pool -- 40" [_thread_blocked, id=5690, stack(0x00007f893dffd000,0x00007f893e0fe000)]
+  0x00007f8948405000 JavaThread "ServerService Thread Pool -- 39" [_thread_blocked, id=5689, stack(0x00007f893e0fe000,0x00007f893e1ff000)]
+  0x00007f8948402000 JavaThread "ServerService Thread Pool -- 38" [_thread_blocked, id=5688, stack(0x00007f893e1ff000,0x00007f893e300000)]
+  0x00007f8948400000 JavaThread "ServerService Thread Pool -- 37" [_thread_blocked, id=5687, stack(0x00007f893e300000,0x00007f893e401000)]
+  0x00007f89483fe000 JavaThread "ServerService Thread Pool -- 36" [_thread_blocked, id=5686, stack(0x00007f893e401000,0x00007f893e502000)]
+  0x00007f89483fc000 JavaThread "ServerService Thread Pool -- 35" [_thread_blocked, id=5685, stack(0x00007f893e502000,0x00007f893e603000)]
+  0x00007f89483fa000 JavaThread "ServerService Thread Pool -- 34" [_thread_blocked, id=5684, stack(0x00007f893e603000,0x00007f893e704000)]
+  0x00007f89483f8000 JavaThread "ServerService Thread Pool -- 33" [_thread_blocked, id=5683, stack(0x00007f893e704000,0x00007f893e805000)]
+  0x00007f89483f6000 JavaThread "ServerService Thread Pool -- 32" [_thread_blocked, id=5682, stack(0x00007f893e805000,0x00007f893e906000)]
+  0x00007f89483f4000 JavaThread "ServerService Thread Pool -- 31" [_thread_blocked, id=5681, stack(0x00007f893e906000,0x00007f893ea07000)]
+  0x00007f89581dc800 JavaThread "Remoting "campinas:MANAGEMENT" write-1" [_thread_in_native, id=5680, stack(0x00007f893ea07000,0x00007f893eb08000)]
+  0x00007f89581a0800 JavaThread "Remoting "campinas:MANAGEMENT" read-1" [_thread_in_native, id=5679, stack(0x00007f893eb08000,0x00007f893ec09000)]
+  0x00007f89483f2800 JavaThread "ServerService Thread Pool -- 30" [_thread_blocked, id=5678, stack(0x00007f893ec09000,0x00007f893ed0a000)]
+  0x00007f89483f1000 JavaThread "ServerService Thread Pool -- 29" [_thread_blocked, id=5677, stack(0x00007f893ed0a000,0x00007f893ee0b000)]
+  0x00007f89483f0000 JavaThread "ServerService Thread Pool -- 28" [_thread_blocked, id=5676, stack(0x00007f893ee0b000,0x00007f893ef0c000)]
+  0x00007f89483ef000 JavaThread "ServerService Thread Pool -- 27" [_thread_blocked, id=5675, stack(0x00007f893ef0c000,0x00007f893f00d000)]
+  0x00007f8960045800 JavaThread "ServerService Thread Pool -- 26" [_thread_blocked, id=5674, stack(0x00007f893f010000,0x00007f893f111000)]
+  0x00007f899400f000 JavaThread "DeploymentScanner-threads - 2" [_thread_blocked, id=5673, stack(0x00007f893f111000,0x00007f893f212000)]
+  0x00007f8948393800 JavaThread "DeploymentScanner-threads - 1" [_thread_blocked, id=5672, stack(0x00007f893f212000,0x00007f893f313000)]
+  0x00007f8948390000 JavaThread "ServerService Thread Pool -- 25" [_thread_blocked, id=5671, stack(0x00007f893f313000,0x00007f893f414000)]
+  0x00007f894838c800 JavaThread "ServerService Thread Pool -- 24" [_thread_blocked, id=5670, stack(0x00007f893f414000,0x00007f893f515000)]
+  0x00007f8948326800 JavaThread "ServerService Thread Pool -- 23" [_thread_blocked, id=5669, stack(0x00007f893f56c000,0x00007f893f66d000)]
+  0x00007f89480c1800 JavaThread "ServerService Thread Pool -- 22" [_thread_blocked, id=5666, stack(0x00007f893f7f8000,0x00007f893f8f9000)]
+  0x00007f89480bf800 JavaThread "ServerService Thread Pool -- 21" [_thread_blocked, id=5665, stack(0x00007f893f8f9000,0x00007f893f9fa000)]
+  0x00007f89480bd000 JavaThread "ServerService Thread Pool -- 20" [_thread_blocked, id=5664, stack(0x00007f893f9fa000,0x00007f893fafb000)]
+  0x00007f89480bb000 JavaThread "ServerService Thread Pool -- 19" [_thread_blocked, id=5663, stack(0x00007f893fafb000,0x00007f893fbfc000)]
+  0x00007f89480b9000 JavaThread "ServerService Thread Pool -- 18" [_thread_blocked, id=5662, stack(0x00007f893fbfc000,0x00007f893fcfd000)]
+  0x00007f89480b7800 JavaThread "ServerService Thread Pool -- 17" [_thread_blocked, id=5661, stack(0x00007f893fcfd000,0x00007f893fdfe000)]
+  0x00007f89480b5000 JavaThread "ServerService Thread Pool -- 16" [_thread_blocked, id=5660, stack(0x00007f893fdfe000,0x00007f893feff000)]
+  0x00007f89480b3000 JavaThread "ServerService Thread Pool -- 15" [_thread_blocked, id=5659, stack(0x00007f893feff000,0x00007f8940000000)]
+  0x00007f89480b0800 JavaThread "ServerService Thread Pool -- 14" [_thread_blocked, id=5658, stack(0x00007f89740f1000,0x00007f89741f2000)]
+  0x00007f894809b800 JavaThread "ServerService Thread Pool -- 13" [_thread_blocked, id=5657, stack(0x00007f89741f2000,0x00007f89742f3000)]
+  0x00007f8948099800 JavaThread "ServerService Thread Pool -- 12" [_thread_blocked, id=5656, stack(0x00007f89742f3000,0x00007f89743f4000)]
+  0x00007f8948097000 JavaThread "ServerService Thread Pool -- 11" [_thread_blocked, id=5655, stack(0x00007f89743f4000,0x00007f89744f5000)]
+  0x00007f8948095000 JavaThread "ServerService Thread Pool -- 10" [_thread_blocked, id=5654, stack(0x00007f89744f5000,0x00007f89745f6000)]
+  0x00007f8948093000 JavaThread "ServerService Thread Pool -- 9" [_thread_blocked, id=5653, stack(0x00007f89745f6000,0x00007f89746f7000)]
+  0x00007f8948091000 JavaThread "ServerService Thread Pool -- 8" [_thread_blocked, id=5652, stack(0x00007f89746f7000,0x00007f89747f8000)]
+  0x00007f894808f000 JavaThread "ServerService Thread Pool -- 7" [_thread_blocked, id=5651, stack(0x00007f89747f8000,0x00007f89748f9000)]
+  0x00007f894808d800 JavaThread "ServerService Thread Pool -- 6" [_thread_blocked, id=5650, stack(0x00007f89748f9000,0x00007f89749fa000)]
+  0x00007f89480a5000 JavaThread "ServerService Thread Pool -- 5" [_thread_blocked, id=5649, stack(0x00007f89749fa000,0x00007f8974afb000)]
+  0x00007f89480a3800 JavaThread "ServerService Thread Pool -- 4" [_thread_blocked, id=5648, stack(0x00007f8974afb000,0x00007f8974bfc000)]
+  0x00007f89480a9800 JavaThread "ServerService Thread Pool -- 3" [_thread_blocked, id=5647, stack(0x00007f8974bfc000,0x00007f8974cfd000)]
+  0x00007f89480a9000 JavaThread "ServerService Thread Pool -- 2" [_thread_blocked, id=5646, stack(0x00007f8974cfd000,0x00007f8974dfe000)]
+  0x00007f8964008800 JavaThread "ServerService Thread Pool -- 1" [_thread_blocked, id=5645, stack(0x00007f89ac055000,0x00007f89ac156000)]
+  0x00007f89c400e000 JavaThread "DestroyJavaVM" [_thread_blocked, id=5607, stack(0x00007f89ccc4c000,0x00007f89ccd4d000)]
+  0x00007f8958136000 JavaThread "Controller Boot Thread" [_thread_blocked, id=5644, stack(0x00007f8974dfe000,0x00007f8974fff000)]
+  0x00007f8970020800 JavaThread "ServerDeploymentRepository-temp-threads - 1" daemon [_thread_blocked, id=5642, stack(0x00007f89ac156000,0x00007f89ac257000)]
+  0x00007f8958002000 JavaThread "MSC service thread 1-8" [_thread_blocked, id=5641, stack(0x00007f89ac257000,0x00007f89ac358000)]
+  0x00007f8960005000 JavaThread "MSC service thread 1-7" [_thread_blocked, id=5640, stack(0x00007f89ac358000,0x00007f89ac459000)]
+  0x00007f896c002000 JavaThread "MSC service thread 1-6" [_thread_blocked, id=5639, stack(0x00007f89ac459000,0x00007f89ac55a000)]
+  0x00007f8960004800 JavaThread "MSC service thread 1-5" [_thread_blocked, id=5638, stack(0x00007f89ac55a000,0x00007f89ac65b000)]
+  0x00007f8968001000 JavaThread "MSC service thread 1-4" [_thread_blocked, id=5637, stack(0x00007f89ac65b000,0x00007f89ac75c000)]
+  0x00007f8970001800 JavaThread "MSC service thread 1-3" [_thread_blocked, id=5636, stack(0x00007f89ac75c000,0x00007f89ac85d000)]
+  0x00007f89c460b000 JavaThread "MSC service thread 1-2" [_thread_blocked, id=5635, stack(0x00007f89ac85d000,0x00007f89ac95e000)]
+  0x00007f89c4609000 JavaThread "MSC service thread 1-1" [_thread_blocked, id=5634, stack(0x00007f89ac95e000,0x00007f89aca5f000)]
+  0x00007f89c415a000 JavaThread "Reference Reaper" daemon [_thread_blocked, id=5630, stack(0x00007f89ad1f0000,0x00007f89ad2f1000)]
+  0x00007f89c40b4800 JavaThread "Service Thread" daemon [_thread_blocked, id=5628, stack(0x00007f89ad3f2000,0x00007f89ad4f3000)]
+  0x00007f89c40b2800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=5627, stack(0x00007f89ad4f3000,0x00007f89ad5f4000)]
+  0x00007f89c40af800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=5626, stack(0x00007f89ad5f4000,0x00007f89ad6f5000)]
+  0x00007f8990001000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=5621, stack(0x00007f89ad6f5000,0x00007f89ad7f6000)]
+  0x00007f89c40ad000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=5618, stack(0x00007f89ad7f6000,0x00007f89ad8f7000)]
+  0x00007f89c40a9800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=5617, stack(0x00007f89ad8f7000,0x00007f89ad9f8000)]
+  0x00007f89c409c800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5615, stack(0x00007f89adbfc000,0x00007f89adcfd000)]
+  0x00007f89c4074800 JavaThread "Finalizer" daemon [_thread_blocked, id=5614, stack(0x00007f89adcfd000,0x00007f89addfe000)]
+  0x00007f89c4072000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5613, stack(0x00007f89addfe000,0x00007f89adeff000)]
+
+Other Threads:
+=>0x00007f89c406e000 VMThread [stack: 0x00007f89adeff000,0x00007f89ae000000] [id=5612]
+  0x00007f89c40bf800 WatcherThread [stack: 0x00007f89ad2f1000,0x00007f89ad3f2000] [id=5629]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f89c400a170] ExpandHeap_lock - owner thread: 0x00007f89c406e000
+[0x00007f89c400a7f0] Threads_lock - owner thread: 0x00007f89c406e000
+[0x00007f89c400acf0] Heap_lock - owner thread: 0x00007f89584be000
+
+Heap
+ PSYoungGen      total 552960K, used 0K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 492544K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f3600000)
+  from space 60416K, 0% used [0x00000007f3600000,0x00000007f3600000,0x00000007f7100000)
+  to   space 105472K, 0% used [0x00000007f9900000,0x00000007f9900000,0x0000000800000000)
+ ParOldGen       total 699392K, used 562224K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 80% used [0x0000000780000000,0x00000007a250c1a8,0x00000007aab00000)
+ PSPermGen       total 335872K, used 131005K [0x0000000740000000, 0x0000000754800000, 0x0000000780000000)
+  object space 335872K, 39% used [0x0000000740000000,0x0000000747fef4b0,0x0000000754800000)
+
+Card table byte_map: [0x00007f89c921a000,0x00007f89c981b000] byte_map_base: 0x00007f89c581a000
+
+Polling page: 0x00007f89ccd72000
+
+Code Cache  [0x00007f89c1000000, 0x00007f89c1a50000, 0x00007f89c4000000)
+ total_blobs=3001 nmethods=2406 adapters=553 free_code_cache=38715Kb largest_free_block=39531904
+
+Compilation events (10 events):
+Event: 102,852 Thread 0x00007f89c40b2800 nmethod 2706 0x00007f89c1a45690 code [0x00007f89c1a458e0, 0x00007f89c1a46300]
+Event: 102,858 Thread 0x00007f89c40b2800 2707             org.hibernate.cfg.annotations.PropertyBinder::validateBind (43 bytes)
+Event: 102,860 Thread 0x00007f89c40b2800 nmethod 2707 0x00007f89c1a1f9d0 code [0x00007f89c1a1fb40, 0x00007f89c1a1fc68]
+Event: 102,893 Thread 0x00007f89c40b2800 2708             org.hibernate.property.PropertyAccessorFactory::getPropertyAccessor (28 bytes)
+Event: 102,895 Thread 0x00007f89c40b2800 nmethod 2708 0x00007f89c1a1f550 code [0x00007f89c1a1f6a0, 0x00007f89c1a1f8f8]
+Event: 102,895 Thread 0x00007f89c40b2800 2709             org.hibernate.property.PropertyAccessorFactory::getPropertyAccessor (74 bytes)
+Event: 102,905 Thread 0x00007f89c40b2800 nmethod 2709 0x00007f89c1a23450 code [0x00007f89c1a235a0, 0x00007f89c1a237f8]
+Event: 102,905 Thread 0x00007f89c40b2800 2711             org.hibernate.ejb.metamodel.AttributeFactory$1::getPropertyMapping (5 bytes)
+Event: 102,905 Thread 0x00007f89c40b2800 nmethod 2711 0x00007f89c1668d10 code [0x00007f89c1668e40, 0x00007f89c1668eb8]
+Event: 102,905 Thread 0x00007f89c40b2800 2712   !         org.hibernate.persister.entity.SingleTableEntityPersister::<init> (2533 bytes)
+
+GC Heap History (10 events):
+Event: 88,414 GC heap after
+Heap after GC invocations=29 (full 0):
+ PSYoungGen      total 613376K, used 36165K [0x00000007d5500000, 0x00000007fff80000, 0x0000000800000000)
+  eden space 531968K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f5c80000)
+  from space 81408K, 44% used [0x00000007f5c80000,0x00000007f7fd1438,0x00000007fac00000)
+  to   space 80384K, 0% used [0x00000007fb100000,0x00000007fb100000,0x00000007fff80000)
+ ParOldGen       total 699392K, used 461218K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 65% used [0x0000000780000000,0x000000079c268ba8,0x00000007aab00000)
+ PSPermGen       total 327680K, used 327516K [0x0000000740000000, 0x0000000754000000, 0x0000000780000000)
+  object space 327680K, 99% used [0x0000000740000000,0x0000000753fd7348,0x0000000754000000)
+}
+Event: 90,386 GC heap before
+{Heap before GC invocations=30 (full 0):
+ PSYoungGen      total 613376K, used 568133K [0x00000007d5500000, 0x00000007fff80000, 0x0000000800000000)
+  eden space 531968K, 100% used [0x00000007d5500000,0x00000007f5c80000,0x00000007f5c80000)
+  from space 81408K, 44% used [0x00000007f5c80000,0x00000007f7fd1438,0x00000007fac00000)
+  to   space 80384K, 0% used [0x00000007fb100000,0x00000007fb100000,0x00000007fff80000)
+ ParOldGen       total 699392K, used 461218K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 65% used [0x0000000780000000,0x000000079c268ba8,0x00000007aab00000)
+ PSPermGen       total 330752K, used 330494K [0x0000000740000000, 0x0000000754300000, 0x0000000780000000)
+  object space 330752K, 99% used [0x0000000740000000,0x00000007542bf8b0,0x0000000754300000)
+Event: 90,648 GC heap after
+Heap after GC invocations=30 (full 0):
+ PSYoungGen      total 603648K, used 59760K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 523264K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f5400000)
+  from space 80384K, 74% used [0x00000007fb100000,0x00000007feb5c030,0x00000007fff80000)
+  to   space 88064K, 0% used [0x00000007f5400000,0x00000007f5400000,0x00000007faa00000)
+ ParOldGen       total 699392K, used 491906K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 70% used [0x0000000780000000,0x000000079e060b20,0x00000007aab00000)
+ PSPermGen       total 330752K, used 330494K [0x0000000740000000, 0x0000000754300000, 0x0000000780000000)
+  object space 330752K, 99% used [0x0000000740000000,0x00000007542bf8b0,0x0000000754300000)
+}
+Event: 94,760 GC heap before
+{Heap before GC invocations=31 (full 0):
+ PSYoungGen      total 603648K, used 583024K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 523264K, 100% used [0x00000007d5500000,0x00000007f5400000,0x00000007f5400000)
+  from space 80384K, 74% used [0x00000007fb100000,0x00000007feb5c030,0x00000007fff80000)
+  to   space 88064K, 0% used [0x00000007f5400000,0x00000007f5400000,0x00000007faa00000)
+ ParOldGen       total 699392K, used 491906K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 70% used [0x0000000780000000,0x000000079e060b20,0x00000007aab00000)
+ PSPermGen       total 332800K, used 332337K [0x0000000740000000, 0x0000000754500000, 0x0000000780000000)
+  object space 332800K, 99% used [0x0000000740000000,0x000000075448c5e0,0x0000000754500000)
+Event: 95,147 GC heap after
+Heap after GC invocations=31 (full 0):
+ PSYoungGen      total 589312K, used 65716K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 523264K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f5400000)
+  from space 66048K, 99% used [0x00000007f5400000,0x00000007f942d250,0x00000007f9480000)
+  to   space 96256K, 0% used [0x00000007fa200000,0x00000007fa200000,0x0000000800000000)
+ ParOldGen       total 699392K, used 548934K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 78% used [0x0000000780000000,0x00000007a1811880,0x00000007aab00000)
+ PSPermGen       total 332800K, used 332337K [0x0000000740000000, 0x0000000754500000, 0x0000000780000000)
+  object space 332800K, 99% used [0x0000000740000000,0x000000075448c5e0,0x0000000754500000)
+}
+Event: 98,977 GC heap before
+{Heap before GC invocations=32 (full 0):
+ PSYoungGen      total 589312K, used 588980K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 523264K, 100% used [0x00000007d5500000,0x00000007f5400000,0x00000007f5400000)
+  from space 66048K, 99% used [0x00000007f5400000,0x00000007f942d250,0x00000007f9480000)
+  to   space 96256K, 0% used [0x00000007fa200000,0x00000007fa200000,0x0000000800000000)
+ ParOldGen       total 699392K, used 548934K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 78% used [0x0000000780000000,0x00000007a1811880,0x00000007aab00000)
+ PSPermGen       total 334848K, used 334498K [0x0000000740000000, 0x0000000754700000, 0x0000000780000000)
+  object space 334848K, 99% used [0x0000000740000000,0x00000007546a8a00,0x0000000754700000)
+Event: 100,234 GC heap after
+Heap after GC invocations=32 (full 0):
+ PSYoungGen      total 588800K, used 68704K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 492544K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f3600000)
+  from space 96256K, 71% used [0x00000007fa200000,0x00000007fe518000,0x0000000800000000)
+  to   space 103424K, 0% used [0x00000007f3600000,0x00000007f3600000,0x00000007f9b00000)
+ ParOldGen       total 699392K, used 613054K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 87% used [0x0000000780000000,0x00000007a56afbb8,0x00000007aab00000)
+ PSPermGen       total 334848K, used 334498K [0x0000000740000000, 0x0000000754700000, 0x0000000780000000)
+  object space 334848K, 99% used [0x0000000740000000,0x00000007546a8a00,0x0000000754700000)
+}
+Event: 103,604 GC heap before
+{Heap before GC invocations=33 (full 0):
+ PSYoungGen      total 588800K, used 561248K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 492544K, 100% used [0x00000007d5500000,0x00000007f3600000,0x00000007f3600000)
+  from space 96256K, 71% used [0x00000007fa200000,0x00000007fe518000,0x0000000800000000)
+  to   space 103424K, 0% used [0x00000007f3600000,0x00000007f3600000,0x00000007f9b00000)
+ ParOldGen       total 699392K, used 613054K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 87% used [0x0000000780000000,0x00000007a56afbb8,0x00000007aab00000)
+ PSPermGen       total 335872K, used 335635K [0x0000000740000000, 0x0000000754800000, 0x0000000780000000)
+  object space 335872K, 99% used [0x0000000740000000,0x00000007547c4e10,0x0000000754800000)
+Event: 104,052 GC heap after
+Heap after GC invocations=33 (full 0):
+ PSYoungGen      total 552960K, used 60000K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 492544K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f3600000)
+  from space 60416K, 99% used [0x00000007f3600000,0x00000007f7098000,0x00000007f7100000)
+  to   space 105472K, 0% used [0x00000007f9900000,0x00000007f9900000,0x0000000800000000)
+ ParOldGen       total 699392K, used 680506K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 97% used [0x0000000780000000,0x00000007a988e998,0x00000007aab00000)
+ PSPermGen       total 335872K, used 335635K [0x0000000740000000, 0x0000000754800000, 0x0000000780000000)
+  object space 335872K, 99% used [0x0000000740000000,0x00000007547c4e10,0x0000000754800000)
+}
+Event: 104,052 GC heap before
+{Heap before GC invocations=34 (full 1):
+ PSYoungGen      total 552960K, used 60000K [0x00000007d5500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 492544K, 0% used [0x00000007d5500000,0x00000007d5500000,0x00000007f3600000)
+  from space 60416K, 99% used [0x00000007f3600000,0x00000007f7098000,0x00000007f7100000)
+  to   space 105472K, 0% used [0x00000007f9900000,0x00000007f9900000,0x0000000800000000)
+ ParOldGen       total 699392K, used 680506K [0x0000000780000000, 0x00000007aab00000, 0x00000007d5500000)
+  object space 699392K, 97% used [0x0000000780000000,0x00000007a988e998,0x00000007aab00000)
+ PSPermGen       total 335872K, used 335635K [0x0000000740000000, 0x0000000754800000, 0x0000000780000000)
+  object space 335872K, 99% used [0x0000000740000000,0x00000007547c4e10,0x0000000754800000)
+
+Deoptimization events (10 events):
+Event: 103,595 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,595 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,597 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,597 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,600 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,600 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,600 Thread 0x00007f8958444000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,601 Thread 0x00007f8958444000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,601 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+Event: 103,601 Thread 0x00007f89584be000 Uncommon trap: reason=unhandled action=none pc=0x00007f89c137f0e0 method=org.jboss.modules.ModuleClassLoader.findClass(Ljava/lang/String;ZZ)Ljava/lang/Class; @ 116
+
+Internal exceptions (10 events):
+Event: 103,587 Thread 0x00007f8970001800 Threw 0x00000007f330ba18 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,587 Thread 0x00007f8970001800 Threw 0x00000007f330dc30 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,588 Thread 0x00007f8970001800 Threw 0x00000007f34110f8 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,588 Thread 0x00007f8970001800 Threw 0x00000007f34131c0 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,588 Thread 0x00007f8970001800 Threw 0x00000007f3415858 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,588 Thread 0x00007f8970001800 Threw 0x00000007f3417370 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,590 Thread 0x00007f8968001000 Threw 0x00000007f32e0c70 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,590 Thread 0x00007f8968001000 Threw 0x00000007f32e4070 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,591 Thread 0x00007f8968001000 Threw 0x00000007f32e7418 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+Event: 103,591 Thread 0x00007f8968001000 Threw 0x00000007f34a64f0 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp:347
+
+Events (10 events):
+Event: 103,601 Thread 0x00007f89584be000 DEOPT PACKING pc=0x00007f89c128fee0 sp=0x00007f8934b3dde0
+Event: 103,601 Thread 0x00007f89584be000 DEOPT UNPACKING pc=0x00007f89c103920f sp=0x00007f8934b3db10 mode 1
+Event: 103,601 Thread 0x00007f89584be000 DEOPT PACKING pc=0x00007f89c17bac00 sp=0x00007f8934b3de10
+Event: 103,601 Thread 0x00007f89584be000 DEOPT UNPACKING pc=0x00007f89c103920f sp=0x00007f8934b3da48 mode 1
+Event: 103,601 Thread 0x00007f89584be000 Uncommon trap: trap_request=0xffffffa7 fr.pc=0x00007f89c137f0e0
+Event: 103,601 Thread 0x00007f89584be000 DEOPT PACKING pc=0x00007f89c137f0e0 sp=0x00007f8934b3d340
+Event: 103,601 Thread 0x00007f89584be000 DEOPT UNPACKING pc=0x00007f89c1039445 sp=0x00007f8934b3d1a8 mode 2
+Event: 103,601 Thread 0x00007f89584be000 DEOPT PACKING pc=0x00007f89c128fee0 sp=0x00007f8934b3d3f0
+Event: 103,601 Thread 0x00007f89584be000 DEOPT UNPACKING pc=0x00007f89c103920f sp=0x00007f8934b3d130 mode 1
+Event: 103,602 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:02 12979744                           /opt/jdk1.7.0_80/bin/java
+00600000-00601000 rw-p 00000000 08:02 12979744                           /opt/jdk1.7.0_80/bin/java
+023db000-02658000 rw-p 00000000 00:00 0                                  [heap]
+740000000-754800000 rw-p 00000000 00:00 0 
+754800000-780000000 rw-p 00000000 00:00 0 
+780000000-7aab00000 rw-p 00000000 00:00 0 
+7bac00000-7d5500000 rw-p 00000000 00:00 0 
+7d5500000-800000000 rw-p 00000000 00:00 0 
+7f8924000000-7f8924dc9000 rw-p 00000000 00:00 0 
+7f8924dc9000-7f8928000000 ---p 00000000 00:00 0 
+7f892c000000-7f892d080000 rw-p 00000000 00:00 0 
+7f892d080000-7f8930000000 ---p 00000000 00:00 0 
+7f89318c2000-7f89318c5000 ---p 00000000 00:00 0 
+7f89318c5000-7f89319c3000 rw-p 00000000 00:00 0 
+7f89319c3000-7f89319c6000 ---p 00000000 00:00 0 
+7f89319c6000-7f8931ac4000 rw-p 00000000 00:00 0 
+7f8931ac4000-7f8931ac7000 ---p 00000000 00:00 0 
+7f8931ac7000-7f8931bc5000 rw-p 00000000 00:00 0 
+7f8931bc5000-7f8931bc8000 ---p 00000000 00:00 0 
+7f8931bc8000-7f8931cc6000 rw-p 00000000 00:00 0 
+7f8931cc6000-7f8931cc9000 ---p 00000000 00:00 0 
+7f8931cc9000-7f8931dc7000 rw-p 00000000 00:00 0 
+7f8931dc7000-7f8931dca000 ---p 00000000 00:00 0 
+7f8931dca000-7f8931ec8000 rw-p 00000000 00:00 0 
+7f8931ec8000-7f8931ecb000 ---p 00000000 00:00 0 
+7f8931ecb000-7f8931fc9000 rw-p 00000000 00:00 0 
+7f8931fc9000-7f8931fcc000 ---p 00000000 00:00 0 
+7f8931fcc000-7f89320ca000 rw-p 00000000 00:00 0 
+7f89320ca000-7f89320cd000 ---p 00000000 00:00 0 
+7f89320cd000-7f89321cb000 rw-p 00000000 00:00 0 
+7f89321cb000-7f89321ce000 ---p 00000000 00:00 0 
+7f89321ce000-7f89322cc000 rw-p 00000000 00:00 0 
+7f89322cc000-7f89322cf000 ---p 00000000 00:00 0 
+7f89322cf000-7f89323cd000 rw-p 00000000 00:00 0 
+7f89323cd000-7f89323d0000 ---p 00000000 00:00 0 
+7f89323d0000-7f89324ce000 rw-p 00000000 00:00 0 
+7f89324ce000-7f89324d1000 ---p 00000000 00:00 0 
+7f89324d1000-7f89325cf000 rw-p 00000000 00:00 0 
+7f89325cf000-7f89325d2000 ---p 00000000 00:00 0 
+7f89325d2000-7f89326d0000 rw-p 00000000 00:00 0 
+7f89326d0000-7f89326d3000 ---p 00000000 00:00 0 
+7f89326d3000-7f89327d1000 rw-p 00000000 00:00 0 
+7f89327d1000-7f89327d4000 ---p 00000000 00:00 0 
+7f89327d4000-7f89328d2000 rw-p 00000000 00:00 0 
+7f89328d2000-7f89328d5000 ---p 00000000 00:00 0 
+7f89328d5000-7f89329d3000 rw-p 00000000 00:00 0 
+7f89329d3000-7f89329d6000 ---p 00000000 00:00 0 
+7f89329d6000-7f8932ad4000 rw-p 00000000 00:00 0 
+7f8932ad4000-7f8932ad7000 ---p 00000000 00:00 0 
+7f8932ad7000-7f8932bd5000 rw-p 00000000 00:00 0 
+7f8932bd5000-7f8932bd8000 ---p 00000000 00:00 0 
+7f8932bd8000-7f8932cd6000 rw-p 00000000 00:00 0 
+7f8932cd6000-7f8932cd9000 ---p 00000000 00:00 0 
+7f8932cd9000-7f8932dd7000 rw-p 00000000 00:00 0 
+7f8932dd7000-7f8932dda000 ---p 00000000 00:00 0 
+7f8932dda000-7f8932ed8000 rw-p 00000000 00:00 0 
+7f8932ed8000-7f8932edb000 ---p 00000000 00:00 0 
+7f8932edb000-7f8932fd9000 rw-p 00000000 00:00 0 
+7f8932fd9000-7f8932fdc000 ---p 00000000 00:00 0 
+7f8932fdc000-7f89330da000 rw-p 00000000 00:00 0 
+7f89330da000-7f89330dd000 ---p 00000000 00:00 0 
+7f89330dd000-7f89331db000 rw-p 00000000 00:00 0 
+7f89331db000-7f89331de000 ---p 00000000 00:00 0 
+7f89331de000-7f89332dc000 rw-p 00000000 00:00 0 
+7f89332dc000-7f89332df000 ---p 00000000 00:00 0 
+7f89332df000-7f89333dd000 rw-p 00000000 00:00 0 
+7f89333dd000-7f89333e0000 ---p 00000000 00:00 0 
+7f89333e0000-7f89334de000 rw-p 00000000 00:00 0 
+7f8933ada000-7f8933add000 ---p 00000000 00:00 0 
+7f8933add000-7f8933bdb000 rw-p 00000000 00:00 0 
+7f8933bdb000-7f8933bde000 ---p 00000000 00:00 0 
+7f8933bde000-7f8933cdc000 rw-p 00000000 00:00 0 
+7f8933cdc000-7f8933cdf000 ---p 00000000 00:00 0 
+7f8933cdf000-7f8933ddd000 rw-p 00000000 00:00 0 
+7f8933ddd000-7f8933dde000 r--s 00002000 08:02 3284545                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_agendamento/exception/main/HDIException.jar
+7f8933dde000-7f8933de0000 r--s 00008000 08:02 3290291                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_agendamento/cache/main/HDICache.jar
+7f8933de0000-7f8933de9000 r--s 0006f000 08:02 3283657                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_agendamento/log4j/main/log4j-1.2.17.jar
+7f8933de9000-7f8933df0000 r--s 00037000 08:02 3295519                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-e94a87f58750230a/junit-4.10.jar
+7f8933df0000-7f8933df2000 r--s 00011000 08:02 3295518                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-46590a808134e791/hamcrest-core-1.1.jar
+7f8933df2000-7f8933df5000 r--s 0000b000 08:02 3295517                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-annotations-2.8.6.jar-d26223dcf5cbeac2/jackson-annotations-2.8.6.jar
+7f8933df5000-7f8933dff000 r--s 0005c000 08:02 3295516                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jstl-1.2.jar-98e54b797054397b/jstl-1.2.jar
+7f8933dff000-7f8933e00000 r--s 00002000 08:02 3289647                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/jaxws-jboss-httpserver-httpspi-1.0.1.GA-redhat-2.jar
+7f8933e00000-7f8933e02000 r--s 00016000 08:02 3283346                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/xml-resolver/main/xml-resolver-1.2.0.redhat-10.jar
+7f8933e02000-7f8933e0b000 r--s 0006a000 08:02 3290660                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/velocity/main/velocity-1.7.0.redhat-4.jar
+7f8933e0b000-7f8933e0f000 r--s 0002c000 08:02 3288011                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/ws/xmlschema/main/xmlschema-core-2.0.2.redhat-3.jar
+7f8933e0f000-7f8933e11000 r--s 00017000 08:02 3284492                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/neethi/main/neethi-3.0.2.redhat-3.jar
+7f8933e11000-7f8933e14000 ---p 00000000 00:00 0 
+7f8933e14000-7f8933f12000 rw-p 00000000 00:00 0 
+7f8933f12000-7f8933f18000 r--s 00039000 08:02 3288856                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jaxen/main/jaxen-1.1.3.redhat-4.jar
+7f8933f18000-7f8933f21000 r--s 0006f000 08:02 3283841                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/log4j/main/log4j-1.2.17.jar
+7f8933f21000-7f8933f28000 r--s 00037000 08:02 3295514                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-e6c9ffd712531f98/junit-4.10.jar
+7f8933f28000-7f8933f2a000 r--s 00011000 08:02 3295513                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-1733566c2c91e74c/hamcrest-core-1.1.jar
+7f8933f2a000-7f8933f34000 r--s 0005c000 08:02 3295512                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jstl-1.2.jar-f26381cdc211d829/jstl-1.2.jar
+7f8933f34000-7f8933f37000 ---p 00000000 00:00 0 
+7f8933f37000-7f8934035000 rw-p 00000000 00:00 0 
+7f8934035000-7f8934038000 ---p 00000000 00:00 0 
+7f8934038000-7f8934136000 rw-p 00000000 00:00 0 
+7f8934136000-7f8934139000 ---p 00000000 00:00 0 
+7f8934139000-7f8934237000 rw-p 00000000 00:00 0 
+7f8934237000-7f893423a000 ---p 00000000 00:00 0 
+7f893423a000-7f8934338000 rw-p 00000000 00:00 0 
+7f8934338000-7f893433b000 ---p 00000000 00:00 0 
+7f893433b000-7f8934439000 rw-p 00000000 00:00 0 
+7f8934439000-7f893443c000 ---p 00000000 00:00 0 
+7f893443c000-7f893453a000 rw-p 00000000 00:00 0 
+7f893453a000-7f893453d000 ---p 00000000 00:00 0 
+7f893453d000-7f893463b000 rw-p 00000000 00:00 0 
+7f893463b000-7f893463e000 ---p 00000000 00:00 0 
+7f893463e000-7f893473c000 rw-p 00000000 00:00 0 
+7f893473c000-7f893473f000 ---p 00000000 00:00 0 
+7f893473f000-7f893483d000 rw-p 00000000 00:00 0 
+7f893483d000-7f8934840000 ---p 00000000 00:00 0 
+7f8934840000-7f893493e000 rw-p 00000000 00:00 0 
+7f893493e000-7f8934941000 ---p 00000000 00:00 0 
+7f8934941000-7f8934a3f000 rw-p 00000000 00:00 0 
+7f8934a3f000-7f8934a42000 ---p 00000000 00:00 0 
+7f8934a42000-7f8934b40000 rw-p 00000000 00:00 0 
+7f8934b40000-7f8934b43000 ---p 00000000 00:00 0 
+7f8934b43000-7f8934c41000 rw-p 00000000 00:00 0 
+7f8934c41000-7f8934c44000 ---p 00000000 00:00 0 
+7f8934c44000-7f8934d42000 rw-p 00000000 00:00 0 
+7f8934d42000-7f8934d45000 ---p 00000000 00:00 0 
+7f8934d45000-7f8934e43000 rw-p 00000000 00:00 0 
+7f8934e43000-7f8934e46000 ---p 00000000 00:00 0 
+7f8934e46000-7f8934f44000 rw-p 00000000 00:00 0 
+7f8934f44000-7f8934f47000 ---p 00000000 00:00 0 
+7f8934f47000-7f8935045000 rw-p 00000000 00:00 0 
+7f8935045000-7f8935048000 ---p 00000000 00:00 0 
+7f8935048000-7f8935146000 rw-p 00000000 00:00 0 
+7f8935146000-7f8935149000 ---p 00000000 00:00 0 
+7f8935149000-7f8935247000 rw-p 00000000 00:00 0 
+7f8935247000-7f893524a000 ---p 00000000 00:00 0 
+7f893524a000-7f8935348000 rw-p 00000000 00:00 0 
+7f8935348000-7f893534b000 ---p 00000000 00:00 0 
+7f893534b000-7f8935449000 rw-p 00000000 00:00 0 
+7f8935449000-7f8935450000 r--s 0003b000 08:02 3289529                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/yaml/snakeyaml/main/snakeyaml-1.8.0.redhat-3.jar
+7f8935450000-7f8935456000 r--s 00052000 08:02 3291207                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/james/mime4j/main/apache-mime4j-0.6.0.redhat-4.jar
+7f8935456000-7f8935458000 r--s 00018000 08:02 3288664                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/jettison/main/jettison-1.3.1.redhat-4.jar
+7f8935458000-7f8935459000 r--s 00006000 08:02 3284611                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main/jackson-xc-1.9.9.redhat-4.jar
+7f8935459000-7f893545a000 r--s 00004000 08:02 3289940                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main/jackson-jaxrs-1.9.9.redhat-4.jar
+7f893545a000-7f893545d000 ---p 00000000 00:00 0 
+7f893545d000-7f893555b000 rw-p 00000000 00:00 0 
+7f893555b000-7f893555e000 ---p 00000000 00:00 0 
+7f893555e000-7f893565c000 rw-p 00000000 00:00 0 
+7f893565c000-7f8935661000 r--s 00045000 08:02 3288262                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/lang/main/commons-lang-2.6.0.redhat-4.jar
+7f8935661000-7f893566a000 r--s 0006f000 08:02 3283841                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/log4j/main/log4j-1.2.17.jar
+7f893566a000-7f893566c000 r--s 00000000 08:02 3289593                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/aopalliance/main/aopalliance-1.0.jar
+7f893566c000-7f89356da000 r--s 00920000 08:02 3290561                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/aspectj/aspectjtools/main/aspectjtools-1.7.4.jar
+7f89356da000-7f89356dd000 ---p 00000000 00:00 0 
+7f89356dd000-7f89357db000 rw-p 00000000 00:00 0 
+7f89357db000-7f89357e0000 r--s 00019000 08:02 3291153                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/aspectj/aspectjrt/main/aspectjrt-1.7.4.jar
+7f89357e0000-7f89357f8000 r--s 001ac000 08:02 3290193                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/aspectj/aspectjweaver/main/aspectjweaver-1.7.4.jar
+7f89357f8000-7f89357fd000 r--s 0003a000 08:02 3289862                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/beanutils/main/commons-beanutils-1.8.3.redhat-6.jar
+7f89357fd000-7f893580d000 r--s 000a1000 08:02 3294955                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/lib/main/HDICotacaoWSClient.jar
+7f893580d000-7f8935811000 r--s 0001b000 08:02 3289047                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jasypt/main/jasypt-1.9.0.jar
+7f8935811000-7f89358de000 r--s 00a8b000 08:02 3283753                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/security/main/HDISecurity-jar-with-dependencies.jar
+7f89358de000-7f89358e0000 r--s 00008000 08:02 3283716                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/cache/main/HDICache.jar
+7f89358e0000-7f89358e1000 r--s 00002000 08:02 3289639                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/exception/main/HDIException.jar
+7f89358e1000-7f89358e5000 r--s 0002b000 08:02 3294851                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/base/main/HDIDigitalBase-dtos.jar
+7f89358e5000-7f89358ee000 r--s 0006f000 08:02 3283841                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/log4j/main/log4j-1.2.17.jar
+7f89358ee000-7f89358f5000 r--s 00037000 08:02 3295510                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-a9e479ec3b1e30c3/junit-4.10.jar
+7f89358f5000-7f89358f7000 r--s 00011000 08:02 3295509                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-676e288932ff6f38/hamcrest-core-1.1.jar
+7f89358f7000-7f8935901000 r--s 0005c000 08:02 3295508                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jstl-1.2.jar-1b52b82e791e640d/jstl-1.2.jar
+7f8935901000-7f8935ba5000 r--s 0155c000 08:02 3289383                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/net/sf/ehcache-terracotta/main/terracotta-toolkit-runtime-ee-4.3.1.1.36.jar
+7f8935ba5000-7f8935cd1000 r--s 00b78000 08:02 3283180                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/net/sf/ehcache-terracotta/main/ehcache-ee-2.10.1.1.14.jar
+7f8935cd1000-7f8935cd7000 r--s 00048000 08:02 3288339                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/lang3/main/commons-lang3-3.1.jar
+7f8935cd7000-7f8935cd9000 r--s 00001000 08:02 3283277                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-2.3.10.Final-redhat-1.jar
+7f8935cd9000-7f8935cdc000 r--s 00011000 08:02 3289773                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.10.Final-redhat-1.jar
+7f8935cdc000-7f8935cdd000 r--s 00007000 08:02 3283385                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-2.3.10.Final-redhat-1.jar
+7f8935cdd000-7f8935cdf000 r--s 00007000 08:02 3284529                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-2.3.10.Final-redhat-1.jar
+7f8935cdf000-7f8935cee000 r--s 000b0000 08:02 3289421                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main/jackson-mapper-asl-1.9.9.redhat-4.jar
+7f8935cee000-7f8935cf2000 r--s 00035000 08:02 3288649                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main/jackson-core-asl-1.9.9.redhat-4.jar
+7f8935cf2000-7f8935cf3000 r--s 00001000 08:02 3291284                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-2.3.10.Final-redhat-1.jar
+7f8935cf3000-7f8935cf6000 r--s 00010000 08:02 3284121                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.10.Final-redhat-1.jar
+7f8935cf6000-7f8935cf9000 ---p 00000000 00:00 0 
+7f8935cf9000-7f8935df7000 rw-p 00000000 00:00 0 
+7f8935df7000-7f8935df9000 r--s 00003000 08:02 3289780                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider/main/resteasy-hibernatevalidator-provider-2.3.10.Final-redhat-1.jar
+7f8935df9000-7f8935dfc000 ---p 00000000 00:00 0 
+7f8935dfc000-7f8935efa000 rw-p 00000000 00:00 0 
+7f8935efa000-7f8935efc000 r--s 00009000 08:02 3289410                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-2.3.10.Final-redhat-1.jar
+7f8935efc000-7f8935efe000 r--s 0000a000 08:02 3290739                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring-jar/resteasy-spring-2.3.10.Final-redhat-1.jar
+7f8935efe000-7f8935f01000 ---p 00000000 00:00 0 
+7f8935f01000-7f8935fff000 rw-p 00000000 00:00 0 
+7f8935fff000-7f8936006000 r--s 00037000 08:02 3295504                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-99d5b14774c68153/junit-4.10.jar
+7f8936006000-7f8936008000 r--s 00011000 08:02 3295503                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-956ca9aaa269943e/hamcrest-core-1.1.jar
+7f8936008000-7f8936014000 r--s 00085000 08:02 3295502                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpclient-4.3.6.jar-faf7a1a9c9dcfd85/httpclient-4.3.6.jar
+7f8936014000-7f8936016000 r--s 00008000 08:02 3295500                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-logging-1.0.4.jar-d4ed60b40a671e68/commons-logging-1.0.4.jar
+7f8936016000-7f8936018000 r--s 00007000 08:02 3295499                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/objenesis-1.2.jar-2a9db0e049f13067/objenesis-1.2.jar
+7f8936018000-7f893601c000 r--s 00017000 08:02 3295498                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-core-2.2.0.Final.jar-288824175881e8f/togglz-core-2.2.0.Final.jar
+7f893601c000-7f893601e000 r--s 00009000 08:02 3295497                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/powermock-reflect-1.5.1.jar-e1ab0c88b25c39dc/powermock-reflect-1.5.1.jar
+7f893601e000-7f8936028000 r--s 0005c000 08:02 3295496                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jstl-1.2.jar-1680991b490ab6d/jstl-1.2.jar
+7f8936028000-7f893602b000 r--s 00013000 08:02 3295495                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-io-1.3.2.jar-4c668b94597f6a72/commons-io-1.3.2.jar
+7f893602b000-7f8936032000 r--s 0003f000 08:02 3295494                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpcore-4.3.3.jar-69f290334d8a5d26/httpcore-4.3.3.jar
+7f8936032000-7f8936038000 r--s 00033000 08:02 3295493                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-codec-1.6.jar-a626d5ba10da7b2e/commons-codec-1.6.jar
+7f8936038000-7f893603b000 ---p 00000000 00:00 0 
+7f893603b000-7f8936139000 rw-p 00000000 00:00 0 
+7f8936139000-7f893613c000 ---p 00000000 00:00 0 
+7f893613c000-7f893623a000 rw-p 00000000 00:00 0 
+7f893623a000-7f893623d000 ---p 00000000 00:00 0 
+7f893623d000-7f893633b000 rw-p 00000000 00:00 0 
+7f893633b000-7f893633e000 ---p 00000000 00:00 0 
+7f893633e000-7f893643c000 rw-p 00000000 00:00 0 
+7f893643c000-7f893643f000 ---p 00000000 00:00 0 
+7f893643f000-7f893653d000 rw-p 00000000 00:00 0 
+7f893653d000-7f8936540000 ---p 00000000 00:00 0 
+7f8936540000-7f893663e000 rw-p 00000000 00:00 0 
+7f893663e000-7f8936641000 ---p 00000000 00:00 0 
+7f8936641000-7f893673f000 rw-p 00000000 00:00 0 
+7f893673f000-7f8936742000 ---p 00000000 00:00 0 
+7f8936742000-7f8936840000 rw-p 00000000 00:00 0 
+7f8936840000-7f8936843000 ---p 00000000 00:00 0 
+7f8936843000-7f8936941000 rw-p 00000000 00:00 0 
+7f8936941000-7f8936944000 ---p 00000000 00:00 0 
+7f8936944000-7f8936a42000 rw-p 00000000 00:00 0 
+7f8936a42000-7f8936a45000 ---p 00000000 00:00 0 
+7f8936a45000-7f8936b43000 rw-p 00000000 00:00 0 
+7f8936b43000-7f8936b46000 ---p 00000000 00:00 0 
+7f8936b46000-7f8936c44000 rw-p 00000000 00:00 0 
+7f8936c44000-7f8936c47000 ---p 00000000 00:00 0 
+7f8936c47000-7f8936d45000 rw-p 00000000 00:00 0 
+7f8936d45000-7f8936d4d000 r--s 00059000 08:02 3295492                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hdi-vistoria-confirma-agendamento.jar-36d5b20e10f21534/hdi-vistoria-confirma-agendamento.jar
+7f8936d4d000-7f8936d50000 r--s 00018000 08:02 3295491                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-vfs.jar-2dc14b3e85c72099/jboss-vfs.jar
+7f8936d50000-7f8936d52000 r--s 00005000 08:02 3295490                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-transaction-api_1.1_spec.jar-be6ea7cd5ac05f91/jboss-transaction-api_1.1_spec.jar
+7f8936d52000-7f8936d56000 r--s 0003c000 08:02 3295488                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/okhttp.jar-e12c28eb8626c50a/okhttp.jar
+7f8936d56000-7f8936d58000 r--s 00003000 08:02 3295487                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jcl-over-slf4j.jar-3fd633743ee15926/jcl-over-slf4j.jar
+7f8936d58000-7f8936d62000 r--s 00067000 08:02 3295486                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-commons.jar-8ef4a4469c5a7635/infinispan-commons.jar
+7f8936d62000-7f8936d70000 r--s 0008b000 08:02 3295485                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-web.jar-cfb3b3ee87a4773/spring-web.jar
+7f8936d70000-7f8936d72000 r--s 00004000 08:02 3295484                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/picketbox-infinispan.jar-65d5fc13a5b451f3/picketbox-infinispan.jar
+7f8936d72000-7f8936d74000 r--s 00005000 08:02 3295483                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-jacc-api_1.4_spec.jar-379aeb79d104d7f/jboss-jacc-api_1.4_spec.jar
+7f8936d74000-7f8936d77000 r--s 00041000 08:02 3295481                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/serializer.jar-de26b9101374fe53/serializer.jar
+7f8936d77000-7f8936d7a000 ---p 00000000 00:00 0 
+7f8936d7a000-7f8936e78000 rw-p 00000000 00:00 0 
+7f8936e78000-7f8936e81000 r--s 00093000 08:02 3295480                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.eclipse.persistence.moxy.jar-aa79921c1984ea01/org.eclipse.persistence.moxy.jar
+7f8936e81000-7f8936e84000 ---p 00000000 00:00 0 
+7f8936e84000-7f8936f82000 rw-p 00000000 00:00 0 
+7f8936f82000-7f8936f87000 r--s 0002e000 08:02 3295479                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/gson.jar-c2359aebf796f8e1/gson.jar
+7f8936f87000-7f8936f89000 r--s 00014000 08:02 3295478                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-sasl.jar-1f1c4bef442a2ad0/jboss-sasl.jar
+7f8936f89000-7f8936f8e000 r--s 0003d000 08:02 3295477                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-modules.jar-124fed876764c935/jboss-modules.jar
+7f8936f8e000-7f8936f91000 ---p 00000000 00:00 0 
+7f8936f91000-7f893708f000 rw-p 00000000 00:00 0 
+7f893708f000-7f8937092000 ---p 00000000 00:00 0 
+7f8937092000-7f8937190000 rw-p 00000000 00:00 0 
+7f8937190000-7f893719b000 r--s 00085000 08:02 3295476                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-server.jar-891490dc8629c187/jboss-as-server.jar
+7f893719b000-7f89371a0000 r--s 00029000 08:02 3295475                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-logmanager.jar-5b47426efd5e62bf/jboss-logmanager.jar
+7f89371a0000-7f89371be000 r--s 00201000 08:02 3295474                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jbossweb.jar-483789d3045f657c/jbossweb.jar
+7f89371be000-7f89371c1000 ---p 00000000 00:00 0 
+7f89371c1000-7f89372bf000 rw-p 00000000 00:00 0 
+7f89372bf000-7f89372c2000 ---p 00000000 00:00 0 
+7f89372c2000-7f89373c0000 rw-p 00000000 00:00 0 
+7f89373c0000-7f89373c3000 r--s 00012000 08:02 3295473                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/javax.json.jar-e324ca99c58541d1/javax.json.jar
+7f89373c3000-7f89373c5000 r--s 00004000 08:02 3295472                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hdi-comunicador-client.jar-7064105d8dd82ee3/hdi-comunicador-client.jar
+7f89373c5000-7f89373c7000 r--s 00010000 08:02 3295471                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-transactions.jar-5b8ccc5fda060fec/jboss-as-transactions.jar
+7f89373c7000-7f89373e9000 r--s 001cb000 08:02 3295470                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-core.jar-9d471d4181a5d73d/infinispan-core.jar
+7f89373e9000-7f89373ec000 ---p 00000000 00:00 0 
+7f89373ec000-7f89374ea000 rw-p 00000000 00:00 0 
+7f89374ea000-7f89374ed000 ---p 00000000 00:00 0 
+7f89374ed000-7f89375eb000 rw-p 00000000 00:00 0 
+7f89375eb000-7f89375ee000 r--s 00021000 08:02 3295469                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-remoting.jar-dc64f1bbada1db4f/jboss-as-remoting.jar
+7f89375ee000-7f89375ef000 r--s 00035000 08:02 3295468                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.apache.commons.codec.jar-298ac55d67de0b07/org.apache.commons.codec.jar
+7f89375ef000-7f89375f4000 r--s 00034000 08:02 3295467                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-beanutils.jar-7dc6ac304702dbc/commons-beanutils.jar
+7f89375f4000-7f89375f8000 r--s 0001f000 08:02 3295466                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-process-controller.jar-7f1f60be2fb3389f/jboss-as-process-controller.jar
+7f89375f8000-7f8937608000 r--s 000ae000 08:02 3295465                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-controller.jar-e33d206305d68e8d/jboss-as-controller.jar
+7f8937608000-7f893760a000 r--s 00000000 08:02 3295464                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/aopalliance.jar-7eccb8004fd58879/aopalliance.jar
+7f893760a000-7f893760c000 r--s 00004000 08:02 3295463                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/picketbox-commons.jar-2231735f8b213bf6/picketbox-commons.jar
+7f893760c000-7f8937612000 r--s 0003b000 08:02 3295462                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-clustering-infinispan.jar-f65353ebabf7ea83/jboss-as-clustering-infinispan.jar
+7f8937612000-7f8937653000 r--s 004da000 08:02 3295461                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.eclipse.persistence.core.jar-14aa438ac844279c/org.eclipse.persistence.core.jar
+7f8937653000-7f8937656000 ---p 00000000 00:00 0 
+7f8937656000-7f8937754000 rw-p 00000000 00:00 0 
+7f8937754000-7f8937757000 ---p 00000000 00:00 0 
+7f8937757000-7f8937855000 rw-p 00000000 00:00 0 
+7f8937855000-7f8937867000 r--s 000b9000 08:02 3295460                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/picketbox.jar-345c4b4d93ae64d4/picketbox.jar
+7f8937867000-7f893786a000 ---p 00000000 00:00 0 
+7f893786a000-7f8937968000 rw-p 00000000 00:00 0 
+7f8937968000-7f89379b9000 r--s 0041d000 08:02 3295459                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hibernate-core.jar-ce8d3b44e7328256/hibernate-core.jar
+7f89379b9000-7f89379bc000 r--s 0000b000 08:02 3295458                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-annotations.jar-a882b1749200f9b/jackson-annotations.jar
+7f89379bc000-7f89379c1000 r--s 0002b000 08:02 3295457                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-expression.jar-6c0b9b32f52e6342/spring-expression.jar
+7f89379c1000-7f89379c5000 r--s 0001a000 08:02 3295456                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-threads.jar-de5bd4b2ca786a46/jboss-threads.jar
+7f89379c5000-7f89379da000 r--s 000bc000 08:02 3295455                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-context.jar-f23602422bb1560b/spring-context.jar
+7f89379da000-7f89379dc000 r--s 00009000 08:02 3295454                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/slf4j-api.jar-cbd46eab8ce0f5f2/slf4j-api.jar
+7f89379dc000-7f89379de000 r--s 00005000 08:02 3295453                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-deployment-repository.jar-6151eddccf59dc78/jboss-as-deployment-repository.jar
+7f89379de000-7f89379e3000 r--s 00030000 08:02 3295452                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling.jar-ae51c37f14554112/jboss-marshalling.jar
+7f89379e3000-7f89379e5000 r--s 00011000 08:02 3295451                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core.jar-41e1ee6c85e12f38/hamcrest-core.jar
+7f89379e5000-7f89379e7000 r--s 00003000 08:02 3295450                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-negotiation-extras.jar-2088aabce618d063/jboss-negotiation-extras.jar
+7f89379e7000-7f89379e9000 r--s 00005000 08:02 3295449                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-negotiation-spnego.jar-a679cc109bbfc9ec/jboss-negotiation-spnego.jar
+7f89379e9000-7f89379fa000 r--s 0008a000 08:02 3295448                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/joda-time.jar-8d5864f537910e/joda-time.jar
+7f89379fa000-7f89379fc000 r--s 00008000 08:02 3295447                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-logging.jar-279c179d82168e75/commons-logging.jar
+7f89379fc000-7f89379fe000 r--s 00008000 08:02 3295446                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-embedded.jar-b3ffae7ffe86c01e/jboss-as-embedded.jar
+7f89379fe000-7f8937a05000 r--s 00049000 08:02 3295445                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.eclipse.persistence.asm.jar-5c3ee3d928ed8b7f/org.eclipse.persistence.asm.jar
+7f8937a05000-7f8937a07000 r--s 00007000 08:02 3291324                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jsf-injection/main/jboss-as-jsf-injection-7.5.0.Final-redhat-21.jar
+7f8937a07000-7f8937a0a000 r--s 00011000 08:02 3295444                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-domain-http-interface.jar-9839ecfe25557324/jboss-as-domain-http-interface.jar
+7f8937a0a000-7f8937a2f000 r--s 002e3000 08:02 3295443                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/xalan.jar-5571a2f26020b24d/xalan.jar
+7f8937a2f000-7f8937a31000 r--s 0000d000 08:02 3295442                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-logging.jar-a5545bcec0a12e28/jboss-logging.jar
+7f8937a31000-7f8937a33000 r--s 00007000 08:02 3295441                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-negotiation-common.jar-7e36644445a607c5/jboss-negotiation-common.jar
+7f8937a33000-7f8937a37000 r--s 00017000 08:02 3295440                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-core.jar-171ecb44937432d3/togglz-core.jar
+7f8937a37000-7f8937a3d000 r--s 0003e000 08:02 3295439                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/dozer.jar-3e34ee4af1781cbf/dozer.jar
+7f8937a3d000-7f8937a3f000 r--s 00007000 08:02 3295438                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/staxmapper.jar-cf1b06a9775074da/staxmapper.jar
+7f8937a3f000-7f8937a50000 r--s 0011d000 08:02 3295437                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-databind.jar-e6be70e5099ad98a/jackson-databind.jar
+7f8937a50000-7f8937a53000 r--s 0000f000 08:02 3295436                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-servlet-api_3.0_spec.jar-54499519ce735fad/jboss-servlet-api_3.0_spec.jar
+7f8937a53000-7f8937a54000 r--s 00000000 08:02 3295435                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-build-config.jar-c9e4cbcc02a7e8bf/jboss-as-build-config.jar
+7f8937a54000-7f8937a5b000 r--s 00049000 08:02 3295434                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpcore.jar-b37c64ad5293d960/httpcore.jar
+7f8937a5b000-7f8937a5f000 r--s 0002e000 08:02 3295433                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-security.jar-2370a55266534d49/jboss-as-security.jar
+7f8937a5f000-7f8937a64000 r--s 00068000 08:02 3295432                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/antlr.jar-c3213bc21cbd2ed8/antlr.jar
+7f8937a64000-7f8937a6a000 r--s 00163000 08:02 3295431                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/fontbox.jar-6f85cd5e30a7efb4/fontbox.jar
+7f8937a6a000-7f8937a7a000 r--s 000a8000 08:02 3295430                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-collections4.jar-42500ca41956d53a/commons-collections4.jar
+7f8937a7a000-7f8937a7f000 r--s 00022000 08:02 3295429                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-controller-client.jar-6305a8a6e1972eb5/jboss-as-controller-client.jar
+7f8937a7f000-7f8937a82000 r--s 0002b000 08:02 3295428                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jandex.jar-229f8763b1822c90/jandex.jar
+7f8937a82000-7f8937a84000 r--s 00003000 08:02 3295427                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-logmanager-log4j.jar-6a7ba030421dbefa/jboss-logmanager-log4j.jar
+7f8937a84000-7f8937a87000 r--s 00013000 08:02 3295425                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-protocol.jar-d11485f5e5fcafbc/jboss-as-protocol.jar
+7f8937a87000-7f8937a8a000 r--s 00011000 08:02 3295420                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hibernate-commons-annotations.jar-dd7d1029df36632/hibernate-commons-annotations.jar
+7f8937a8a000-7f8937a8c000 r--s 00003000 08:02 3295419                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-stdio.jar-2aaf2e8ab0e63da1/jboss-stdio.jar
+7f8937a8c000-7f8937a8f000 r--s 0000e000 08:02 3295418                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/google-maps-services.jar-5b07830abba5d5f/google-maps-services.jar
+7f8937a8f000-7f8937a93000 r--s 0000c000 08:02 3295416                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/validation-api.jar-1a72d708f12e665b/validation-api.jar
+7f8937a93000-7f8937a9b000 r--s 00028000 08:02 3295415                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/xml-apis.jar-e3ec7da90d84f0ef/xml-apis.jar
+7f8937a9b000-7f8937a9e000 r--s 0000e000 08:02 3295414                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-invocation.jar-f3188b95ce2ae0a8/jboss-invocation.jar
+7f8937a9e000-7f8937ab0000 r--s 000c1000 08:02 3295413                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-core.jar-10bc0a87ed86ec30/spring-core.jar
+7f8937ab0000-7f8937ab2000 r--s 00004000 08:02 3295412                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hdi-comunicador-client-4.0.0-20180108.205942-6.jar-e7de995dbbc2697c/hdi-comunicador-client-4.0.0-20180108.205942-6.jar
+7f8937ab2000-7f8937abe000 r--s 00088000 08:02 3295409                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-beans.jar-3ccd434e89a1a76e/spring-beans.jar
+7f8937abe000-7f8937ac5000 r--s 00037000 08:02 3295411                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-c4468e8fbaf320f0/junit-4.10.jar
+7f8937ac5000-7f8937ac8000 r--s 00012000 08:02 3295410                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling-river-1.4.4.Final.jar-5a5f9e58bb51d30c/jboss-marshalling-river-1.4.4.Final.jar
+7f8937ac8000-7f8937acc000 r--s 00041000 08:02 3295408                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-core.jar-5792f02f7fb37f17/jackson-core.jar
+7f8937acc000-7f8937ad2000 r--s 00048000 08:02 3295407                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-lang3-3.1.jar-913f0ff93a23e52e/commons-lang3-3.1.jar
+7f8937ad2000-7f8937ad7000 r--s 00015000 08:02 3295406                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hibernate-jpa-2.0-api.jar-b5ce9db5e7bf68b5/hibernate-jpa-2.0-api.jar
+7f8937ad7000-7f8937ad9000 r--s 00011000 08:02 3295405                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-9d8ab781b7ff56ee/hamcrest-core-1.1.jar
+7f8937ad9000-7f8937ae3000 r--s 00067000 08:02 3295404                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-commons-6.0.2.Final.jar-94290a9d8576961/infinispan-commons-6.0.2.Final.jar
+7f8937ae3000-7f8937ae5000 r--s 00005000 08:02 3295403                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-transaction-api_1.1_spec-1.0.1.Final.jar-66c69cff25d6d3c8/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+7f8937ae5000-7f8937af2000 r--s 000a7000 08:02 3295401                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpclient.jar-2fbd3a3d6f9935a8/httpclient.jar
+7f8937af2000-7f8937af9000 r--s 0003a000 08:02 3295402                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-codec-1.8.jar-b8b74bad1c9e8545/commons-codec-1.8.jar
+7f8937af9000-7f8937b00000 r--s 00037000 08:02 3295399                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-17f3a4a21e7592f0/junit-4.10.jar
+7f8937b00000-7f8937b05000 r--s 00029000 08:02 3295400                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-naming.jar-faeb00826fe54ac4/jboss-as-naming.jar
+7f8937b05000-7f8937b0b000 r--s 00048000 08:02 3295398                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-lang3.jar-56f3fa85458c914c/commons-lang3.jar
+7f8937b0b000-7f8937b0e000 r--s 00012000 08:02 3295397                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling-river-1.4.4.Final.jar-70e1bc42d1ea756a/jboss-marshalling-river-1.4.4.Final.jar
+7f8937b0e000-7f8937b16000 r--s 0004a000 08:02 3295396                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-aop.jar-67d7996ce2e3235d/spring-aop.jar
+7f8937b16000-7f8937b1c000 r--s 00048000 08:02 3295394                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-lang3-3.1.jar-9949584555121fd4/commons-lang3-3.1.jar
+7f8937b1c000-7f8937b28000 r--s 00085000 08:02 3295395                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpclient-4.3.6.jar-6d11e1464606ba6d/httpclient-4.3.6.jar
+7f8937b28000-7f8937b29000 r--s 00035000 08:02 3295392                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.apache.commons.codec-1.8.jar-91859ca82cc71e7d/org.apache.commons.codec-1.8.jar
+7f8937b29000-7f8937b3f000 r--s 00241000 08:02 3295390                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/pdfbox.jar-36b84a3b71b263d8/pdfbox.jar
+7f8937b3f000-7f8937b41000 r--s 00011000 08:02 3295393                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-fd784b7a16200852/hamcrest-core-1.1.jar
+7f8937b41000-7f8937b43000 r--s 00008000 08:02 3295391                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-logging-1.0.4.jar-88c86034661c0518/commons-logging-1.0.4.jar
+7f8937b43000-7f8937b4d000 r--s 00067000 08:02 3295389                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-commons-6.0.2.Final.jar-3120a26aa82eba56/infinispan-commons-6.0.2.Final.jar
+7f8937b4d000-7f8937b6f000 r--s 001cb000 08:02 3295385                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-core-6.0.2.Final.jar-eca247c4d0959abe/infinispan-core-6.0.2.Final.jar
+7f8937b6f000-7f8937b71000 r--s 00007000 08:02 3295388                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/objenesis.jar-259756703c62b02a/objenesis.jar
+7f8937b71000-7f8937b73000 r--s 00005000 08:02 3295387                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-transaction-api_1.1_spec-1.0.1.Final.jar-fc541915dae1d261/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+7f8937b73000-7f8937b77000 r--s 00030000 08:02 3295386                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-msc.jar-ef0dd877ecc775c7/jboss-msc.jar
+7f8937b77000-7f8937b81000 r--s 000a5000 08:02 3295384                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/javassist.jar-3444518829ed829d/javassist.jar
+7f8937b81000-7f8937b88000 r--s 0003a000 08:02 3295382                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-codec-1.8.jar-5f3f29502ba16903/commons-codec-1.8.jar
+7f8937b88000-7f8937ba0000 r--s 00132000 08:02 3295381                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/freemarker-2.3.23.jar-783e3dd83ed2b5a6/freemarker-2.3.23.jar
+7f8937ba0000-7f8937ba4000 r--s 0001b000 08:02 3295383                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jasypt.jar-c915157d77b5f7c9/jasypt.jar
+7f8937ba4000-7f8937ba5000 r--s 0000c000 08:02 3295417                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/okio.jar-b6e2e8317868678f/okio.jar
+7f8937ba5000-7f8937bb1000 r--s 00085000 08:02 3295379                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpclient-4.3.6.jar-bbec285ccaebe267/httpclient-4.3.6.jar
+7f8937bb1000-7f8937bbd000 r--s 00090000 08:02 3295380                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/spring-webmvc.jar-22f49ab83bc633c4/spring-webmvc.jar
+7f8937bbd000-7f8937bc1000 r--s 00021000 08:02 3295378                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-domain-management.jar-7c5f8cdbaa9e3166/jboss-as-domain-management.jar
+7f8937bc1000-7f8937bd2000 r--s 0011c000 08:02 3295372                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-databind-2.8.2.jar-3c72d98bb60b8d65/jackson-databind-2.8.2.jar
+7f8937bd2000-7f8937bd8000 r--s 00033000 08:02 3295376                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-remoting.jar-b6f51449723ee2bf/jboss-remoting.jar
+7f8937bd8000-7f8937bda000 r--s 00008000 08:02 3295375                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-logging-1.0.4.jar-3527358e6fa40866/commons-logging-1.0.4.jar
+7f8937bda000-7f8937be1000 r--s 0003a000 08:02 3295374                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-codec.jar-e3e9878993058ba/commons-codec.jar
+7f8937be1000-7f8937be4000 r--s 00012000 08:02 3295373                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling-river.jar-1459caa0ecf448c/jboss-marshalling-river.jar
+7f8937be4000-7f8937be6000 r--s 00014000 08:02 3295370                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-dmr.jar-66fc52483d0a843e/jboss-dmr.jar
+7f8937be6000-7f8937be8000 r--s 00007000 08:02 3295371                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/objenesis-1.2.jar-8dfa094a7ddcaa83/objenesis-1.2.jar
+7f8937be8000-7f8937bef000 r--s 00037000 08:02 3295369                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit-4.10.jar-698f7fc07498a668/junit-4.10.jar
+7f8937bef000-7f8937bf1000 r--s 0000c000 08:02 3295368                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-logging-3.1.2.GA.jar-ee2bb25300283dbe/jboss-logging-3.1.2.GA.jar
+7f8937bf1000-7f8937c13000 r--s 001cb000 08:02 3295364                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/infinispan-core-6.0.2.Final.jar-1a819674e54d0788/infinispan-core-6.0.2.Final.jar
+7f8937c13000-7f8937c16000 r--s 00021000 08:02 3295365                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/log4j-api.jar-7bb6f73f5df5c17c/log4j-api.jar
+7f8937c16000-7f8937c1c000 r--s 00048000 08:02 3295366                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-lang3-3.1.jar-31216caf51e5ca25/commons-lang3-3.1.jar
+7f8937c1c000-7f8937c20000 r--s 00017000 08:02 3295367                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-core-2.2.0.Final.jar-e2c1bfb2a221e591/togglz-core-2.2.0.Final.jar
+7f8937c20000-7f8937c25000 r--s 00036000 08:02 3295360                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/xnio-api.jar-12df414bda45d5b5/xnio-api.jar
+7f8937c25000-7f8937c27000 r--s 00009000 08:02 3295363                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/powermock-reflect-1.5.1.jar-1790bc4cf78313f7/powermock-reflect-1.5.1.jar
+7f8937c27000-7f8937c29000 r--s 00011000 08:02 3295361                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/hamcrest-core-1.1.jar-ef68682e7bbb608c/hamcrest-core-1.1.jar
+7f8937c29000-7f8937c2b000 r--s 00007000 08:02 3295362                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/objenesis-1.2.jar-820991d3fa98d718/objenesis-1.2.jar
+7f8937c2b000-7f8937c2f000 r--s 00041000 08:02 3295358                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-core-2.8.2.jar-6aadbf268f75e3b2/jackson-core-2.8.2.jar
+7f8937c2f000-7f8937c31000 r--s 00000000 08:02 3295359                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-cdi-2.2.0.Final.jar-72c1317e67b37f2e/togglz-cdi-2.2.0.Final.jar
+7f8937c31000-7f8937c33000 r--s 0000c000 08:02 3295357                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-logging-3.1.2.GA.jar-3cca036a3ea3429/jboss-logging-3.1.2.GA.jar
+7f8937c33000-7f8937c37000 r--s 00017000 08:02 3295355                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-core-2.2.0.Final.jar-278c3813167c6146/togglz-core-2.2.0.Final.jar
+7f8937c37000-7f8937c3b000 r--s 00018000 08:02 3295356                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jjwt-0.7.0.jar-ba9bd53849c407e9/jjwt-0.7.0.jar
+7f8937c3b000-7f8937c3d000 r--s 00009000 08:02 3295353                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/powermock-reflect-1.5.1.jar-87257526d0abbc3e/powermock-reflect-1.5.1.jar
+7f8937c3d000-7f8937c40000 r--s 0000b000 08:02 3295354                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jackson-annotations-2.8.0.jar-51cb0d6a5257a01/jackson-annotations-2.8.0.jar
+7f8937c40000-7f8937c47000 r--s 0003f000 08:02 3295352                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpcore-4.3.3.jar-8acb8f1b2f7fdffe/httpcore-4.3.3.jar
+7f8937c47000-7f8937c4e000 r--s 0003f000 08:02 3295350                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpcore-4.3.3.jar-792f5d590e740b0a/httpcore-4.3.3.jar
+7f8937c4e000-7f8937c55000 r--s 0003a000 08:02 3295351                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-codec-1.8.jar-a0e376bc36e63661/commons-codec-1.8.jar
+7f8937c55000-7f8937c6c000 r--s 001ed000 08:02 3295349                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jgroups.jar-7ea3f46fcf318185/jgroups.jar
+7f8937c6c000-7f8937c6f000 r--s 0001b000 08:02 3295347                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-as-platform-mbean.jar-4b0b598c99bf5e34/jboss-as-platform-mbean.jar
+7f8937c6f000-7f8937c7b000 r--s 00085000 08:02 3295348                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpclient-4.3.6.jar-18ab89dd5fbfbf82/httpclient-4.3.6.jar
+7f8937c7b000-7f8937c80000 r--s 00048000 08:02 3295346                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/dom4j.jar-a74780e75ac85444/dom4j.jar
+7f8937c80000-7f8937c97000 r--s 001ed000 08:02 3295338                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jgroups-3.4.1.Final.jar-5528afdc1f74946a/jgroups-3.4.1.Final.jar
+7f8937c97000-7f8937c99000 r--s 00009000 08:02 3295344                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/powermock-reflect.jar-9c9691e7ed9b3536/powermock-reflect.jar
+7f8937c99000-7f8937c9c000 ---p 00000000 00:00 0 
+7f8937c9c000-7f8937d9a000 rw-p 00000000 00:00 0 
+7f8937d9a000-7f8937d9d000 ---p 00000000 00:00 0 
+7f8937d9d000-7f8937e9b000 rw-p 00000000 00:00 0 
+7f8937e9b000-7f8937eff000 r--s 01e39000 08:02 3288535                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/console/eap/release-stream-2.5.5.Final-redhat-1-resources.jar
+7f8937eff000-7f8937f02000 ---p 00000000 00:00 0 
+7f8937f02000-7f8938000000 rw-p 00000000 00:00 0 
+7f8938000000-7f89380ed000 rw-p 00000000 00:00 0 
+7f89380ed000-7f893c000000 ---p 00000000 00:00 0 
+7f893c000000-7f893c001000 r--s 00035000 08:02 3295377                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.apache.commons.codec-1.8.jar-42e8421c6dd01d7f/org.apache.commons.codec-1.8.jar
+7f893c001000-7f893c003000 r--s 00008000 08:02 3295343                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-logging-1.0.4.jar-b3d97d4e660d8a/commons-logging-1.0.4.jar
+7f893c003000-7f893c005000 r--s 00008000 08:02 3295342                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-csv.jar-142638fd6a389519/commons-csv.jar
+7f893c005000-7f893c01c000 r--s 001ed000 08:02 3295331                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jgroups-3.4.1.Final.jar-9878d807fefa760a/jgroups-3.4.1.Final.jar
+7f893c01c000-7f893c01e000 r--s 00007000 08:02 3295341                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/objenesis-1.2.jar-594a4b097d539bc4/objenesis-1.2.jar
+7f893c01e000-7f893c021000 r--s 0000f000 08:02 3295340                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/HDILegacyDispatcher-0.0.30-SNAPSHOT.jar-9fb108ab458fda8f/HDILegacyDispatcher-0.0.30-SNAPSHOT.jar
+7f893c021000-7f893c025000 r--s 00017000 08:02 3295339                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/togglz-core-2.2.0.Final.jar-1e8dd3e7cffb8fc3/togglz-core-2.2.0.Final.jar
+7f893c025000-7f893c02c000 r--s 00037000 08:02 3295337                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/junit.jar-7f45def110ec93d8/junit.jar
+7f893c02c000-7f893c02e000 r--s 00009000 08:02 3295333                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/powermock-reflect-1.5.1.jar-d6b9d8188d3e0137/powermock-reflect-1.5.1.jar
+7f893c02e000-7f893c030000 r--s 00008000 08:02 3295332                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/commons-csv-1.2.jar-969af20f7266d84f/commons-csv-1.2.jar
+7f893c030000-7f893c032000 r--s 00012000 08:02 3295330                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/xnio-nio.jar-69ade5627911b259/xnio-nio.jar
+7f893c032000-7f893c037000 r--s 00030000 08:02 3295328                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling-1.4.4.Final.jar-2ab6209513cc6436/jboss-marshalling-1.4.4.Final.jar
+7f893c037000-7f893c03e000 r--s 0003f000 08:02 3295326                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/httpcore-4.3.3.jar-f90037cbaa4c603f/httpcore-4.3.3.jar
+7f893c03e000-7f893c041000 ---p 00000000 00:00 0 
+7f893c041000-7f893c13f000 rw-p 00000000 00:00 0 
+7f893c13f000-7f893c155000 r-xp 00000000 08:02 5771682                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f893c155000-7f893c354000 ---p 00016000 08:02 5771682                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f893c354000-7f893c355000 rw-p 00015000 08:02 5771682                    /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f893c355000-7f893c356000 r--s 00035000 08:02 3295345                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/org.apache.commons.codec-1.8.jar-611622a7dfbc9f11/org.apache.commons.codec-1.8.jar
+7f893c356000-7f893c35b000 r--s 00030000 08:02 3295329                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/tmp/vfs/deployment/deploymente2fefa810c45faa6/jboss-marshalling-1.4.4.Final.jar-48ae7628ac63308a/jboss-marshalling-1.4.4.Final.jar
+7f893c35b000-7f893c366000 r--s 00174000 08:02 3283883                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/h2database/h2/main/h2-1.3.168.redhat-4.jar
+7f893c366000-7f893c372000 r--s 001ab000 08:02 3288509                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_digital/jdbc/progress/main/openedge.jar
+7f893c372000-7f893c376000 r--s 0002d000 08:02 12457345                   /opt/jdk1.7.0_80/jre/lib/ext/sunjce_provider.jar
+7f893c376000-7f893c3a8000 r-xp 00000000 08:02 12323837                   /opt/jdk1.7.0_80/jre/lib/amd64/libsunec.so
+7f893c3a8000-7f893c5a7000 ---p 00032000 08:02 12323837                   /opt/jdk1.7.0_80/jre/lib/amd64/libsunec.so
+7f893c5a7000-7f893c5ad000 rw-p 00031000 08:02 12323837                   /opt/jdk1.7.0_80/jre/lib/amd64/libsunec.so
+7f893c5ad000-7f893c5bd000 rw-p 00000000 00:00 0 
+7f893c5bd000-7f893c5c8000 r--s 0008a000 08:02 3289508                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/xb/main/jbossxb-2.0.3.GA-redhat-3.jar
+7f893c5c8000-7f893c5cd000 r--s 0003d000 08:02 3288001                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/faces/api/1.2/jsf-api-1.2.15.b01-redhat-12.jar
+7f893c5cd000-7f893c5e5000 r--s 00120000 08:02 3289856                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/netty/main/netty-3.6.10.Final-redhat-1.jar
+7f893c5e5000-7f893c5f0000 r--s 0037c000 08:02 12324358                   /opt/jdk1.7.0_80/jre/lib/charsets.jar
+7f893c5f0000-7f893c5fa000 r--s 000a0000 08:02 3288309                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/jsf-impl/1.2/jsf-impl-1.2.15.b01-redhat-12.jar
+7f893c5fa000-7f893c5fb000 r--s 00006000 08:02 3288785                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services/main/jbossws-native-services-4.2.0.Final-redhat-1.jar
+7f893c5fb000-7f893c608000 r--s 000d5000 08:02 3288787                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core/main/jbossws-native-core-4.2.0.Final-redhat-1.jar
+7f893c608000-7f893c60b000 ---p 00000000 00:00 0 
+7f893c60b000-7f893c709000 rw-p 00000000 00:00 0 
+7f893c709000-7f893c719000 r--s 00090000 08:02 3283049                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/opensaml/main/xmltooling-1.3.4.redhat-3.jar
+7f893c719000-7f893c72c000 r--s 0007f000 08:02 3288417                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/opensaml/main/openws-1.4.4.redhat-2.jar
+7f893c72c000-7f893c754000 r--s 0012e000 08:02 3288175                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/opensaml/main/opensaml-2.5.3.redhat-2.jar
+7f893c754000-7f893c757000 ---p 00000000 00:00 0 
+7f893c757000-7f893c855000 rw-p 00000000 00:00 0 
+7f893c855000-7f893c865000 r--s 00079000 08:02 3283970                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/joda/time/main/joda-time-1.6.2.redhat-5.jar
+7f893c865000-7f893c868000 ---p 00000000 00:00 0 
+7f893c868000-7f893c966000 rw-p 00000000 00:00 0 
+7f893c966000-7f893c969000 ---p 00000000 00:00 0 
+7f893c969000-7f893ca67000 rw-p 00000000 00:00 0 
+7f893ca67000-7f893ca6a000 ---p 00000000 00:00 0 
+7f893ca6a000-7f893cb68000 rw-p 00000000 00:00 0 
+7f893cb68000-7f893cb6b000 ---p 00000000 00:00 0 
+7f893cb6b000-7f893cc69000 rw-p 00000000 00:00 0 
+7f893cc69000-7f893cc6b000 r--s 00004000 08:02 3289322                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-security-taglibs-3.1.4.RELEASE.jar
+7f893cc6b000-7f893cc72000 r--s 00037000 08:02 3290417                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-security-web-3.1.4.RELEASE.jar
+7f893cc72000-7f893cc75000 r--s 00011000 08:02 3289817                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-security-acl-3.1.4.RELEASE.jar
+7f893cc75000-7f893cc78000 r--s 0002f000 08:02 3283717                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-security-config-3.1.4.RELEASE.jar
+7f893cc78000-7f893cc7b000 ---p 00000000 00:00 0 
+7f893cc7b000-7f893cd79000 rw-p 00000000 00:00 0 
+7f893cd79000-7f893cd84000 r--s 00049000 08:02 3287994                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-security-core-3.1.4.RELEASE.jar
+7f893cd84000-7f893cd90000 r--s 00090000 08:02 3283033                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-webmvc-3.2.0.RELEASE.jar
+7f893cd90000-7f893cd9e000 r--s 0008b000 08:02 3289559                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-web-3.2.0.RELEASE.jar
+7f893cd9e000-7f893cda5000 r--s 00088000 08:02 3288457                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/hdi_fs/jdbc/sqlserver/main/sqljdbc4-4.0.jar
+7f893cda5000-7f893cda8000 r--s 0000f000 08:02 3288267                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-aspects-3.2.0.RELEASE.jar
+7f893cda8000-7f893cdb0000 r--s 0004a000 08:02 3283092                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-aop-3.2.0.RELEASE.jar
+7f893cdb0000-7f893cdb9000 r--s 00059000 08:02 3289390                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-jdbc-3.2.0.RELEASE.jar
+7f893cdb9000-7f893cdbe000 r--s 0002b000 08:02 3289320                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-expression-3.2.0.RELEASE.jar
+7f893cdbe000-7f893cdc5000 r--s 00034000 08:02 3290131                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-tx-3.2.0.RELEASE.jar
+7f893cdc5000-7f893cdd7000 r--s 000c1000 08:02 3291263                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-core-3.2.0.RELEASE.jar
+7f893cdd7000-7f893cdec000 r--s 000bc000 08:02 3288372                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-context-3.2.0.RELEASE.jar
+7f893cdec000-7f893cdf8000 r--s 00088000 08:02 3289438                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/springframework/spring/main/spring-beans-3.2.0.RELEASE.jar
+7f893cdf8000-7f893ce06000 r--s 00098000 08:02 3291198                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-1.5.7.redhat-1.jar
+7f893ce06000-7f893ce0c000 r--s 00070000 08:02 3288365                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/ws/security/main/wss4j-1.6.17.SP1-redhat-1.jar
+7f893ce0c000-7f893ce11000 r--s 00045000 08:02 3283200                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16.SP1-redhat-2.jar
+7f893ce11000-7f893ce25000 r--s 00103000 08:02 3284023                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/main/cxf-api-2.7.14.redhat-1.jar
+7f893ce25000-7f893ce27000 r--s 00007000 08:02 3289557                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-ts-2.6.2.redhat-1.jar
+7f893ce27000-7f893ce29000 r--s 00008000 08:02 3289515                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-dv-2.6.2.redhat-1.jar
+7f893ce29000-7f893ce2c000 ---p 00000000 00:00 0 
+7f893ce2c000-7f893cf2a000 rw-p 00000000 00:00 0 
+7f893cf2a000-7f893cf2c000 r--s 00007000 08:02 3290521                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-boolean-2.6.2.redhat-1.jar
+7f893cf2c000-7f893cf2e000 r--s 00015000 08:02 3284535                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-ws-discovery-api-2.7.14.redhat-1.jar
+7f893cf2e000-7f893cf33000 r--s 00042000 08:02 3284180                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-sts-core-2.7.14.redhat-1.jar
+7f893cf33000-7f893cf37000 r--s 0002d000 08:02 3284164                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-2.7.14.redhat-1.jar
+7f893cf37000-7f893cf39000 r--s 00011000 08:02 3290467                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-2.7.14.redhat-1.jar
+7f893cf39000-7f893cf3b000 r--s 00014000 08:02 3289403                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-2.7.14.redhat-1.jar
+7f893cf3b000-7f893cf3d000 r--s 00017000 08:02 3288328                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-2.7.14.redhat-1.jar
+7f893cf3d000-7f893cf40000 r--s 00023000 08:02 3283104                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-2.7.14.redhat-1.jar
+7f893cf40000-7f893cf44000 r--s 0002c000 08:02 3289365                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-2.7.14.redhat-1.jar
+7f893cf44000-7f893cf47000 ---p 00000000 00:00 0 
+7f893cf47000-7f893d045000 rw-p 00000000 00:00 0 
+7f893d045000-7f893d048000 ---p 00000000 00:00 0 
+7f893d048000-7f893d146000 rw-p 00000000 00:00 0 
+7f893d146000-7f893d151000 r--s 000a4000 08:02 3289112                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-2.7.14.redhat-1.jar
+7f893d151000-7f893d154000 ---p 00000000 00:00 0 
+7f893d154000-7f893d252000 rw-p 00000000 00:00 0 
+7f893d252000-7f893d258000 r--s 00055000 08:02 3283938                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-2.7.14.redhat-1.jar
+7f893d258000-7f893d25d000 r--s 00037000 08:02 3288894                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-2.7.14.redhat-1.jar
+7f893d25d000-7f893d25f000 r--s 0000c000 08:02 3284018                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-2.7.14.redhat-1.jar
+7f893d25f000-7f893d261000 r--s 00019000 08:02 3289670                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-2.7.14.redhat-1.jar
+7f893d261000-7f893d262000 r--s 0000d000 08:02 3288773                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-2.7.14.redhat-1.jar
+7f893d262000-7f893d265000 r--s 00029000 08:02 3288474                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-2.7.14.redhat-1.jar
+7f893d265000-7f893d26a000 r--s 00041000 08:02 3288841                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-2.7.14.redhat-1.jar
+7f893d26a000-7f893d26d000 r--s 00016000 08:02 3283880                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-2.7.14.redhat-1.jar
+7f893d26d000-7f893d26f000 r--s 00017000 08:02 3290682                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-2.7.14.redhat-1.jar
+7f893d26f000-7f893d276000 r--s 00061000 08:02 3289012                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-2.7.14.redhat-1.jar
+7f893d276000-7f893d279000 r--s 00025000 08:02 3288053                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-2.7.14.redhat-1.jar
+7f893d279000-7f893d27e000 r--s 00040000 08:02 3291022                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-2.7.14.redhat-1.jar
+7f893d27e000-7f893d285000 r--s 00066000 08:02 3283440                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-core-2.7.14.redhat-1.jar
+7f893d285000-7f893d287000 r--s 0000f000 08:02 3290680                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-2.7.14.redhat-1.jar
+7f893d287000-7f893d28c000 r--s 00036000 08:02 3284082                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-2.7.14.redhat-1.jar
+7f893d28c000-7f893d28d000 r--s 0000d000 08:02 3290628                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-2.7.14.redhat-1.jar
+7f893d28d000-7f893d28e000 r--s 0000f000 08:02 3289807                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-2.7.14.redhat-1.jar
+7f893d28e000-7f893d291000 r--s 00021000 08:02 3283569                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-4.3.4.Final-redhat-1.jar
+7f893d291000-7f893d293000 r--s 00009000 08:02 3289345                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/jbossws-cxf-transports-udp-4.3.4.Final-redhat-1.jar
+7f893d293000-7f893d294000 r--s 00009000 08:02 3282985                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/jbossws-cxf-transports-httpserver-4.3.4.Final-redhat-1.jar
+7f893d294000-7f893d295000 r--s 00006000 08:02 3290177                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-4.3.4.Final-redhat-1.jar
+7f893d295000-7f893d29a000 r--s 00029000 08:02 3290360                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-4.3.4.Final-redhat-1.jar
+7f893d29a000-7f893d2a1000 r--s 00045000 08:02 3283369                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/kohsuke/rngom/main/rngom-201103.0.0.redhat-4.jar
+7f893d2a1000-7f893d2a8000 r--s 0005f000 08:02 3283041                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/xsom/main/xsom-20110809.0.0.redhat-4.jar
+7f893d2a8000-7f893d2ab000 r--s 0000f000 08:02 3289435                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/xml/txw2/main/txw2-20110809.0.0.redhat-5.jar
+7f893d2ab000-7f893d2ac000 r--s 00003000 08:02 3289195                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/istack/main/istack-commons-tools-2.6.1.redhat-3.jar
+7f893d2ac000-7f893d2ae000 r--s 00004000 08:02 3288666                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/istack/main/istack-commons-runtime-2.6.1.redhat-3.jar
+7f893d2ae000-7f893d2b2000 r--s 00023000 08:02 3290188                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/codemodel/main/codemodel-2.6.0.redhat-3.jar
+7f893d2b2000-7f893d2b4000 r--s 00003000 08:02 3288727                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/github/relaxng/main/relaxngDatatype-2011.1.0.redhat-9.jar
+7f893d2b4000-7f893d2c7000 r--s 000f3000 08:02 3288621                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/xml/bind/main/jaxb-xjc-2.2.5.redhat-9.jar
+7f893d2c7000-7f893d2db000 r--s 000e6000 08:02 3282814                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/xml/bind/main/jaxb-impl-2.2.5.redhat-9.jar
+7f893d2db000-7f893d2de000 ---p 00000000 00:00 0 
+7f893d2de000-7f893d3dc000 rw-p 00000000 00:00 0 
+7f893d3dc000-7f893d3df000 ---p 00000000 00:00 0 
+7f893d3df000-7f893d4dd000 rw-p 00000000 00:00 0 
+7f893d4dd000-7f893d4e1000 r--s 00011000 08:02 3290641                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main/jboss-as-clustering-web-infinispan-7.5.0.Final-redhat-21.jar
+7f893d4e1000-7f893d4e3000 r--s 00008000 08:02 3288550                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.2.Final-redhat-3.jar
+7f893d4e3000-7f893d4e5000 r--s 00003000 08:02 3284062                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f893d4e5000-7f893d4e7000 r--s 0000c000 08:02 3289009                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA-redhat-6.jar
+7f893d4e7000-7f893d4e8000 r--s 0000a000 08:02 3290120                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/scannotation/scannotation/main/scannotation-1.0.3.redhat-4.jar
+7f893d4e8000-7f893d4ea000 r--s 00007000 08:02 3283090                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.1.Final-redhat-3.jar
+7f893d4ea000-7f893d4ef000 r--s 00031000 08:02 3290742                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.3.redhat-1.jar
+7f893d4ef000-7f893d4f2000 r--s 0000e000 08:02 3291216                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/codec/main/commons-codec-1.4.0.redhat-4.jar
+7f893d4f2000-7f893d4f5000 ---p 00000000 00:00 0 
+7f893d4f5000-7f893d5f3000 rw-p 00000000 00:00 0 
+7f893d5f3000-7f893d5f6000 ---p 00000000 00:00 0 
+7f893d5f6000-7f893d6f4000 rw-p 00000000 00:00 0 
+7f893d6f4000-7f893d6f7000 ---p 00000000 00:00 0 
+7f893d6f7000-7f893d7f5000 rw-p 00000000 00:00 0 
+7f893d7f5000-7f893d7f8000 ---p 00000000 00:00 0 
+7f893d7f8000-7f893d8f6000 rw-p 00000000 00:00 0 
+7f893d8f6000-7f893d8f9000 ---p 00000000 00:00 0 
+7f893d8f9000-7f893d9f7000 rw-p 00000000 00:00 0 
+7f893d9f7000-7f893d9fa000 ---p 00000000 00:00 0 
+7f893d9fa000-7f893daf8000 rw-p 00000000 00:00 0 
+7f893daf8000-7f893dafb000 ---p 00000000 00:00 0 
+7f893dafb000-7f893dbf9000 rw-p 00000000 00:00 0 
+7f893dbf9000-7f893dbfc000 ---p 00000000 00:00 0 
+7f893dbfc000-7f893dcfa000 rw-p 00000000 00:00 0 
+7f893dcfa000-7f893dcfd000 ---p 00000000 00:00 0 
+7f893dcfd000-7f893ddfb000 rw-p 00000000 00:00 0 
+7f893ddfb000-7f893ddfe000 ---p 00000000 00:00 0 
+7f893ddfe000-7f893defc000 rw-p 00000000 00:00 0 
+7f893defc000-7f893deff000 ---p 00000000 00:00 0 
+7f893deff000-7f893dffd000 rw-p 00000000 00:00 0 
+7f893dffd000-7f893e000000 ---p 00000000 00:00 0 
+7f893e000000-7f893e0fe000 rw-p 00000000 00:00 0 
+7f893e0fe000-7f893e101000 ---p 00000000 00:00 0 
+7f893e101000-7f893e1ff000 rw-p 00000000 00:00 0 
+7f893e1ff000-7f893e202000 ---p 00000000 00:00 0 
+7f893e202000-7f893e300000 rw-p 00000000 00:00 0 
+7f893e300000-7f893e303000 ---p 00000000 00:00 0 
+7f893e303000-7f893e401000 rw-p 00000000 00:00 0 
+7f893e401000-7f893e404000 ---p 00000000 00:00 0 
+7f893e404000-7f893e502000 rw-p 00000000 00:00 0 
+7f893e502000-7f893e505000 ---p 00000000 00:00 0 
+7f893e505000-7f893e603000 rw-p 00000000 00:00 0 
+7f893e603000-7f893e606000 ---p 00000000 00:00 0 
+7f893e606000-7f893e704000 rw-p 00000000 00:00 0 
+7f893e704000-7f893e707000 ---p 00000000 00:00 0 
+7f893e707000-7f893e805000 rw-p 00000000 00:00 0 
+7f893e805000-7f893e808000 ---p 00000000 00:00 0 
+7f893e808000-7f893e906000 rw-p 00000000 00:00 0 
+7f893e906000-7f893e909000 ---p 00000000 00:00 0 
+7f893e909000-7f893ea07000 rw-p 00000000 00:00 0 
+7f893ea07000-7f893ea0a000 ---p 00000000 00:00 0 
+7f893ea0a000-7f893eb08000 rw-p 00000000 00:00 0 
+7f893eb08000-7f893eb0b000 ---p 00000000 00:00 0 
+7f893eb0b000-7f893ec09000 rw-p 00000000 00:00 0 
+7f893ec09000-7f893ec0c000 ---p 00000000 00:00 0 
+7f893ec0c000-7f893ed0a000 rw-p 00000000 00:00 0 
+7f893ed0a000-7f893ed0d000 ---p 00000000 00:00 0 
+7f893ed0d000-7f893ee0b000 rw-p 00000000 00:00 0 
+7f893ee0b000-7f893ee0e000 ---p 00000000 00:00 0 
+7f893ee0e000-7f893ef0c000 rw-p 00000000 00:00 0 
+7f893ef0c000-7f893ef0f000 ---p 00000000 00:00 0 
+7f893ef0f000-7f893f00d000 rw-p 00000000 00:00 0 
+7f893f00d000-7f893f010000 r--s 00017000 08:02 3284610                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/com/sun/httpserver/main/httpserver-1.0.4.Final-redhat-1.jar
+7f893f010000-7f893f013000 ---p 00000000 00:00 0 
+7f893f013000-7f893f111000 rw-p 00000000 00:00 0 
+7f893f111000-7f893f114000 ---p 00000000 00:00 0 
+7f893f114000-7f893f212000 rw-p 00000000 00:00 0 
+7f893f212000-7f893f215000 ---p 00000000 00:00 0 
+7f893f215000-7f893f313000 rw-p 00000000 00:00 0 
+7f893f313000-7f893f316000 ---p 00000000 00:00 0 
+7f893f316000-7f893f414000 rw-p 00000000 00:00 0 
+7f893f414000-7f893f417000 ---p 00000000 00:00 0 
+7f893f417000-7f893f515000 rw-p 00000000 00:00 0 
+7f893f515000-7f893f517000 r--s 0001b000 08:02 3288842                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/pool/main/commons-pool-1.6.0.redhat-7.jar
+7f893f517000-7f893f51b000 r--s 0002f000 08:02 3283898                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-jms-server-2.3.25.Final-redhat-1.jar
+7f893f51b000-7f893f51e000 r--s 00019000 08:02 3288117                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-jms-client-2.3.25.Final-redhat-1.jar
+7f893f51e000-7f893f522000 r--s 0002a000 08:02 3289249                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-journal-2.3.25.Final-redhat-1.jar
+7f893f522000-7f893f525000 r--s 00019000 08:02 3283433                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-commons-2.3.25.Final-redhat-1.jar
+7f893f525000-7f893f535000 r--s 000f9000 08:02 3291012                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-server-2.3.25.Final-redhat-1.jar
+7f893f535000-7f893f53f000 r--s 0007d000 08:02 3284536                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hornetq/main/hornetq-core-client-2.3.25.Final-redhat-1.jar
+7f893f53f000-7f893f540000 r--s 00007000 08:02 3288688                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.3.GA-redhat-1.jar
+7f893f540000-7f893f544000 r--s 00011000 08:02 3290051                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/commons-annotations/main/hibernate-commons-annotations-4.0.2.Final-redhat-1.jar
+7f893f544000-7f893f54d000 r--s 0005b000 08:02 3290789                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/envers/main/hibernate-envers-4.2.18.Final-redhat-2.jar
+7f893f54d000-7f893f551000 r--s 0001a000 08:02 3288430                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jpa/hibernate/4/jboss-as-jpa-hibernate4-7.5.0.Final-redhat-21.jar
+7f893f551000-7f893f553000 r--s 00000000 08:02 3283831                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.1.Final-redhat-2.jar
+7f893f553000-7f893f559000 r--s 00051000 08:02 3289331                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/dom4j/main/dom4j-1.6.1.redhat-6.jar
+7f893f559000-7f893f55b000 r--s 00009000 08:02 3291000                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main/jcl-over-slf4j-1.7.2.redhat-3.jar
+7f893f55b000-7f893f566000 r--s 00080000 08:02 3290675                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final-redhat-5.jar
+7f893f566000-7f893f56b000 r--s 00081000 08:02 3283801                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/antlr/main/antlr-2.7.7.redhat-4.jar
+7f893f56b000-7f893f56c000 r--s 0000a000 08:02 3284638                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/asm/asm/main/asm-3.3.1.redhat-9.jar
+7f893f56c000-7f893f56f000 ---p 00000000 00:00 0 
+7f893f56f000-7f893f66d000 rw-p 00000000 00:00 0 
+7f893f66d000-7f893f66e000 r--s 00002000 08:02 3290860                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/iiop-client/main/jboss-iiop-client-1.0.0.Final-redhat-3.jar
+7f893f66e000-7f893f671000 r--s 00017000 08:02 3289778                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/classfilewriter/main/jboss-classfilewriter-1.0.3.Final-redhat-2.jar
+7f893f671000-7f893f673000 r--s 0000f000 08:02 3283314                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/slf4j/ext/main/slf4j-ext-1.7.2.redhat-3.jar
+7f893f673000-7f893f675000 r--s 0000b000 08:02 3291178                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/slf4j/main/slf4j-api-1.7.2.redhat-3.jar
+7f893f675000-7f893f67a000 r--s 00021000 08:02 3290241                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-2.3.1.Final-redhat-1.jar
+7f893f67a000-7f893f68c000 r--s 000d5000 08:02 3290835                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/weld/core/main/weld-core-1.1.28.Final-redhat-1.jar
+7f893f68c000-7f893f68e000 r--s 00009000 08:02 3284373                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main/jboss-as-clustering-ejb3-infinispan-7.5.0.Final-redhat-21.jar
+7f893f68e000-7f893f690000 r--s 00004000 08:02 3290817                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/weld/api/main/weld-api-1.1.0.Final-redhat-6.jar
+7f893f690000-7f893f695000 r--s 0003e000 08:02 3283284                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-2.3.1.Final-redhat-1.jar
+7f893f695000-7f893f69c000 r--s 0004c000 08:02 3283821                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ejb-client/main/jboss-ejb-client-1.0.30.Final-redhat-1.jar
+7f893f69c000-7f893f69d000 r--s 00000000 08:02 3289279                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jpa/util/main/jboss-as-jpa-util-7.5.0.Final-redhat-21.jar
+7f893f69d000-7f893f6a0000 r--s 0000c000 08:02 3288447                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/main/hibernate-infinispan-4.2.18.Final-redhat-2.jar
+7f893f6a0000-7f893f6a2000 r--s 00012000 08:02 3289625                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jpa/spi/main/jboss-as-jpa-spi-7.5.0.Final-redhat-21.jar
+7f893f6a2000-7f893f6af000 r--s 0008e000 08:02 3284235                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/collections/main/commons-collections-3.2.1.redhat-3.jar
+7f893f6af000-7f893f6b9000 r--s 0006c000 08:02 3290243                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/main/hibernate-entitymanager-4.2.18.Final-redhat-2.jar
+7f893f6b9000-7f893f6bc000 r--s 00011000 08:02 3288074                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ws/api/main/jbossws-api-1.0.2.Final-redhat-1.jar
+7f893f6bc000-7f893f6c3000 r--s 00067000 08:02 3283955                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jacorb/main/jboss-as-jacorb-7.5.0.Final-redhat-21.jar
+7f893f6c3000-7f893f715000 r--s 0042a000 08:02 3283552                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/main/hibernate-core-4.2.18.Final-redhat-2.jar
+7f893f715000-7f893f71f000 r--s 000a5000 08:02 3290772                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/javassist/main/javassist-3.18.1.GA-redhat-1.jar
+7f893f71f000-7f893f721000 r--s 00006000 08:02 3291016                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.1.0.redhat-1.jar
+7f893f721000-7f893f724000 r--s 00007000 08:02 3290440                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f893f724000-7f893f729000 r--s 00015000 08:02 3288369                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final-redhat-3.jar
+7f893f729000-7f893f72d000 r--s 0000a000 08:02 3288886                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-1.1.0.Final-redhat-6.jar
+7f893f72d000-7f893f742000 r--s 001da000 08:02 3288871                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jgroups/main/jgroups-3.2.13.Final-redhat-1.jar
+7f893f742000-7f893f7b5000 r--s 0058e000 08:02 3288386                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jacorb/main/jacorb-2.3.2.redhat-6.jar
+7f893f7b5000-7f893f7d3000 r--s 00167000 08:02 3288569                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/jts/main/jbossjts-jacorb-4.17.29.Final-redhat-1.jar
+7f893f7d3000-7f893f7f8000 r--s 001a9000 08:02 3284609                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/google/guava/main/guava-13.0.1.redhat-2.jar
+7f893f7f8000-7f893f7fb000 ---p 00000000 00:00 0 
+7f893f7fb000-7f893f8f9000 rw-p 00000000 00:00 0 
+7f893f8f9000-7f893f8fc000 ---p 00000000 00:00 0 
+7f893f8fc000-7f893f9fa000 rw-p 00000000 00:00 0 
+7f893f9fa000-7f893f9fd000 ---p 00000000 00:00 0 
+7f893f9fd000-7f893fafb000 rw-p 00000000 00:00 0 
+7f893fafb000-7f893fafe000 ---p 00000000 00:00 0 
+7f893fafe000-7f893fbfc000 rw-p 00000000 00:00 0 
+7f893fbfc000-7f893fbff000 ---p 00000000 00:00 0 
+7f893fbff000-7f893fcfd000 rw-p 00000000 00:00 0 
+7f893fcfd000-7f893fd00000 ---p 00000000 00:00 0 
+7f893fd00000-7f893fdfe000 rw-p 00000000 00:00 0 
+7f893fdfe000-7f893fe01000 ---p 00000000 00:00 0 
+7f893fe01000-7f893feff000 rw-p 00000000 00:00 0 
+7f893feff000-7f893ff02000 ---p 00000000 00:00 0 
+7f893ff02000-7f8940000000 rw-p 00000000 00:00 0 
+7f8940000000-7f8940413000 rw-p 00000000 00:00 0 
+7f8940413000-7f8944000000 ---p 00000000 00:00 0 
+7f8944000000-7f8944110000 rw-p 00000000 00:00 0 
+7f8944110000-7f8948000000 ---p 00000000 00:00 0 
+7f8948000000-7f89486c8000 rw-p 00000000 00:00 0 
+7f89486c8000-7f894c000000 ---p 00000000 00:00 0 
+7f894c000000-7f894c36b000 rw-p 00000000 00:00 0 
+7f894c36b000-7f8950000000 ---p 00000000 00:00 0 
+7f8950000000-7f8950ad2000 rw-p 00000000 00:00 0 
+7f8950ad2000-7f8954000000 ---p 00000000 00:00 0 
+7f8954000000-7f89542d4000 rw-p 00000000 00:00 0 
+7f89542d4000-7f8958000000 ---p 00000000 00:00 0 
+7f8958000000-7f89589fe000 rw-p 00000000 00:00 0 
+7f89589fe000-7f895c000000 ---p 00000000 00:00 0 
+7f895c000000-7f895c471000 rw-p 00000000 00:00 0 
+7f895c471000-7f8960000000 ---p 00000000 00:00 0 
+7f8960000000-7f8960667000 rw-p 00000000 00:00 0 
+7f8960667000-7f8964000000 ---p 00000000 00:00 0 
+7f8964000000-7f8964c26000 rw-p 00000000 00:00 0 
+7f8964c26000-7f8968000000 ---p 00000000 00:00 0 
+7f8968000000-7f8968647000 rw-p 00000000 00:00 0 
+7f8968647000-7f896c000000 ---p 00000000 00:00 0 
+7f896c000000-7f896c609000 rw-p 00000000 00:00 0 
+7f896c609000-7f8970000000 ---p 00000000 00:00 0 
+7f8970000000-7f8970885000 rw-p 00000000 00:00 0 
+7f8970885000-7f8974000000 ---p 00000000 00:00 0 
+7f8974000000-7f8974001000 r--s 00002000 08:02 3290747                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/jws/api/main/jsr181-api-1.0.0.MR1-redhat-7.jar
+7f8974001000-7f8974003000 r--s 0000a000 08:02 3284222                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/jts/integration/main/jbossjts-integration-4.17.29.Final-redhat-1.jar
+7f8974003000-7f8974007000 r--s 0002c000 08:02 3283290                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.0.31.Final-redhat-1.jar
+7f8974007000-7f8974009000 r--s 0000a000 08:02 3283667                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/web/spi/main/jboss-as-clustering-web-spi-7.5.0.Final-redhat-21.jar
+7f8974009000-7f897400b000 r--s 00005000 08:02 3289554                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-2.3.10.Final-redhat-1.jar
+7f897400b000-7f897400d000 r--s 0000c000 08:02 3288498                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.0.31.Final-redhat-1.jar
+7f897400d000-7f897400f000 r--s 00003000 08:02 3291308                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/registry/main/jboss-as-clustering-registry-7.5.0.Final-redhat-21.jar
+7f897400f000-7f8974011000 r--s 00008000 08:02 3289946                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/httpcomponents/main/httpmime-4.3.6.redhat-1.jar
+7f8974011000-7f8974013000 r--s 0000d000 08:02 3283931                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.0.31.Final-redhat-1.jar
+7f8974013000-7f8974015000 r--s 00003000 08:02 3284277                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/service/main/jboss-as-clustering-service-7.5.0.Final-redhat-21.jar
+7f8974015000-7f897401c000 r--s 00041000 08:02 3284182                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/httpcomponents/main/httpcore-4.3.3.redhat-1.jar
+7f897401c000-7f8974021000 r--s 00044000 08:02 3290802                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.0.31.Final-redhat-1.jar
+7f8974021000-7f897402d000 r--s 0008a000 08:02 3289849                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/httpcomponents/main/httpclient-4.3.6.redhat-1.jar
+7f897402d000-7f897402f000 r--s 00007000 08:02 3283972                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.1.Final-redhat-3.jar
+7f897402f000-7f8974031000 r--s 00006000 08:02 3290787                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/ch/qos/cal10n/main/cal10n-api-0.7.7.redhat-1.jar
+7f8974031000-7f8974035000 r--s 00021000 08:02 3289808                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/jboss-as-clustering-jgroups-7.5.0.Final-redhat-21.jar
+7f8974035000-7f8974038000 r--s 0003d000 08:02 3291325                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.0.31.Final-redhat-1.jar
+7f8974038000-7f897404d000 r--s 000e6000 08:02 3287978                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final-redhat-3.jar
+7f897404d000-7f8974066000 r--s 001e3000 08:02 3284285                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.1.28.redhat-8.jar
+7f8974066000-7f8974069000 r--s 00007000 08:02 3289067                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.0.31.Final-redhat-1.jar
+7f8974069000-7f897406c000 r--s 00016000 08:02 3290832                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/impl/main/jboss-as-clustering-impl-7.5.0.Final-redhat-21.jar
+7f897406c000-7f897406d000 r--s 00000000 08:02 3288990                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.0.31.Final-redhat-1.jar
+7f897406d000-7f8974072000 r--s 0002f000 08:02 3288789                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.0.31.Final-redhat-1.jar
+7f8974072000-7f8974074000 r--s 00005000 08:02 3290760                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/common/main/jboss-as-clustering-common-7.5.0.Final-redhat-21.jar
+7f8974074000-7f8974081000 r--s 00095000 08:02 3283031                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.10.Final-redhat-1.jar
+7f8974081000-7f8974087000 r--s 00036000 08:02 3288469                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/weld/main/jboss-as-weld-7.5.0.Final-redhat-21.jar
+7f8974087000-7f8974089000 r--s 0000e000 08:02 3291034                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.redhat-4.jar
+7f8974089000-7f897408b000 r--s 0000d000 08:02 3288214                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.3.Final-redhat-1.jar
+7f897408b000-7f897408c000 r--s 00001000 08:02 3289202                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.10.Final-redhat-1.jar
+7f897408c000-7f897408d000 r--s 00001000 08:02 3284131                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-4.3.4.Final-redhat-1-jboss720.jar
+7f897408d000-7f89740b0000 r--s 00274000 08:02 3284587                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/web/main/jbossweb-7.5.7.Final-redhat-1.jar
+7f89740b0000-7f89740b7000 r--s 0005b000 08:02 3289802                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/webservices/main/jboss-as-webservices-server-integration-7.5.0.Final-redhat-21.jar
+7f89740b7000-7f89740c0000 r--s 00069000 08:02 3288163                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.6.Final-redhat-1.jar
+7f89740c0000-7f89740d2000 r--s 00212000 08:02 3288873                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/web/main/ecj-4.4.2.redhat-1.jar
+7f89740d2000-7f89740d5000 r--s 00011000 08:02 3289978                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/api/main/jboss-as-clustering-api-7.5.0.Final-redhat-21.jar
+7f89740d5000-7f89740d9000 r--s 00015000 08:02 3288661                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/sar/main/jboss-as-sar-7.5.0.Final-redhat-21.jar
+7f89740d9000-7f89740db000 r--s 0000a000 08:02 3283077                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.1.0.Final-redhat-1.jar
+7f89740db000-7f89740de000 r--s 00017000 08:02 3284081                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.4.Final-redhat-3.jar
+7f89740de000-7f89740e7000 r--s 00096000 08:02 3288564                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/web/main/jboss-as-web-7.5.0.Final-redhat-21.jar
+7f89740e7000-7f89740eb000 r--s 00027000 08:02 3288510                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/io/main/commons-io-2.1.0.redhat-4.jar
+7f89740eb000-7f89740ed000 r--s 0000a000 08:02 3291266                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f89740ed000-7f89740f1000 r--s 00024000 08:02 3290451                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/pojo/main/jboss-as-pojo-7.5.0.Final-redhat-21.jar
+7f89740f1000-7f89740f4000 ---p 00000000 00:00 0 
+7f89740f4000-7f89741f2000 rw-p 00000000 00:00 0 
+7f89741f2000-7f89741f5000 ---p 00000000 00:00 0 
+7f89741f5000-7f89742f3000 rw-p 00000000 00:00 0 
+7f89742f3000-7f89742f6000 ---p 00000000 00:00 0 
+7f89742f6000-7f89743f4000 rw-p 00000000 00:00 0 
+7f89743f4000-7f89743f7000 ---p 00000000 00:00 0 
+7f89743f7000-7f89744f5000 rw-p 00000000 00:00 0 
+7f89744f5000-7f89744f8000 ---p 00000000 00:00 0 
+7f89744f8000-7f89745f6000 rw-p 00000000 00:00 0 
+7f89745f6000-7f89745f9000 ---p 00000000 00:00 0 
+7f89745f9000-7f89746f7000 rw-p 00000000 00:00 0 
+7f89746f7000-7f89746fa000 ---p 00000000 00:00 0 
+7f89746fa000-7f89747f8000 rw-p 00000000 00:00 0 
+7f89747f8000-7f89747fb000 ---p 00000000 00:00 0 
+7f89747fb000-7f89748f9000 rw-p 00000000 00:00 0 
+7f89748f9000-7f89748fc000 ---p 00000000 00:00 0 
+7f89748fc000-7f89749fa000 rw-p 00000000 00:00 0 
+7f89749fa000-7f89749fd000 ---p 00000000 00:00 0 
+7f89749fd000-7f8974afb000 rw-p 00000000 00:00 0 
+7f8974afb000-7f8974afe000 ---p 00000000 00:00 0 
+7f8974afe000-7f8974bfc000 rw-p 00000000 00:00 0 
+7f8974bfc000-7f8974bff000 ---p 00000000 00:00 0 
+7f8974bff000-7f8974cfd000 rw-p 00000000 00:00 0 
+7f8974cfd000-7f8974d00000 ---p 00000000 00:00 0 
+7f8974d00000-7f8974dfe000 rw-p 00000000 00:00 0 
+7f8974dfe000-7f8974e01000 ---p 00000000 00:00 0 
+7f8974e01000-7f8978000000 rw-p 00000000 00:00 0 
+7f8978000000-7f8978680000 rw-p 00000000 00:00 0 
+7f8978680000-7f897c000000 ---p 00000000 00:00 0 
+7f897c000000-7f897c4f0000 rw-p 00000000 00:00 0 
+7f897c4f0000-7f8980000000 ---p 00000000 00:00 0 
+7f8980000000-7f8983ffe000 rw-p 00000000 00:00 0 
+7f8983ffe000-7f8984000000 ---p 00000000 00:00 0 
+7f8984000000-7f8984534000 rw-p 00000000 00:00 0 
+7f8984534000-7f8988000000 ---p 00000000 00:00 0 
+7f8988000000-7f8988021000 rw-p 00000000 00:00 0 
+7f8988021000-7f898c000000 ---p 00000000 00:00 0 
+7f898c000000-7f898fffb000 rw-p 00000000 00:00 0 
+7f898fffb000-7f8990000000 ---p 00000000 00:00 0 
+7f8990000000-7f8990116000 rw-p 00000000 00:00 0 
+7f8990116000-7f8994000000 ---p 00000000 00:00 0 
+7f8994000000-7f8994022000 rw-p 00000000 00:00 0 
+7f8994022000-7f8998000000 ---p 00000000 00:00 0 
+7f8998000000-7f8998362000 rw-p 00000000 00:00 0 
+7f8998362000-7f899c000000 ---p 00000000 00:00 0 
+7f899c000000-7f899c232000 rw-p 00000000 00:00 0 
+7f899c232000-7f89a0000000 ---p 00000000 00:00 0 
+7f89a0000000-7f89a1186000 rw-p 00000000 00:00 0 
+7f89a1186000-7f89a4000000 ---p 00000000 00:00 0 
+7f89a4000000-7f89a406a000 rw-p 00000000 00:00 0 
+7f89a406a000-7f89a8000000 ---p 00000000 00:00 0 
+7f89a8000000-7f89a816e000 rw-p 00000000 00:00 0 
+7f89a816e000-7f89ac000000 ---p 00000000 00:00 0 
+7f89ac000000-7f89ac002000 r--s 00008000 08:02 3290246                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.1.Final-redhat-4.jar
+7f89ac002000-7f89ac00e000 r--s 0006b000 08:02 3289206                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-4.3.2.Final-redhat-2.jar
+7f89ac00e000-7f89ac012000 r--s 00022000 08:02 3284471                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-5.2.11.Final-redhat-2.jar
+7f89ac012000-7f89ac015000 r--s 0000c000 08:02 3291058                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.2.Final-redhat-1.jar
+7f89ac015000-7f89ac018000 r--s 00012000 08:02 3290902                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.2.Final-redhat-1.jar
+7f89ac018000-7f89ac01c000 r--s 00025000 08:02 3288206                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/remote-naming/main/jboss-remote-naming-1.0.10.Final-redhat-1.jar
+7f89ac01c000-7f89ac01f000 r--s 0000a000 08:02 3289362                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar
+7f89ac01f000-7f89ac021000 r--s 00010000 08:02 3289302                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/el/api/main/jboss-el-api_2.2_spec-1.0.4.Final-redhat-1.jar
+7f89ac021000-7f89ac029000 r--s 0007a000 08:02 3290441                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/mail/api/main/mail-1.4.5.redhat-2.jar
+7f89ac029000-7f89ac034000 r--s 0009c000 08:02 3291271                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.1.28.Final-redhat-1.jar
+7f89ac034000-7f89ac037000 r--s 00009000 08:02 3289746                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/validation/api/main/validation-api-1.0.0.GA-redhat-3.jar
+7f89ac037000-7f89ac055000 r--s 001a2000 08:02 3291146                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/ejb3/main/jboss-as-ejb3-7.5.0.Final-redhat-21.jar
+7f89ac055000-7f89ac058000 ---p 00000000 00:00 0 
+7f89ac058000-7f89ac156000 rw-p 00000000 00:00 0 
+7f89ac156000-7f89ac159000 ---p 00000000 00:00 0 
+7f89ac159000-7f89ac257000 rw-p 00000000 00:00 0 
+7f89ac257000-7f89ac25a000 ---p 00000000 00:00 0 
+7f89ac25a000-7f89ac358000 rw-p 00000000 00:00 0 
+7f89ac358000-7f89ac35b000 ---p 00000000 00:00 0 
+7f89ac35b000-7f89ac459000 rw-p 00000000 00:00 0 
+7f89ac459000-7f89ac45c000 ---p 00000000 00:00 0 
+7f89ac45c000-7f89ac55a000 rw-p 00000000 00:00 0 
+7f89ac55a000-7f89ac55d000 ---p 00000000 00:00 0 
+7f89ac55d000-7f89ac65b000 rw-p 00000000 00:00 0 
+7f89ac65b000-7f89ac65e000 ---p 00000000 00:00 0 
+7f89ac65e000-7f89ac75c000 rw-p 00000000 00:00 0 
+7f89ac75c000-7f89ac75f000 ---p 00000000 00:00 0 
+7f89ac75f000-7f89ac85d000 rw-p 00000000 00:00 0 
+7f89ac85d000-7f89ac860000 ---p 00000000 00:00 0 
+7f89ac860000-7f89ac95e000 rw-p 00000000 00:00 0 
+7f89ac95e000-7f89ac961000 ---p 00000000 00:00 0 
+7f89ac961000-7f89aca5f000 rw-p 00000000 00:00 0 
+7f89aca5f000-7f89aca63000 r--s 0001b000 08:02 3284040                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/protocol/main/jboss-as-protocol-7.5.0.Final-redhat-21.jar
+7f89aca63000-7f89aca65000 r--s 00014000 08:02 3289007                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-5.2.11.Final-redhat-2.jar
+7f89aca65000-7f89aca68000 r--s 00014000 08:02 3283042                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jdr/main/jboss-as-jdr-7.5.0.Final-redhat-21.jar
+7f89aca68000-7f89aca69000 r--s 00004000 08:02 3284232                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f89aca69000-7f89aca6d000 r--s 0000a000 08:02 3288437                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/enterprise/api/main/cdi-api-1.0.0.SP4-redhat-5.jar
+7f89aca6d000-7f89aca70000 r--s 0000f000 08:02 3283234                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/mail/main/jboss-as-mail-7.5.0.Final-redhat-21.jar
+7f89aca70000-7f89aca72000 r--s 0000e000 08:02 3289266                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jsf/main/jboss-as-jsf-7.5.0.Final-redhat-21.jar
+7f89aca72000-7f89aca76000 r--s 0002a000 08:02 3290171                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jpa/main/jboss-as-jpa-7.5.0.Final-redhat-21.jar
+7f89aca76000-7f89aca79000 r--s 0000f000 08:02 3290734                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.1.Final-redhat-3.jar
+7f89aca79000-7f89aca7a000 r--s 00004000 08:02 3284006                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f89aca7a000-7f89aca7d000 r--s 00023000 08:02 3283190                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-5.2.11.Final-redhat-2.jar
+7f89aca7d000-7f89aca80000 r--s 00011000 08:02 3283830                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jaxrs/main/jboss-as-jaxrs-7.5.0.Final-redhat-21.jar
+7f89aca80000-7f89aca84000 r--s 00026000 08:02 3288945                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/deployment-scanner/main/jboss-as-deployment-scanner-7.5.0.Final-redhat-21.jar
+7f89aca84000-7f89aca91000 r--s 000a4000 08:02 3283012                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/connector/main/jboss-as-connector-7.5.0.Final-redhat-21.jar
+7f89aca91000-7f89aca93000 r--s 00000000 08:02 3289893                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/net/jcip/main/jcip-annotations-1.0.0.redhat-7.jar
+7f89aca93000-7f89aca94000 r--s 00003000 08:02 12457343                   /opt/jdk1.7.0_80/jre/lib/ext/sunec.jar
+7f89aca94000-7f89aca98000 r--s 00037000 08:02 12457344                   /opt/jdk1.7.0_80/jre/lib/ext/sunpkcs11.jar
+7f89aca98000-7f89aca9b000 r--s 00019000 08:02 12324345                   /opt/jdk1.7.0_80/jre/lib/jce.jar
+7f89aca9b000-7f89acaab000 r--s 000b6000 08:02 3289110                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/cli/main/jboss-as-cli-7.5.0.Final-redhat-21.jar
+7f89acaab000-7f89acaad000 r--s 00013000 08:02 3290955                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.0.13.GA-redhat-1.jar
+7f89acaad000-7f89acab1000 r--s 00025000 08:02 3289241                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/threads/main/jboss-as-threads-7.5.0.Final-redhat-21.jar
+7f89acab1000-7f89acab2000 r--s 0000a000 08:02 3287965                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/commons/cli/main/commons-cli-1.2.0.redhat-8.jar
+7f89acab2000-7f89acab4000 r--s 00006000 08:02 3290703                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-2.3.6.Final-redhat-1.jar
+7f89acab4000-7f89acab5000 r--s 00003000 08:02 3288004                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-2.3.6.Final-redhat-1.jar
+7f89acab5000-7f89acab6000 r--s 00004000 08:02 3288136                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-net-2.3.6.Final-redhat-1.jar
+7f89acab6000-7f89acab8000 r--s 00009000 08:02 3290557                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-2.3.6.Final-redhat-1.jar
+7f89acab8000-7f89acaba000 r--s 00009000 08:02 3288995                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-2.3.6.Final-redhat-1.jar
+7f89acaba000-7f89acabd000 r--s 0000e000 08:02 3291313                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ear-7.2.1.Final-redhat-1.jar
+7f89acabd000-7f89acac5000 r--s 00059000 08:02 3287964                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-web-7.2.1.Final-redhat-1.jar
+7f89acac5000-7f89acacf000 r--s 0007b000 08:02 3290078                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ejb-7.2.1.Final-redhat-1.jar
+7f89acacf000-7f89acad1000 r--s 00004000 08:02 3283015                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-appclient-7.2.1.Final-redhat-1.jar
+7f89acad1000-7f89acada000 r--s 0005b000 08:02 3283623                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-common-7.2.1.Final-redhat-1.jar
+7f89acada000-7f89acade000 r--s 0002f000 08:02 3289518                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/transactions/main/jboss-as-transactions-7.5.0.Final-redhat-21.jar
+7f89acade000-7f89acae7000 r--s 00072000 08:02 3283368                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/ee/main/jboss-as-ee-7.5.0.Final-redhat-21.jar
+7f89acae7000-7f89acaee000 r--s 0005d000 08:02 3288392                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/jboss-as-clustering-infinispan-7.5.0.Final-redhat-21.jar
+7f89acaee000-7f89acb18000 r--s 00240000 08:02 3288796                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/infinispan/main/infinispan-core-5.2.11.Final-redhat-2.jar
+7f89acb18000-7f89acb1a000 r--s 00005000 08:02 3290931                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f89acb1a000-7f89acb1d000 r--s 0002b000 08:02 3283809                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.2.Final-redhat-2.jar
+7f89acb1d000-7f89acb1f000 r--s 0000d000 08:02 3283848                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.3.Final-redhat-1.jar
+7f89acb1f000-7f89acb23000 r--s 0008b000 08:02 12324352                   /opt/jdk1.7.0_80/jre/lib/jsse.jar
+7f89acb23000-7f89acb24000 r--s 00001000 08:02 3288979                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/javax/inject/api/main/javax.inject-1.0.0.redhat-5.jar
+7f89acb24000-7f89acb25000 r--s 00005000 08:02 3283176                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final-redhat-3.jar
+7f89acb25000-7f89acb27000 r--s 00005000 08:02 3284512                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.1.1.Final-redhat-1.jar
+7f89acb27000-7f89acb39000 r--s 000d1000 08:02 3290610                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/picketbox/main/picketbox-4.1.1.Final-redhat-1.jar
+7f89acb39000-7f89acb3f000 r--s 00045000 08:02 3283244                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/security/main/jboss-as-security-7.5.0.Final-redhat-21.jar
+7f89acb3f000-7f89acb41000 r--s 00001000 08:02 3283732                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/version/main/jboss-as-version-7.5.0.Final-redhat-21.jar
+7f89acb41000-7f89acb46000 r--s 00030000 08:02 3288384                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/process-controller/main/jboss-as-process-controller-7.5.0.Final-redhat-21.jar
+7f89acb46000-7f89acb4a000 r--s 00029000 08:02 3289176                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/platform-mbean/main/jboss-as-platform-mbean-7.5.0.Final-redhat-21.jar
+7f89acb4a000-7f89acb54000 r--s 00061000 08:02 3290536                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/patching/main/wildfly-patching-7.5.0.Final-redhat-21.jar
+7f89acb54000-7f89acb58000 r--s 00020000 08:02 3284395                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/domain-http-interface/main/jboss-as-domain-http-interface-7.5.0.Final-redhat-21.jar
+7f89acb58000-7f89acb5b000 r--s 0000a000 08:02 3284518                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/deployment-repository/main/jboss-as-deployment-repository-7.5.0.Final-redhat-21.jar
+7f89acb5b000-7f89acb5f000 r--s 0001a000 08:02 3288524                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/threads/main/jboss-threads-2.1.2.Final-redhat-1.jar
+7f89acb5f000-7f89acb61000 r--s 00015000 08:02 3288144                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/sasl/main/jboss-sasl-1.0.5.Final-redhat-1.jar
+7f89acb61000-7f89acb63000 r--s 00013000 08:02 3289387                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-1.4.10.Final-redhat-1.jar
+7f89acb63000-7f89acb65000 r--s 00012000 08:02 3283130                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/jandex/main/jandex-1.2.2.Final-redhat-1.jar
+7f89acb65000-7f89acb68000 r--s 00014000 08:02 3283159                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/invocation/main/jboss-invocation-1.1.2.Final-redhat-1.jar
+7f89acb68000-7f89acb6e000 r--s 00040000 08:02 3284097                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/naming/main/jboss-as-naming-7.5.0.Final-redhat-21.jar
+7f89acb6e000-7f89acb76000 r--s 00047000 08:02 3289420                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/remoting-jmx/main/remoting-jmx-1.1.3.Final-redhat-2.jar
+7f89acb76000-7f89acb7b000 r--s 00036000 08:02 3287914                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.0.13.GA-redhat-1.jar
+7f89acb7b000-7f89acb81000 r--s 00030000 08:02 3283982                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-1.4.10.Final-redhat-1.jar
+7f89acb81000-7f89acb87000 r--s 0003f000 08:02 3283293                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/remoting3/main/jboss-remoting-3.3.4.Final-redhat-1.jar
+7f89acb87000-7f89acb8b000 r--s 0002c000 08:02 3284419                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/remoting/main/jboss-as-remoting-7.5.0.Final-redhat-21.jar
+7f89acb8b000-7f89acb8e000 r--s 0000b000 08:02 3290765                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/network/main/jboss-as-network-7.5.0.Final-redhat-21.jar
+7f89acb8e000-7f89acb9e000 r--s 000bf000 08:02 3283888                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/domain-management/main/jboss-as-domain-management-7.5.0.Final-redhat-21.jar
+7f89acb9e000-7f89acba0000 r--s 00000000 08:02 3289024                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/core-security-api/main/wildfly-core-security-api-7.5.0.Final-redhat-21.jar
+7f89acba0000-7f89acbb0000 r-xp 00000000 08:02 12323826                   /opt/jdk1.7.0_80/jre/lib/amd64/libnio.so
+7f89acbb0000-7f89acdb0000 ---p 00010000 08:02 12323826                   /opt/jdk1.7.0_80/jre/lib/amd64/libnio.so
+7f89acdb0000-7f89acdb1000 rw-p 00010000 08:02 12323826                   /opt/jdk1.7.0_80/jre/lib/amd64/libnio.so
+7f89acdb1000-7f89acdd1000 r--s 001b1000 08:02 3284463                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/controller/main/jboss-as-controller-7.5.0.Final-redhat-21.jar
+7f89acdd1000-7f89acde8000 r-xp 00000000 08:02 12323860                   /opt/jdk1.7.0_80/jre/lib/amd64/libnet.so
+7f89acde8000-7f89acfe7000 ---p 00017000 08:02 12323860                   /opt/jdk1.7.0_80/jre/lib/amd64/libnet.so
+7f89acfe7000-7f89acfe8000 rw-p 00016000 08:02 12323860                   /opt/jdk1.7.0_80/jre/lib/amd64/libnet.so
+7f89acfe8000-7f89acff0000 r-xp 00000000 08:02 12323834                   /opt/jdk1.7.0_80/jre/lib/amd64/libmanagement.so
+7f89acff0000-7f89ad1ef000 ---p 00008000 08:02 12323834                   /opt/jdk1.7.0_80/jre/lib/amd64/libmanagement.so
+7f89ad1ef000-7f89ad1f0000 rw-p 00007000 08:02 12323834                   /opt/jdk1.7.0_80/jre/lib/amd64/libmanagement.so
+7f89ad1f0000-7f89ad1f3000 ---p 00000000 00:00 0 
+7f89ad1f3000-7f89ad2f1000 rw-p 00000000 00:00 0 
+7f89ad2f1000-7f89ad2f2000 ---p 00000000 00:00 0 
+7f89ad2f2000-7f89ad3f2000 rw-p 00000000 00:00 0 
+7f89ad3f2000-7f89ad3f5000 ---p 00000000 00:00 0 
+7f89ad3f5000-7f89ad4f3000 rw-p 00000000 00:00 0 
+7f89ad4f3000-7f89ad4f6000 ---p 00000000 00:00 0 
+7f89ad4f6000-7f89ad5f4000 rw-p 00000000 00:00 0 
+7f89ad5f4000-7f89ad5f7000 ---p 00000000 00:00 0 
+7f89ad5f7000-7f89ad6f5000 rw-p 00000000 00:00 0 
+7f89ad6f5000-7f89ad6f8000 ---p 00000000 00:00 0 
+7f89ad6f8000-7f89ad7f6000 rw-p 00000000 00:00 0 
+7f89ad7f6000-7f89ad7f9000 ---p 00000000 00:00 0 
+7f89ad7f9000-7f89ad8f7000 rw-p 00000000 00:00 0 
+7f89ad8f7000-7f89ad8fa000 ---p 00000000 00:00 0 
+7f89ad8fa000-7f89ad9f8000 rw-p 00000000 00:00 0 
+7f89ad9f8000-7f89ad9fc000 r-xp 00000000 08:02 12323872                   /opt/jdk1.7.0_80/jre/lib/amd64/libdt_socket.so
+7f89ad9fc000-7f89adbfb000 ---p 00004000 08:02 12323872                   /opt/jdk1.7.0_80/jre/lib/amd64/libdt_socket.so
+7f89adbfb000-7f89adbfc000 rw-p 00003000 08:02 12323872                   /opt/jdk1.7.0_80/jre/lib/amd64/libdt_socket.so
+7f89adbfc000-7f89adbff000 ---p 00000000 00:00 0 
+7f89adbff000-7f89adcfd000 rw-p 00000000 00:00 0 
+7f89adcfd000-7f89add00000 ---p 00000000 00:00 0 
+7f89add00000-7f89addfe000 rw-p 00000000 00:00 0 
+7f89addfe000-7f89ade01000 ---p 00000000 00:00 0 
+7f89ade01000-7f89adeff000 rw-p 00000000 00:00 0 
+7f89adeff000-7f89adf00000 ---p 00000000 00:00 0 
+7f89adf00000-7f89b4000000 rw-p 00000000 00:00 0 
+7f89b4000000-7f89b4280000 rw-p 00000000 00:00 0 
+7f89b4280000-7f89b8000000 ---p 00000000 00:00 0 
+7f89b8000000-7f89b8127000 rw-p 00000000 00:00 0 
+7f89b8127000-7f89bc000000 ---p 00000000 00:00 0 
+7f89bc000000-7f89bc3f0000 rw-p 00000000 00:00 0 
+7f89bc3f0000-7f89c0000000 ---p 00000000 00:00 0 
+7f89c0000000-7f89c0002000 r--s 00004000 08:02 3283782                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/core-security/main/wildfly-core-security-7.5.0.Final-redhat-21.jar
+7f89c0002000-7f89c0003000 r--s 00009000 08:02 3283909                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/stdio/main/jboss-stdio-1.0.2.GA-redhat-1.jar
+7f89c0003000-7f89c0006000 r--s 0000c000 08:02 3289344                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.1.4.GA-redhat-2.jar
+7f89c0006000-7f89c0007000 r--s 00008000 08:02 3290912                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/staxmapper/main/staxmapper-1.1.0.Final-redhat-3.jar
+7f89c0007000-7f89c0013000 r--s 0007f000 08:02 3283887                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/common-core/main/jboss-common-core-2.2.17.GA-redhat-3.jar
+7f89c0013000-7f89c0015000 r--s 00016000 08:02 3289162                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.2.2.Final-redhat-1.jar
+7f89c0015000-7f89c001c000 r--s 00033000 08:02 3284533                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/controller-client/main/jboss-as-controller-client-7.5.0.Final-redhat-21.jar
+7f89c001c000-7f89c0025000 r--s 00070000 08:02 3290194                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.1.1.Final-redhat-1.jar
+7f89c0025000-7f89c002c000 r--s 0005b000 08:02 3289113                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/logging/main/jboss-as-logging-7.5.0.Final-redhat-21.jar
+7f89c002c000-7f89c0030000 r--s 0003a000 08:02 3284637                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/msc/main/jboss-msc-1.1.5.Final-redhat-1.jar
+7f89c0030000-7f89c003f000 r--s 000e3000 08:02 3283614                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/server/main/jboss-as-server-7.5.0.Final-redhat-21.jar
+7f89c003f000-7f89c0045000 r--s 00041000 08:02 3291079                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/as/jmx/main/jboss-as-jmx-7.5.0.Final-redhat-21.jar
+7f89c0045000-7f89c004c000 r--s 0004a000 08:02 3290882                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-1.5.4.Final-redhat-1.jar
+7f89c004c000-7f89c0050000 r--s 0001e000 08:02 3283321                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.2.9.Final-redhat-1.jar
+7f89c0050000-7f89c006d000 r--s 0027f000 08:02 3282874                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/xalan/main/xalan-2.7.1.redhat-7.jar
+7f89c006d000-7f89c1000000 rw-p 00000000 00:00 0 
+7f89c1000000-7f89c1a50000 rwxp 00000000 00:00 0 
+7f89c1a50000-7f89c4643000 rw-p 00000000 00:00 0 
+7f89c4643000-7f89c8000000 ---p 00000000 00:00 0 
+7f89c8000000-7f89c8004000 r--s 0002c000 08:02 3288159                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/woodstox/main/stax2-api-3.1.3.redhat-1.jar
+7f89c8004000-7f89c800a000 r--s 0007b000 08:02 3283008                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/codehaus/woodstox/main/woodstox-core-asl-4.2.0.redhat-4.jar
+7f89c800a000-7f89c8076000 rw-p 00000000 00:00 0 
+7f89c8076000-7f89c8236000 r--s 039fb000 08:02 12324357                   /opt/jdk1.7.0_80/jre/lib/rt.jar
+7f89c8236000-7f89c896b000 rw-p 00000000 00:00 0 
+7f89c896b000-7f89c896c000 ---p 00000000 00:00 0 
+7f89c896c000-7f89c8a6c000 rw-p 00000000 00:00 0 
+7f89c8a6c000-7f89c8a6d000 ---p 00000000 00:00 0 
+7f89c8a6d000-7f89c8b6d000 rw-p 00000000 00:00 0 
+7f89c8b6d000-7f89c8b6e000 ---p 00000000 00:00 0 
+7f89c8b6e000-7f89c8c6e000 rw-p 00000000 00:00 0 
+7f89c8c6e000-7f89c8c6f000 ---p 00000000 00:00 0 
+7f89c8c6f000-7f89c8e13000 rw-p 00000000 00:00 0 
+7f89c8e13000-7f89c8f6f000 rw-p 00000000 00:00 0 
+7f89c8f6f000-7f89c90c5000 rw-p 00000000 00:00 0 
+7f89c90c5000-7f89c921a000 rw-p 00000000 00:00 0 
+7f89c921a000-7f89c92be000 rw-p 00000000 00:00 0 
+7f89c92be000-7f89c941a000 rw-p 00000000 00:00 0 
+7f89c941a000-7f89c9570000 rw-p 00000000 00:00 0 
+7f89c9570000-7f89c96c4000 rw-p 00000000 00:00 0 
+7f89c96c4000-7f89c981a000 rw-p 00000000 00:00 0 
+7f89c981a000-7f89c981b000 rw-p 00000000 00:00 0 
+7f89c981b000-7f89c9832000 r-xp 00000000 08:02 12323855                   /opt/jdk1.7.0_80/jre/lib/amd64/libzip.so
+7f89c9832000-7f89c9a32000 ---p 00017000 08:02 12323855                   /opt/jdk1.7.0_80/jre/lib/amd64/libzip.so
+7f89c9a32000-7f89c9a33000 rw-p 00017000 08:02 12323855                   /opt/jdk1.7.0_80/jre/lib/amd64/libzip.so
+7f89c9a33000-7f89c9a3e000 r-xp 00000000 08:02 5768034                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f89c9a3e000-7f89c9c3d000 ---p 0000b000 08:02 5768034                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f89c9c3d000-7f89c9c3e000 r--p 0000a000 08:02 5768034                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f89c9c3e000-7f89c9c3f000 rw-p 0000b000 08:02 5768034                    /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f89c9c3f000-7f89c9c45000 rw-p 00000000 00:00 0 
+7f89c9c45000-7f89c9c50000 r-xp 00000000 08:02 5768041                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f89c9c50000-7f89c9e4f000 ---p 0000b000 08:02 5768041                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f89c9e4f000-7f89c9e50000 r--p 0000a000 08:02 5768041                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f89c9e50000-7f89c9e51000 rw-p 0000b000 08:02 5768041                    /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f89c9e51000-7f89c9e67000 r-xp 00000000 08:02 5768002                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f89c9e67000-7f89ca066000 ---p 00016000 08:02 5768002                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f89ca066000-7f89ca067000 r--p 00015000 08:02 5768002                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f89ca067000-7f89ca068000 rw-p 00016000 08:02 5768002                    /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f89ca068000-7f89ca06a000 rw-p 00000000 00:00 0 
+7f89ca06a000-7f89ca072000 r-xp 00000000 08:02 5768024                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f89ca072000-7f89ca271000 ---p 00008000 08:02 5768024                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f89ca271000-7f89ca272000 r--p 00007000 08:02 5768024                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f89ca272000-7f89ca273000 rw-p 00008000 08:02 5768024                    /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f89ca273000-7f89ca54c000 r--p 00000000 08:02 9438674                    /usr/lib/locale/locale-archive
+7f89ca54c000-7f89ca54e000 r-xp 00000000 08:02 12323877                   /opt/jdk1.7.0_80/jre/lib/amd64/libnpt.so
+7f89ca54e000-7f89ca74e000 ---p 00002000 08:02 12323877                   /opt/jdk1.7.0_80/jre/lib/amd64/libnpt.so
+7f89ca74e000-7f89ca74f000 rw-p 00002000 08:02 12323877                   /opt/jdk1.7.0_80/jre/lib/amd64/libnpt.so
+7f89ca74f000-7f89ca788000 r-xp 00000000 08:02 12323828                   /opt/jdk1.7.0_80/jre/lib/amd64/libjdwp.so
+7f89ca788000-7f89ca988000 ---p 00039000 08:02 12323828                   /opt/jdk1.7.0_80/jre/lib/amd64/libjdwp.so
+7f89ca988000-7f89ca989000 rw-p 00039000 08:02 12323828                   /opt/jdk1.7.0_80/jre/lib/amd64/libjdwp.so
+7f89ca989000-7f89ca98a000 rw-p 00000000 00:00 0 
+7f89ca98a000-7f89ca9b3000 r-xp 00000000 08:02 12323821                   /opt/jdk1.7.0_80/jre/lib/amd64/libjava.so
+7f89ca9b3000-7f89cabb3000 ---p 00029000 08:02 12323821                   /opt/jdk1.7.0_80/jre/lib/amd64/libjava.so
+7f89cabb3000-7f89cabb5000 rw-p 00029000 08:02 12323821                   /opt/jdk1.7.0_80/jre/lib/amd64/libjava.so
+7f89cabb5000-7f89cabc2000 r-xp 00000000 08:02 12323848                   /opt/jdk1.7.0_80/jre/lib/amd64/libverify.so
+7f89cabc2000-7f89cadc1000 ---p 0000d000 08:02 12323848                   /opt/jdk1.7.0_80/jre/lib/amd64/libverify.so
+7f89cadc1000-7f89cadc3000 rw-p 0000c000 08:02 12323848                   /opt/jdk1.7.0_80/jre/lib/amd64/libverify.so
+7f89cadc3000-7f89cadca000 r-xp 00000000 08:02 5768042                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f89cadca000-7f89cafc9000 ---p 00007000 08:02 5768042                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f89cafc9000-7f89cafca000 r--p 00006000 08:02 5768042                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f89cafca000-7f89cafcb000 rw-p 00007000 08:02 5768042                    /lib/x86_64-linux-gnu/librt-2.23.so
+7f89cafcb000-7f89cb0d3000 r-xp 00000000 08:02 5768000                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f89cb0d3000-7f89cb2d2000 ---p 00108000 08:02 5768000                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f89cb2d2000-7f89cb2d3000 r--p 00107000 08:02 5768000                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f89cb2d3000-7f89cb2d4000 rw-p 00108000 08:02 5768000                    /lib/x86_64-linux-gnu/libm-2.23.so
+7f89cb2d4000-7f89cbe4a000 r-xp 00000000 08:02 12323875                   /opt/jdk1.7.0_80/jre/lib/amd64/server/libjvm.so
+7f89cbe4a000-7f89cc049000 ---p 00b76000 08:02 12323875                   /opt/jdk1.7.0_80/jre/lib/amd64/server/libjvm.so
+7f89cc049000-7f89cc10d000 rw-p 00b75000 08:02 12323875                   /opt/jdk1.7.0_80/jre/lib/amd64/server/libjvm.so
+7f89cc10d000-7f89cc14e000 rw-p 00000000 00:00 0 
+7f89cc14e000-7f89cc30e000 r-xp 00000000 08:02 5768008                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f89cc30e000-7f89cc50e000 ---p 001c0000 08:02 5768008                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f89cc50e000-7f89cc512000 r--p 001c0000 08:02 5768008                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f89cc512000-7f89cc514000 rw-p 001c4000 08:02 5768008                    /lib/x86_64-linux-gnu/libc-2.23.so
+7f89cc514000-7f89cc518000 rw-p 00000000 00:00 0 
+7f89cc518000-7f89cc51b000 r-xp 00000000 08:02 5768012                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f89cc51b000-7f89cc71a000 ---p 00003000 08:02 5768012                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f89cc71a000-7f89cc71b000 r--p 00002000 08:02 5768012                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f89cc71b000-7f89cc71c000 rw-p 00003000 08:02 5768012                    /lib/x86_64-linux-gnu/libdl-2.23.so
+7f89cc71c000-7f89cc731000 r-xp 00000000 08:02 12586788                   /opt/jdk1.7.0_80/lib/amd64/jli/libjli.so
+7f89cc731000-7f89cc930000 ---p 00015000 08:02 12586788                   /opt/jdk1.7.0_80/lib/amd64/jli/libjli.so
+7f89cc930000-7f89cc931000 rw-p 00014000 08:02 12586788                   /opt/jdk1.7.0_80/lib/amd64/jli/libjli.so
+7f89cc931000-7f89cc949000 r-xp 00000000 08:02 5768006                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f89cc949000-7f89ccb48000 ---p 00018000 08:02 5768006                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f89ccb48000-7f89ccb49000 r--p 00017000 08:02 5768006                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f89ccb49000-7f89ccb4a000 rw-p 00018000 08:02 5768006                    /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f89ccb4a000-7f89ccb4e000 rw-p 00000000 00:00 0 
+7f89ccb4e000-7f89ccb74000 r-xp 00000000 08:02 5768004                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f89ccb74000-7f89ccb8c000 r--s 00196000 08:02 3289541                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/xerces/main/xercesImpl-2.9.1.redhat-6.jar
+7f89ccb8c000-7f89ccbb6000 rw-p 00000000 00:00 0 
+7f89ccbb6000-7f89ccc4c000 rw-p 00000000 00:00 0 
+7f89ccc4c000-7f89ccc4f000 ---p 00000000 00:00 0 
+7f89ccc4f000-7f89ccd52000 rw-p 00000000 00:00 0 
+7f89ccd52000-7f89ccd55000 r--s 0000d000 08:02 3291283                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/jboss/common-beans/main/jboss-common-beans-1.1.0.Final-redhat-2.jar
+7f89ccd55000-7f89ccd59000 r--s 00048000 08:02 3288295                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules/system/layers/base/org/apache/xalan/main/serializer-2.7.1.redhat-7.jar
+7f89ccd59000-7f89ccd63000 r--s 00253000 08:02 12323903                   /opt/jdk1.7.0_80/jre/lib/resources.jar
+7f89ccd63000-7f89ccd69000 r--s 00053000 08:02 3288952                    /home/colaborador/ambiente_java/EAP-6.4-digital-homo/jboss-modules.jar
+7f89ccd69000-7f89ccd71000 rw-s 00000000 08:02 5518448                    /tmp/hsperfdata_colaborador/5600
+7f89ccd71000-7f89ccd72000 rw-p 00000000 00:00 0 
+7f89ccd72000-7f89ccd73000 ---p 00000000 00:00 0 
+7f89ccd73000-7f89ccd74000 r--p 00025000 08:02 5768004                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f89ccd74000-7f89ccd75000 rw-p 00026000 08:02 5768004                    /lib/x86_64-linux-gnu/ld-2.23.so
+7f89ccd75000-7f89ccd76000 rw-p 00000000 00:00 0 
+7ffc04a07000-7ffc04a28000 rw-p 00000000 00:00 0                          [stack]
+7ffc04adb000-7ffc04ade000 r--p 00000000 00:00 0                          [vvar]
+7ffc04ade000-7ffc04ae0000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:33139 -Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+ -Xms1024m -Xmx2048m -XX:MaxPermSize=1024m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/log/boot.log -Dlogging.configuration=file:/home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone/configuration/logging.properties -Djboss.home.dir=/home/colaborador/ambiente_java/EAP-6.4-digital-homo -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dcom.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump=true -Dfile.encoding=UTF-8 
+java_command: org.jboss.modules.Main -mp /home/colaborador/ambiente_java/EAP-6.4-digital-homo/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=/home/colaborador/ambiente_java/EAP-6.4-digital-homo/standalone
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/jdk1.7.0_80
+PATH=native:/opt/jdk1.7.0_80/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/p4v/bin:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x9a3b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x9a3b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x81ffb0], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:stretch/sid
+
+uname:Linux 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 30715, NOFILE 1048576, AS infinity
+load average:16,90 8,62 5,34
+
+/proc/meminfo:
+MemTotal:        8089244 kB
+MemFree:          129800 kB
+MemAvailable:      49380 kB
+Buffers:             960 kB
+Cached:           222124 kB
+SwapCached:        24532 kB
+Active:          6250272 kB
+Inactive:        1262184 kB
+Active(anon):    6230464 kB
+Inactive(anon):  1237580 kB
+Active(file):      19808 kB
+Inactive(file):    24604 kB
+Unevictable:         732 kB
+Mlocked:             732 kB
+SwapTotal:       8265724 kB
+SwapFree:            576 kB
+Dirty:               696 kB
+Writeback:             0 kB
+AnonPages:       7266544 kB
+Mapped:            41972 kB
+Shmem:            178016 kB
+Slab:             143304 kB
+SReclaimable:      66712 kB
+SUnreclaim:        76592 kB
+KernelStack:       30736 kB
+PageTables:       154744 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12310344 kB
+Committed_AS:   27363260 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1191936 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      315692 kB
+DirectMap2M:     7987200 kB
+DirectMap1G:           0 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, erms, ht, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x20
+cpu MHz		: 2843.953
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single retpoline kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 5187.50
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x20
+cpu MHz		: 2795.000
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single retpoline kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 5187.50
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x20
+cpu MHz		: 2729.390
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single retpoline kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 5187.50
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 69
+model name	: Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+stepping	: 1
+microcode	: 0x20
+cpu MHz		: 2792.867
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single retpoline kaiser tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2
+bogomips	: 5187.50
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8089244k(129800k free), swap 8265724k(576k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.80-b11) for linux-amd64 JRE (1.7.0_80-b15), built on Apr 10 2015 19:53:14 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Mon Apr  2 13:02:43 2018
+elapsed time: 108 seconds
+

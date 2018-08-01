@@ -1,0 +1,1669 @@
+2016-12-21 13:32:07,402 [http-/0.0.0.0:8080-1] INFO com.terracottatech.general - New logging session started.
+2016-12-21 13:32:07,418 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Terracotta Enterprise 4.3.1.1.36, as of 20151016-124459 (Revision 45753-26577 from tc-4.3.1)
+2016-12-21 13:32:07,420 [http-/0.0.0.0:8080-1] INFO com.tc.logging.TCLogging - PID is 18007
+2016-12-21 13:32:07,631 [http-/0.0.0.0:8080-1] INFO com.tc.config.schema.setup.StandardXMLFileConfigurationCreator - Attempting to load configuration from the server at 'localhost:9510'...
+2016-12-21 13:32:08,303 [http-/0.0.0.0:8080-1] WARN com.terracottatech.console - 
+********************************* WARNING **********************************
+* DataStorage offheap size is configured below recommended/supported
+* amounts. Please consult documentation.
+****************************************************************************
+
+2016-12-21 13:32:08,312 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Successfully loaded base configuration from server at 'localhost:9510'.
+2016-12-21 13:32:08,331 [http-/0.0.0.0:8080-1] INFO com.tc.config.schema.setup.StandardXMLFileConfigurationCreator - The configuration specified by 'base configuration from server at 'localhost:9510'':
+
+<con:tc-config xmlns:con="http://www.terracotta.org/config">
+  <clients xmlns:tc="http://www.terracotta.org/config"/>
+  <servers secure="false" xmlns:tc="http://www.terracotta.org/config">
+    <mirror-group election-time="5" group-name="default-group">
+      <server host="localhost" bind="0.0.0.0" name="localhost:9510" jmx-enabled="false">
+        <tsa-port bind="0.0.0.0">9510</tsa-port>
+        <jmx-port bind="0.0.0.0">9520</jmx-port>
+        <tsa-group-port bind="0.0.0.0">9530</tsa-group-port>
+        <management-port bind="0.0.0.0">9540</management-port>
+        <data>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data</data>
+        <logs>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../logs</logs>
+        <data-backup>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data-backup</data-backup>
+        <index>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data/index</index>
+        <dataStorage size="512m">
+          <offheap size="512m"/>
+        </dataStorage>
+      </server>
+    </mirror-group>
+    <update-check>
+      <enabled>true</enabled>
+      <period-days>7</period-days>
+    </update-check>
+    <garbage-collection>
+      <enabled>false</enabled>
+      <verbose>false</verbose>
+      <interval>3600</interval>
+    </garbage-collection>
+    <restartable enabled="true"/>
+    <client-reconnect-window>120</client-reconnect-window>
+  </servers>
+</con:tc-config>
+2016-12-21 13:32:08,333 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - Loading default properties from tc.properties
+2016-12-21 13:32:08,333 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "tc.config.total.timeout" was read before initialization completed. "tc.config.total.timeout" = 300000
+2016-12-21 13:32:08,333 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "tc.config.getFromSource.timeout" was read before initialization completed. "tc.config.getFromSource.timeout" = 30000
+2016-12-21 13:32:08,333 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "l1.objectmanager.fault.count" was read before initialization completed. "l1.objectmanager.fault.count" = 500
+2016-12-21 13:32:08,333 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - tc-config doesn't have any tc-property. No tc-property will be overridden
+2016-12-21 13:32:08,334 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - Loaded TCProperties : TCProperties = { appgroups.debug = false, disabled.secure.protocols = SSLv3, ehcache.clusterAllCacheManagers = true, ehcache.concurrency = 128, ehcache.evictor.logging.enabled = false, ehcache.evictor.pool.size = 1, ehcache.global.eviction.enable = true, ehcache.global.eviction.frequency = 10, ehcache.global.eviction.rest.timeMillis = 10, ehcache.global.eviction.segments = 2, ehcache.lock.readLevel = READ, ehcache.lock.writeLevel = WRITE, ehcache.logging.enabled = false, ehcache.storageStrategy.dcv2.evictUnexpiredEntries.enabled = true, ehcache.storageStrategy.dcv2.eviction.overshoot = 15, ehcache.storageStrategy.dcv2.localcache.enabled = true, ehcache.storageStrategy.dcv2.perElementTTITTL.enabled = false, ehcache.storageStrategy.dcv2.periodicEviction.enabled = true, http.defaultservlet.attribute.aliases = false;, http.defaultservlet.attribute.dirallowed = false;, http.defaultservlet.enabled = false;, l1.clusterevents.outofbandnotifier.jointime.millis = 100, l1.healthcheck.l2.bindAddress = 0.0.0.0, l1.healthcheck.l2.bindPort = 0, l1.healthcheck.l2.checkTime.enabled = true, l1.healthcheck.l2.checkTime.interval = 300000, l1.healthcheck.l2.checkTime.threshold = 300000, l1.healthcheck.l2.ping.enabled = true, l1.healthcheck.l2.ping.idletime = 5000, l1.healthcheck.l2.ping.interval = 1000, l1.healthcheck.l2.ping.probes = 3, l1.healthcheck.l2.socketConnect = true, l1.healthcheck.l2.socketConnectCount = 13, l1.healthcheck.l2.socketConnectTimeout = 5, l1.l2.config.validation.enabled = true, l1.lock.statistics.gatherInterval = 1, l1.lock.statistics.traceDepth = 0, l1.lockmanager.pinning.enabled = true, l1.lockmanager.striped.count = 128, l1.lockmanager.timeout.interval = 60000, l1.memorymanager.criticalThreshold = 70, l1.objectmanager.fault.count = 500, l1.objectmanager.fault.logging.enabled = false, l1.objectmanager.flush.logging.enabled = false, l1.objectmanager.objectid.request.size = 50000, l1.objectmanager.remote.batchLookupTimePeriod = 1, l1.objectmanager.remote.logging.enabled = false, l1.objectmanager.remote.maxDNALRUSize = 60, l1.objectmanager.remote.maxRequestSentImmediately = 4, l1.seda.stage.sink.capacity = -1, l1.serverEvent.delivery.timeout.intervalInSec = 180, l1.serverarray.objectCreationStrategy = round-robin, l1.serverarray.objectCreationStrategy.groupAffinity.groupName = mirror-group1, l1.serverarray.objectCreationStrategy.roundRobin.startIndex = sequential, l1.servermapmanager.remote.batchLookupTimePeriod = 1, l1.servermapmanager.remote.maxRequestSentImmediately = 4, l1.shutdown.force.finalization = true, l1.shutdown.threadgroup.gracetime = 30000, l1.socket.connect.timeout = 10000, l1.socket.reconnect.waitInterval = 1000, l1.transactionmanager.completedAckFlushTimeout = 5000, l1.transactionmanager.folding.debug = false, l1.transactionmanager.folding.enabled = false, l1.transactionmanager.folding.lock.limit = 0, l1.transactionmanager.folding.object.limit = 0, l1.transactionmanager.logging.enabled = false, l1.transactionmanager.maxBatchSizeInKiloBytes = 128, l1.transactionmanager.maxOutstandingBatchSize = 8, l1.transactionmanager.maxPendingBatches = 88, l1.transactionmanager.maxSleepTimeBeforeHalt = 1024, l1.transactionmanager.strings.compress.enabled = true, l1.transactionmanager.strings.compress.logging.enabled = false, l1.transactionmanager.strings.compress.minSize = 512, l1.transactionmanager.timeoutForAckOnExit = 300, l2.dump.on.exception.timeout = 30, l2.enable.legacy.production.mode = false, l2.frs.compactor.lsnGap.maxLoad = 0.80, l2.frs.compactor.lsnGap.minLoad = 0.40, l2.healthcheck.l1.checkTime.enabled = true, l2.healthcheck.l1.checkTime.interval = 300000, l2.healthcheck.l1.checkTime.threshold = 300000, l2.healthcheck.l1.ping.enabled = true, l2.healthcheck.l1.ping.idletime = 5000, l2.healthcheck.l1.ping.interval = 1000, l2.healthcheck.l1.ping.probes = 3, l2.healthcheck.l1.socketConnect = true, l2.healthcheck.l1.socketConnectCount = 10, l2.healthcheck.l1.socketConnectTimeout = 5, l2.healthcheck.l2.checkTime.enabled = true, l2.healthcheck.l2.checkTime.interval = 300000, l2.healthcheck.l2.checkTime.threshold = 300000, l2.healthcheck.l2.ping.enabled = true, l2.healthcheck.l2.ping.idletime = 5000, l2.healthcheck.l2.ping.interval = 1000, l2.healthcheck.l2.ping.probes = 3, l2.healthcheck.l2.socketConnect = true, l2.healthcheck.l2.socketConnectCount = 10, l2.healthcheck.l2.socketConnectTimeout = 5, l2.l1reconnect.enabled = true, l2.l1reconnect.maxDelayedAcks = 16, l2.l1reconnect.sendWindow = 32, l2.l1reconnect.sendqueue.cap = 5000, l2.l1reconnect.timeout.millis = 5000, l2.l1rejoin.sleep.millis = 100, l2.lockmanager.greedy.lease.enabled = true, l2.lockmanager.greedy.lease.leaseTimeInMillis = 50, l2.lockmanager.greedy.locks.enabled = true, l2.logs.store = 1500, l2.nha.autoRestart = true, l2.nha.dirtydb.autoDelete = true, l2.nha.dirtydb.backup.enabled = true, l2.nha.dirtydb.rolling = 0, l2.nha.send.timeout.millis = 16000, l2.nha.tcgroupcomm.discovery.interval = 1000, l2.nha.tcgroupcomm.handshake.timeout = 5000, l2.nha.tcgroupcomm.reconnect.enabled = true, l2.nha.tcgroupcomm.reconnect.maxDelayedAcks = 16, l2.nha.tcgroupcomm.reconnect.sendWindow = 32, l2.nha.tcgroupcomm.reconnect.sendqueue.cap = 5000, l2.nha.tcgroupcomm.reconnect.timeout = 5000, l2.objectmanager.dgc.inline.cleanup.delaySeconds = 0, l2.objectmanager.dgc.inline.intervalInSeconds = 10, l2.objectmanager.dgc.inline.maxObjects = 10000, l2.objectmanager.dgc.throttle.requestsPerThrottle = 1000, l2.objectmanager.dgc.throttle.timeInMillis = 0, l2.objectmanager.maxTxnsInTxnObjectGrouping = 10, l2.objectmanager.objectrequest.logging.enabled = false, l2.objectmanager.objectrequest.split.size = 500, l2.objectmanager.passive.sync.batch.size = 500, l2.objectmanager.passive.sync.message.maxSizeInMegaBytes = 10, l2.objectmanager.passive.sync.throttle.maxPendingMessages = 10, l2.objectmanager.passive.sync.throttle.timeInMillis = 0, l2.objectmanager.persistor.logging.enabled = false, l2.objectmanager.request.logging.enabled = false, l2.offHeap.allocation.critical = 15000, l2.offHeap.allocation.critical.halt = true, l2.offHeap.allocation.slow = 1500, l2.offHeap.map.concurrency = 1, l2.offHeap.map.tableSize = 128, l2.operator.events.store = 100, l2.remotejmx.connect.timeout = 30000, l2.remotejmx.idletime = 5, l2.remotejmx.maxthreads = 50, l2.seda.evictionprocessorstage.sink.capacity = 1000, l2.seda.local.cache.invalidations.sink.capacity = 5000, l2.seda.local.cache.transaction.complete.sink.capacity = 5000, l2.seda.local.cache.transaction.complete.threads = 8, l2.seda.query.threads = 4, l2.seda.search.threads = 16, l2.seda.stage.sink.capacity = -1, l2.serverarray.2pc.enabled = true, l2.servermap.eviction.broadcast.maxkeys = 10000, l2.servermap.eviction.clientObjectReferences.refresh.interval = 60000, l2.startuplock.retries.enabled = false, l2.transactionmanager.broadcast.durability.level = RELAYED, l2.transactionmanager.logging.enabled = false, l2.transactionmanager.logging.printBroadcastStats = false, l2.transactionmanager.logging.printCommits = false, l2.transactionmanager.logging.printStats = true, l2.transactionmanager.logging.verbose = false, l2.transactionmanager.passive.throttle.enabled = true, l2.transactionmanager.passive.throttle.maxSleepSeconds = 5, l2.transactionmanager.passive.throttle.threshold = 20000, lock.statistics.enabled = false, logging.longgc.threshold = 8000, logging.maxBackups = 20, logging.maxLogFileSize = 512, management.rest.enabled = true, memory.monitor.forcebasic = false, net.core.keepalive = false, net.core.tcpnodelay = true, offHeapFileSystem.file.maxDataPageSize = 262144, offHeapFilesystem.chm.segments = 4, offHeapFilesystem.file.blockSize = 8192, search.lucene.indexes.per.cache = 4, search.lucene.max.boolean.clauses = 1024, search.lucene.max.buffer = 16.0, search.lucene.use.offHeap.directory = false, search.lucene.use.ram.directory = false, search.passive.max.chunk = 2097152, search.passive.max.pending = 8, session.debug.invalidate = false, session.debug.sessions = false, session.invalidator.sleep = 300, stats.printer.intervalInMillis = 5000, tc.bytebuffer.common.pool.maxcount = 3000, tc.bytebuffer.pooling.enabled = true, tc.bytebuffer.threadlocal.pool.maxcount = 2000, tc.config.getFromSource.timeout = 30000, tc.config.total.timeout = 300000, tc.management.mbeans.enabled = true, tc.management.test.mbeans.enabled = false, tc.messages.grouping.enabled = true, tc.messages.grouping.maxSizeKiloBytes = 1024, tc.messages.packup.enabled = true, tc.stage.monitor.delay = 5000, tc.stage.monitor.enabled = false, tc.time.sync.threshold = 30, tc.transport.handshake.timeout = 10000, tcm.monitor.delay = 5, tcm.monitor.enabled = false, toolkit.bulkload.logging = false, toolkit.bulkload.minbatchbytesize = 5242880, toolkit.bulkload.throttle.threshold = 10485760, toolkit.bulkload.throttle.timeInmillis = 600, version.compatibility.check = true }
+2016-12-21 13:32:08,346 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Log file: '/home/colaborador/ambiente_java/EAP-6.4-digital/bin/logs-127.0.1.1/terracotta-client.log'.
+2016-12-21 13:32:08,348 [http-/0.0.0.0:8080-1] INFO com.tc.logging.TCLogging - All Java System Properties for this Terracotta instance:
+========================================================================
+JVM arguments: [-Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+, -Xms1024m, -Xmx1024m, -XX:MaxPermSize=2048m, -Dorg.jboss.resolver.warning=true, -Djava.net.preferIPv4Stack=true, -Dsun.rmi.dgc.client.gcInterval=3600000, -Dsun.rmi.dgc.server.gcInterval=3600000, -Djboss.modules.system.pkgs=org.jboss.byteman, -Djava.awt.headless=true, -Dorg.jboss.boot.log.file=/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log/boot.log, -Dlogging.configuration=file:/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/logging.properties, -Djboss.home.dir=/home/colaborador/ambiente_java/EAP-6.4-digital, -Dorg.jboss.logmanager.nocolor=true, -Djboss.bind.address.management=localhost, -Dfile.encoding=UTF-8]
+___terracotta_jvm_uuid                                             : 2d8d6b66-85ca-4721-9a3a-db461555a70f
+awt.toolkit                                                        : sun.awt.X11.XToolkit
+br.com.hdi.digital.ha.datasources                                  : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/ha-datasources.properties
+br.com.hdi.digital.legacy                                          : /home/colaborador/ambiente_java/EAP-6.4-digital/modules/hdi_digital/properties/main/hdi-legacy.properties
+br.com.hdi.digital.security.environment                            : /home/colaborador/ambiente_java/EAP-6.4-digital/modules/hdi_digital/properties/main/hdi-security-environment.properties
+catalina.home                                                      : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/tmp
+file.encoding                                                      : UTF-8
+file.encoding.pkg                                                  : sun.io
+file.separator                                                     : /
+java.awt.graphicsenv                                               : sun.awt.X11GraphicsEnvironment
+java.awt.headless                                                  : true
+java.awt.printerjob                                                : sun.print.PSPrinterJob
+java.class.path                                                    : /home/colaborador/ambiente_java/EAP-6.4-digital/jboss-modules.jar
+java.class.version                                                 : 51.0
+java.endorsed.dirs                                                 : /opt/jdk1.7.0_80/jre/lib/endorsed
+java.ext.dirs                                                      : /opt/jdk1.7.0_80/jre/lib/ext:/usr/java/packages/lib/ext
+java.home                                                          : /opt/jdk1.7.0_80/jre
+java.io.tmpdir                                                     : /tmp
+java.library.path                                                  : /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+java.naming.factory.url.pkgs                                       : org.jboss.as.naming.interfaces:org.jboss.ejb.client.naming
+java.net.preferIPv4Stack                                           : true
+java.protocol.handler.pkgs                                         : org.jboss.net.protocol|org.jboss.vfs.protocol
+java.runtime.name                                                  : Java(TM) SE Runtime Environment
+java.runtime.version                                               : 1.7.0_80-b15
+java.specification.name                                            : Java Platform API Specification
+java.specification.vendor                                          : Oracle Corporation
+java.specification.version                                         : 1.7
+java.util.logging.manager                                          : org.jboss.logmanager.LogManager
+java.vendor                                                        : Oracle Corporation
+java.vendor.url                                                    : http://java.oracle.com/
+java.vendor.url.bug                                                : http://bugreport.sun.com/bugreport/
+java.version                                                       : 1.7.0_80
+java.vm.info                                                       : mixed mode
+java.vm.name                                                       : Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name                                         : Java Virtual Machine Specification
+java.vm.specification.vendor                                       : Oracle Corporation
+java.vm.specification.version                                      : 1.7
+java.vm.vendor                                                     : Oracle Corporation
+java.vm.version                                                    : 24.80-b11
+javax.management.builder.initial                                   : org.jboss.as.jmx.PluggableMBeanServerBuilder
+javax.xml.datatype.DatatypeFactory                                 : __redirected.__DatatypeFactory
+javax.xml.parsers.DocumentBuilderFactory                           : __redirected.__DocumentBuilderFactory
+javax.xml.parsers.SAXParserFactory                                 : __redirected.__SAXParserFactory
+javax.xml.stream.XMLEventFactory                                   : __redirected.__XMLEventFactory
+javax.xml.stream.XMLInputFactory                                   : __redirected.__XMLInputFactory
+javax.xml.stream.XMLOutputFactory                                  : __redirected.__XMLOutputFactory
+javax.xml.transform.TransformerFactory                             : __redirected.__TransformerFactory
+javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema: __redirected.__SchemaFactory
+javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom    : __redirected.__XPathFactory
+jboss.bind.address                                                 : localhost
+jboss.bind.address.management                                      : localhost
+jboss.home.dir                                                     : /home/colaborador/ambiente_java/EAP-6.4-digital
+jboss.host.name                                                    : campinas
+jboss.i18n.generate-proxies                                        : true
+jboss.modules.dir                                                  : /home/colaborador/ambiente_java/EAP-6.4-digital/modules
+jboss.modules.system.pkgs                                          : org.jboss.byteman
+jboss.node.name                                                    : campinas
+jboss.qualified.host.name                                          : campinas
+jboss.server.base.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone
+jboss.server.config.dir                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration
+jboss.server.data.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/data
+jboss.server.deploy.dir                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/data/content
+jboss.server.log.dir                                               : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log
+jboss.server.name                                                  : campinas
+jboss.server.persist.config                                        : true
+jboss.server.temp.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/tmp
+line.separator                                                     : 
+
+logging.configuration                                              : file:/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/logging.properties
+module.path                                                        : /home/colaborador/ambiente_java/EAP-6.4-digital/modules
+org.apache.catalina.connector.URI_ENCODING                         : UTF-8
+org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING   : true
+org.apache.xml.security.ignoreLineBreaks                           : true
+org.jboss.boot.log.file                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log/boot.log
+org.jboss.logmanager.nocolor                                       : true
+org.jboss.resolver.warning                                         : true
+org.jboss.security.context.ThreadLocal                             : true
+org.xml.sax.driver                                                 : __redirected.__XMLReaderFactory
+os.arch                                                            : amd64
+os.name                                                            : Linux
+os.version                                                         : 4.4.0-53-generic
+path.separator                                                     : :
+program.name                                                       : JBossTools: Red Hat JBoss EAP 6.1+
+sun.arch.data.model                                                : 64
+sun.boot.class.path                                                : /opt/jdk1.7.0_80/jre/lib/resources.jar:/opt/jdk1.7.0_80/jre/lib/rt.jar:/opt/jdk1.7.0_80/jre/lib/sunrsasign.jar:/opt/jdk1.7.0_80/jre/lib/jsse.jar:/opt/jdk1.7.0_80/jre/lib/jce.jar:/opt/jdk1.7.0_80/jre/lib/charsets.jar:/opt/jdk1.7.0_80/jre/lib/jfr.jar:/opt/jdk1.7.0_80/jre/classes
+sun.boot.library.path                                              : /opt/jdk1.7.0_80/jre/lib/amd64
+sun.cpu.endian                                                     : little
+sun.cpu.isalist                                                    : 
+sun.desktop                                                        : gnome
+sun.io.unicode.encoding                                            : UnicodeLittle
+sun.java.command                                                   : org.jboss.modules.Main -mp /home/colaborador/ambiente_java/EAP-6.4-digital/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=/home/colaborador/ambiente_java/EAP-6.4-digital/standalone
+sun.java.launcher                                                  : SUN_STANDARD
+sun.jnu.encoding                                                   : UTF-8
+sun.management.compiler                                            : HotSpot 64-Bit Tiered Compilers
+sun.net.client.defaultConnectTimeout                               : 30000
+sun.net.client.defaultReadTimeout                                  : 30000
+sun.nio.ch.bugLevel                                                : 
+sun.os.patch.level                                                 : unknown
+sun.rmi.dgc.client.gcInterval                                      : 3600000
+sun.rmi.dgc.server.gcInterval                                      : 3600000
+tc.active                                                          : true
+tc.dso.globalmode                                                  : false
+user.country                                                       : US
+user.country.format                                                : BR
+user.dir                                                           : /home/colaborador/ambiente_java/EAP-6.4-digital/bin
+user.home                                                          : /home/colaborador
+user.language                                                      : en
+user.language.format                                               : pt
+user.name                                                          : colaborador
+user.timezone                                                      : America/Sao_Paulo
+========================================================================
+2016-12-21 13:32:08,365 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-21 13:32:08,386 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-21 13:32:08,492 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Terracotta license loaded from resource /terracotta-license.key
+Date of Issue: 2013-03-28
+License Type: Commercial
+License Number: 2023162 Dev and Testing
+Licensee: HDI Seguros
+Product: Ehcache
+Edition: FX
+Capabilities: DCV2, TMC, authentication, ehcache, ehcache offheap, operator console, search, server array offheap, server striping
+Max Client Count: 2
+ehcache.maxOffHeap: 200G
+terracotta.serverArray.maxOffHeap: 200G
+
+2016-12-21 13:32:08,522 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Connection components don't need Active Server Array. Using EnterpriseNonAADSOClientBuilder
+2016-12-21 13:32:08,541 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-21 13:32:08,543 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-21 13:32:08,546 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-21 13:32:08,557 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-21 13:32:08,560 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-21 13:32:08,566 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Server: http://localhost:9510/version returned server version = 4.3.2.2.15
+2016-12-21 13:32:08,572 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get L1 Reconnect Properties from http://localhost:9510/l1reconnectproperties
+2016-12-21 13:32:08,598 [http-/0.0.0.0:8080-1] INFO com.tc.object.ApplicatorDNAEncodingImpl - Compressed String constructor not present
+2016-12-21 13:32:08,656 [http-/0.0.0.0:8080-1] INFO com.tc.net.core.TCCommImpl - Comm Worker Threads NOT requested
+2016-12-21 13:32:08,664 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker Started
+2016-12-21 13:32:08,708 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.tcm.CommunicationsManager - HealthCheck CallbackPort Listener started at /0.0.0.0:43475
+2016-12-21 13:32:08,789 [http-/0.0.0.0:8080-1] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[-1]: com.tc.object.tx.RemoteTransactionManagerImpl null
+2016-12-21 13:32:08,856 [http-/0.0.0.0:8080-1] INFO com.tc.runtime.TCMemoryManagerImpl - GarbageCollector: PS Scavenge
+2016-12-21 13:32:08,857 [http-/0.0.0.0:8080-1] INFO com.tc.runtime.TCMemoryManagerImpl - GarbageCollector: PS MarkSweep
+2016-12-21 13:32:08,963 [L1Management JMX registration] INFO com.tc.management.L1Management - Terracotta JMX connector available at[service:jmx:terracotta://localhost]
+2016-12-21 13:32:09,027 [http-/0.0.0.0:8080-1] INFO com.tc.net.core.TCConnection - Comms Message Batching enabled
+2016-12-21 13:32:09,033 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ClientMessageTransport - ConnectionID(-1.ffffffffffffffffffffffffffffffff.2d8d6b66-85ca-4721-9a3a-db461555a70f-15921fef1be.USER)[]: Attaching new connection: com.tc.net.core.TCConnectionImpl@306669138: connected: true, closed: false local=127.0.0.1:38760 remote=127.0.0.1:9510 connect=[Wed Dec 21 13:32:09 BRST 2016] idle=4ms [0 read, 0 write]
+2016-12-21 13:32:09,141 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl. DSO Client - Health monitoring agent started for localhost:9510
+2016-12-21 13:32:09,147 [L1_L2:TCComm Main Selector Thread_R (listen 0.0.0.0:43475)] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl. DSO Client - HealthCheckCallbackPort verification PASSED for localhost:9510(callbackport: 9510)
+2016-12-21 13:32:09,188 [http-/0.0.0.0:8080-1] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: CHANNEL_OPENED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@1757409930[type = CHANNEL_OPENED_EVENT, timestamp = Wed Dec 21 13:32:09 BRST 2016, channel  = ChannelID=[922]:127.0.0.1:38760 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-21 13:32:09,192 [L1_L2:TCComm Main Selector Thread_R (listen 0.0.0.0:43475)] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: TRANSPORT_CONNECTED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@682268904[type = TRANSPORT_CONNECTED_EVENT, timestamp = Wed Dec 21 13:32:09 BRST 2016, channel  = ChannelID=[922]:127.0.0.1:38760 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-21 13:32:09,194 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[922]: Connected: Unpausing from PAUSED RemoteNode : GroupID[0]. Disconnect count : 1
+2016-12-21 13:32:09,204 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[922]: Sending handshake message with oids 0 validate 0
+2016-12-21 13:32:09,216 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[922]: Received StripeIDMap size:1 from GroupID[0]
+2016-12-21 13:32:09,216 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[922]: Received Handshake ack from remote node :GroupID[0]
+2016-12-21 13:32:09,237 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Connection successfully established to server at 127.0.0.1:9510
+2016-12-21 13:32:09,238 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Connection successfully established to server at 127.0.0.1:9510
+2016-12-21 13:32:09,240 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.RemoteObjectManager - ClientID[922]: Sending Pending LookUp Requests lookups 0 roots 0
+2016-12-21 13:32:09,240 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.RemoteServerMapManager - ClientID[922]: Sending outstanding servermap requests, num msgs: 0
+2016-12-21 13:32:09,244 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.management.remote.protocol.terracotta.TunnelingEventHandler - Client JMX server ready; sending notification to L2 server
+2016-12-21 13:32:09,245 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.platform.rejoin.RejoinManagerImpl - This node joined the cluster - rejoinEnabled: true newNodeId: ClientID[922]
+2016-12-21 13:32:09,246 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.cluster.DsoClusterImpl - NODE_JOINED ClientID[922] rejoinHappened false
+2016-12-21 13:32:09,261 [http-/0.0.0.0:8080-1] INFO com.tc.management.remote.protocol.terracotta.TunneledDomainManager - Sending current registered tunneled domains to L2 server to set up the tunneled connections for the mbeans that match.
+2016-12-21 13:32:09,899 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Configuration for clustered cache manager HDI_DIGITAL_2_0_AUTOMACAO:
+<ehcache     
+    name="HDI_DIGITAL_2_0_AUTOMACAO"     
+    updateCheck="true">    
+    <diskStore         
+        path="java.io.tmpdir"/>    
+    <defaultCache         
+        eternal="true"         
+        maxEntriesLocalHeap="0"/>    
+    <terracottaConfig         
+        url="localhost:9510"         
+        rejoin="true"/>
+</ehcache>
+
+2016-12-21 13:32:10,072 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named TesteAutomatizado:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="TesteAutomatizado"     
+    eternal="true"     
+    maxEntriesLocalHeap="100"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop             
+            timeoutMillis="15000"/>    
+    </terracotta>
+</cache>
+
+2016-12-21 13:35:08,905 [ClientLockManager LockGC] INFO com.tc.object.locks.ClientLockManager - ClientID[922]: Lock GC collected 28 garbage locks
+2016-12-21 13:37:59,881 [TC Memory Monitor] INFO com.tc.runtime.TCMemoryManagerImpl - Sleep time changed to : 1200
+2016-12-21 16:40:20,288 [L1 VM Shutdown Hook] INFO com.terracottatech.tsa - Running L1 VM shutdown hook
+2016-12-21 16:40:20,289 [CommonShutDownHook] INFO com.terracottatech.tsa - L1 Exiting...
+2016-12-21 16:40:20,317 [L1 VM Shutdown Hook] INFO com.terracottatech.tsa - shuting down Terracotta Client hook=true force=false
+2016-12-21 16:40:20,322 [L1 VM Shutdown Hook] INFO com.terracotta.toolkit.factory.impl.ToolkitNotifierFactoryImpl - Shutting Down Notifier Thread Pool
+2016-12-21 16:40:21,293 [L1 VM Shutdown Hook] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: stop(): took 5 millis to complete
+2016-12-21 16:40:21,307 [L1 VM Shutdown Hook] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - Connection to [localhost:9510] CLOSED. Health Monitoring for this node is now disabled.
+2016-12-21 16:40:21,313 [L1 VM Shutdown Hook] INFO com.tc.net.protocol.transport.ClientConnectionEstablisher - waiting for connection establisher to finish null
+2016-12-21 16:40:21,315 [L1 VM Shutdown Hook] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: CHANNEL_CLOSED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@1310392400[type = CHANNEL_CLOSED_EVENT, timestamp = Wed Dec 21 16:40:21 BRST 2016, channel  = ChannelID[NULL_ID, Status:CLOSED]:127.0.0.1:38760 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-21 16:40:24,229 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:29,229 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:34,230 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:39,230 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:47,640 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:52,641 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:40:57,642 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:41:02,642 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:41:07,642 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:41:12,642 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-21 16:41:12,666 [ServerService Thread Pool -- 90] INFO com.terracotta.toolkit.factory.impl.ToolkitNotifierFactoryImpl - Shutting Down Notifier Thread Pool
+2016-12-21 16:41:12,666 [ServerService Thread Pool -- 90] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: stop(): took 0 millis to complete
+2016-12-21 16:41:14,014 [ServerService Thread Pool -- 90] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: stop(): took 0 millis to complete
+2016-12-21 16:41:14,014 [ServerService Thread Pool -- 90] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker STOP requested
+2016-12-21 16:41:14,016 [cluster-events-processor-0] ERROR com.tc.cluster.DsoClusterImpl - Problem firing the cluster event : Node Left - DsoClusterEvent:ClientID[919]
+java.lang.NullPointerException
+	at com.tcclient.cluster.DsoNodeImpl.getIp(DsoNodeImpl.java:56)
+	at com.terracotta.toolkit.cluster.TerracottaNode.<init>(TerracottaNode.java:34)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterEventImpl.<init>(TerracottaClusterInfo.java:246)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterEventImpl.<init>(TerracottaClusterInfo.java:242)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo.translateEvent(TerracottaClusterInfo.java:138)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo.access$100(TerracottaClusterInfo.java:46)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterListenerWrapper.nodeLeft(TerracottaClusterInfo.java:165)
+	at com.tc.cluster.DsoClusterImpl.notifyDsoClusterListener(DsoClusterImpl.java:427)
+	at com.tc.object.handler.ClusterInternalEventsHandler$1.run(ClusterInternalEventsHandler.java:103)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2016-12-21 16:41:14,016 [WorkerThread(cluster_events_stage, 0)] WARN com.tc.object.handler.ClusterInternalEventsHandler - clusterEventExecutor interrupted while waiting for result context :ClusterInternalEventsContext [eventType=Node Left, event=DsoClusterEvent:ClientID[919], dsoClusterListener=ClusterListenerWrapper{listener=com.terracotta.toolkit.nonstop.NonStopClusterListener@fc2ea9d}]
+java.lang.InterruptedException
+	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:400)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:199)
+	at com.tc.object.handler.ClusterInternalEventsHandler.handleEvent(ClusterInternalEventsHandler.java:112)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:188)
+2016-12-21 16:41:14,019 [ServerService Thread Pool -- 90] INFO com.terracottatech.tsa - Shutting down TaskRunner
+2016-12-21 16:41:14,052 [WorkerThread(cluster_membership_event_stage, 0)] ERROR com.tc.object.DistributedObjectClient - Thread:Thread[WorkerThread(cluster_membership_event_stage, 0),5,TC Thread Group] got an uncaught exception. calling CallbackOnExitDefaultHandlers.
+com.tc.exception.TCRuntimeException: Uncaught exception in stage
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:211)
+Caused by: java.lang.NullPointerException
+	at com.tcclient.cluster.DsoNodeImpl.getIp(DsoNodeImpl.java:56)
+	at com.terracotta.toolkit.cluster.TerracottaNode.<init>(TerracottaNode.java:34)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterEventImpl.<init>(TerracottaClusterInfo.java:246)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterEventImpl.<init>(TerracottaClusterInfo.java:242)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo.translateEvent(TerracottaClusterInfo.java:138)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo.access$100(TerracottaClusterInfo.java:46)
+	at com.terracotta.toolkit.cluster.TerracottaClusterInfo$ClusterListenerWrapper.useOutOfBandNotification(TerracottaClusterInfo.java:188)
+	at com.tc.cluster.DsoClusterImpl.useOOBNotification(DsoClusterImpl.java:413)
+	at com.tc.cluster.DsoClusterImpl.fireEvent(DsoClusterImpl.java:398)
+	at com.tc.cluster.DsoClusterImpl.fireEventToAllListeners(DsoClusterImpl.java:331)
+	at com.tc.cluster.DsoClusterImpl.fireNodeLeft(DsoClusterImpl.java:340)
+	at com.tc.object.handler.ClusterMemberShipEventsHandler.handleClusterMembershipMessage(ClusterMemberShipEventsHandler.java:51)
+	at com.tc.object.handler.ClusterMemberShipEventsHandler.handleEvent(ClusterMemberShipEventsHandler.java:37)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:188)
+2016-12-21 16:41:14,053 [WorkerThread(cluster_membership_event_stage, 0)] ERROR com.terracottatech.tsa - LockManager not initialised still. LockInfo for threads cannot be updated
+2016-12-21 16:41:14,446 [WorkerThread(cluster_membership_event_stage, 0)] ERROR com.tc.logging.ThreadDumpHandler - Wed Dec 21 16:41:14 BRST 2016
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (24.80-b11 mixed mode):
+
+"TCThreadGroup last chance cleaner thread" Id=1131 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.tc.object.DistributedObjectClient$TCThreadGroupCleanerRunnable.run(DistributedObjectClient.java:1337)
+	at java.lang.Thread.run(Thread.java:745)
+
+"SIGTERM handler" Id=1127 BLOCKED on java.lang.Class@742d5bf3 owned by "Management Triggered Shutdown" Id=1060
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	at java.lang.Terminator$1.handle(Terminator.java:52)
+	at sun.misc.Signal$1.run(Signal.java:212)
+	at java.lang.Thread.run(Thread.java:745)
+
+"SIGTERM handler" Id=1125 BLOCKED on java.lang.Class@742d5bf3 owned by "Management Triggered Shutdown" Id=1060
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	at java.lang.Terminator$1.handle(Terminator.java:52)
+	at sun.misc.Signal$1.run(Signal.java:212)
+	at java.lang.Thread.run(Thread.java:745)
+
+"cluster-events-processor-1" Id=1121 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@4defea1b
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:359)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:942)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ServerService Thread Pool -- 91" Id=1074 BLOCKED on net.sf.ehcache.CacheManager@3a6fe5e8 owned by "ServerService Thread Pool -- 90" Id=1069
+	at net.sf.ehcache.CacheManager.shutdown(CacheManager.java:1523)
+	at net.sf.ehcache.constructs.web.ShutdownListener.contextDestroyed(ShutdownListener.java:76)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:3427)
+	at org.apache.catalina.core.StandardContext.stop(StandardContext.java:3939)
+	- locked <0x41f2ba96> (a org.apache.catalina.core.StandardContext)
+	at org.jboss.as.web.deployment.WebDeploymentService.doStop(WebDeploymentService.java:178)
+	at org.jboss.as.web.deployment.WebDeploymentService.access$100(WebDeploymentService.java:61)
+	at org.jboss.as.web.deployment.WebDeploymentService$2.run(WebDeploymentService.java:116)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+"ServerService Thread Pool -- 90" Id=1069 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.tc.object.DistributedObjectClient.shutdownResources(DistributedObjectClient.java:1248)
+	at com.tc.object.ClientShutdownManager.shutdown(ClientShutdownManager.java:133)
+	at com.tc.object.ClientShutdownManager.execute(ClientShutdownManager.java:85)
+	at com.tc.object.DistributedObjectClient.shutdownClient(DistributedObjectClient.java:1373)
+	at com.tc.object.DistributedObjectClient.shutdown(DistributedObjectClient.java:1118)
+	at com.terracotta.toolkit.express.ClientHandleImpl.shutdown(ClientHandleImpl.java:47)
+	at com.terracotta.toolkit.express.TerracottaInternalClientImpl.shutdown(TerracottaInternalClientImpl.java:181)
+	- locked <0x6876ee34> (a com.terracotta.toolkit.express.TerracottaInternalClientImpl)
+	at com.terracotta.toolkit.client.TerracottaToolkitCreator$TCL1Instance.shutdown(TerracottaToolkitCreator.java:268)
+	at com.terracotta.toolkit.TerracottaToolkit.shutdown(TerracottaToolkit.java:347)
+	- locked <0x3723bbab> (a com.terracotta.toolkit.EnterpriseTerracottaToolkit)
+	at com.terracotta.toolkit.NonStopToolkitImpl.shutdown(NonStopToolkitImpl.java:317)
+	at org.terracotta.modules.ehcache.ToolkitInstanceFactoryImpl.shutdown(ToolkitInstanceFactoryImpl.java:419)
+	at org.terracotta.modules.ehcache.store.TerracottaClusteredInstanceFactory.shutdown(TerracottaClusteredInstanceFactory.java:161)
+	at net.sf.ehcache.terracotta.ClusteredInstanceFactoryWrapper.shutdown(ClusteredInstanceFactoryWrapper.java:131)
+	at net.sf.ehcache.terracotta.TerracottaClient.shutdownClusteredInstanceFactoryWrapper(TerracottaClient.java:169)
+	at net.sf.ehcache.terracotta.TerracottaClient.shutdown(TerracottaClient.java:155)
+	- locked <0xaf5f3d5> (a net.sf.ehcache.terracotta.TerracottaClient)
+	at net.sf.ehcache.CacheManager.shutdown(CacheManager.java:1574)
+	- locked <0x3a6fe5e8> (a net.sf.ehcache.CacheManager)
+	at net.sf.ehcache.constructs.web.ShutdownListener.contextDestroyed(ShutdownListener.java:76)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:3427)
+	at org.apache.catalina.core.StandardContext.stop(StandardContext.java:3939)
+	- locked <0x327c8ac3> (a org.apache.catalina.core.StandardContext)
+	at org.jboss.as.web.deployment.WebDeploymentService.doStop(WebDeploymentService.java:178)
+	at org.jboss.as.web.deployment.WebDeploymentService.access$100(WebDeploymentService.java:61)
+	at org.jboss.as.web.deployment.WebDeploymentService$2.run(WebDeploymentService.java:116)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+"MSC Shutdown Thread" Id=10 WAITING on java.util.concurrent.CountDownLatch$Sync@e7a221a
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:834)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:994)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1303)
+	at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:236)
+	at org.jboss.msc.service.ServiceContainerImpl$ShutdownHookHolder$1$1.run(ServiceContainerImpl.java:136)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Management Triggered Shutdown" Id=1060 WAITING on java.lang.Thread@4c17a1bc
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:106)
+	at java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46)
+	at java.lang.Shutdown.runHooks(Shutdown.java:123)
+	at java.lang.Shutdown.sequence(Shutdown.java:167)
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	- locked <0x742d5bf3> (a java.lang.Class)
+	at java.lang.Runtime.exit(Runtime.java:109)
+	at java.lang.System.exit(System.java:962)
+	at org.jboss.as.server.operations.ServerShutdownHandler$1$1$1.run(ServerShutdownHandler.java:93)
+	at java.lang.Thread.run(Thread.java:745)
+
+"management-handler-thread - 1" Id=1059 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7454e062
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+"management-handler-thread - 1" Id=1057 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@70577d98
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+"task-runner-thread-62" Id=1038 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-61" Id=1028 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-60" Id=1016 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-59" Id=1011 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-58" Id=1003 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-52" Id=970 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-51" Id=965 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-50" Id=956 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-47" Id=951 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-46" Id=946 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-45" Id=943 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-40" Id=918 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-37" Id=913 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-26" Id=859 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-18" Id=825 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"NonStopExecutor thread-6" Id=786 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1f1668d4
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1079)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Statistics Thread-HDI_DIGITAL_2_0_DEV_AGENDAMENTO-1" Id=783 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@783c463d
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"clustered-entity-locking-thread" Id=782 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3d278c76
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"HDI_DIGITAL_2_0_DEV_AGENDAMENTO" Id=780 TIMED_WAITING on java.util.TaskQueue@6f76b657
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"wan-watchdog" Id=779 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5abd42ec
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Statistics Thread-toolkitDefaultCacheManager-062d05a5-1501-49e0-8a23-065c72ee99d2-1" Id=775 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3f74c27e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Job_Executor2" Id=774 WAITING on [I@a8cfebe
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at com.sun.jmx.remote.opt.util.ThreadService$ThreadServiceJob.run(ThreadService.java:223)
+	at com.sun.jmx.remote.opt.util.JobExecutor.run(JobExecutor.java:99)
+
+"Job_Executor1" Id=773 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2ea8715b
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.management.remote.protocol.terracotta.TunnelingMessageConnection.readMessage(TunnelingMessageConnection.java:75)
+	at com.sun.jmx.remote.generic.ServerSynchroMessageConnectionImpl$MessageReader.run(ServerSynchroMessageConnectionImpl.java:225)
+	at com.sun.jmx.remote.opt.util.ThreadService$ThreadServiceJob.run(ThreadService.java:248)
+	at com.sun.jmx.remote.opt.util.JobExecutor.run(JobExecutor.java:99)
+
+"Toolkit Weak Maps Cleaner Thread" Id=772 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.terracotta.toolkit.util.collections.WeakValueMapManager$CleanerRunnable.sleepForSomeTime(WeakValueMapManager.java:63)
+	at com.terracotta.toolkit.util.collections.WeakValueMapManager$CleanerRunnable.run(WeakValueMapManager.java:57)
+	at java.lang.Thread.run(Thread.java:745)
+
+"cluster-events-processor-0" Id=771 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@4defea1b
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:359)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:942)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Out of band notifier - Main" Id=769 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@34aa254b
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at com.tc.cluster.DsoClusterImpl$OutOfBandNotifier$1.run(DsoClusterImpl.java:507)
+	at java.lang.Thread.run(Thread.java:745)
+
+"WorkerThread(lock_recall_stage, 7, 0)" Id=766 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 6, 0)" Id=765 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 5, 0)" Id=764 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 4, 0)" Id=763 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 3, 0)" Id=762 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 2, 0)" Id=761 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 1, 0)" Id=760 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_recall_stage, 0, 0)" Id=759 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@e7679f0
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_object_stage, 0)" Id=758 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@43f82fb
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(management_stage, 0)" Id=757 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@65b02eea
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 7, 0)" Id=756 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 6, 0)" Id=755 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 5, 0)" Id=754 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 4, 0)" Id=753 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 3, 0)" Id=752 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 2, 0)" Id=751 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 1, 0)" Id=750 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(capacity_eviction_stage, 0, 0)" Id=749 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@11d838ce
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(resource_manager_stage, 0)" Id=748 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@a796589
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(lock_response_stage, 0)" Id=747 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@27f90abe
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(client_coordination_stage, 0)" Id=746 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4f305472
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(cluster_metadata_stage, 0)" Id=745 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6df830fb
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(jmxremote_tunnel_stage, 0)" Id=744 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4157e724
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_search_query_response_stage, 0)" Id=743 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@72080dff
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_invalidate_objects_stage, 0)" Id=742 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6ecf1ad5
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(cluster_events_stage, 0)" Id=741 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5eeacec8
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 7, 0)" Id=740 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 6, 0)" Id=739 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 5, 0)" Id=738 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 4, 0)" Id=737 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 3, 0)" Id=736 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 2, 0)" Id=735 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 1, 0)" Id=734 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(local_cache_transaction_complete_stage, 0, 0)" Id=733 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9addd27
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_search_result_response_stage, 0)" Id=732 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@75923067
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 7, 0)" Id=731 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 6, 0)" Id=730 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 5, 0)" Id=729 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 4, 0)" Id=728 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 3, 0)" Id=727 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 2, 0)" Id=726 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 1, 0)" Id=725 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(pinned_entry_fault_stage, 0, 0)" Id=724 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@50a7f67e
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_transaction_stage, 0)" Id=723 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4327f390
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(server_event_delivery_stage, 3, 3)" Id=722 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73e79561
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(server_event_delivery_stage, 2, 2)" Id=721 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@69004eb9
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(server_event_delivery_stage, 1, 1)" Id=720 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1330898a
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(server_event_delivery_stage, 0, 0)" Id=719 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5795ccdd
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_root_id_stage, 0)" Id=718 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2bbcee17
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(batch_txn_ack_stage, 0)" Id=717 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@b33e70
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(received_sync_write_transaction_ack_stage, 0)" Id=716 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@77c82b6b
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(object_id_request_response_stage, 0)" Id=715 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@769abb3c
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_server_map_response_stage, 0)" Id=714 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@287a9cf9
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(hydrate_message_stage, 0)" Id=713 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@9d7b432
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(cluster_membership_event_stage, 0)" Id=712 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@307743aa
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"WorkerThread(receive_transaction_complete_stage, 0)" Id=711 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@65fb66c1
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.tc.util.concurrent.TCLinkedBlockingQueue.poll(TCLinkedBlockingQueue.java:45)
+	at com.tc.async.impl.StageQueueImpl$SourceQueueImpl.poll(StageQueueImpl.java:298)
+	at com.tc.async.impl.StageImpl$WorkerThread.run(StageImpl.java:182)
+
+"Thread-264" Id=710 WAITING on com.tc.management.remote.protocol.terracotta.TunnelingEventHandler@5c173d35
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at com.tc.management.remote.protocol.terracotta.TunnelingEventHandler.accept(TunnelingEventHandler.java:125)
+	at com.tc.management.remote.protocol.terracotta.TunnelingMessageConnectionServer.accept(TunnelingMessageConnectionServer.java:44)
+	at com.sun.jmx.remote.generic.SynchroMessageConnectionServerImpl.accept(SynchroMessageConnectionServerImpl.java:87)
+	at javax.management.remote.generic.GenericConnectorServer$Receiver.run(GenericConnectorServer.java:380)
+
+"Timer-6" Id=709 WAITING on java.util.TaskQueue@79b391ce
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"TC Memory Monitor" Id=706 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.tc.runtime.TCMemoryManagerImpl$MemoryMonitor.run(TCMemoryManagerImpl.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+
+"task-runner-thread-1" Id=702 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@7ff6bfc6
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:1125)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"HealthChecker" Id=699 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Thread.java:340)
+	at com.tc.util.concurrent.ThreadUtil.reallySleep(ThreadUtil.java:43)
+	at com.tc.util.concurrent.ThreadUtil.reallySleep(ThreadUtil.java:29)
+	at com.tc.net.protocol.transport.ConnectionHealthCheckerImpl$HealthCheckerMonitorThreadEngine.run(ConnectionHealthCheckerImpl.java:240)
+	at java.lang.Thread.run(Thread.java:745)
+
+"L1_L2:TCComm Main Selector Thread_W (listen 0.0.0.0:44668)" Id=698 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:79)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	- locked <0x134b116a> (a sun.nio.ch.Util$2)
+	- locked <0x5cc3155a> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x3ef9d8b7> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at com.tc.net.core.CoreNIOServices$CommThread.selectLoop(CoreNIOServices.java:565)
+	at com.tc.net.core.CoreNIOServices$CommThread.run(CoreNIOServices.java:308)
+
+"L1_L2:TCComm Main Selector Thread_R (listen 0.0.0.0:44668)" Id=697 RUNNABLE (in native)
+	at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+	at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+	at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:79)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:87)
+	- locked <0x5911c14> (a sun.nio.ch.Util$2)
+	- locked <0x576b6b81> (a java.util.Collections$UnmodifiableSet)
+	- locked <0x1bd12bba> (a sun.nio.ch.EPollSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:98)
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:102)
+	at com.tc.net.core.CoreNIOServices$CommThread.selectLoop(CoreNIOServices.java:565)
+	at com.tc.net.core.CoreNIOServices$CommThread.run(CoreNIOServices.java:308)
+
+"SampledCounterManager Timer" Id=696 TIMED_WAITING on java.util.TaskQueue@418dce9a
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"toolkitDefaultCacheManager-062d05a5-1501-49e0-8a23-065c72ee99d2" Id=691 WAITING on java.util.TaskQueue@44f70215
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"Job_Executor2" Id=690 TIMED_WAITING on [I@195b2a92
+	at java.lang.Object.wait(Native Method)
+	at com.sun.jmx.remote.opt.util.JobExecutor.run(JobExecutor.java:127)
+
+"Job_Executor1" Id=689 TIMED_WAITING on [I@3047e43f
+	at java.lang.Object.wait(Native Method)
+	at com.sun.jmx.remote.opt.util.JobExecutor.run(JobExecutor.java:127)
+
+"http-/0.0.0.0:8080-6" Id=682 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@36af1433
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"http-/0.0.0.0:8080-5" Id=680 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@20573c51
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Statistics Thread-HDI_DIGITAL_2_0_AUTOMACAO-1" Id=664 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@35c12a88
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"wan-watchdog" Id=660 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@69266fef
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"WorkerThread(cluster_membership_event_stage, 0)" Id=596 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:446)
+	at com.tc.util.runtime.ThreadDumpUtil.getThreadDump(ThreadDumpUtil.java:149)
+	at com.tc.logging.ThreadDumpHandler.callbackOnExit(ThreadDumpHandler.java:39)
+	at com.tc.lang.ThrowableHandlerImpl.handleDefaultException(ThrowableHandlerImpl.java:195)
+	- locked <0x3fd9fcdc> (a java.lang.Object)
+	at com.tc.lang.ThrowableHandlerImpl.handleThrowable(ThrowableHandlerImpl.java:145)
+	at com.tc.lang.TCThreadGroup.uncaughtException(TCThreadGroup.java:42)
+	at java.lang.Thread.dispatchUncaughtException(Thread.java:1986)
+
+"HealthChecker" Id=583 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at java.lang.Thread.sleep(Thread.java:340)
+	at com.tc.util.concurrent.ThreadUtil.reallySleep(ThreadUtil.java:43)
+	at com.tc.util.concurrent.ThreadUtil.reallySleep(ThreadUtil.java:29)
+	at com.tc.net.protocol.transport.ConnectionHealthCheckerImpl$HealthCheckerMonitorThreadEngine.run(ConnectionHealthCheckerImpl.java:240)
+	at java.lang.Thread.run(Thread.java:745)
+
+"wan-watchdog" Id=559 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@457f13f4
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"WorkerThread(cluster_membership_event_stage, 0)" Id=491 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at com.tc.object.DistributedObjectClient.shutdownResources(DistributedObjectClient.java:1248)
+	at com.tc.object.ClientShutdownManager.shutdown(ClientShutdownManager.java:133)
+	at com.tc.object.ClientShutdownManager.execute(ClientShutdownManager.java:85)
+	at com.tc.object.DistributedObjectClient.shutdownClient(DistributedObjectClient.java:1373)
+	at com.tc.object.DistributedObjectClient.shutdown(DistributedObjectClient.java:1118)
+	at com.tc.object.DistributedObjectClientFactory$1.call(DistributedObjectClientFactory.java:115)
+	at com.tc.object.DistributedObjectClientFactory$1.call(DistributedObjectClientFactory.java:111)
+	at com.tc.lang.L1ThrowableHandler.exit(L1ThrowableHandler.java:38)
+	- locked <0x27cf0091> (a com.tc.lang.L1ThrowableHandler)
+	at com.tc.lang.ThrowableHandlerImpl.exit(ThrowableHandlerImpl.java:221)
+	at com.tc.lang.ThrowableHandlerImpl.handleThrowable(ThrowableHandlerImpl.java:151)
+	at com.tc.lang.TCThreadGroup.uncaughtException(TCThreadGroup.java:42)
+	at java.lang.Thread.dispatchUncaughtException(Thread.java:1986)
+
+"wan-watchdog" Id=455 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@2e4343a8
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"wan-watchdog" Id=353 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@420ee252
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"wan-watchdog" Id=252 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@5f2c975f
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Attach Listener" Id=249 RUNNABLE
+
+"http-/0.0.0.0:8080-4" Id=159 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@68860ec9
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"http-/0.0.0.0:8080-3" Id=158 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@3934e3bb
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"http-/0.0.0.0:8080-2" Id=157 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@3f532754
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"pool-8-thread-1" Id=156 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@6c3b1c46
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"pool-7-thread-1" Id=155 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1cbd6f2d
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2082)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"AsyncAppender-Dispatcher-Thread-102" Id=145 WAITING on java.util.ArrayList@58ce0218
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.log4j.AsyncAppender$Dispatcher.run(AsyncAppender.java:548)
+	at java.lang.Thread.run(Thread.java:745)
+
+"AsyncAppender-Dispatcher-Thread-101" Id=144 WAITING on java.util.ArrayList@3ceba334
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.log4j.AsyncAppender$Dispatcher.run(AsyncAppender.java:548)
+	at java.lang.Thread.run(Thread.java:745)
+
+"AsyncAppender-Dispatcher-Thread-100" Id=143 WAITING on java.util.ArrayList@1227ca2b
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.log4j.AsyncAppender$Dispatcher.run(AsyncAppender.java:548)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Buffer reclamation thread" Id=113 WAITING on java.lang.ref.ReferenceQueue$Lock@7249d65c
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at org.xnio.ByteBufferSlicePool$QueueThread.run(ByteBufferSlicePool.java:195)
+
+"JCA PoolFiller" Id=92 WAITING on java.util.LinkedList@4d986ca2
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.jboss.jca.core.connectionmanager.pool.mcp.PoolFiller.run(PoolFiller.java:106)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Transaction Reaper Worker 0" Id=91 WAITING on java.util.LinkedList@5204277a
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at com.arjuna.ats.arjuna.coordinator.TransactionReaper.waitForCancellations(TransactionReaper.java:321)
+	at com.arjuna.ats.internal.arjuna.coordinator.ReaperWorkerThread.run(ReaperWorkerThread.java:65)
+
+"Transaction Reaper" Id=90 TIMED_WAITING on com.arjuna.ats.arjuna.coordinator.TransactionReaper@ebbe4a7
+	at java.lang.Object.wait(Native Method)
+	at com.arjuna.ats.internal.arjuna.coordinator.ReaperThread.run(ReaperThread.java:90)
+
+"Periodic Recovery" Id=85 TIMED_WAITING on java.lang.Object@51a0977f
+	at java.lang.Object.wait(Native Method)
+	at com.arjuna.ats.internal.arjuna.recovery.PeriodicRecovery.doPeriodicWait(PeriodicRecovery.java:676)
+	at com.arjuna.ats.internal.arjuna.recovery.PeriodicRecovery.run(PeriodicRecovery.java:396)
+
+"Transaction Expired Entry Monitor" Id=89 TIMED_WAITING on com.arjuna.ats.internal.arjuna.recovery.ExpiredEntryMonitor@63a3cb7
+	at java.lang.Object.wait(Native Method)
+	at com.arjuna.ats.internal.arjuna.recovery.ExpiredEntryMonitor.run(ExpiredEntryMonitor.java:190)
+
+"http-/0.0.0.0:8080-1" Id=88 WAITING on org.apache.tomcat.util.net.JIoEndpoint$Worker@59681592
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.await(JIoEndpoint.java:881)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:907)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ContainerBackgroundProcessor[StandardEngine[jboss.web]]" Id=84 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1563)
+	at java.lang.Thread.run(Thread.java:745)
+
+"DestroyJavaVM" Id=21 RUNNABLE
+
+"ServerDeploymentRepository-temp-threads - 1" Id=19 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@40605219
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1079)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:807)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+
+"MSC service thread 1-8" Id=18 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-6" Id=16 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-7" Id=17 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-5" Id=15 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-4" Id=14 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-3" Id=13 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-2" Id=12 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"MSC service thread 1-1" Id=11 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@73ae0853
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Reference Reaper" Id=8 WAITING on java.lang.ref.ReferenceQueue$Lock@26a4bc7a
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at org.jboss.modules.ref.References$ReaperThread.run(References.java:68)
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@9520168
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:135)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:151)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@66da579f
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:503)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:133)
+
+
+[dump] 
+***********************************************************************************
+com.tc.object.RemoteServerMapManagerImplGroup Id: GroupID[0]
+[dump] --> outstandingRequests count: 0
+[dump] 
+***********************************************************************************
+com.tc.object.ClientObjectManagerImpl
+[dump] --> roots Map: 10
+[dump] --> idToManaged size: 789
+[dump] --> pojoToManaged size: 0
+[dump] 
+***********************************************************************************
+ClientLockManagerImpl [4 locks]
+[dump] --> ClientLockImpl : LongLockID(5606160500805636110)
+GC Cycle Count : 127
+Greediness : GREEDY_READ
+State:
+
+[dump] --> ClientLockImpl : StringLockID(toolkit-object-lock-prefix|READ_WRITE_LOCK|__entity_cache_manager_lock@HDI_DIGITAL_2_0_AUTOMACAO)
+GC Cycle Count : 127
+Greediness : GREEDY_READ
+State:
+	LockHold : Thread(clustered-entity-locking-thread) ID[3] : READ flushInProgress : false
+
+[dump] --> ClientLockImpl : LongLockID(5605755874388301281)
+GC Cycle Count : 127
+Greediness : GREEDY_READ
+State:
+
+[dump] --> ClientLockImpl : StringLockID(toolkit-object-lock-prefix|READ_WRITE_LOCK|__entity_cache_lock@HDI_DIGITAL_2_0_AUTOMACAO@TesteAutomatizado)
+GC Cycle Count : 127
+Greediness : GREEDY_READ
+State:
+	LockHold : Thread(clustered-entity-locking-thread) ID[3] : READ flushInProgress : false
+
+[dump] 
+***********************************************************************************
+com.tc.object.tx.ClientTransactionManagerImpl
+2016-12-21 16:41:14,452 [WorkerThread(cluster_membership_event_stage, 0)] INFO com.tc.object.DistributedObjectClient - ExitState : CallbackOnExitState[Throwable: class com.tc.exception.TCRuntimeException; RestartNeeded: false]; AutoRestart: true
+2016-12-21 16:41:14,452 [WorkerThread(cluster_membership_event_stage, 0)] INFO com.terracotta.toolkit.factory.impl.ToolkitNotifierFactoryImpl - Shutting Down Notifier Thread Pool
+2016-12-21 16:41:14,452 [WorkerThread(cluster_membership_event_stage, 0)] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[922]: stop(): took 0 millis to complete
+2016-12-21 16:41:14,452 [WorkerThread(cluster_membership_event_stage, 0)] INFO com.terracottatech.tsa - Shutting down TaskRunner
+2016-12-21 16:41:14,646 [HealthChecker] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker SHUTDOWN
+2016-12-21 16:41:44,027 [ServerService Thread Pool -- 90] WARN com.terracottatech.tsa - Timed out waiting for TC thread group threads to die - probable shutdown memory leak
+Live threads: [Thread[WorkerThread(cluster_membership_event_stage, 0),5,TC Thread Group]]
+2016-12-21 16:41:44,031 [ServerService Thread Pool -- 90] WARN com.terracottatech.tsa - Spawning TCThreadGroup last chance cleaner thread

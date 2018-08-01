@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="net.sf.ehcache-terracotta" slot="security_manager">
+	<resources>
+		<resource-root path="../main/terracotta-toolkit-1.6-runtime-ee-5.5.0.jar"/>
+		<resource-root path="../main/."/>
+	</resources>
+        <dependencies>
+                <module name="hdi_security_manager.cache" export="true"/>
+	</dependencies>	
+</module>

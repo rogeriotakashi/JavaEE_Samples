@@ -1,0 +1,40 @@
+16:40:07,427 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.6.Final-redhat-1
+16:40:07,577 INFO  [org.jboss.msc] (main) JBoss MSC version 1.1.5.Final-redhat-1
+16:40:07,658 INFO  [org.jboss.as] (MSC service thread 1-7) JBAS015899: Iniciando JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21)
+16:40:08,593 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014612: Falha na operação ("add") - endereço ([
+    ("host" => "master"),
+    ("core-service" => "vault")
+]): java.lang.RuntimeException: JBAS015804: Erro ao inicializar o vault --  org.jboss.as.server.services.security.VaultReaderException: JBAS013313: Exceção do Leitor Vault:
+	at org.jboss.as.server.services.security.VaultAddHandler.performRuntime(VaultAddHandler.java:89) [jboss-as-server-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractAddStepHandler$1.execute(AbstractAddStepHandler.java:75) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:702) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:537) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractOperationContext.completeStepInternal(AbstractOperationContext.java:338) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractOperationContext.executeOperation(AbstractOperationContext.java:314) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.OperationContextImpl.executeOperation(OperationContextImpl.java:1144) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.ModelControllerImpl.boot(ModelControllerImpl.java:393) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractControllerService.boot(AbstractControllerService.java:301) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.host.controller.DomainModelControllerService.boot(DomainModelControllerService.java:420) [jboss-as-host-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.controller.AbstractControllerService$1.run(AbstractControllerService.java:263) [jboss-as-controller-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_80]
+Caused by: org.jboss.as.server.services.security.VaultReaderException: JBAS013313: Exceção do Leitor Vault:
+	at org.jboss.as.security.vault.RuntimeVaultReader.createVault(RuntimeVaultReader.java:95) [jboss-as-security-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	at org.jboss.as.server.services.security.VaultAddHandler.performRuntime(VaultAddHandler.java:87) [jboss-as-server-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	... 11 more
+Caused by: org.jboss.security.vault.SecurityVaultException: java.lang.RuntimeException: PBOX000140: Unable to get keystore (/home/colaborador/ambiente_java/EAP-6.4-digital/vault/vault.keystore)
+	at org.picketbox.plugins.vault.PicketBoxSecurityVault.init(PicketBoxSecurityVault.java:210)
+	at org.jboss.as.security.vault.RuntimeVaultReader.createVault(RuntimeVaultReader.java:93) [jboss-as-security-7.5.0.Final-redhat-21.jar:7.5.0.Final-redhat-21]
+	... 12 more
+Caused by: java.lang.RuntimeException: PBOX000140: Unable to get keystore (/home/colaborador/ambiente_java/EAP-6.4-digital/vault/vault.keystore)
+	at org.picketbox.plugins.vault.PicketBoxSecurityVault.getKeyStore(PicketBoxSecurityVault.java:691)
+	at org.picketbox.plugins.vault.PicketBoxSecurityVault.init(PicketBoxSecurityVault.java:205)
+	... 13 more
+Caused by: java.io.FileNotFoundException: /home/colaborador/ambiente_java/EAP-6.4-digital/vault/vault.keystore (Arquivo ou diretório não encontrado)
+	at java.io.FileInputStream.open(Native Method) [rt.jar:1.7.0_80]
+	at java.io.FileInputStream.<init>(FileInputStream.java:146) [rt.jar:1.7.0_80]
+	at org.picketbox.util.KeyStoreUtil.getKeyStore(KeyStoreUtil.java:150)
+	at org.picketbox.plugins.vault.PicketBoxSecurityVault.getKeyStore(PicketBoxSecurityVault.java:688)
+	... 14 more
+
+16:40:08,603 FATAL [org.jboss.as.host.controller] (Controller Boot Thread) JBAS010933: A inicialização do Controlador do Host falhou de forma irrecuperável: existente. Consulte as mensagens anteriores para maiores informações.
+16:40:08,619 INFO  [org.jboss.as] (MSC service thread 1-3) JBAS015950: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) interrompido em 12ms

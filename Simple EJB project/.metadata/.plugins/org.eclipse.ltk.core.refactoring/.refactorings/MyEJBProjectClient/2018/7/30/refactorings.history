@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.rogerio.ejbproject.Local&apos; to &apos;HelloBeanLocal&apos;&#x0A;- Original project: &apos;MyEJBProjectClient&apos;&#x0A;- Original element: &apos;com.rogerio.ejbproject.Local&apos;&#x0A;- Renamed element: &apos;com.rogerio.ejbproject.HelloBeanLocal&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Local&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/ejbModule&lt;com.rogerio.ejbproject{Local.java[Local" matchStrategy="1" name="HelloBeanLocal" qualified="false" references="true" similarDeclarations="false" stamp="1532693702517" textual="false" version="1.0"/>
+</session>

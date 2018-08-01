@@ -1,0 +1,480 @@
+2016-12-20 14:11:39,759 [http-/0.0.0.0:8080-1] INFO com.terracottatech.general - New logging session started.
+2016-12-20 14:11:39,778 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Terracotta Enterprise 4.3.1.1.36, as of 20151016-124459 (Revision 45753-26577 from tc-4.3.1)
+2016-12-20 14:11:39,779 [http-/0.0.0.0:8080-1] INFO com.tc.logging.TCLogging - PID is 17834
+2016-12-20 14:11:39,849 [http-/0.0.0.0:8080-1] INFO com.tc.config.schema.setup.StandardXMLFileConfigurationCreator - Attempting to load configuration from the server at 'localhost:9510'...
+2016-12-20 14:11:41,195 [http-/0.0.0.0:8080-1] WARN com.terracottatech.console - 
+********************************* WARNING **********************************
+* DataStorage offheap size is configured below recommended/supported
+* amounts. Please consult documentation.
+****************************************************************************
+
+2016-12-20 14:11:41,236 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Successfully loaded base configuration from server at 'localhost:9510'.
+2016-12-20 14:11:41,302 [http-/0.0.0.0:8080-1] INFO com.tc.config.schema.setup.StandardXMLFileConfigurationCreator - The configuration specified by 'base configuration from server at 'localhost:9510'':
+
+<con:tc-config xmlns:con="http://www.terracotta.org/config">
+  <clients xmlns:tc="http://www.terracotta.org/config"/>
+  <servers secure="false" xmlns:tc="http://www.terracotta.org/config">
+    <mirror-group election-time="5" group-name="default-group">
+      <server host="localhost" bind="0.0.0.0" name="localhost:9510" jmx-enabled="false">
+        <tsa-port bind="0.0.0.0">9510</tsa-port>
+        <jmx-port bind="0.0.0.0">9520</jmx-port>
+        <tsa-group-port bind="0.0.0.0">9530</tsa-group-port>
+        <management-port bind="0.0.0.0">9540</management-port>
+        <data>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data</data>
+        <logs>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../logs</logs>
+        <data-backup>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data-backup</data-backup>
+        <index>/home/colaborador/ambiente_java/bigmemory-max-4.3.2.2.15/server/bin/../../data/index</index>
+        <dataStorage size="512m">
+          <offheap size="512m"/>
+        </dataStorage>
+      </server>
+    </mirror-group>
+    <update-check>
+      <enabled>true</enabled>
+      <period-days>7</period-days>
+    </update-check>
+    <garbage-collection>
+      <enabled>false</enabled>
+      <verbose>false</verbose>
+      <interval>3600</interval>
+    </garbage-collection>
+    <restartable enabled="true"/>
+    <client-reconnect-window>120</client-reconnect-window>
+  </servers>
+</con:tc-config>
+2016-12-20 14:11:41,312 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - Loading default properties from tc.properties
+2016-12-20 14:11:41,312 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "tc.config.total.timeout" was read before initialization completed. "tc.config.total.timeout" = 300000
+2016-12-20 14:11:41,312 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "tc.config.getFromSource.timeout" was read before initialization completed. "tc.config.getFromSource.timeout" = 30000
+2016-12-20 14:11:41,312 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - The property "l1.objectmanager.fault.count" was read before initialization completed. "l1.objectmanager.fault.count" = 500
+2016-12-20 14:11:41,312 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - tc-config doesn't have any tc-property. No tc-property will be overridden
+2016-12-20 14:11:41,313 [http-/0.0.0.0:8080-1] INFO com.tc.properties.TCProperties - Loaded TCProperties : TCProperties = { appgroups.debug = false, disabled.secure.protocols = SSLv3, ehcache.clusterAllCacheManagers = true, ehcache.concurrency = 128, ehcache.evictor.logging.enabled = false, ehcache.evictor.pool.size = 1, ehcache.global.eviction.enable = true, ehcache.global.eviction.frequency = 10, ehcache.global.eviction.rest.timeMillis = 10, ehcache.global.eviction.segments = 2, ehcache.lock.readLevel = READ, ehcache.lock.writeLevel = WRITE, ehcache.logging.enabled = false, ehcache.storageStrategy.dcv2.evictUnexpiredEntries.enabled = true, ehcache.storageStrategy.dcv2.eviction.overshoot = 15, ehcache.storageStrategy.dcv2.localcache.enabled = true, ehcache.storageStrategy.dcv2.perElementTTITTL.enabled = false, ehcache.storageStrategy.dcv2.periodicEviction.enabled = true, http.defaultservlet.attribute.aliases = false;, http.defaultservlet.attribute.dirallowed = false;, http.defaultservlet.enabled = false;, l1.clusterevents.outofbandnotifier.jointime.millis = 100, l1.healthcheck.l2.bindAddress = 0.0.0.0, l1.healthcheck.l2.bindPort = 0, l1.healthcheck.l2.checkTime.enabled = true, l1.healthcheck.l2.checkTime.interval = 300000, l1.healthcheck.l2.checkTime.threshold = 300000, l1.healthcheck.l2.ping.enabled = true, l1.healthcheck.l2.ping.idletime = 5000, l1.healthcheck.l2.ping.interval = 1000, l1.healthcheck.l2.ping.probes = 3, l1.healthcheck.l2.socketConnect = true, l1.healthcheck.l2.socketConnectCount = 13, l1.healthcheck.l2.socketConnectTimeout = 5, l1.l2.config.validation.enabled = true, l1.lock.statistics.gatherInterval = 1, l1.lock.statistics.traceDepth = 0, l1.lockmanager.pinning.enabled = true, l1.lockmanager.striped.count = 128, l1.lockmanager.timeout.interval = 60000, l1.memorymanager.criticalThreshold = 70, l1.objectmanager.fault.count = 500, l1.objectmanager.fault.logging.enabled = false, l1.objectmanager.flush.logging.enabled = false, l1.objectmanager.objectid.request.size = 50000, l1.objectmanager.remote.batchLookupTimePeriod = 1, l1.objectmanager.remote.logging.enabled = false, l1.objectmanager.remote.maxDNALRUSize = 60, l1.objectmanager.remote.maxRequestSentImmediately = 4, l1.seda.stage.sink.capacity = -1, l1.serverEvent.delivery.timeout.intervalInSec = 180, l1.serverarray.objectCreationStrategy = round-robin, l1.serverarray.objectCreationStrategy.groupAffinity.groupName = mirror-group1, l1.serverarray.objectCreationStrategy.roundRobin.startIndex = sequential, l1.servermapmanager.remote.batchLookupTimePeriod = 1, l1.servermapmanager.remote.maxRequestSentImmediately = 4, l1.shutdown.force.finalization = true, l1.shutdown.threadgroup.gracetime = 30000, l1.socket.connect.timeout = 10000, l1.socket.reconnect.waitInterval = 1000, l1.transactionmanager.completedAckFlushTimeout = 5000, l1.transactionmanager.folding.debug = false, l1.transactionmanager.folding.enabled = false, l1.transactionmanager.folding.lock.limit = 0, l1.transactionmanager.folding.object.limit = 0, l1.transactionmanager.logging.enabled = false, l1.transactionmanager.maxBatchSizeInKiloBytes = 128, l1.transactionmanager.maxOutstandingBatchSize = 8, l1.transactionmanager.maxPendingBatches = 88, l1.transactionmanager.maxSleepTimeBeforeHalt = 1024, l1.transactionmanager.strings.compress.enabled = true, l1.transactionmanager.strings.compress.logging.enabled = false, l1.transactionmanager.strings.compress.minSize = 512, l1.transactionmanager.timeoutForAckOnExit = 300, l2.dump.on.exception.timeout = 30, l2.enable.legacy.production.mode = false, l2.frs.compactor.lsnGap.maxLoad = 0.80, l2.frs.compactor.lsnGap.minLoad = 0.40, l2.healthcheck.l1.checkTime.enabled = true, l2.healthcheck.l1.checkTime.interval = 300000, l2.healthcheck.l1.checkTime.threshold = 300000, l2.healthcheck.l1.ping.enabled = true, l2.healthcheck.l1.ping.idletime = 5000, l2.healthcheck.l1.ping.interval = 1000, l2.healthcheck.l1.ping.probes = 3, l2.healthcheck.l1.socketConnect = true, l2.healthcheck.l1.socketConnectCount = 10, l2.healthcheck.l1.socketConnectTimeout = 5, l2.healthcheck.l2.checkTime.enabled = true, l2.healthcheck.l2.checkTime.interval = 300000, l2.healthcheck.l2.checkTime.threshold = 300000, l2.healthcheck.l2.ping.enabled = true, l2.healthcheck.l2.ping.idletime = 5000, l2.healthcheck.l2.ping.interval = 1000, l2.healthcheck.l2.ping.probes = 3, l2.healthcheck.l2.socketConnect = true, l2.healthcheck.l2.socketConnectCount = 10, l2.healthcheck.l2.socketConnectTimeout = 5, l2.l1reconnect.enabled = true, l2.l1reconnect.maxDelayedAcks = 16, l2.l1reconnect.sendWindow = 32, l2.l1reconnect.sendqueue.cap = 5000, l2.l1reconnect.timeout.millis = 5000, l2.l1rejoin.sleep.millis = 100, l2.lockmanager.greedy.lease.enabled = true, l2.lockmanager.greedy.lease.leaseTimeInMillis = 50, l2.lockmanager.greedy.locks.enabled = true, l2.logs.store = 1500, l2.nha.autoRestart = true, l2.nha.dirtydb.autoDelete = true, l2.nha.dirtydb.backup.enabled = true, l2.nha.dirtydb.rolling = 0, l2.nha.send.timeout.millis = 16000, l2.nha.tcgroupcomm.discovery.interval = 1000, l2.nha.tcgroupcomm.handshake.timeout = 5000, l2.nha.tcgroupcomm.reconnect.enabled = true, l2.nha.tcgroupcomm.reconnect.maxDelayedAcks = 16, l2.nha.tcgroupcomm.reconnect.sendWindow = 32, l2.nha.tcgroupcomm.reconnect.sendqueue.cap = 5000, l2.nha.tcgroupcomm.reconnect.timeout = 5000, l2.objectmanager.dgc.inline.cleanup.delaySeconds = 0, l2.objectmanager.dgc.inline.intervalInSeconds = 10, l2.objectmanager.dgc.inline.maxObjects = 10000, l2.objectmanager.dgc.throttle.requestsPerThrottle = 1000, l2.objectmanager.dgc.throttle.timeInMillis = 0, l2.objectmanager.maxTxnsInTxnObjectGrouping = 10, l2.objectmanager.objectrequest.logging.enabled = false, l2.objectmanager.objectrequest.split.size = 500, l2.objectmanager.passive.sync.batch.size = 500, l2.objectmanager.passive.sync.message.maxSizeInMegaBytes = 10, l2.objectmanager.passive.sync.throttle.maxPendingMessages = 10, l2.objectmanager.passive.sync.throttle.timeInMillis = 0, l2.objectmanager.persistor.logging.enabled = false, l2.objectmanager.request.logging.enabled = false, l2.offHeap.allocation.critical = 15000, l2.offHeap.allocation.critical.halt = true, l2.offHeap.allocation.slow = 1500, l2.offHeap.map.concurrency = 1, l2.offHeap.map.tableSize = 128, l2.operator.events.store = 100, l2.remotejmx.connect.timeout = 30000, l2.remotejmx.idletime = 5, l2.remotejmx.maxthreads = 50, l2.seda.evictionprocessorstage.sink.capacity = 1000, l2.seda.local.cache.invalidations.sink.capacity = 5000, l2.seda.local.cache.transaction.complete.sink.capacity = 5000, l2.seda.local.cache.transaction.complete.threads = 8, l2.seda.query.threads = 4, l2.seda.search.threads = 16, l2.seda.stage.sink.capacity = -1, l2.serverarray.2pc.enabled = true, l2.servermap.eviction.broadcast.maxkeys = 10000, l2.servermap.eviction.clientObjectReferences.refresh.interval = 60000, l2.startuplock.retries.enabled = false, l2.transactionmanager.broadcast.durability.level = RELAYED, l2.transactionmanager.logging.enabled = false, l2.transactionmanager.logging.printBroadcastStats = false, l2.transactionmanager.logging.printCommits = false, l2.transactionmanager.logging.printStats = true, l2.transactionmanager.logging.verbose = false, l2.transactionmanager.passive.throttle.enabled = true, l2.transactionmanager.passive.throttle.maxSleepSeconds = 5, l2.transactionmanager.passive.throttle.threshold = 20000, lock.statistics.enabled = false, logging.longgc.threshold = 8000, logging.maxBackups = 20, logging.maxLogFileSize = 512, management.rest.enabled = true, memory.monitor.forcebasic = false, net.core.keepalive = false, net.core.tcpnodelay = true, offHeapFileSystem.file.maxDataPageSize = 262144, offHeapFilesystem.chm.segments = 4, offHeapFilesystem.file.blockSize = 8192, search.lucene.indexes.per.cache = 4, search.lucene.max.boolean.clauses = 1024, search.lucene.max.buffer = 16.0, search.lucene.use.offHeap.directory = false, search.lucene.use.ram.directory = false, search.passive.max.chunk = 2097152, search.passive.max.pending = 8, session.debug.invalidate = false, session.debug.sessions = false, session.invalidator.sleep = 300, stats.printer.intervalInMillis = 5000, tc.bytebuffer.common.pool.maxcount = 3000, tc.bytebuffer.pooling.enabled = true, tc.bytebuffer.threadlocal.pool.maxcount = 2000, tc.config.getFromSource.timeout = 30000, tc.config.total.timeout = 300000, tc.management.mbeans.enabled = true, tc.management.test.mbeans.enabled = false, tc.messages.grouping.enabled = true, tc.messages.grouping.maxSizeKiloBytes = 1024, tc.messages.packup.enabled = true, tc.stage.monitor.delay = 5000, tc.stage.monitor.enabled = false, tc.time.sync.threshold = 30, tc.transport.handshake.timeout = 10000, tcm.monitor.delay = 5, tcm.monitor.enabled = false, toolkit.bulkload.logging = false, toolkit.bulkload.minbatchbytesize = 5242880, toolkit.bulkload.throttle.threshold = 10485760, toolkit.bulkload.throttle.timeInmillis = 600, version.compatibility.check = true }
+2016-12-20 14:11:41,384 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Log file: '/home/colaborador/ambiente_java/EAP-6.4-digital/bin/logs-127.0.1.1/terracotta-client.log'.
+2016-12-20 14:11:41,385 [http-/0.0.0.0:8080-1] INFO com.tc.logging.TCLogging - All Java System Properties for this Terracotta instance:
+========================================================================
+JVM arguments: [-Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+, -Xms1024m, -Xmx1024m, -XX:MaxPermSize=2048m, -Dorg.jboss.resolver.warning=true, -Djava.net.preferIPv4Stack=true, -Dsun.rmi.dgc.client.gcInterval=3600000, -Dsun.rmi.dgc.server.gcInterval=3600000, -Djboss.modules.system.pkgs=org.jboss.byteman, -Djava.awt.headless=true, -Dorg.jboss.boot.log.file=/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log/boot.log, -Dlogging.configuration=file:/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/logging.properties, -Djboss.home.dir=/home/colaborador/ambiente_java/EAP-6.4-digital, -Dorg.jboss.logmanager.nocolor=true, -Djboss.bind.address.management=localhost, -Dfile.encoding=UTF-8]
+___terracotta_jvm_uuid                                             : 3ea73956-c4f1-4dd2-9bc9-16abef8c181b
+awt.toolkit                                                        : sun.awt.X11.XToolkit
+br.com.hdi.digital.ha.datasources                                  : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/ha-datasources.properties
+br.com.hdi.digital.legacy                                          : /home/colaborador/ambiente_java/EAP-6.4-digital/modules/hdi_digital/properties/main/hdi-legacy.properties
+br.com.hdi.digital.security.environment                            : /home/colaborador/ambiente_java/EAP-6.4-digital/modules/hdi_digital/properties/main/hdi-security-environment.properties
+catalina.home                                                      : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/tmp
+file.encoding                                                      : UTF-8
+file.encoding.pkg                                                  : sun.io
+file.separator                                                     : /
+java.awt.graphicsenv                                               : sun.awt.X11GraphicsEnvironment
+java.awt.headless                                                  : true
+java.awt.printerjob                                                : sun.print.PSPrinterJob
+java.class.path                                                    : /home/colaborador/ambiente_java/EAP-6.4-digital/jboss-modules.jar
+java.class.version                                                 : 51.0
+java.endorsed.dirs                                                 : /opt/jdk1.7.0_80/jre/lib/endorsed
+java.ext.dirs                                                      : /opt/jdk1.7.0_80/jre/lib/ext:/usr/java/packages/lib/ext
+java.home                                                          : /opt/jdk1.7.0_80/jre
+java.io.tmpdir                                                     : /tmp
+java.library.path                                                  : /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+java.naming.factory.url.pkgs                                       : org.jboss.as.naming.interfaces:org.jboss.ejb.client.naming
+java.net.preferIPv4Stack                                           : true
+java.protocol.handler.pkgs                                         : org.jboss.net.protocol|org.jboss.vfs.protocol
+java.runtime.name                                                  : Java(TM) SE Runtime Environment
+java.runtime.version                                               : 1.7.0_80-b15
+java.specification.name                                            : Java Platform API Specification
+java.specification.vendor                                          : Oracle Corporation
+java.specification.version                                         : 1.7
+java.util.logging.manager                                          : org.jboss.logmanager.LogManager
+java.vendor                                                        : Oracle Corporation
+java.vendor.url                                                    : http://java.oracle.com/
+java.vendor.url.bug                                                : http://bugreport.sun.com/bugreport/
+java.version                                                       : 1.7.0_80
+java.vm.info                                                       : mixed mode
+java.vm.name                                                       : Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name                                         : Java Virtual Machine Specification
+java.vm.specification.vendor                                       : Oracle Corporation
+java.vm.specification.version                                      : 1.7
+java.vm.vendor                                                     : Oracle Corporation
+java.vm.version                                                    : 24.80-b11
+javax.management.builder.initial                                   : org.jboss.as.jmx.PluggableMBeanServerBuilder
+javax.xml.datatype.DatatypeFactory                                 : __redirected.__DatatypeFactory
+javax.xml.parsers.DocumentBuilderFactory                           : __redirected.__DocumentBuilderFactory
+javax.xml.parsers.SAXParserFactory                                 : __redirected.__SAXParserFactory
+javax.xml.stream.XMLEventFactory                                   : __redirected.__XMLEventFactory
+javax.xml.stream.XMLInputFactory                                   : __redirected.__XMLInputFactory
+javax.xml.stream.XMLOutputFactory                                  : __redirected.__XMLOutputFactory
+javax.xml.transform.TransformerFactory                             : __redirected.__TransformerFactory
+javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema: __redirected.__SchemaFactory
+javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom    : __redirected.__XPathFactory
+jboss.bind.address                                                 : localhost
+jboss.bind.address.management                                      : localhost
+jboss.home.dir                                                     : /home/colaborador/ambiente_java/EAP-6.4-digital
+jboss.host.name                                                    : campinas
+jboss.i18n.generate-proxies                                        : true
+jboss.modules.dir                                                  : /home/colaborador/ambiente_java/EAP-6.4-digital/modules
+jboss.modules.system.pkgs                                          : org.jboss.byteman
+jboss.node.name                                                    : campinas
+jboss.qualified.host.name                                          : campinas
+jboss.server.base.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone
+jboss.server.config.dir                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration
+jboss.server.data.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/data
+jboss.server.deploy.dir                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/data/content
+jboss.server.log.dir                                               : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log
+jboss.server.name                                                  : campinas
+jboss.server.persist.config                                        : true
+jboss.server.temp.dir                                              : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/tmp
+line.separator                                                     : 
+
+logging.configuration                                              : file:/home/colaborador/ambiente_java/EAP-6.4-digital/standalone/configuration/logging.properties
+module.path                                                        : /home/colaborador/ambiente_java/EAP-6.4-digital/modules
+org.apache.catalina.connector.URI_ENCODING                         : UTF-8
+org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING   : true
+org.apache.xml.security.ignoreLineBreaks                           : true
+org.jboss.boot.log.file                                            : /home/colaborador/ambiente_java/EAP-6.4-digital/standalone/log/boot.log
+org.jboss.logmanager.nocolor                                       : true
+org.jboss.resolver.warning                                         : true
+org.jboss.security.context.ThreadLocal                             : true
+org.xml.sax.driver                                                 : __redirected.__XMLReaderFactory
+os.arch                                                            : amd64
+os.name                                                            : Linux
+os.version                                                         : 4.4.0-53-generic
+path.separator                                                     : :
+program.name                                                       : JBossTools: Red Hat JBoss EAP 6.1+
+sun.arch.data.model                                                : 64
+sun.boot.class.path                                                : /opt/jdk1.7.0_80/jre/lib/resources.jar:/opt/jdk1.7.0_80/jre/lib/rt.jar:/opt/jdk1.7.0_80/jre/lib/sunrsasign.jar:/opt/jdk1.7.0_80/jre/lib/jsse.jar:/opt/jdk1.7.0_80/jre/lib/jce.jar:/opt/jdk1.7.0_80/jre/lib/charsets.jar:/opt/jdk1.7.0_80/jre/lib/jfr.jar:/opt/jdk1.7.0_80/jre/classes
+sun.boot.library.path                                              : /opt/jdk1.7.0_80/jre/lib/amd64
+sun.cpu.endian                                                     : little
+sun.cpu.isalist                                                    : 
+sun.desktop                                                        : gnome
+sun.io.unicode.encoding                                            : UnicodeLittle
+sun.java.command                                                   : org.jboss.modules.Main -mp /home/colaborador/ambiente_java/EAP-6.4-digital/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=/home/colaborador/ambiente_java/EAP-6.4-digital/standalone
+sun.java.launcher                                                  : SUN_STANDARD
+sun.jnu.encoding                                                   : UTF-8
+sun.management.compiler                                            : HotSpot 64-Bit Tiered Compilers
+sun.net.client.defaultConnectTimeout                               : 30000
+sun.net.client.defaultReadTimeout                                  : 30000
+sun.nio.ch.bugLevel                                                : 
+sun.os.patch.level                                                 : unknown
+sun.rmi.dgc.client.gcInterval                                      : 3600000
+sun.rmi.dgc.server.gcInterval                                      : 3600000
+tc.active                                                          : true
+tc.dso.globalmode                                                  : false
+user.country                                                       : US
+user.country.format                                                : BR
+user.dir                                                           : /home/colaborador/ambiente_java/EAP-6.4-digital/bin
+user.home                                                          : /home/colaborador
+user.language                                                      : en
+user.language.format                                               : pt
+user.name                                                          : colaborador
+user.timezone                                                      : America/Sao_Paulo
+========================================================================
+2016-12-20 14:11:41,418 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-20 14:11:41,468 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-20 14:11:41,730 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Terracotta license loaded from resource /terracotta-license.key
+Date of Issue: 2013-03-28
+License Type: Commercial
+License Number: 2023162 Dev and Testing
+Licensee: HDI Seguros
+Product: Ehcache
+Edition: FX
+Capabilities: DCV2, TMC, authentication, ehcache, ehcache offheap, operator console, search, server array offheap, server striping
+Max Client Count: 2
+ehcache.maxOffHeap: 200G
+terracotta.serverArray.maxOffHeap: 200G
+
+2016-12-20 14:11:41,776 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Connection components don't need Active Server Array. Using EnterpriseNonAADSOClientBuilder
+2016-12-20 14:11:41,797 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-20 14:11:41,801 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-20 14:11:41,805 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-20 14:11:41,820 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Groupname ID Map from http://localhost:9510/groupidmap
+2016-12-20 14:11:41,825 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get Cluster topology from http://localhost:9510/groupinfo
+2016-12-20 14:11:41,846 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Server: http://localhost:9510/version returned server version = 4.3.2.2.15
+2016-12-20 14:11:41,853 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Trying to get L1 Reconnect Properties from http://localhost:9510/l1reconnectproperties
+2016-12-20 14:11:41,881 [http-/0.0.0.0:8080-1] INFO com.tc.object.ApplicatorDNAEncodingImpl - Compressed String constructor not present
+2016-12-20 14:11:41,948 [http-/0.0.0.0:8080-1] INFO com.tc.net.core.TCCommImpl - Comm Worker Threads NOT requested
+2016-12-20 14:11:41,961 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker Started
+2016-12-20 14:11:42,016 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.tcm.CommunicationsManager - HealthCheck CallbackPort Listener started at /0.0.0.0:37274
+2016-12-20 14:11:42,148 [http-/0.0.0.0:8080-1] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[-1]: com.tc.object.tx.RemoteTransactionManagerImpl null
+2016-12-20 14:11:42,266 [http-/0.0.0.0:8080-1] INFO com.tc.runtime.TCMemoryManagerImpl - GarbageCollector: PS Scavenge
+2016-12-20 14:11:42,266 [http-/0.0.0.0:8080-1] INFO com.tc.runtime.TCMemoryManagerImpl - GarbageCollector: PS MarkSweep
+2016-12-20 14:11:42,354 [L1Management JMX registration] INFO com.tc.management.L1Management - Terracotta JMX connector available at[service:jmx:terracotta://localhost]
+2016-12-20 14:11:42,449 [http-/0.0.0.0:8080-1] INFO com.tc.net.core.TCConnection - Comms Message Batching enabled
+2016-12-20 14:11:42,460 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ClientMessageTransport - ConnectionID(-1.ffffffffffffffffffffffffffffffff.3ea73956-c4f1-4dd2-9bc9-16abef8c181b-1591cfe97c5.USER)[]: Attaching new connection: com.tc.net.core.TCConnectionImpl@758354998: connected: true, closed: false local=127.0.0.1:60616 remote=127.0.0.1:9510 connect=[Tue Dec 20 14:11:42 BRST 2016] idle=9ms [0 read, 0 write]
+2016-12-20 14:11:42,499 [http-/0.0.0.0:8080-1] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl. DSO Client - Health monitoring agent started for localhost:9510
+2016-12-20 14:11:42,504 [L1_L2:TCComm Main Selector Thread_R (listen 0.0.0.0:37274)] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl. DSO Client - HealthCheckCallbackPort verification PASSED for localhost:9510(callbackport: 9510)
+2016-12-20 14:11:42,514 [http-/0.0.0.0:8080-1] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: CHANNEL_OPENED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@1923396634[type = CHANNEL_OPENED_EVENT, timestamp = Tue Dec 20 14:11:42 BRST 2016, channel  = ChannelID=[909]:127.0.0.1:60616 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-20 14:11:42,516 [L1_L2:TCComm Main Selector Thread_R (listen 0.0.0.0:37274)] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: TRANSPORT_CONNECTED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@455889347[type = TRANSPORT_CONNECTED_EVENT, timestamp = Tue Dec 20 14:11:42 BRST 2016, channel  = ChannelID=[909]:127.0.0.1:60616 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-20 14:11:42,518 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[909]: Connected: Unpausing from PAUSED RemoteNode : GroupID[0]. Disconnect count : 1
+2016-12-20 14:11:42,527 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[909]: Sending handshake message with oids 0 validate 0
+2016-12-20 14:11:42,542 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[909]: Received StripeIDMap size:1 from GroupID[0]
+2016-12-20 14:11:42,542 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.handshakemanager.ClientHandshakeManagerImpl - ClientID[909]: Received Handshake ack from remote node :GroupID[0]
+2016-12-20 14:11:42,544 [http-/0.0.0.0:8080-1] INFO com.terracottatech.console - Connection successfully established to server at 127.0.0.1:9510
+2016-12-20 14:11:42,545 [http-/0.0.0.0:8080-1] INFO com.terracottatech.tsa - Connection successfully established to server at 127.0.0.1:9510
+2016-12-20 14:11:42,547 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.RemoteObjectManager - ClientID[909]: Sending Pending LookUp Requests lookups 0 roots 0
+2016-12-20 14:11:42,547 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.object.RemoteServerMapManager - ClientID[909]: Sending outstanding servermap requests, num msgs: 0
+2016-12-20 14:11:42,552 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.management.remote.protocol.terracotta.TunnelingEventHandler - Client JMX server ready; sending notification to L2 server
+2016-12-20 14:11:42,555 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.platform.rejoin.RejoinManagerImpl - This node joined the cluster - rejoinEnabled: true newNodeId: ClientID[909]
+2016-12-20 14:11:42,567 [WorkerThread(client_coordination_stage, 0)] INFO com.tc.cluster.DsoClusterImpl - NODE_JOINED ClientID[909] rejoinHappened false
+2016-12-20 14:11:42,575 [http-/0.0.0.0:8080-1] INFO com.tc.management.remote.protocol.terracotta.TunneledDomainManager - Sending current registered tunneled domains to L2 server to set up the tunneled connections for the mbeans that match.
+2016-12-20 14:11:43,403 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Configuration for clustered cache manager HDI_DIGITAL_2_0_DEV_BUSCA:
+<ehcache     
+    name="HDI_DIGITAL_2_0_DEV_BUSCA"     
+    updateCheck="true">    
+    <diskStore         
+        path="java.io.tmpdir"/>    
+    <defaultCache         
+        eternal="true"         
+        maxEntriesLocalHeap="0"/>    
+    <terracottaConfig         
+        url="localhost:9510"         
+        rejoin="true"/>
+</ehcache>
+
+2016-12-20 14:11:43,679 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named MrInfoResumidasDocXCorr:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="MrInfoResumidasDocXCorr"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:43,872 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named UsuarioXCelulaUsuarios:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="UsuarioXCelulaUsuarios"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:43,988 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named CamposSecoesBusca:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="CamposSecoesBusca"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,185 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named Produto:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="Produto"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,335 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named MenuPermissaoUsuario:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="MenuPermissaoUsuario"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,514 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ListaNovosNegociosTemp:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ListaNovosNegociosTemp"     
+    maxEntriesLocalHeap="60000"     
+    timeToIdleSeconds="432000"     
+    timeToLiveSeconds="432000"     
+    maxEntriesInCache="3000000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,590 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ProdutosRural:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ProdutosRural"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,654 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ModeloAuto:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ModeloAuto"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,743 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ModuloCorretor:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ModuloCorretor"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,816 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named Estipulante:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="Estipulante"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,892 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ProdutorBuscas:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ProdutorBuscas"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:44,994 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named FiltroBuscaCotacao:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="FiltroBuscaCotacao"     
+    maxEntriesLocalHeap="60000"     
+    timeToIdleSeconds="432000"     
+    timeToLiveSeconds="432000"     
+    maxEntriesInCache="3000000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,066 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named IsPab:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="IsPab"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,170 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named NomeProduto:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="NomeProduto"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,274 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named MrDocumentoXCorretor:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="MrDocumentoXCorretor"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,397 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named ApNovosNegocios:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="ApNovosNegocios"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,523 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named Usuario:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="Usuario"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,695 [TerracottaStoreInitializationThread_2] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named OperacaoRestritaBuscas:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="OperacaoRestritaBuscas"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:11:45,790 [TerracottaStoreInitializationThread_1] INFO com.terracotta.ehcache.config - Client configuration for clustered cache named CelulaUsuarios:
+(clustered properties may differ in runtime cache depending on configuration used at creation time)
+<cache     
+    name="CelulaUsuarios"     
+    eternal="true"     
+    maxEntriesLocalHeap="60000"     
+    maxEntriesInCache="100000">    
+    <terracotta>        
+        <nonstop/>    
+    </terracotta>
+</cache>
+
+2016-12-20 14:12:30,379 [TC Memory Monitor] INFO com.tc.runtime.TCMemoryManagerImpl - Sleep time changed to : 1200
+2016-12-20 14:13:42,347 [ClientLockManager LockGC] INFO com.tc.object.locks.ClientLockManager - ClientID[909]: Lock GC collected 7 garbage locks
+2016-12-20 14:14:42,349 [ClientLockManager LockGC] INFO com.tc.object.locks.ClientLockManager - ClientID[909]: Lock GC collected 147 garbage locks
+2016-12-20 15:44:51,907 [CommonShutDownHook] INFO com.terracottatech.tsa - L1 Exiting...
+2016-12-20 15:44:51,912 [L1 VM Shutdown Hook] INFO com.terracottatech.tsa - Running L1 VM shutdown hook
+2016-12-20 15:44:51,945 [L1 VM Shutdown Hook] INFO com.terracottatech.tsa - shuting down Terracotta Client hook=true force=false
+2016-12-20 15:44:51,951 [L1 VM Shutdown Hook] INFO com.terracotta.toolkit.factory.impl.ToolkitNotifierFactoryImpl - Shutting Down Notifier Thread Pool
+2016-12-20 15:44:52,134 [L1 VM Shutdown Hook] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: stop(): took 1 millis to complete
+2016-12-20 15:44:52,214 [L1 VM Shutdown Hook] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - Connection to [localhost:9510] CLOSED. Health Monitoring for this node is now disabled.
+2016-12-20 15:44:52,243 [L1 VM Shutdown Hook] INFO com.tc.net.protocol.transport.ClientConnectionEstablisher - waiting for connection establisher to finish null
+2016-12-20 15:44:52,361 [L1 VM Shutdown Hook] INFO com.tc.platform.rejoin.ClientChannelEventController - Got channel event - type: CHANNEL_CLOSED_EVENT, event: com.tc.net.protocol.tcm.ChannelEventImpl@1038878152[type = CHANNEL_CLOSED_EVENT, timestamp = Tue Dec 20 15:44:52 BRST 2016, channel  = ChannelID[NULL_ID, Status:CLOSED]:127.0.0.1:60616 <--> 127.0.0.1:9510 remote node  : GroupID[0]
+2016-12-20 15:44:53,127 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-20 15:44:58,145 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-20 15:45:03,145 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-20 15:45:08,146 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-20 15:45:13,146 [RemoteTransactionManager Flusher] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: Ignoring RemoteTransactionManagerTask because status State[ STOPPED ]
+2016-12-20 15:45:14,651 [ServerService Thread Pool -- 82] INFO com.terracotta.toolkit.factory.impl.ToolkitNotifierFactoryImpl - Shutting Down Notifier Thread Pool
+2016-12-20 15:45:14,835 [ServerService Thread Pool -- 82] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: stop(): took 0 millis to complete
+2016-12-20 15:45:16,453 [ServerService Thread Pool -- 82] INFO com.tc.object.tx.RemoteTransactionManagerImpl - ClientID[909]: stop(): took 0 millis to complete
+2016-12-20 15:45:16,454 [ServerService Thread Pool -- 82] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker STOP requested
+2016-12-20 15:45:16,458 [ServerService Thread Pool -- 82] INFO com.terracottatech.tsa - Shutting down TaskRunner
+2016-12-20 15:45:17,220 [HealthChecker] INFO com.tc.net.protocol.transport.ConnectionHealthCheckerImpl: DSO Client - HealthChecker SHUTDOWN
+2016-12-20 15:45:20,470 [ServerService Thread Pool -- 82] INFO com.terracottatech.tsa - Destroying TC thread group

@@ -1,0 +1,1611 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f0f5b3a47a1, pid=7313, tid=139703892174592
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_80-b15) (build 1.7.0_80-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.80-b11 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x5c57a1]  oopDesc::size_given_klass(Klass*)+0x1
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f0f5402d800):  GCTaskThread [stack: 0x00007f0f58cde000,0x00007f0f58ddf000] [id=7326]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x0000000000000018
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00000000cb934418, RCX=0x0000000000000000, RDX=0x000000000015cde2
+RSP=0x00007f0f58ddd900, RBP=0x00007f0f58ddd970, RSI=0x0000000000000010, RDI=0x00000000cb93c450
+R8 =0x0000000000000400, R9 =0x0000000000000573, R10=0x0000000000000002, R11=0x00007f0f5bc2a800
+R12=0x00007f0f5bc2e860, R13=0x00000000cb93c450, R14=0x0000000000000002, R15=0x00007f0f540701e0
+RIP=0x00007f0f5b3a47a1, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f0f58ddd900)
+0x00007f0f58ddd900:   00007f0f58ddd970 00007f0f5b39c00b
+0x00007f0f58ddd910:   00000000cb934408 00000000a02afcd0
+0x00007f0f58ddd920:   00000000a02afcd8 00000000cb93441c
+0x00007f0f58ddd930:   00007f0f5bbf28a8 00007f0f54070220
+0x00007f0f58ddd940:   00000000c907e198 00007f0f540701e0
+0x00007f0f58ddd950:   00007f0f5bc2a800 00007f0f5bc20bf8
+0x00007f0f58ddd960:   00007f0f5402dd90 00007f0f540701f0
+0x00007f0f58ddd970:   00007f0f58ddda60 00007f0f5b653e2c
+0x00007f0f58ddd980:   00007f0f540711f0 00007f0f58ddd9d0
+0x00007f0f58ddd990:   00007f0f58ddd9e0 00007f0f58ddd9c0
+0x00007f0f58ddd9a0:   00007f0f58ddda00 00007f0f58ddda10
+0x00007f0f58ddd9b0:   00007f0f54070220 00007f0f540702a0
+0x00007f0f58ddd9c0:   00007f0f58ddda30 00007f0f5c4493f0
+0x00007f0f58ddd9d0:   0000000000000000 00007f0f5402eb50
+0x00007f0f58ddd9e0:   00000000c12639d8 00007f0f540701e0
+0x00007f0f58ddd9f0:   00007f0f58ddda20 00007f0f5b660f1e
+0x00007f0f58ddda00:   000000000000001f 00000000000000f8
+0x00007f0f58ddda10:   00007f0e60069520 00007f0f58dddaa0
+0x00007f0f58ddda20:   00007f0f58ddda60 00007f0f5b45655a
+0x00007f0f58ddda30:   00007f0f5402d800 00007f0f5402fbb0
+0x00007f0f58ddda40:   00007f0f540701e0 0000000000000001
+0x00007f0f58ddda50:   00007f0f5402dd90 00007f0f5b7f3e80
+0x00007f0f58ddda60:   00007f0f58dddaf0 00007f0f5b63aca8
+0x00007f0f58ddda70:   00007f0f54020070 00007f0f5402d800
+0x00007f0f58ddda80:   0000000000000003 00007f0f5401fff0
+0x00007f0f58ddda90:   0000000000000007 00007f0f5b5fbf59
+0x00007f0f58dddaa0:   00007f0f5bbe1c70 00007f0f5402fb00
+0x00007f0f58dddab0:   0000000000000000 00007f0f540701e0
+0x00007f0f58dddac0:   00007f0f58dddaf0 00007f0f5402fbb0
+0x00007f0f58dddad0:   00007f0f5402d800 0000000000000001
+0x00007f0f58dddae0:   00007f0f5402dd90 00007f0f5b7f3e80
+0x00007f0f58dddaf0:   00007f0f58dddc00 00007f0f5b3380bf 
+
+Instructions: (pc=0x00007f0f5b3a47a1)
+0x00007f0f5b3a4781:   00 48 8b 01 48 89 45 f0 48 8b 41 08 48 8d 4d f0
+0x00007f0f5b3a4791:   48 89 45 f8 41 ff d0 c9 c3 90 90 90 90 90 90 55
+0x00007f0f5b3a47a1:   8b 4e 08 48 89 f2 48 89 e5 83 f9 00 7e 11 f6 c1
+0x00007f0f5b3a47b1:   01 75 14 89 c8 c9 c1 f8 03 c3 0f 1f 44 00 00 75 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00000000cb934418 is pointing into object: 0x00000000cb934408
+java.util.concurrent.CopyOnWriteArrayList 
+ - klass: 'java/util/concurrent/CopyOnWriteArrayList'
+RCX=0x0000000000000000 is an unknown value
+RDX=0x000000000015cde2 is an unknown value
+RSP=0x00007f0f58ddd900 is an unknown value
+RBP=0x00007f0f58ddd970 is an unknown value
+RSI=0x0000000000000010 is an unknown value
+RDI=0x00000000cb93c450 is pointing into object: 0x00000000cb93c440
+org.terracotta.statistics.derived.EventRateSimpleMovingAverage$CounterPartition 
+ - klass: 'org/terracotta/statistics/derived/EventRateSimpleMovingAverage$CounterPartition'
+R8 =0x0000000000000400 is an unknown value
+R9 =0x0000000000000573 is an unknown value
+R10=0x0000000000000002 is an unknown value
+R11=0x00007f0f5bc2a800: <offset 0xe4b800> in /usr/lib/jvm/jre1.7.0_80/lib/amd64/server/libjvm.so at 0x00007f0f5addf000
+R12=0x00007f0f5bc2e860: <offset 0xe4f860> in /usr/lib/jvm/jre1.7.0_80/lib/amd64/server/libjvm.so at 0x00007f0f5addf000
+R13=0x00000000cb93c450 is pointing into object: 0x00000000cb93c440
+org.terracotta.statistics.derived.EventRateSimpleMovingAverage$CounterPartition 
+ - klass: 'org/terracotta/statistics/derived/EventRateSimpleMovingAverage$CounterPartition'
+R14=0x0000000000000002 is an unknown value
+R15=0x00007f0f540701e0 is an unknown value
+
+
+Stack: [0x00007f0f58cde000,0x00007f0f58ddf000],  sp=0x00007f0f58ddd900,  free space=1022k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x5c57a1]  oopDesc::size_given_klass(Klass*)+0x1
+V  [libjvm.so+0x874e2c]  ParCompactionManager::follow_marking_stacks()+0x1ec
+V  [libjvm.so+0x85bca8]  MarkFromRootsTask::do_it(GCTaskManager*, unsigned int)+0x78
+V  [libjvm.so+0x5590bf]  GCTaskThread::run()+0x12f
+V  [libjvm.so+0x8238c8]  java_start(Thread*)+0x108
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f0e780dd800 JavaThread "pool-12-thread-1" [_thread_blocked, id=9647, stack(0x00007f0e2b6b8000,0x00007f0e2b7b9000)]
+  0x00007f0e7c096000 JavaThread "pool-11-thread-1" [_thread_blocked, id=9646, stack(0x00007f0e2b2b4000,0x00007f0e2b3b5000)]
+  0x00007f0efc66d800 JavaThread "ServerService Thread Pool -- 184" [_thread_blocked, id=9645, stack(0x00007f0e2b1b3000,0x00007f0e2b2b4000)]
+  0x00007f0ef80a0000 JavaThread "ServerService Thread Pool -- 180" [_thread_blocked, id=9644, stack(0x00007f0e2b3b5000,0x00007f0e2b4b6000)]
+  0x00007f0ef00c0000 JavaThread "ServerService Thread Pool -- 182" [_thread_blocked, id=9643, stack(0x00007f0e2b0b2000,0x00007f0e2b1b3000)]
+  0x00007f0ed404e000 JavaThread "ServerService Thread Pool -- 183" [_thread_blocked, id=9642, stack(0x00007f0e2b4b6000,0x00007f0e2b5b7000)]
+  0x00007f0eec042000 JavaThread "ServerService Thread Pool -- 181" [_thread_blocked, id=9641, stack(0x00007f0e2afb1000,0x00007f0e2b0b2000)]
+  0x00007f0ec41c6000 JavaThread "ServerService Thread Pool -- 176" [_thread_blocked, id=9639, stack(0x00007f0e2adaf000,0x00007f0e2aeb0000)]
+  0x00007f0ef8088000 JavaThread "ServerService Thread Pool -- 179" [_thread_blocked, id=9638, stack(0x00007f0e2aeb0000,0x00007f0e2afb1000)]
+  0x00007f0ed0021800 JavaThread "ServerService Thread Pool -- 178" [_thread_blocked, id=9637, stack(0x00007f0e2acae000,0x00007f0e2adaf000)]
+  0x00007f0ee075a000 JavaThread "ServerService Thread Pool -- 177" [_thread_blocked, id=9636, stack(0x00007f0e2abad000,0x00007f0e2acae000)]
+  0x00007f0ed0011000 JavaThread "ServerService Thread Pool -- 175" [_thread_blocked, id=9635, stack(0x00007f0e45146000,0x00007f0e45247000)]
+  0x00007f0ef8068800 JavaThread "ServerService Thread Pool -- 170" [_thread_blocked, id=9634, stack(0x00007f0e2aaac000,0x00007f0e2abad000)]
+  0x00007f0ed8070800 JavaThread "ServerService Thread Pool -- 172" [_thread_blocked, id=9633, stack(0x00007f0e2a9ab000,0x00007f0e2aaac000)]
+  0x00007f0ec006c800 JavaThread "ServerService Thread Pool -- 173" [_thread_blocked, id=9632, stack(0x00007f0e2ecee000,0x00007f0e2edef000)]
+  0x00007f0ef4055800 JavaThread "ServerService Thread Pool -- 174" [_thread_blocked, id=9631, stack(0x00007f0e2edef000,0x00007f0e2eef0000)]
+  0x00007f0efc68d000 JavaThread "ServerService Thread Pool -- 163" [_thread_blocked, id=9630, stack(0x00007f0e2989a000,0x00007f0e2999b000)]
+  0x00007f0ee80f9800 JavaThread "ServerService Thread Pool -- 160" [_thread_blocked, id=9629, stack(0x00007f0e2e5e7000,0x00007f0e2e6e8000)]
+  0x00007f0eec2a8800 JavaThread "ServerService Thread Pool -- 159" [_thread_blocked, id=9628, stack(0x00007f0e29496000,0x00007f0e29597000)]
+  0x00007f0ed0017000 JavaThread "ServerService Thread Pool -- 161" [_thread_blocked, id=9627, stack(0x00007f0e28f91000,0x00007f0e29092000)]
+  0x00007f0ed4087800 JavaThread "ServerService Thread Pool -- 164" [_thread_blocked, id=9626, stack(0x00007f0e29092000,0x00007f0e29193000)]
+  0x00007f0ec4199800 JavaThread "ServerService Thread Pool -- 156" [_thread_blocked, id=9625, stack(0x00007f0e2898b000,0x00007f0e28a8c000)]
+  0x00007f0f04026800 JavaThread "ServerService Thread Pool -- 166" [_thread_blocked, id=9624, stack(0x00007f0e4463b000,0x00007f0e4473c000)]
+  0x00007f0ef414f000 JavaThread "ServerService Thread Pool -- 171" [_thread_blocked, id=9623, stack(0x00007f0e2e9eb000,0x00007f0e2eaec000)]
+  0x00007f0ed806b800 JavaThread "ServerService Thread Pool -- 150" [_thread_blocked, id=9622, stack(0x00007f0e2e7e9000,0x00007f0e2e8ea000)]
+  0x00007f0ef0255800 JavaThread "ServerService Thread Pool -- 167" [_thread_blocked, id=9621, stack(0x00007f0e29698000,0x00007f0e29799000)]
+  0x00007f0ecc356800 JavaThread "ServerService Thread Pool -- 169" [_thread_blocked, id=9620, stack(0x00007f0e2e6e8000,0x00007f0e2e7e9000)]
+  0x00007f0ef8048800 JavaThread "ServerService Thread Pool -- 149" [_thread_blocked, id=9619, stack(0x00007f0e2e0e2000,0x00007f0e2e1e3000)]
+  0x00007f0ecc350000 JavaThread "ServerService Thread Pool -- 168" [_thread_blocked, id=9618, stack(0x00007f0e2a1a3000,0x00007f0e2a2a4000)]
+  0x00007f0ecc40f000 JavaThread "ServerService Thread Pool -- 151" [_thread_blocked, id=9617, stack(0x00007f0e2888a000,0x00007f0e2898b000)]
+  0x00007f0ef01d8800 JavaThread "ServerService Thread Pool -- 152" [_thread_blocked, id=9616, stack(0x00007f0e28a8c000,0x00007f0e28b8d000)]
+  0x00007f0ef4056000 JavaThread "ServerService Thread Pool -- 153" [_thread_blocked, id=9615, stack(0x00007f0e2a3a5000,0x00007f0e2a4a6000)]
+  0x00007f0ec00db000 JavaThread "ServerService Thread Pool -- 154" [_thread_blocked, id=9614, stack(0x00007f0e2a7a9000,0x00007f0e2a8aa000)]
+  0x00007f0f0408d000 JavaThread "ServerService Thread Pool -- 155" [_thread_blocked, id=9613, stack(0x00007f0e2e3e5000,0x00007f0e2e4e6000)]
+  0x00007f0ec8015800 JavaThread "ServerService Thread Pool -- 157" [_thread_blocked, id=9612, stack(0x00007f0e2ebed000,0x00007f0e2ecee000)]
+  0x00007f0edc154800 JavaThread "ServerService Thread Pool -- 165" [_thread_blocked, id=9611, stack(0x00007f0e28587000,0x00007f0e28688000)]
+  0x00007f0edc124000 JavaThread "ServerService Thread Pool -- 162" [_thread_blocked, id=9610, stack(0x00007f0e29193000,0x00007f0e29294000)]
+  0x00007f0efc66c800 JavaThread "ServerService Thread Pool -- 158" [_thread_blocked, id=9609, stack(0x00007f0e29a9c000,0x00007f0e29b9d000)]
+  0x00007f0eec2ac000 JavaThread "ServerService Thread Pool -- 148" [_thread_blocked, id=9608, stack(0x00007f0e45045000,0x00007f0e45146000)]
+  0x00007f0ef414f800 JavaThread "ServerService Thread Pool -- 106" [_thread_blocked, id=9454, stack(0x00007f0e27a7c000,0x00007f0e27b7d000)]
+  0x00007f0ed806e000 JavaThread "http-/0.0.0.0:8080-6" daemon [_thread_blocked, id=9000, stack(0x00007f0e28b8d000,0x00007f0e28c8e000)]
+  0x00007f0ed806c800 JavaThread "http-/0.0.0.0:8080-5" daemon [_thread_blocked, id=8999, stack(0x00007f0e28c8e000,0x00007f0e28d8f000)]
+  0x00007f0ed8033800 JavaThread "http-/0.0.0.0:8080-4" daemon [_thread_in_native, id=8998, stack(0x00007f0e28d8f000,0x00007f0e28e90000)]
+  0x00007f0ed8019000 JavaThread "http-/0.0.0.0:8080-3" daemon [_thread_blocked, id=8997, stack(0x00007f0e28e90000,0x00007f0e28f91000)]
+  0x00007f0ee0aab000 JavaThread "wan-watchdog" daemon [_thread_blocked, id=8970, stack(0x00007f0e29fa1000,0x00007f0e2a0a2000)]
+  0x00007f0ee09b4800 JavaThread "wan-watchdog" daemon [_thread_blocked, id=8861, stack(0x00007f0e30304000,0x00007f0e30405000)]
+  0x00007f0ee0881800 JavaThread "wan-watchdog" daemon [_thread_blocked, id=8767, stack(0x00007f0e35c5d000,0x00007f0e35d5e000)]
+  0x00007f0ee02e4000 JavaThread "wan-watchdog" daemon [_thread_blocked, id=8669, stack(0x00007f0e3b8b9000,0x00007f0e3b9ba000)]
+  0x00007f0ee07c3800 JavaThread "wan-watchdog" daemon [_thread_blocked, id=8541, stack(0x00007f0e46673000,0x00007f0e46774000)]
+  0x00007f0ed8069000 JavaThread "http-/0.0.0.0:8080-2" daemon [_thread_blocked, id=8422, stack(0x00007f0e45348000,0x00007f0e45449000)]
+  0x0000000000bf6000 JavaThread "ServerService Thread Pool -- 90" [_thread_blocked, id=7970, stack(0x00007f0e44f44000,0x00007f0e45045000)]
+  0x00007f0eb0031000 JavaThread "ServerService Thread Pool -- 89" [_thread_blocked, id=7635, stack(0x00007f0e45247000,0x00007f0e45348000)]
+  0x00007f0efc29f800 JavaThread "AsyncAppender-Dispatcher-Thread-119" daemon [_thread_blocked, id=7562, stack(0x00007f0e45f6c000,0x00007f0e4606d000)]
+  0x00007f0efc29e000 JavaThread "AsyncAppender-Dispatcher-Thread-118" daemon [_thread_blocked, id=7561, stack(0x00007f0e4606d000,0x00007f0e4616e000)]
+  0x00007f0efc1ad800 JavaThread "AsyncAppender-Dispatcher-Thread-117" daemon [_thread_blocked, id=7560, stack(0x00007f0e4616e000,0x00007f0e4626f000)]
+  0x00007f0efc18a800 JavaThread "AsyncAppender-Dispatcher-Thread-116" daemon [_thread_blocked, id=7559, stack(0x00007f0e4626f000,0x00007f0e46370000)]
+  0x00007f0efc188000 JavaThread "AsyncAppender-Dispatcher-Thread-115" daemon [_thread_blocked, id=7558, stack(0x00007f0e46370000,0x00007f0e46471000)]
+  0x00007f0e48030800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-16" [_thread_blocked, id=7533, stack(0x00007f0e47226000,0x00007f0e47327000)]
+  0x00007f0e4802e800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-15" [_thread_blocked, id=7532, stack(0x00007f0e47327000,0x00007f0e47428000)]
+  0x00007f0e4802c000 JavaThread "Remoting "sftv000039:MANAGEMENT" task-14" [_thread_blocked, id=7529, stack(0x00007f0e47428000,0x00007f0e47529000)]
+  0x00007f0e48061800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-13" [_thread_blocked, id=7527, stack(0x00007f0e47529000,0x00007f0e4762a000)]
+  0x00007f0f1c007000 JavaThread "Buffer reclamation thread" daemon [_thread_blocked, id=7520, stack(0x00007f0e479fa000,0x00007f0e47afb000)]
+  0x00007f0e4805f800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-12" [_thread_blocked, id=7498, stack(0x00007f0e4cf61000,0x00007f0e4d062000)]
+  0x00007f0e4805e800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-11" [_thread_blocked, id=7497, stack(0x00007f0e4d062000,0x00007f0e4d163000)]
+  0x00007f0e4805c800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-10" [_thread_blocked, id=7494, stack(0x00007f0e4d163000,0x00007f0e4d264000)]
+  0x00007f0e4805a800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-9" [_thread_blocked, id=7492, stack(0x00007f0e4d264000,0x00007f0e4d365000)]
+  0x00007f0e48058800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-8" [_thread_blocked, id=7484, stack(0x00007f0e4d466000,0x00007f0e4d567000)]
+  0x00007f0f1c009000 JavaThread "Remoting "sftv000039:MANAGEMENT" task-7" [_thread_blocked, id=7482, stack(0x00007f0e4d668000,0x00007f0e4d769000)]
+  0x00007f0e48054800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-6" [_thread_blocked, id=7481, stack(0x00007f0e4d769000,0x00007f0e4d86a000)]
+  0x00007f0e48050000 JavaThread "Remoting "sftv000039:MANAGEMENT" task-5" [_thread_blocked, id=7480, stack(0x00007f0e4d86a000,0x00007f0e4d96b000)]
+  0x00007f0e4804e800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-4" [_thread_blocked, id=7476, stack(0x00007f0e4da6c000,0x00007f0e4db6d000)]
+  0x00007f0e4804c800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-3" [_thread_blocked, id=7472, stack(0x00007f0e4dd6f000,0x00007f0e4de70000)]
+  0x00007f0e4804a800 JavaThread "Remoting "sftv000039:MANAGEMENT" task-2" [_thread_blocked, id=7470, stack(0x00007f0e4de70000,0x00007f0e4df71000)]
+  0x00007f0e48041000 JavaThread "Remoting "sftv000039:MANAGEMENT" task-1" [_thread_blocked, id=7469, stack(0x00007f0e4df95000,0x00007f0e4e096000)]
+  0x00007f0ec0065000 JavaThread "Thread-76" [_thread_in_native, id=7462, stack(0x00007f0e4e69c000,0x00007f0e4e79d000)]
+  0x00007f0ec0032800 JavaThread "server-timer" daemon [_thread_blocked, id=7459, stack(0x00007f0e4e79d000,0x00007f0e4e89e000)]
+  0x00007f0ed8022800 JavaThread "JCA PoolFiller" daemon [_thread_blocked, id=7456, stack(0x00007f0e4e8a9000,0x00007f0e4e9aa000)]
+  0x00007f0efc0b5800 JavaThread "Transaction Reaper Worker 0" daemon [_thread_blocked, id=7455, stack(0x00007f0e4eaeb000,0x00007f0e4ebec000)]
+  0x00007f0efc0b4800 JavaThread "Transaction Reaper" daemon [_thread_blocked, id=7454, stack(0x00007f0e4ebec000,0x00007f0e4eced000)]
+  0x00007f0ed8010800 JavaThread "http-/0.0.0.0:8080-1" daemon [_thread_blocked, id=7453, stack(0x00007f0e4eced000,0x00007f0e4edee000)]
+  0x00007f0ec4026800 JavaThread "http-/0.0.0.0:8080-Acceptor-0" daemon [_thread_in_native, id=7452, stack(0x00007f0e4edee000,0x00007f0e4eeef000)]
+  0x00007f0ee00e2800 JavaThread "Periodic Recovery" [_thread_blocked, id=7450, stack(0x00007f0e4eeef000,0x00007f0e4eff0000)]
+  0x00007f0ec4025800 JavaThread "http-/0.0.0.0:8080-Poller" daemon [_thread_blocked, id=7449, stack(0x00007f0e4eff0000,0x00007f0e4f0f1000)]
+  0x00007f0ee00e0800 JavaThread "Transaction Expired Entry Monitor" daemon [_thread_blocked, id=7448, stack(0x00007f0e4f0f1000,0x00007f0e4f1f2000)]
+  0x00007f0ee8015800 JavaThread "Timer-0" [_thread_blocked, id=7435, stack(0x00007f0e4f1f2000,0x00007f0e4f2f3000)]
+  0x00007f0eec032800 JavaThread "ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon [_thread_blocked, id=7427, stack(0x00007f0e4f2f3000,0x00007f0e4f3f4000)]
+  0x00007f0eec002000 JavaThread "ConnectionValidator" daemon [_thread_blocked, id=7419, stack(0x00007f0e4f5f6000,0x00007f0e4f6f7000)]
+  0x00007f0edc137000 JavaThread "IdleRemover" daemon [_thread_blocked, id=7418, stack(0x00007f0e4f6f7000,0x00007f0e4f7f8000)]
+  0x00007f0ecc038800 JavaThread "Remoting "sftv000039" write-1" [_thread_in_native, id=7417, stack(0x00007f0e4f7f8000,0x00007f0e4f8f9000)]
+  0x00007f0ecc036800 JavaThread "Remoting "sftv000039" read-1" [_thread_in_native, id=7416, stack(0x00007f0e4f8f9000,0x00007f0e4f9fa000)]
+  0x00007f0efc04e000 JavaThread "Remoting "sftv000039:MANAGEMENT" write-1" [_thread_in_native, id=7389, stack(0x00007f0ee5204000,0x00007f0ee5305000)]
+  0x00007f0efc04d800 JavaThread "Remoting "sftv000039:MANAGEMENT" read-1" [_thread_in_native, id=7388, stack(0x00007f0ee5305000,0x00007f0ee5406000)]
+  0x00007f0ec4002000 JavaThread "ServerService Thread Pool -- 26" [_thread_blocked, id=7387, stack(0x00007f0ee5409000,0x00007f0ee550a000)]
+  0x00007f0e54004000 JavaThread "DeploymentScanner-threads - 2" [_thread_blocked, id=7384, stack(0x00007f0ee550a000,0x00007f0ee560b000)]
+  0x00007f0ea8097000 JavaThread "DeploymentScanner-threads - 1" [_thread_blocked, id=7383, stack(0x00007f0ee560b000,0x00007f0ee570c000)]
+  0x00007f0ecc002800 JavaThread "ServerService Thread Pool -- 1" [_thread_blocked, id=7358, stack(0x00007f0ee7294000,0x00007f0ee7395000)]
+  0x00007f0f5400a800 JavaThread "DestroyJavaVM" [_thread_blocked, id=7317, stack(0x00007f0f5c761000,0x00007f0f5c862000)]
+  0x00007f0ec0018800 JavaThread "ServerDeploymentRepository-temp-threads - 1" daemon [_thread_blocked, id=7356, stack(0x00007f0ee7598000,0x00007f0ee7699000)]
+  0x00007f0ee009c800 JavaThread "MSC service thread 1-16" [_thread_blocked, id=7355, stack(0x00007f0ee7699000,0x00007f0ee779a000)]
+  0x00007f0ee008e800 JavaThread "MSC service thread 1-15" [_thread_blocked, id=7354, stack(0x00007f0ee779a000,0x00007f0ee789b000)]
+  0x00007f0ee004b800 JavaThread "MSC service thread 1-14" [_thread_blocked, id=7353, stack(0x00007f0ee78f9000,0x00007f0ee79fa000)]
+  0x00007f0ee004a000 JavaThread "MSC service thread 1-13" [_thread_blocked, id=7352, stack(0x00007f0ee79fa000,0x00007f0ee7afb000)]
+  0x00007f0ee0035800 JavaThread "MSC service thread 1-12" [_thread_blocked, id=7351, stack(0x00007f0ee7afb000,0x00007f0ee7bfc000)]
+  0x00007f0ee0033800 JavaThread "MSC service thread 1-11" [_thread_blocked, id=7350, stack(0x00007f0ee7bfc000,0x00007f0ee7cfd000)]
+  0x00007f0ee003e000 JavaThread "MSC service thread 1-10" [_thread_blocked, id=7349, stack(0x00007f0ee7cfd000,0x00007f0ee7dfe000)]
+  0x00007f0ee0014800 JavaThread "MSC service thread 1-9" [_thread_blocked, id=7348, stack(0x00007f0ee7dfe000,0x00007f0ee7eff000)]
+  0x00007f0ef4003800 JavaThread "MSC service thread 1-8" [_thread_blocked, id=7347, stack(0x00007f0ee7eff000,0x00007f0ee8000000)]
+  0x00007f0ef4001000 JavaThread "MSC service thread 1-7" [_thread_blocked, id=7346, stack(0x00007f0f10018000,0x00007f0f10119000)]
+  0x00007f0efc001800 JavaThread "MSC service thread 1-6" [_thread_blocked, id=7345, stack(0x00007f0f10119000,0x00007f0f1021a000)]
+  0x00007f0ef0001000 JavaThread "MSC service thread 1-5" [_thread_blocked, id=7344, stack(0x00007f0f1021a000,0x00007f0f1031b000)]
+  0x00007f0f5457c000 JavaThread "MSC service thread 1-4" [_thread_blocked, id=7343, stack(0x00007f0f1031b000,0x00007f0f1041c000)]
+  0x00007f0ef8001800 JavaThread "MSC service thread 1-3" [_thread_blocked, id=7342, stack(0x00007f0f1041c000,0x00007f0f1051d000)]
+  0x00007f0f04001000 JavaThread "MSC service thread 1-2" [_thread_blocked, id=7341, stack(0x00007f0f1051d000,0x00007f0f1061e000)]
+  0x00007f0f5457a000 JavaThread "MSC service thread 1-1" [_thread_blocked, id=7340, stack(0x00007f0f1061e000,0x00007f0f1071f000)]
+  0x00007f0f54154000 JavaThread "Reference Reaper" daemon [_thread_blocked, id=7338, stack(0x00007f0f13dfe000,0x00007f0f13eff000)]
+  0x00007f0f540a8000 JavaThread "Service Thread" daemon [_thread_blocked, id=7336, stack(0x00007f0f30015000,0x00007f0f30116000)]
+  0x00007f0f540a6000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7335, stack(0x00007f0f30116000,0x00007f0f30217000)]
+  0x00007f0f540a3000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=7334, stack(0x00007f0f30217000,0x00007f0f30318000)]
+  0x00007f0f540a0800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7333, stack(0x00007f0f30318000,0x00007f0f30419000)]
+  0x00007f0f54079800 JavaThread "Finalizer" daemon [_thread_blocked, id=7329, stack(0x00007f0f306f3000,0x00007f0f307f4000)]
+  0x00007f0f54077800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7328, stack(0x00007f0f307f4000,0x00007f0f308f5000)]
+
+Other Threads:
+  0x00007f0f54073000 VMThread [stack: 0x00007f0f308f5000,0x00007f0f309f6000] [id=7327]
+  0x00007f0f540b3000 WatcherThread [stack: 0x00007f0f13eff000,0x00007f0f14000000] [id=7337]
+
+=>0x00007f0f5402d800 (exited) GCTaskThread [stack: 0x00007f0f58cde000,0x00007f0f58ddf000] [id=7326]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f0f54007090] Threads_lock - owner thread: 0x00007f0f54073000
+[0x00007f0f54007590] Heap_lock - owner thread: 0x00007f0ee004a000
+
+Heap
+ PSYoungGen      total 288256K, used 42183K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 230912K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f8c00000)
+  from space 57344K, 73% used [0x00000000fc800000,0x00000000ff131d68,0x0000000100000000)
+  to   space 59392K, 0% used [0x00000000f8c00000,0x00000000f8c00000,0x00000000fc600000)
+ ParOldGen       total 699392K, used 694844K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 99% used [0x00000000bff80000,0x00000000ea60f2b0,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 419893K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 80% used [0x000000009ff80000,0x00000000b998d658,0x00000000bff80000)
+
+Card table byte_map: [0x00007f0f5973c000,0x00007f0f59a3d000] byte_map_base: 0x00007f0f5923c400
+
+Polling page: 0x00007f0f5c87d000
+
+Code Cache  [0x00007f0f51000000, 0x00007f0f521d0000, 0x00007f0f54000000)
+ total_blobs=5455 nmethods=4739 adapters=667 free_code_cache=31150Kb largest_free_block=31669632
+
+Compilation events (10 events):
+Event: 1036,931 Thread 0x00007f0f540a3000 5521             org.jboss.weld.bean.interceptor.WeldInterceptorClassMetadata::<init> (128 bytes)
+Event: 1036,950 Thread 0x00007f0f540a3000 nmethod 5521 0x00007f0f521a3110 code [0x00007f0f521a33c0, 0x00007f0f521a3ec0]
+Event: 1036,997 Thread 0x00007f0f540a6000 5522             org.jboss.weld.bean.AbstractBean::initDefaultQualifiers (236 bytes)
+Event: 1037,016 Thread 0x00007f0f540a6000 nmethod 5522 0x00007f0f52155750 code [0x00007f0f52155a20, 0x00007f0f521566c8]
+Event: 1037,026 Thread 0x00007f0f540a3000 5523             org.jboss.weld.util.bytecode.RuntimeMethodInformation::getParameterTypes (5 bytes)
+Event: 1037,027 Thread 0x00007f0f540a3000 nmethod 5523 0x00007f0f5218bb90 code [0x00007f0f5218bcc0, 0x00007f0f5218bd18]
+Event: 1037,029 Thread 0x00007f0f540a6000 5524             java.io.FilterOutputStream::write (9 bytes)
+Event: 1037,032 Thread 0x00007f0f540a6000 nmethod 5524 0x00007f0f51f66190 code [0x00007f0f51f66320, 0x00007f0f51f66a98]
+Event: 1037,108 Thread 0x00007f0f540a3000 5525             org.jboss.weld.event.ObserverNotifier::notifyObservers (38 bytes)
+Event: 1037,115 Thread 0x00007f0f540a3000 nmethod 5525 0x00007f0f51fa8890 code [0x00007f0f51fa8a40, 0x00007f0f51fa8d08]
+
+GC Heap History (10 events):
+Event: 1031,136 GC heap after
+Heap after GC invocations=123 (full 1):
+ PSYoungGen      total 296448K, used 33419K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 245248K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f9a00000)
+  from space 51200K, 65% used [0x00000000fce00000,0x00000000feea2ce8,0x0000000100000000)
+  to   space 52224K, 0% used [0x00000000f9a00000,0x00000000f9a00000,0x00000000fcd00000)
+ ParOldGen       total 699392K, used 550037K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 78% used [0x00000000bff80000,0x00000000e18a5440,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 410734K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b909b958,0x00000000bff80000)
+}
+Event: 1031,650 GC heap before
+{Heap before GC invocations=124 (full 1):
+ PSYoungGen      total 296448K, used 278667K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 245248K, 100% used [0x00000000eaa80000,0x00000000f9a00000,0x00000000f9a00000)
+  from space 51200K, 65% used [0x00000000fce00000,0x00000000feea2ce8,0x0000000100000000)
+  to   space 52224K, 0% used [0x00000000f9a00000,0x00000000f9a00000,0x00000000fcd00000)
+ ParOldGen       total 699392K, used 550037K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 78% used [0x00000000bff80000,0x00000000e18a5440,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 411151K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b9103e88,0x00000000bff80000)
+Event: 1031,710 GC heap after
+Heap after GC invocations=124 (full 1):
+ PSYoungGen      total 288768K, used 43152K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 245248K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f9a00000)
+  from space 43520K, 99% used [0x00000000f9a00000,0x00000000fc424020,0x00000000fc480000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 699392K, used 580669K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 83% used [0x00000000bff80000,0x00000000e368f5e8,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 411151K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b9103e88,0x00000000bff80000)
+}
+Event: 1032,176 GC heap before
+{Heap before GC invocations=125 (full 1):
+ PSYoungGen      total 288768K, used 288400K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 245248K, 100% used [0x00000000eaa80000,0x00000000f9a00000,0x00000000f9a00000)
+  from space 43520K, 99% used [0x00000000f9a00000,0x00000000fc424020,0x00000000fc480000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 699392K, used 580669K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 83% used [0x00000000bff80000,0x00000000e368f5e8,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 412252K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b92170d8,0x00000000bff80000)
+Event: 1032,232 GC heap after
+Heap after GC invocations=125 (full 1):
+ PSYoungGen      total 291328K, used 37600K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 235008K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f9000000)
+  from space 56320K, 66% used [0x00000000fc900000,0x00000000fedb8020,0x0000000100000000)
+  to   space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+ ParOldGen       total 699392K, used 622442K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 88% used [0x00000000bff80000,0x00000000e5f5a9b0,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 412252K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b92170d8,0x00000000bff80000)
+}
+Event: 1034,258 GC heap before
+{Heap before GC invocations=126 (full 1):
+ PSYoungGen      total 291328K, used 272608K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 235008K, 100% used [0x00000000eaa80000,0x00000000f9000000,0x00000000f9000000)
+  from space 56320K, 66% used [0x00000000fc900000,0x00000000fedb8020,0x0000000100000000)
+  to   space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+ ParOldGen       total 699392K, used 622442K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 88% used [0x00000000bff80000,0x00000000e5f5a9b0,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 413448K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b9342308,0x00000000bff80000)
+Event: 1034,313 GC heap after
+Heap after GC invocations=126 (full 1):
+ PSYoungGen      total 292352K, used 35808K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 235008K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f9000000)
+  from space 57344K, 62% used [0x00000000f9000000,0x00000000fb2f8000,0x00000000fc800000)
+  to   space 57344K, 0% used [0x00000000fc800000,0x00000000fc800000,0x0000000100000000)
+ ParOldGen       total 699392K, used 658678K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 94% used [0x00000000bff80000,0x00000000e82bd968,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 413448K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 78% used [0x000000009ff80000,0x00000000b9342308,0x00000000bff80000)
+}
+Event: 1037,125 GC heap before
+{Heap before GC invocations=127 (full 1):
+ PSYoungGen      total 292352K, used 270816K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 235008K, 100% used [0x00000000eaa80000,0x00000000f9000000,0x00000000f9000000)
+  from space 57344K, 62% used [0x00000000f9000000,0x00000000fb2f8000,0x00000000fc800000)
+  to   space 57344K, 0% used [0x00000000fc800000,0x00000000fc800000,0x0000000100000000)
+ ParOldGen       total 699392K, used 658678K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 94% used [0x00000000bff80000,0x00000000e82bd968,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 419893K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 80% used [0x000000009ff80000,0x00000000b998d658,0x00000000bff80000)
+Event: 1037,180 GC heap after
+Heap after GC invocations=127 (full 1):
+ PSYoungGen      total 288256K, used 42183K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 230912K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f8c00000)
+  from space 57344K, 73% used [0x00000000fc800000,0x00000000ff131d68,0x0000000100000000)
+  to   space 59392K, 0% used [0x00000000f8c00000,0x00000000f8c00000,0x00000000fc600000)
+ ParOldGen       total 699392K, used 694844K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 99% used [0x00000000bff80000,0x00000000ea60f2b0,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 419893K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 80% used [0x000000009ff80000,0x00000000b998d658,0x00000000bff80000)
+}
+Event: 1037,180 GC heap before
+{Heap before GC invocations=128 (full 2):
+ PSYoungGen      total 288256K, used 42183K [0x00000000eaa80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 230912K, 0% used [0x00000000eaa80000,0x00000000eaa80000,0x00000000f8c00000)
+  from space 57344K, 73% used [0x00000000fc800000,0x00000000ff131d68,0x0000000100000000)
+  to   space 59392K, 0% used [0x00000000f8c00000,0x00000000f8c00000,0x00000000fc600000)
+ ParOldGen       total 699392K, used 694844K [0x00000000bff80000, 0x00000000eaa80000, 0x00000000eaa80000)
+  object space 699392K, 99% used [0x00000000bff80000,0x00000000ea60f2b0,0x00000000eaa80000)
+ PSPermGen       total 524288K, used 419893K [0x000000009ff80000, 0x00000000bff80000, 0x00000000bff80000)
+  object space 524288K, 80% used [0x000000009ff80000,0x00000000b998d658,0x00000000bff80000)
+
+Deoptimization events (10 events):
+Event: 1018,445 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51f684ec method=org.jboss.weld.manager.BeanManagerImpl.getReference(Ljavax/enterprise/inject/spi/InjectionPoint;Ljavax/enterprise/inject/spi/Bean;Ljavax/enterprise/context/spi/Creationa
+Event: 1018,474 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51782a00 method=org.jboss.weld.introspector.jlr.AbstractWeldAnnotated.getQualifiers()Ljava/util/Set; @ 7
+Event: 1018,474 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51f684ec method=org.jboss.weld.manager.BeanManagerImpl.getReference(Ljavax/enterprise/inject/spi/InjectionPoint;Ljavax/enterprise/inject/spi/Bean;Ljavax/enterprise/context/spi/Creationa
+Event: 1020,354 Thread 0x00007f0ee003e000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007f0f51987594 method=org.jboss.weld.util.reflection.HierarchyDiscovery.resolveTypeParameter(Ljava/lang/reflect/ParameterizedType;Ljava/lang/reflect/Type;Ljava/lang/reflect/TypeVariable;)Ljav
+Event: 1020,615 Thread 0x00007f0ee003e000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007f0f518dd99c method=org.jboss.weld.util.collections.ArraySetMultimap.putSingleElement(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List; @ 5
+Event: 1023,508 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51aaefb8 method=org.jboss.weld.bean.AbstractBean.isDependent()Z @ 4
+Event: 1023,534 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51aaefb8 method=org.jboss.weld.bean.AbstractBean.isDependent()Z @ 4
+Event: 1023,557 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51aaefb8 method=org.jboss.weld.bean.AbstractBean.isDependent()Z @ 4
+Event: 1023,578 Thread 0x00007f0ee003e000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f0f51aaefb8 method=org.jboss.weld.bean.AbstractBean.isDependent()Z @ 4
+Event: 1029,640 Thread 0x00007f0ec4199800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f0f5187a184 method=javassist.util.proxy.ProxyFactory.addReturn(Ljavassist/bytecode/Bytecode;Ljava/lang/Class;)I @ 11
+
+Internal exceptions (10 events):
+Event: 1033,865 Thread 0x00007f0ecc40f000 Threw 0x00000000f6f84e68 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1033,865 Thread 0x00007f0ecc40f000 Threw 0x00000000f6f853e0 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1033,865 Thread 0x00007f0ecc40f000 Threw 0x00000000f6f93780 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1033,865 Thread 0x00007f0ecc40f000 Threw 0x00000000f6f93cf8 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1034,071 Thread 0x00007f0ecc40f000 Threw 0x00000000f81656f8 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1034,071 Thread 0x00007f0ecc40f000 Threw 0x00000000f8165c58 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1034,073 Thread 0x00007f0ecc40f000 Threw 0x00000000f8172be0 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1034,073 Thread 0x00007f0ecc40f000 Threw 0x00000000f8173140 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1035,058 Thread 0x00007f0ecc40f000 Threw 0x00000000edfc9b28 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+Event: 1035,058 Thread 0x00007f0ecc40f000 Threw 0x00000000edfca0c0 at /HUDSON/workspace/7u-2-build-linux-amd64/jdk7u80/2329/hotspot/src/share/vm/prims/jvm.cpp:1319
+
+Events (10 events):
+Event: 1035,058 loading class 0x00007f0e740f0f30 done
+Event: 1035,058 loading class 0x00007f0e740f0f30
+Event: 1035,058 loading class 0x00007f0e740f0f30 done
+Event: 1035,192 loading class 0x00007f0e7c16d630
+Event: 1035,192 loading class 0x00007f0e7c16d630 done
+Event: 1035,369 Executing VM operation: RevokeBias
+Event: 1035,371 Executing VM operation: RevokeBias done
+Event: 1035,371 Executing VM operation: BulkRevokeBias
+Event: 1035,372 Executing VM operation: BulkRevokeBias done
+Event: 1037,124 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 11802673                           /usr/lib/jvm/jre1.7.0_80/bin/java
+00600000-00601000 rw-p 00000000 08:01 11802673                           /usr/lib/jvm/jre1.7.0_80/bin/java
+00b25000-00c25000 rw-p 00000000 00:00 0                                  [heap]
+9ff80000-bff80000 rw-p 00000000 00:00 0 
+bff80000-100000000 rw-p 00000000 00:00 0 
+7f0e20000000-7f0e21584000 rw-p 00000000 00:00 0 
+7f0e21584000-7f0e24000000 ---p 00000000 00:00 0 
+7f0e27a7c000-7f0e27a7f000 ---p 00000000 00:00 0 
+7f0e27a7f000-7f0e27b7d000 rw-p 00000000 00:00 0 
+7f0e28587000-7f0e2858a000 ---p 00000000 00:00 0 
+7f0e2858a000-7f0e28688000 rw-p 00000000 00:00 0 
+7f0e2888a000-7f0e2888d000 ---p 00000000 00:00 0 
+7f0e2888d000-7f0e2898b000 rw-p 00000000 00:00 0 
+7f0e2898b000-7f0e2898e000 ---p 00000000 00:00 0 
+7f0e2898e000-7f0e28a8c000 rw-p 00000000 00:00 0 
+7f0e28a8c000-7f0e28a8f000 ---p 00000000 00:00 0 
+7f0e28a8f000-7f0e28b8d000 rw-p 00000000 00:00 0 
+7f0e28b8d000-7f0e28b90000 ---p 00000000 00:00 0 
+7f0e28b90000-7f0e28c8e000 rw-p 00000000 00:00 0 
+7f0e28c8e000-7f0e28c91000 ---p 00000000 00:00 0 
+7f0e28c91000-7f0e28d8f000 rw-p 00000000 00:00 0 
+7f0e28d8f000-7f0e28d92000 ---p 00000000 00:00 0 
+7f0e28d92000-7f0e28e90000 rw-p 00000000 00:00 0 
+7f0e28e90000-7f0e28e93000 ---p 00000000 00:00 0 
+7f0e28e93000-7f0e28f91000 rw-p 00000000 00:00 0 
+7f0e28f91000-7f0e28f94000 ---p 00000000 00:00 0 
+7f0e28f94000-7f0e29092000 rw-p 00000000 00:00 0 
+7f0e29092000-7f0e29095000 ---p 00000000 00:00 0 
+7f0e29095000-7f0e29193000 rw-p 00000000 00:00 0 
+7f0e29193000-7f0e29196000 ---p 00000000 00:00 0 
+7f0e29196000-7f0e29294000 rw-p 00000000 00:00 0 
+7f0e29496000-7f0e29499000 ---p 00000000 00:00 0 
+7f0e29499000-7f0e29597000 rw-p 00000000 00:00 0 
+7f0e29698000-7f0e2969b000 ---p 00000000 00:00 0 
+7f0e2969b000-7f0e29799000 rw-p 00000000 00:00 0 
+7f0e2989a000-7f0e2989d000 ---p 00000000 00:00 0 
+7f0e2989d000-7f0e2999b000 rw-p 00000000 00:00 0 
+7f0e29a9c000-7f0e29a9f000 ---p 00000000 00:00 0 
+7f0e29a9f000-7f0e29b9d000 rw-p 00000000 00:00 0 
+7f0e29fa1000-7f0e29fa4000 ---p 00000000 00:00 0 
+7f0e29fa4000-7f0e2a0a2000 rw-p 00000000 00:00 0 
+7f0e2a1a3000-7f0e2a1a6000 ---p 00000000 00:00 0 
+7f0e2a1a6000-7f0e2a2a4000 rw-p 00000000 00:00 0 
+7f0e2a3a5000-7f0e2a3a8000 ---p 00000000 00:00 0 
+7f0e2a3a8000-7f0e2a4a6000 rw-p 00000000 00:00 0 
+7f0e2a7a9000-7f0e2a7ac000 ---p 00000000 00:00 0 
+7f0e2a7ac000-7f0e2a8aa000 rw-p 00000000 00:00 0 
+7f0e2a9ab000-7f0e2a9ae000 ---p 00000000 00:00 0 
+7f0e2a9ae000-7f0e2aaac000 rw-p 00000000 00:00 0 
+7f0e2aaac000-7f0e2aaaf000 ---p 00000000 00:00 0 
+7f0e2aaaf000-7f0e2abad000 rw-p 00000000 00:00 0 
+7f0e2abad000-7f0e2abb0000 ---p 00000000 00:00 0 
+7f0e2abb0000-7f0e2acae000 rw-p 00000000 00:00 0 
+7f0e2acae000-7f0e2acb1000 ---p 00000000 00:00 0 
+7f0e2acb1000-7f0e2adaf000 rw-p 00000000 00:00 0 
+7f0e2adaf000-7f0e2adb2000 ---p 00000000 00:00 0 
+7f0e2adb2000-7f0e2aeb0000 rw-p 00000000 00:00 0 
+7f0e2aeb0000-7f0e2aeb3000 ---p 00000000 00:00 0 
+7f0e2aeb3000-7f0e2afb1000 rw-p 00000000 00:00 0 
+7f0e2afb1000-7f0e2afb4000 ---p 00000000 00:00 0 
+7f0e2afb4000-7f0e2b0b2000 rw-p 00000000 00:00 0 
+7f0e2b0b2000-7f0e2b0b5000 ---p 00000000 00:00 0 
+7f0e2b0b5000-7f0e2b1b3000 rw-p 00000000 00:00 0 
+7f0e2b1b3000-7f0e2b1b6000 ---p 00000000 00:00 0 
+7f0e2b1b6000-7f0e2b2b4000 rw-p 00000000 00:00 0 
+7f0e2b2b4000-7f0e2b2b7000 ---p 00000000 00:00 0 
+7f0e2b2b7000-7f0e2b3b5000 rw-p 00000000 00:00 0 
+7f0e2b3b5000-7f0e2b3b8000 ---p 00000000 00:00 0 
+7f0e2b3b8000-7f0e2b4b6000 rw-p 00000000 00:00 0 
+7f0e2b4b6000-7f0e2b4b9000 ---p 00000000 00:00 0 
+7f0e2b4b9000-7f0e2b5b7000 rw-p 00000000 00:00 0 
+7f0e2b6b8000-7f0e2b6bb000 ---p 00000000 00:00 0 
+7f0e2b6bb000-7f0e2b7b9000 rw-p 00000000 00:00 0 
+7f0e2b7b9000-7f0e2b7bc000 ---p 00000000 00:00 0 
+7f0e2b7bc000-7f0e2b8ba000 rw-p 00000000 00:00 0 
+7f0e2e0e2000-7f0e2e0e5000 ---p 00000000 00:00 0 
+7f0e2e0e5000-7f0e2e1e3000 rw-p 00000000 00:00 0 
+7f0e2e3e5000-7f0e2e3e8000 ---p 00000000 00:00 0 
+7f0e2e3e8000-7f0e2e4e6000 rw-p 00000000 00:00 0 
+7f0e2e5e7000-7f0e2e5ea000 ---p 00000000 00:00 0 
+7f0e2e5ea000-7f0e2e6e8000 rw-p 00000000 00:00 0 
+7f0e2e6e8000-7f0e2e6eb000 ---p 00000000 00:00 0 
+7f0e2e6eb000-7f0e2e7e9000 rw-p 00000000 00:00 0 
+7f0e2e7e9000-7f0e2e7ec000 ---p 00000000 00:00 0 
+7f0e2e7ec000-7f0e2e8ea000 rw-p 00000000 00:00 0 
+7f0e2e9eb000-7f0e2e9ee000 ---p 00000000 00:00 0 
+7f0e2e9ee000-7f0e2eaec000 rw-p 00000000 00:00 0 
+7f0e2ebed000-7f0e2ebf0000 ---p 00000000 00:00 0 
+7f0e2ebf0000-7f0e2ecee000 rw-p 00000000 00:00 0 
+7f0e2ecee000-7f0e2ecf1000 ---p 00000000 00:00 0 
+7f0e2ecf1000-7f0e2edef000 rw-p 00000000 00:00 0 
+7f0e2edef000-7f0e2edf2000 ---p 00000000 00:00 0 
+7f0e2edf2000-7f0e2eef0000 rw-p 00000000 00:00 0 
+7f0e30304000-7f0e30307000 ---p 00000000 00:00 0 
+7f0e30307000-7f0e30405000 rw-p 00000000 00:00 0 
+7f0e35c5d000-7f0e35c60000 ---p 00000000 00:00 0 
+7f0e35c60000-7f0e35d5e000 rw-p 00000000 00:00 0 
+7f0e3b8b9000-7f0e3b8bc000 ---p 00000000 00:00 0 
+7f0e3b8bc000-7f0e3b9ba000 rw-p 00000000 00:00 0 
+7f0e40000000-7f0e41272000 rw-p 00000000 00:00 0 
+7f0e41272000-7f0e44000000 ---p 00000000 00:00 0 
+7f0e4463b000-7f0e4463e000 ---p 00000000 00:00 0 
+7f0e4463e000-7f0e4473c000 rw-p 00000000 00:00 0 
+7f0e44f44000-7f0e44f47000 ---p 00000000 00:00 0 
+7f0e44f47000-7f0e45045000 rw-p 00000000 00:00 0 
+7f0e45045000-7f0e45048000 ---p 00000000 00:00 0 
+7f0e45048000-7f0e45146000 rw-p 00000000 00:00 0 
+7f0e45146000-7f0e45149000 ---p 00000000 00:00 0 
+7f0e45149000-7f0e45247000 rw-p 00000000 00:00 0 
+7f0e45247000-7f0e4524a000 ---p 00000000 00:00 0 
+7f0e4524a000-7f0e45348000 rw-p 00000000 00:00 0 
+7f0e45348000-7f0e4534b000 ---p 00000000 00:00 0 
+7f0e4534b000-7f0e45449000 rw-p 00000000 00:00 0 
+7f0e4574c000-7f0e4574d000 r--s 00002000 08:01 2491403                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/jaxws-jboss-httpserver-httpspi/main/jaxws-jboss-httpserver-httpspi-1.0.1.GA-redhat-2.jar
+7f0e4574d000-7f0e4574f000 r--s 00016000 08:01 2491780                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/xml-resolver/main/xml-resolver-1.2.0.redhat-10.jar
+7f0e4574f000-7f0e45758000 r--s 0006a000 08:01 2491771                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/velocity/main/velocity-1.7.0.redhat-4.jar
+7f0e45758000-7f0e4575c000 r--s 0002c000 08:01 2491794                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/ws/xmlschema/main/xmlschema-core-2.0.2.redhat-3.jar
+7f0e4575c000-7f0e4575e000 r--s 00017000 08:01 2491683                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/neethi/main/neethi-3.0.2.redhat-3.jar
+7f0e4575e000-7f0e45764000 r--s 00039000 08:01 2622902                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jaxen/main/jaxen-1.1.3.redhat-4.jar
+7f0e45f6c000-7f0e45f6f000 ---p 00000000 00:00 0 
+7f0e45f6f000-7f0e4606d000 rw-p 00000000 00:00 0 
+7f0e4606d000-7f0e46070000 ---p 00000000 00:00 0 
+7f0e46070000-7f0e4616e000 rw-p 00000000 00:00 0 
+7f0e4616e000-7f0e46171000 ---p 00000000 00:00 0 
+7f0e46171000-7f0e4626f000 rw-p 00000000 00:00 0 
+7f0e4626f000-7f0e46272000 ---p 00000000 00:00 0 
+7f0e46272000-7f0e46370000 rw-p 00000000 00:00 0 
+7f0e46370000-7f0e46373000 ---p 00000000 00:00 0 
+7f0e46373000-7f0e46471000 rw-p 00000000 00:00 0 
+7f0e46673000-7f0e46676000 ---p 00000000 00:00 0 
+7f0e46676000-7f0e46774000 rw-p 00000000 00:00 0 
+7f0e46e7b000-7f0e46e82000 r--s 0003b000 08:01 2623027                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/yaml/snakeyaml/main/snakeyaml-1.8.0.redhat-3.jar
+7f0e46e82000-7f0e46e88000 r--s 00052000 08:01 2491688                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/james/mime4j/main/apache-mime4j-0.6.0.redhat-4.jar
+7f0e46e88000-7f0e46e8a000 r--s 00018000 08:01 2491659                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/jettison/main/jettison-1.3.1.redhat-4.jar
+7f0e46e8a000-7f0e46e8b000 r--s 00006000 08:01 1973554                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/jackson/jackson-xc/main/jackson-xc-1.9.9.redhat-4.jar
+7f0e46e8b000-7f0e46e90000 r--s 00045000 08:01 2491722                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/lang/main/commons-lang-2.6.0.redhat-4.jar
+7f0e46e90000-7f0e46e99000 r--s 0006f000 08:01 2623698                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/log4j/main/log4j-1.2.17.jar
+7f0e46eac000-7f0e46eae000 r--s 00000000 08:01 2622884                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/aopalliance/main/aopalliance-1.0.jar
+7f0e46eae000-7f0e46f1c000 r--s 00920000 08:01 2491665                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/aspectj/aspectjtools/main/aspectjtools-1.7.4.jar
+7f0e46f1c000-7f0e46f21000 r--s 00019000 08:01 2491669                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/aspectj/aspectjrt/main/aspectjrt-1.7.4.jar
+7f0e46f21000-7f0e46f39000 r--s 001ac000 08:01 2491672                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/aspectj/aspectjweaver/main/aspectjweaver-1.7.4.jar
+7f0e46f39000-7f0e46f3e000 r--s 0003a000 08:01 2491727                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/beanutils/main/commons-beanutils-1.8.3.redhat-6.jar
+7f0e46f3e000-7f0e46f4f000 r--s 000ab000 08:01 2623742                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/lib/main/HDICotacaoWSClient.jar
+7f0e46f4f000-7f0e46f53000 r--s 0001b000 08:01 2623043                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jasypt/main/jasypt-1.9.0.jar
+7f0e46f53000-7f0e4701f000 r--s 00a6e000 08:01 2623649                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/security/main/HDISecurity-jar-with-dependencies.jar
+7f0e4701f000-7f0e47021000 r--s 00008000 08:01 2234632                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/cache/main/HDICache.jar
+7f0e47021000-7f0e47024000 r--s 0002e000 08:01 2624872                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/base/main/HDIDigitalBase-dtos.jar
+7f0e47226000-7f0e47229000 ---p 00000000 00:00 0 
+7f0e47229000-7f0e47327000 rw-p 00000000 00:00 0 
+7f0e47327000-7f0e4732a000 ---p 00000000 00:00 0 
+7f0e4732a000-7f0e47428000 rw-p 00000000 00:00 0 
+7f0e47428000-7f0e4742b000 ---p 00000000 00:00 0 
+7f0e4742b000-7f0e47529000 rw-p 00000000 00:00 0 
+7f0e47529000-7f0e4752c000 ---p 00000000 00:00 0 
+7f0e4752c000-7f0e4762a000 rw-p 00000000 00:00 0 
+7f0e4762a000-7f0e478ce000 r--s 0155c000 08:01 2623495                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/net/sf/ehcache-terracotta/main/terracotta-toolkit-runtime-ee-4.3.1.1.36.jar
+7f0e478ce000-7f0e479fa000 r--s 00b78000 08:01 2623489                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/net/sf/ehcache-terracotta/main/ehcache-ee-2.10.1.1.14.jar
+7f0e479fa000-7f0e479fd000 ---p 00000000 00:00 0 
+7f0e479fd000-7f0e47afb000 rw-p 00000000 00:00 0 
+7f0e47de5000-7f0e47dfc000 r-xp 00000000 08:01 786519                     /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f0e47dfc000-7f0e47ffc000 ---p 00017000 08:01 786519                     /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f0e47ffc000-7f0e47ffd000 r--p 00017000 08:01 786519                     /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f0e47ffd000-7f0e47ffe000 rw-p 00018000 08:01 786519                     /lib/x86_64-linux-gnu/libresolv-2.23.so
+7f0e47ffe000-7f0e48000000 rw-p 00000000 00:00 0 
+7f0e48000000-7f0e48115000 rw-p 00000000 00:00 0 
+7f0e48115000-7f0e4c000000 ---p 00000000 00:00 0 
+7f0e4c000000-7f0e4c001000 r--s 00004000 08:01 2234622                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/jackson/jackson-jaxrs/main/jackson-jaxrs-1.9.9.redhat-4.jar
+7f0e4c001000-7f0e4c002000 r--s 00002000 08:01 2623636                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/exception/main/HDIException.jar
+7f0e4c002000-7f0e4c00b000 r--s 0006f000 08:01 2623698                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/log4j/main/log4j-1.2.17.jar
+7f0e4c00b000-7f0e4c011000 r--s 00048000 08:01 2491703                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/lang3/main/commons-lang3-3.1.jar
+7f0e4c011000-7f0e4c013000 r--s 00001000 08:01 2491420                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-yaml-provider/main/resteasy-yaml-provider-2.3.10.Final-redhat-1.jar
+7f0e4c013000-7f0e4c016000 r--s 00011000 08:01 2491456                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-2.3.10.Final-redhat-1.jar
+7f0e4c016000-7f0e4c017000 r--s 00007000 08:01 2491424                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jsapi/main/resteasy-jsapi-2.3.10.Final-redhat-1.jar
+7f0e4c017000-7f0e4c019000 r--s 00007000 08:01 2491444                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jettison-provider/main/resteasy-jettison-provider-2.3.10.Final-redhat-1.jar
+7f0e4c019000-7f0e4c028000 r--s 000b0000 08:01 2105181                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/jackson/jackson-mapper-asl/main/jackson-mapper-asl-1.9.9.redhat-4.jar
+7f0e4c028000-7f0e4c02c000 r--s 00035000 08:01 1852278                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/jackson/jackson-core-asl/main/jackson-core-asl-1.9.9.redhat-4.jar
+7f0e4c02c000-7f0e4c02d000 r--s 00001000 08:01 2491452                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jackson-provider/main/resteasy-jackson-provider-2.3.10.Final-redhat-1.jar
+7f0e4c02d000-7f0e4c030000 r--s 00010000 08:01 2491438                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-2.3.10.Final-redhat-1.jar
+7f0e4c030000-7f0e4c032000 r--s 00003000 08:01 2491447                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-hibernatevalidator-provider/main/resteasy-hibernatevalidator-provider-2.3.10.Final-redhat-1.jar
+7f0e4c032000-7f0e4c034000 r--s 00009000 08:01 2491429                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-atom-provider/main/resteasy-atom-provider-2.3.10.Final-redhat-1.jar
+7f0e4c034000-7f0e4c036000 r--s 0000a000 08:01 2491434                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-spring/main/bundled/resteasy-spring-jar/resteasy-spring-2.3.10.Final-redhat-1.jar
+7f0e4c14d000-7f0e4c152000 r-xp 00000000 08:01 786525                     /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f0e4c152000-7f0e4c352000 ---p 00005000 08:01 786525                     /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f0e4c352000-7f0e4c353000 r--p 00005000 08:01 786525                     /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f0e4c353000-7f0e4c354000 rw-p 00006000 08:01 786525                     /lib/x86_64-linux-gnu/libnss_dns-2.23.so
+7f0e4c354000-7f0e4c356000 r-xp 00000000 08:01 791079                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f0e4c356000-7f0e4c555000 ---p 00002000 08:01 791079                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f0e4c555000-7f0e4c556000 r--p 00001000 08:01 791079                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f0e4c556000-7f0e4c557000 rw-p 00002000 08:01 791079                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7f0e4cf61000-7f0e4cf64000 ---p 00000000 00:00 0 
+7f0e4cf64000-7f0e4d062000 rw-p 00000000 00:00 0 
+7f0e4d062000-7f0e4d065000 ---p 00000000 00:00 0 
+7f0e4d065000-7f0e4d163000 rw-p 00000000 00:00 0 
+7f0e4d163000-7f0e4d166000 ---p 00000000 00:00 0 
+7f0e4d166000-7f0e4d264000 rw-p 00000000 00:00 0 
+7f0e4d264000-7f0e4d267000 ---p 00000000 00:00 0 
+7f0e4d267000-7f0e4d365000 rw-p 00000000 00:00 0 
+7f0e4d466000-7f0e4d469000 ---p 00000000 00:00 0 
+7f0e4d469000-7f0e4d567000 rw-p 00000000 00:00 0 
+7f0e4d668000-7f0e4d66b000 ---p 00000000 00:00 0 
+7f0e4d66b000-7f0e4d769000 rw-p 00000000 00:00 0 
+7f0e4d769000-7f0e4d76c000 ---p 00000000 00:00 0 
+7f0e4d76c000-7f0e4d86a000 rw-p 00000000 00:00 0 
+7f0e4d86a000-7f0e4d86d000 ---p 00000000 00:00 0 
+7f0e4d86d000-7f0e4d96b000 rw-p 00000000 00:00 0 
+7f0e4da6c000-7f0e4da6f000 ---p 00000000 00:00 0 
+7f0e4da6f000-7f0e4db6d000 rw-p 00000000 00:00 0 
+7f0e4dd6f000-7f0e4dd72000 ---p 00000000 00:00 0 
+7f0e4dd72000-7f0e4de70000 rw-p 00000000 00:00 0 
+7f0e4de70000-7f0e4de73000 ---p 00000000 00:00 0 
+7f0e4de73000-7f0e4df71000 rw-p 00000000 00:00 0 
+7f0e4df95000-7f0e4df98000 ---p 00000000 00:00 0 
+7f0e4df98000-7f0e4e096000 rw-p 00000000 00:00 0 
+7f0e4e0fa000-7f0e4e0fc000 r--s 00007000 08:01 2490953                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jsf-injection/main/jboss-as-jsf-injection-7.5.0.Final-redhat-21.jar
+7f0e4e1af000-7f0e4e1b3000 r--s 0002d000 08:01 11538888                   /usr/lib/jvm/jre1.7.0_80/lib/ext/sunjce_provider.jar
+7f0e4e1ba000-7f0e4e1d0000 r-xp 00000000 08:01 791012                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e4e1d0000-7f0e4e3cf000 ---p 00016000 08:01 791012                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e4e3cf000-7f0e4e3d0000 rw-p 00015000 08:01 791012                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f0e4e3e7000-7f0e4e44b000 r--s 01e39000 08:01 2491253                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/console/eap/release-stream-2.5.5.Final-redhat-1-resources.jar
+7f0e4e455000-7f0e4e487000 r-xp 00000000 08:01 11538820                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libsunec.so
+7f0e4e487000-7f0e4e686000 ---p 00032000 08:01 11538820                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libsunec.so
+7f0e4e686000-7f0e4e68c000 rw-p 00031000 08:01 11538820                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libsunec.so
+7f0e4e68c000-7f0e4e69c000 rw-p 00000000 00:00 0 
+7f0e4e69c000-7f0e4e69f000 ---p 00000000 00:00 0 
+7f0e4e69f000-7f0e4e79d000 rw-p 00000000 00:00 0 
+7f0e4e79d000-7f0e4e7a0000 ---p 00000000 00:00 0 
+7f0e4e7a0000-7f0e4e89e000 rw-p 00000000 00:00 0 
+7f0e4e89e000-7f0e4e8a9000 r--s 00174000 08:01 2623054                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/h2database/h2/main/h2-1.3.168.redhat-4.jar
+7f0e4e8a9000-7f0e4e8ac000 ---p 00000000 00:00 0 
+7f0e4e8ac000-7f0e4e9aa000 rw-p 00000000 00:00 0 
+7f0e4e9aa000-7f0e4e9b5000 r--s 0008a000 08:01 2491584                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/xb/main/jbossxb-2.0.3.GA-redhat-3.jar
+7f0e4e9b5000-7f0e4e9cd000 r--s 00120000 08:01 2491567                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/netty/main/netty-3.6.10.Final-redhat-1.jar
+7f0e4e9cd000-7f0e4e9ce000 r--s 00006000 08:01 2491392                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/native/jbossws-native-services/main/jbossws-native-services-4.2.0.Final-redhat-1.jar
+7f0e4e9ce000-7f0e4e9db000 r--s 000d5000 08:01 2491387                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/native/jbossws-native-core/main/jbossws-native-core-4.2.0.Final-redhat-1.jar
+7f0e4e9db000-7f0e4e9e7000 r--s 001ab000 08:01 2623631                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_digital/jdbc/progress/main/openedge.jar
+7f0e4e9e7000-7f0e4e9f7000 r--s 00090000 08:01 2622762                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/opensaml/main/xmltooling-1.3.4.redhat-3.jar
+7f0e4e9f7000-7f0e4ea0a000 r--s 0007f000 08:01 2622764                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/opensaml/main/openws-1.4.4.redhat-2.jar
+7f0e4ea0a000-7f0e4ea32000 r--s 0012e000 08:01 2622763                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/opensaml/main/opensaml-2.5.3.redhat-2.jar
+7f0e4ea32000-7f0e4ea42000 r--s 00079000 08:01 2622947                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/joda/time/main/joda-time-1.6.2.redhat-5.jar
+7f0e4ea42000-7f0e4ea49000 r--s 00037000 08:01 2622743                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-security-web-3.1.4.RELEASE.jar
+7f0e4ea49000-7f0e4ea4c000 r--s 00011000 08:01 2622738                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-security-acl-3.1.4.RELEASE.jar
+7f0e4ea4c000-7f0e4ea4f000 r--s 0002f000 08:01 2622719                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-security-config-3.1.4.RELEASE.jar
+7f0e4ea4f000-7f0e4ea5a000 r--s 00049000 08:01 2622720                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-security-core-3.1.4.RELEASE.jar
+7f0e4ea5a000-7f0e4ea66000 r--s 00090000 08:01 2622713                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-webmvc-3.2.0.RELEASE.jar
+7f0e4ea66000-7f0e4ea74000 r--s 0008b000 08:01 2622736                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-web-3.2.0.RELEASE.jar
+7f0e4ea74000-7f0e4ea77000 r--s 0000f000 08:01 2622724                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-aspects-3.2.0.RELEASE.jar
+7f0e4ea77000-7f0e4ea7f000 r--s 0004a000 08:01 2622718                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-aop-3.2.0.RELEASE.jar
+7f0e4ea7f000-7f0e4ea88000 r--s 00059000 08:01 2622734                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-jdbc-3.2.0.RELEASE.jar
+7f0e4ea88000-7f0e4ea8d000 r--s 0002b000 08:01 2622729                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-expression-3.2.0.RELEASE.jar
+7f0e4ea8d000-7f0e4ea98000 r--s 00363000 08:01 11538892                   /usr/lib/jvm/jre1.7.0_80/lib/charsets.jar
+7f0e4ea98000-7f0e4ea9f000 r--s 00034000 08:01 2622741                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-tx-3.2.0.RELEASE.jar
+7f0e4ea9f000-7f0e4eab1000 r--s 000c1000 08:01 2622753                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-core-3.2.0.RELEASE.jar
+7f0e4eab1000-7f0e4eac6000 r--s 000bc000 08:01 2622726                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-context-3.2.0.RELEASE.jar
+7f0e4eac6000-7f0e4ead2000 r--s 00088000 08:01 2622735                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-beans-3.2.0.RELEASE.jar
+7f0e4ead2000-7f0e4eae0000 r--s 00098000 08:01 2622382                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/santuario/xmlsec/main/xmlsec-1.5.7.redhat-1.jar
+7f0e4eae0000-7f0e4eae6000 r--s 00070000 08:01 2491798                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/ws/security/main/wss4j-1.6.17.SP1-redhat-1.jar
+7f0e4eae6000-7f0e4eaeb000 r--s 00045000 08:01 1973585                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/xml/messaging/saaj/main/saaj-impl-1.3.16.SP1-redhat-2.jar
+7f0e4eaeb000-7f0e4eaee000 ---p 00000000 00:00 0 
+7f0e4eaee000-7f0e4ebec000 rw-p 00000000 00:00 0 
+7f0e4ebec000-7f0e4ebef000 ---p 00000000 00:00 0 
+7f0e4ebef000-7f0e4eced000 rw-p 00000000 00:00 0 
+7f0e4eced000-7f0e4ecf0000 ---p 00000000 00:00 0 
+7f0e4ecf0000-7f0e4edee000 rw-p 00000000 00:00 0 
+7f0e4edee000-7f0e4edf1000 ---p 00000000 00:00 0 
+7f0e4edf1000-7f0e4eeef000 rw-p 00000000 00:00 0 
+7f0e4eeef000-7f0e4eef2000 ---p 00000000 00:00 0 
+7f0e4eef2000-7f0e4eff0000 rw-p 00000000 00:00 0 
+7f0e4eff0000-7f0e4eff3000 ---p 00000000 00:00 0 
+7f0e4eff3000-7f0e4f0f1000 rw-p 00000000 00:00 0 
+7f0e4f0f1000-7f0e4f0f4000 ---p 00000000 00:00 0 
+7f0e4f0f4000-7f0e4f1f2000 rw-p 00000000 00:00 0 
+7f0e4f1f2000-7f0e4f1f5000 ---p 00000000 00:00 0 
+7f0e4f1f5000-7f0e4f2f3000 rw-p 00000000 00:00 0 
+7f0e4f2f3000-7f0e4f2f6000 ---p 00000000 00:00 0 
+7f0e4f2f6000-7f0e4f3f4000 rw-p 00000000 00:00 0 
+7f0e4f5f6000-7f0e4f5f9000 ---p 00000000 00:00 0 
+7f0e4f5f9000-7f0e4f6f7000 rw-p 00000000 00:00 0 
+7f0e4f6f7000-7f0e4f6fa000 ---p 00000000 00:00 0 
+7f0e4f6fa000-7f0e4f7f8000 rw-p 00000000 00:00 0 
+7f0e4f7f8000-7f0e4f7fb000 ---p 00000000 00:00 0 
+7f0e4f7fb000-7f0e4f8f9000 rw-p 00000000 00:00 0 
+7f0e4f8f9000-7f0e4f8fc000 ---p 00000000 00:00 0 
+7f0e4f8fc000-7f0e4f9fa000 rw-p 00000000 00:00 0 
+7f0e50000000-7f0e502fc000 rw-p 00000000 00:00 0 
+7f0e502fc000-7f0e54000000 ---p 00000000 00:00 0 
+7f0e54000000-7f0e54133000 rw-p 00000000 00:00 0 
+7f0e54133000-7f0e58000000 ---p 00000000 00:00 0 
+7f0e58000000-7f0e58111000 rw-p 00000000 00:00 0 
+7f0e58111000-7f0e5c000000 ---p 00000000 00:00 0 
+7f0e5c000000-7f0e5c09a000 rw-p 00000000 00:00 0 
+7f0e5c09a000-7f0e60000000 ---p 00000000 00:00 0 
+7f0e60000000-7f0e601c6000 rw-p 00000000 00:00 0 
+7f0e601c6000-7f0e64000000 ---p 00000000 00:00 0 
+7f0e64000000-7f0e6423b000 rw-p 00000000 00:00 0 
+7f0e6423b000-7f0e68000000 ---p 00000000 00:00 0 
+7f0e68000000-7f0e681d2000 rw-p 00000000 00:00 0 
+7f0e681d2000-7f0e6c000000 ---p 00000000 00:00 0 
+7f0e6c000000-7f0e6c207000 rw-p 00000000 00:00 0 
+7f0e6c207000-7f0e70000000 ---p 00000000 00:00 0 
+7f0e70000000-7f0e70130000 rw-p 00000000 00:00 0 
+7f0e70130000-7f0e74000000 ---p 00000000 00:00 0 
+7f0e74000000-7f0e741ba000 rw-p 00000000 00:00 0 
+7f0e741ba000-7f0e78000000 ---p 00000000 00:00 0 
+7f0e78000000-7f0e78212000 rw-p 00000000 00:00 0 
+7f0e78212000-7f0e7c000000 ---p 00000000 00:00 0 
+7f0e7c000000-7f0e7c2c5000 rw-p 00000000 00:00 0 
+7f0e7c2c5000-7f0e80000000 ---p 00000000 00:00 0 
+7f0e80000000-7f0e8008d000 rw-p 00000000 00:00 0 
+7f0e8008d000-7f0e84000000 ---p 00000000 00:00 0 
+7f0e84000000-7f0e8404d000 rw-p 00000000 00:00 0 
+7f0e8404d000-7f0e88000000 ---p 00000000 00:00 0 
+7f0e88000000-7f0e88110000 rw-p 00000000 00:00 0 
+7f0e88110000-7f0e8c000000 ---p 00000000 00:00 0 
+7f0e8c000000-7f0e8c0c3000 rw-p 00000000 00:00 0 
+7f0e8c0c3000-7f0e90000000 ---p 00000000 00:00 0 
+7f0e90000000-7f0e90089000 rw-p 00000000 00:00 0 
+7f0e90089000-7f0e94000000 ---p 00000000 00:00 0 
+7f0e94000000-7f0e94070000 rw-p 00000000 00:00 0 
+7f0e94070000-7f0e98000000 ---p 00000000 00:00 0 
+7f0e98000000-7f0e98058000 rw-p 00000000 00:00 0 
+7f0e98058000-7f0e9c000000 ---p 00000000 00:00 0 
+7f0e9c000000-7f0e9c08a000 rw-p 00000000 00:00 0 
+7f0e9c08a000-7f0ea0000000 ---p 00000000 00:00 0 
+7f0ea0000000-7f0ea01b2000 rw-p 00000000 00:00 0 
+7f0ea01b2000-7f0ea4000000 ---p 00000000 00:00 0 
+7f0ea4000000-7f0ea40e0000 rw-p 00000000 00:00 0 
+7f0ea40e0000-7f0ea8000000 ---p 00000000 00:00 0 
+7f0ea8000000-7f0ea82e2000 rw-p 00000000 00:00 0 
+7f0ea82e2000-7f0eac000000 ---p 00000000 00:00 0 
+7f0eac000000-7f0eac153000 rw-p 00000000 00:00 0 
+7f0eac153000-7f0eb0000000 ---p 00000000 00:00 0 
+7f0eb0000000-7f0eb00c3000 rw-p 00000000 00:00 0 
+7f0eb00c3000-7f0eb4000000 ---p 00000000 00:00 0 
+7f0eb4000000-7f0eb4376000 rw-p 00000000 00:00 0 
+7f0eb4376000-7f0eb8000000 ---p 00000000 00:00 0 
+7f0eb8000000-7f0eb8207000 rw-p 00000000 00:00 0 
+7f0eb8207000-7f0ebc000000 ---p 00000000 00:00 0 
+7f0ebc000000-7f0ebc32a000 rw-p 00000000 00:00 0 
+7f0ebc32a000-7f0ec0000000 ---p 00000000 00:00 0 
+7f0ec0000000-7f0ec00e6000 rw-p 00000000 00:00 0 
+7f0ec00e6000-7f0ec4000000 ---p 00000000 00:00 0 
+7f0ec4000000-7f0ec428c000 rw-p 00000000 00:00 0 
+7f0ec428c000-7f0ec8000000 ---p 00000000 00:00 0 
+7f0ec8000000-7f0ec85cf000 rw-p 00000000 00:00 0 
+7f0ec85cf000-7f0ecc000000 ---p 00000000 00:00 0 
+7f0ecc000000-7f0ecc427000 rw-p 00000000 00:00 0 
+7f0ecc427000-7f0ed0000000 ---p 00000000 00:00 0 
+7f0ed0000000-7f0ed002d000 rw-p 00000000 00:00 0 
+7f0ed002d000-7f0ed4000000 ---p 00000000 00:00 0 
+7f0ed4000000-7f0ed4195000 rw-p 00000000 00:00 0 
+7f0ed4195000-7f0ed8000000 ---p 00000000 00:00 0 
+7f0ed8000000-7f0ed8083000 rw-p 00000000 00:00 0 
+7f0ed8083000-7f0edc000000 ---p 00000000 00:00 0 
+7f0edc000000-7f0edc3d6000 rw-p 00000000 00:00 0 
+7f0edc3d6000-7f0ee0000000 ---p 00000000 00:00 0 
+7f0ee0000000-7f0ee0bfb000 rw-p 00000000 00:00 0 
+7f0ee0bfb000-7f0ee4000000 ---p 00000000 00:00 0 
+7f0ee4000000-7f0ee4002000 r--s 00004000 08:01 2622733                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/springframework/spring/main/spring-security-taglibs-3.1.4.RELEASE.jar
+7f0ee4002000-7f0ee4016000 r--s 00103000 08:01 2491766                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/main/cxf-api-2.7.14.redhat-1.jar
+7f0ee4016000-7f0ee401b000 r--s 0003d000 08:01 2623313                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/faces/api/1.2/jsf-api-1.2.15.b01-redhat-12.jar
+7f0ee401b000-7f0ee401d000 r--s 00007000 08:01 2491755                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-ts-2.6.2.redhat-1.jar
+7f0ee401d000-7f0ee401f000 r--s 00008000 08:01 2491754                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-dv-2.6.2.redhat-1.jar
+7f0ee401f000-7f0ee4021000 r--s 00007000 08:01 2491759                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-xjc-boolean-2.6.2.redhat-1.jar
+7f0ee4021000-7f0ee402b000 r--s 000a0000 08:01 2361457                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/jsf-impl/1.2/jsf-impl-1.2.15.b01-redhat-12.jar
+7f0ee402b000-7f0ee402d000 r--s 00015000 08:01 2491743                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-ws-discovery-api-2.7.14.redhat-1.jar
+7f0ee402d000-7f0ee4032000 r--s 00042000 08:01 2491742                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-services-sts-core-2.7.14.redhat-1.jar
+7f0ee4032000-7f0ee4036000 r--s 0002d000 08:01 2491741                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-frontend-jaxws-2.7.14.redhat-1.jar
+7f0ee4036000-7f0ee4038000 r--s 00011000 08:01 2491758                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-databinding-jaxb-2.7.14.redhat-1.jar
+7f0ee4038000-7f0ee403a000 r--s 00014000 08:01 2491753                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-wsdlto-core-2.7.14.redhat-1.jar
+7f0ee403a000-7f0ee403c000 r--s 00017000 08:01 2491745                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-validator-2.7.14.redhat-1.jar
+7f0ee403c000-7f0ee403f000 r--s 00023000 08:01 2491735                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-java2ws-2.7.14.redhat-1.jar
+7f0ee403f000-7f0ee4043000 r--s 0002c000 08:01 2491752                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-tools-common-2.7.14.redhat-1.jar
+7f0ee4043000-7f0ee404e000 r--s 000a4000 08:01 2491751                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-security-2.7.14.redhat-1.jar
+7f0ee404e000-7f0ee4054000 r--s 00055000 08:01 2491738                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-rm-2.7.14.redhat-1.jar
+7f0ee4054000-7f0ee4059000 r--s 00037000 08:01 2491749                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-policy-2.7.14.redhat-1.jar
+7f0ee4059000-7f0ee405b000 r--s 0000c000 08:01 2491739                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-mex-2.7.14.redhat-1.jar
+7f0ee405b000-7f0ee405d000 r--s 00019000 08:01 2491756                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-ws-addr-2.7.14.redhat-1.jar
+7f0ee405d000-7f0ee405e000 r--s 0000d000 08:01 2491747                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-local-2.7.14.redhat-1.jar
+7f0ee405e000-7f0ee4061000 r--s 00029000 08:01 2491746                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-jms-2.7.14.redhat-1.jar
+7f0ee4061000-7f0ee4066000 r--s 00041000 08:01 2491748                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-transports-http-2.7.14.redhat-1.jar
+7f0ee4066000-7f0ee4069000 r--s 00016000 08:01 2491737                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-management-2.7.14.redhat-1.jar
+7f0ee4069000-7f0ee406b000 r--s 00017000 08:01 2491762                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-simple-2.7.14.redhat-1.jar
+7f0ee406b000-7f0ee4072000 r--s 00061000 08:01 2491750                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-frontend-jaxws-2.7.14.redhat-1.jar
+7f0ee4072000-7f0ee4075000 r--s 00025000 08:01 2491744                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-jaxb-2.7.14.redhat-1.jar
+7f0ee4075000-7f0ee407a000 r--s 00040000 08:01 2491764                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-databinding-aegis-2.7.14.redhat-1.jar
+7f0ee407a000-7f0ee4081000 r--s 00066000 08:01 2491736                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-core-2.7.14.redhat-1.jar
+7f0ee4081000-7f0ee4083000 r--s 0000f000 08:01 2491761                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-xml-2.7.14.redhat-1.jar
+7f0ee4083000-7f0ee4088000 r--s 00036000 08:01 2491740                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-soap-2.7.14.redhat-1.jar
+7f0ee4088000-7f0ee4089000 r--s 0000d000 08:01 2491760                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-object-2.7.14.redhat-1.jar
+7f0ee4089000-7f0ee408a000 r--s 0000f000 08:01 2491757                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/cxf/impl/main/cxf-rt-bindings-coloc-2.7.14.redhat-1.jar
+7f0ee408a000-7f0ee4091000 r--s 00088000 08:01 2361466                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/hdi_fs/jdbc/sqlserver/main/sqljdbc4-4.0.jar
+7f0ee4091000-7f0ee4094000 r--s 00021000 08:01 2491363                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-server/main/jbossws-cxf-server-4.3.4.Final-redhat-1.jar
+7f0ee4094000-7f0ee4096000 r--s 00009000 08:01 2491374                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-udp/main/jbossws-cxf-transports-udp-4.3.4.Final-redhat-1.jar
+7f0ee4096000-7f0ee4097000 r--s 00009000 08:01 2491359                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-transports-httpserver/main/jbossws-cxf-transports-httpserver-4.3.4.Final-redhat-1.jar
+7f0ee4097000-7f0ee4098000 r--s 00006000 08:01 2491368                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/cxf/jbossws-cxf-factories/main/jbossws-cxf-factories-4.3.4.Final-redhat-1.jar
+7f0ee4098000-7f0ee409d000 r--s 00029000 08:01 2491407                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/jaxws-client/main/jbossws-cxf-client-4.3.4.Final-redhat-1.jar
+7f0ee409d000-7f0ee40a4000 r--s 00045000 08:01 2622775                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/kohsuke/rngom/main/rngom-201103.0.0.redhat-4.jar
+7f0ee40a4000-7f0ee40ab000 r--s 0005f000 08:01 2234625                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/xsom/main/xsom-20110809.0.0.redhat-4.jar
+7f0ee40ab000-7f0ee40ae000 r--s 0000f000 08:01 1707666                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/xml/txw2/main/txw2-20110809.0.0.redhat-5.jar
+7f0ee40ae000-7f0ee40af000 r--s 00003000 08:01 2105189                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/istack/main/istack-commons-tools-2.6.1.redhat-3.jar
+7f0ee40af000-7f0ee40b1000 r--s 00004000 08:01 2105188                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/istack/main/istack-commons-runtime-2.6.1.redhat-3.jar
+7f0ee40b1000-7f0ee40b5000 r--s 00023000 08:01 2623048                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/codemodel/main/codemodel-2.6.0.redhat-3.jar
+7f0ee40b5000-7f0ee40b7000 r--s 00003000 08:01 2623076                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/github/relaxng/main/relaxngDatatype-2011.1.0.redhat-9.jar
+7f0ee40b7000-7f0ee40ca000 r--s 000f3000 08:01 1578153                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/xml/bind/main/jaxb-xjc-2.2.5.redhat-9.jar
+7f0ee40ca000-7f0ee40de000 r--s 000e6000 08:01 1577244                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/xml/bind/main/jaxb-impl-2.2.5.redhat-9.jar
+7f0ee40de000-7f0ee40e0000 r--s 0000c000 08:01 2491652                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/jaxbintros/main/jboss-jaxb-intros-1.0.2.GA-redhat-6.jar
+7f0ee40e0000-7f0ee40e5000 r--s 00031000 08:01 2623331                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.3.redhat-1.jar
+7f0ee40e5000-7f0ee40e7000 r--s 00008000 08:01 2623116                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/xml/registry/api/main/jboss-jaxr-api_1.0_spec-1.0.2.Final-redhat-3.jar
+7f0ee40e7000-7f0ee40eb000 r--s 00011000 08:01 2361362                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/web/infinispan/main/jboss-as-clustering-web-infinispan-7.5.0.Final-redhat-21.jar
+7f0ee40eb000-7f0ee40ed000 r--s 00003000 08:01 2623197                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/management/j2ee/api/main/jboss-j2eemgmt-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0ee40ed000-7f0ee40ef000 r--s 00007000 08:01 2623253                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/enterprise/deploy/api/main/jboss-jad-api_1.2_spec-1.0.1.Final-redhat-3.jar
+7f0ee40ef000-7f0ee40f0000 r--s 0000a000 08:01 2622961                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/scannotation/scannotation/main/scannotation-1.0.3.redhat-4.jar
+7f0ee40f0000-7f0ee40f3000 r--s 0000e000 08:01 2491711                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/codec/main/commons-codec-1.4.0.redhat-4.jar
+7f0ee5204000-7f0ee5207000 ---p 00000000 00:00 0 
+7f0ee5207000-7f0ee5305000 rw-p 00000000 00:00 0 
+7f0ee5305000-7f0ee5308000 ---p 00000000 00:00 0 
+7f0ee5308000-7f0ee5406000 rw-p 00000000 00:00 0 
+7f0ee5406000-7f0ee5409000 r--s 00017000 08:01 2491572                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/com/sun/httpserver/main/httpserver-1.0.4.Final-redhat-1.jar
+7f0ee5409000-7f0ee540c000 ---p 00000000 00:00 0 
+7f0ee540c000-7f0ee550a000 rw-p 00000000 00:00 0 
+7f0ee550a000-7f0ee550d000 ---p 00000000 00:00 0 
+7f0ee550d000-7f0ee560b000 rw-p 00000000 00:00 0 
+7f0ee560b000-7f0ee560e000 ---p 00000000 00:00 0 
+7f0ee560e000-7f0ee570c000 rw-p 00000000 00:00 0 
+7f0ee590e000-7f0ee5910000 r--s 0001b000 08:01 2491718                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/pool/main/commons-pool-1.6.0.redhat-7.jar
+7f0ee5910000-7f0ee5914000 r--s 0002f000 08:01 2622676                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-jms-server-2.3.25.Final-redhat-1.jar
+7f0ee5914000-7f0ee5917000 r--s 00019000 08:01 2622682                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-jms-client-2.3.25.Final-redhat-1.jar
+7f0ee5917000-7f0ee591b000 r--s 0002a000 08:01 2622688                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-journal-2.3.25.Final-redhat-1.jar
+7f0ee591b000-7f0ee591e000 r--s 00019000 08:01 2622673                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-commons-2.3.25.Final-redhat-1.jar
+7f0ee591e000-7f0ee5922000 r--s 00011000 08:01 2622783                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/commons-annotations/main/hibernate-commons-annotations-4.0.2.Final-redhat-1.jar
+7f0ee5922000-7f0ee592b000 r--s 0005b000 08:01 2622837                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/envers/main/hibernate-envers-4.2.18.Final-redhat-2.jar
+7f0ee592b000-7f0ee593b000 r--s 000f9000 08:01 2622690                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-server-2.3.25.Final-redhat-1.jar
+7f0ee593b000-7f0ee593c000 r--s 00007000 08:01 2622935                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/slf4j/impl/main/slf4j-jboss-logmanager-1.0.3.GA-redhat-1.jar
+7f0ee593c000-7f0ee5946000 r--s 0007d000 08:01 2622680                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hornetq/main/hornetq-core-client-2.3.25.Final-redhat-1.jar
+7f0ee5946000-7f0ee594a000 r--s 0001a000 08:01 2491073                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jpa/hibernate/4/jboss-as-jpa-hibernate4-7.5.0.Final-redhat-21.jar
+7f0ee594a000-7f0ee594c000 r--s 00000000 08:01 2491509                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/logging/jul-to-slf4j-stub/main/jul-to-slf4j-stub-1.0.1.Final-redhat-2.jar
+7f0ee594c000-7f0ee5952000 r--s 00051000 08:01 2622655                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/dom4j/main/dom4j-1.6.1.redhat-6.jar
+7f0ee5952000-7f0ee595d000 r--s 00080000 08:01 2491609                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/xacml/main/jbossxacml-2.0.8.Final-redhat-5.jar
+7f0ee595d000-7f0ee5962000 r--s 00081000 08:01 2623009                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/antlr/main/antlr-2.7.7.redhat-4.jar
+7f0ee5962000-7f0ee5964000 r--s 00009000 08:01 2622930                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/slf4j/jcl-over-slf4j/main/jcl-over-slf4j-1.7.2.redhat-3.jar
+7f0ee5964000-7f0ee5965000 r--s 0000a000 08:01 2623537                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/asm/asm/main/asm-3.3.1.redhat-9.jar
+7f0ee5c68000-7f0ee5c69000 r--s 00002000 08:01 1973533                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/iiop-client/main/jboss-iiop-client-1.0.0.Final-redhat-3.jar
+7f0ee5c69000-7f0ee5c6b000 r--s 0000f000 08:01 2622921                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/slf4j/ext/main/slf4j-ext-1.7.2.redhat-3.jar
+7f0ee5c6b000-7f0ee5c6e000 r--s 00017000 08:01 2491577                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/classfilewriter/main/jboss-classfilewriter-1.0.3.Final-redhat-2.jar
+7f0ee5c6e000-7f0ee5c70000 r--s 0000b000 08:01 2622941                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/slf4j/main/slf4j-api-1.7.2.redhat-3.jar
+7f0ee5c70000-7f0ee5c75000 r--s 00021000 08:01 2491396                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/spi/main/jbossws-spi-2.3.1.Final-redhat-1.jar
+7f0ee5c75000-7f0ee5c77000 r--s 00009000 08:01 2361326                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/ejb3/infinispan/main/jboss-as-clustering-ejb3-infinispan-7.5.0.Final-redhat-21.jar
+7f0ee5c77000-7f0ee5c89000 r--s 000d5000 08:01 2491469                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/weld/core/main/weld-core-1.1.28.Final-redhat-1.jar
+7f0ee5c89000-7f0ee5c8b000 r--s 00004000 08:01 2491461                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/weld/api/main/weld-api-1.1.0.Final-redhat-6.jar
+7f0ee5c8b000-7f0ee5c90000 r--s 0003e000 08:01 2491378                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/common/main/jbossws-common-2.3.1.Final-redhat-1.jar
+7f0ee5c90000-7f0ee5c97000 r--s 0004c000 08:01 2491580                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ejb-client/main/jboss-ejb-client-1.0.30.Final-redhat-1.jar
+7f0ee5c97000-7f0ee5c9a000 r--s 00011000 08:01 2491382                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ws/api/main/jbossws-api-1.0.2.Final-redhat-1.jar
+7f0ee5c9a000-7f0ee5c9d000 r--s 0000c000 08:01 2622831                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/main/hibernate-infinispan-4.2.18.Final-redhat-2.jar
+7f0ee5c9d000-7f0ee5c9e000 r--s 00000000 08:01 2491067                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jpa/util/main/jboss-as-jpa-util-7.5.0.Final-redhat-21.jar
+7f0ee5c9e000-7f0ee5ca8000 r--s 000a5000 08:01 2623037                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/javassist/main/javassist-3.18.1.GA-redhat-1.jar
+7f0ee5ca8000-7f0ee5cb2000 r--s 0006c000 08:01 2622832                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/main/hibernate-entitymanager-4.2.18.Final-redhat-2.jar
+7f0ee5cb2000-7f0ee5cb4000 r--s 00012000 08:01 2491077                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jpa/spi/main/jboss-as-jpa-spi-7.5.0.Final-redhat-21.jar
+7f0ee5cb4000-7f0ee5cb8000 r--s 0000a000 08:01 2491465                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/weld/spi/main/weld-spi-1.1.0.Final-redhat-6.jar
+7f0ee5cb8000-7f0ee5d0a000 r--s 0042a000 08:01 2622828                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/main/hibernate-core-4.2.18.Final-redhat-2.jar
+7f0ee5d0a000-7f0ee5d0c000 r--s 00006000 08:01 2491305                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.1.0.redhat-1.jar
+7f0ee5d0c000-7f0ee5d0f000 r--s 00007000 08:01 2623388                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/jms/api/main/jboss-jms-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0ee5d0f000-7f0ee5d1c000 r--s 0008e000 08:01 2491698                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/collections/main/commons-collections-3.2.1.redhat-3.jar
+7f0ee5d1c000-7f0ee5d1d000 r--s 00002000 08:01 2623458                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/jws/api/main/jsr181-api-1.0.0.MR1-redhat-7.jar
+7f0ee5d1d000-7f0ee5d24000 r--s 00067000 08:01 2491110                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jacorb/main/jboss-as-jacorb-7.5.0.Final-redhat-21.jar
+7f0ee5d24000-7f0ee5d29000 r--s 00015000 08:01 2623381                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.0-api-1.0.1.Final-redhat-3.jar
+7f0ee5d29000-7f0ee5d2d000 r--s 0002c000 08:01 2491534                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/jdbcadapters/main/ironjacamar-jdbc-1.0.31.Final-redhat-1.jar
+7f0ee5d2d000-7f0ee5d2f000 r--s 00005000 08:01 2491417                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-cdi/main/resteasy-cdi-2.3.10.Final-redhat-1.jar
+7f0ee5d2f000-7f0ee5d31000 r--s 0000a000 08:01 2361365                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/web/spi/main/jboss-as-clustering-web-spi-7.5.0.Final-redhat-21.jar
+7f0ee5d31000-7f0ee5d56000 r--s 001a9000 08:01 2623087                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/google/guava/main/guava-13.0.1.redhat-2.jar
+7f0ee5d56000-7f0ee5d58000 r--s 00003000 08:01 2361346                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/registry/main/jboss-as-clustering-registry-7.5.0.Final-redhat-21.jar
+7f0ee5d58000-7f0ee5d5a000 r--s 0000a000 08:01 2361449                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/jts/integration/main/jbossjts-integration-4.17.29.Final-redhat-1.jar
+7f0ee5d5a000-7f0ee5d5c000 r--s 00006000 08:01 2623569                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/ch/qos/cal10n/main/cal10n-api-0.7.7.redhat-1.jar
+7f0ee5d5c000-7f0ee5d5e000 r--s 00007000 08:01 2623287                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/security/auth/message/api/main/jboss-jaspi-api_1.0_spec-1.0.1.Final-redhat-3.jar
+7f0ee5d5e000-7f0ee5d60000 r--s 0000c000 08:01 2491540                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-validator-1.0.31.Final-redhat-1.jar
+7f0ee5d60000-7f0ee5d62000 r--s 0000d000 08:01 2491538                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-deployers-common-1.0.31.Final-redhat-1.jar
+7f0ee5d62000-7f0ee5dd5000 r--s 0058e000 08:01 2623014                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jacorb/main/jacorb-2.3.2.redhat-6.jar
+7f0ee5dd5000-7f0ee5dda000 r--s 00044000 08:01 2491541                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-core-impl-1.0.31.Final-redhat-1.jar
+7f0ee5dda000-7f0ee5dfd000 r--s 00274000 08:01 2491160                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/web/main/jbossweb-7.5.7.Final-redhat-1.jar
+7f0ee5dfd000-7f0ee5e1b000 r--s 00167000 08:01 2491300                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/jts/main/jbossjts-jacorb-4.17.29.Final-redhat-1.jar
+7f0ee5e1b000-7f0ee5e21000 r--s 00036000 08:01 2491168                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/weld/main/jboss-as-weld-7.5.0.Final-redhat-21.jar
+7f0ee5e21000-7f0ee5e24000 r--s 0003d000 08:01 2491542                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/impl/main/ironjacamar-common-impl-1.0.31.Final-redhat-1.jar
+7f0ee5e24000-7f0ee5e39000 r--s 000e6000 08:01 2623426                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/rmi/api/main/jboss-rmi-api_1.0_spec-1.0.4.Final-redhat-3.jar
+7f0ee5e39000-7f0ee5e3a000 r--s 00001000 08:01 2491097                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/webservices/main/jbossws-cxf-resources-4.3.4.Final-redhat-1-jboss720.jar
+7f0ee5e3a000-7f0ee5e4c000 r--s 00212000 08:01 2491163                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/web/main/ecj-4.4.2.redhat-1.jar
+7f0ee5e4c000-7f0ee5e4e000 r--s 0000e000 08:01 2623433                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/activation/api/main/activation-1.1.1.redhat-4.jar
+7f0ee5e4e000-7f0ee5e55000 r--s 0005b000 08:01 2491099                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/webservices/main/jboss-as-webservices-server-integration-7.5.0.Final-redhat-21.jar
+7f0ee5e55000-7f0ee5e5e000 r--s 00096000 08:01 2491161                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/web/main/jboss-as-web-7.5.0.Final-redhat-21.jar
+7f0ee5e5e000-7f0ee5e61000 r--s 00007000 08:01 2491547                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-core-api-1.0.31.Final-redhat-1.jar
+7f0ee5e61000-7f0ee5e64000 r--s 00017000 08:01 2623100                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/xml/bind/api/main/jboss-jaxb-api_2.2_spec-1.0.4.Final-redhat-3.jar
+7f0ee5e64000-7f0ee5e79000 r--s 001da000 08:01 2622978                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jgroups/main/jgroups-3.2.13.Final-redhat-1.jar
+7f0ee5e79000-7f0ee5e7b000 r--s 0000d000 08:01 2623127                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/xml/soap/api/main/jboss-saaj-api_1.3_spec-1.0.3.Final-redhat-1.jar
+7f0ee5e7b000-7f0ee5e7c000 r--s 00000000 08:01 2491546                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-spi-1.0.31.Final-redhat-1.jar
+7f0ee5e7c000-7f0ee5e81000 r--s 0002f000 08:01 2491545                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/ironjacamar/api/main/ironjacamar-common-api-1.0.31.Final-redhat-1.jar
+7f0ee5e81000-7f0ee5e85000 r--s 00015000 08:01 2490975                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/sar/main/jboss-as-sar-7.5.0.Final-redhat-21.jar
+7f0ee5e85000-7f0ee5e9e000 r--s 001e3000 08:01 2361460                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/com/sun/jsf-impl/main/jsf-impl-2.1.28.redhat-8.jar
+7f0ee5e9e000-7f0ee5ea0000 r--s 00008000 08:01 2623108                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/xml/rpc/api/main/jboss-jaxrpc-api_1.1_spec-1.0.1.Final-redhat-4.jar
+7f0ee5ea0000-7f0ee5ea2000 r--s 00003000 08:01 2361422                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/service/main/jboss-as-clustering-service-7.5.0.Final-redhat-21.jar
+7f0ee5fa3000-7f0ee5fab000 r--s 0007a000 08:01 2623419                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/mail/api/main/mail-1.4.5.redhat-2.jar
+7f0ee5fab000-7f0ee5fad000 r--s 00008000 08:01 2622372                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/httpcomponents/main/httpmime-4.3.6.redhat-1.jar
+7f0ee5fad000-7f0ee5faf000 r--s 0000a000 08:01 2491500                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/jboss-transaction-spi/main/jboss-transaction-spi-7.1.0.Final-redhat-1.jar
+7f0ee5faf000-7f0ee5fb3000 r--s 00025000 08:01 2491645                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/remote-naming/main/jboss-remote-naming-1.0.10.Final-redhat-1.jar
+7f0ee5fb3000-7f0ee5fb6000 r--s 00012000 08:01 2623155                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/xml/ws/api/main/jboss-jaxws-api_2.2_spec-2.0.2.Final-redhat-1.jar
+7f0ee60b7000-7f0ee60be000 r--s 00041000 08:01 2622370                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/httpcomponents/main/httpcore-4.3.3.redhat-1.jar
+7f0ee60be000-7f0ee60c2000 r--s 00024000 08:01 2491285                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/pojo/main/jboss-as-pojo-7.5.0.Final-redhat-21.jar
+7f0ee61c3000-7f0ee61c7000 r--s 00021000 08:01 2361439                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/jgroups/main/jboss-as-clustering-jgroups-7.5.0.Final-redhat-21.jar
+7f0ee62c8000-7f0ee62d1000 r--s 00069000 08:01 2623239                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/servlet/jstl/api/main/jboss-jstl-api_1.2_spec-1.0.6.Final-redhat-1.jar
+7f0ee62d1000-7f0ee62d4000 r--s 0000a000 08:01 2623451                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/ejb/api/main/jboss-ejb-api_3.1_spec-1.0.2.Final-redhat-3.jar
+7f0ee62d4000-7f0ee62e0000 r--s 0008a000 08:01 2622371                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/httpcomponents/main/httpclient-4.3.6.redhat-1.jar
+7f0ee62e0000-7f0ee62ec000 r--s 0006b000 08:01 2622791                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-4.3.2.Final-redhat-2.jar
+7f0ee62ec000-7f0ee62ef000 r--s 00016000 08:01 2361447                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/impl/main/jboss-as-clustering-impl-7.5.0.Final-redhat-21.jar
+7f0ee62ef000-7f0ee62fc000 r--s 00095000 08:01 2491411                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/resteasy-jaxrs-2.3.10.Final-redhat-1.jar
+7f0ee62fc000-7f0ee62fd000 r--s 00001000 08:01 2491413                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxrs/main/async-http-servlet-3.0-2.3.10.Final-redhat-1.jar
+7f0ee62fd000-7f0ee62ff000 r--s 00005000 08:01 2361431                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/common/main/jboss-as-clustering-common-7.5.0.Final-redhat-21.jar
+7f0ee62ff000-7f0ee6302000 r--s 0000c000 08:01 2623223                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/servlet/jsp/api/main/jboss-jsp-api_2.2_spec-1.0.2.Final-redhat-1.jar
+7f0ee6302000-7f0ee6305000 r--s 00009000 08:01 2623301                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/validation/api/main/validation-api-1.0.0.GA-redhat-3.jar
+7f0ee6305000-7f0ee6308000 r--s 0000f000 08:01 2491054                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/mail/main/jboss-as-mail-7.5.0.Final-redhat-21.jar
+7f0ee6308000-7f0ee630a000 r--s 0000a000 08:01 2623180                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/ws/rs/api/main/jboss-jaxrs-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0ee630a000-7f0ee630d000 r--s 00011000 08:01 2361434                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/api/main/jboss-as-clustering-api-7.5.0.Final-redhat-21.jar
+7f0ee640e000-7f0ee6412000 r--s 00022000 08:01 2622408                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/infinispan/client/hotrod/main/infinispan-client-hotrod-5.2.11.Final-redhat-2.jar
+7f0ee6412000-7f0ee6414000 r--s 00010000 08:01 2623397                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/el/api/main/jboss-el-api_2.2_spec-1.0.4.Final-redhat-1.jar
+7f0ee6414000-7f0ee6417000 r--s 0000f000 08:01 2623474                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/resource/api/main/jboss-connector-api_1.6_spec-1.0.1.Final-redhat-3.jar
+7f0ee6417000-7f0ee6422000 r--s 0009c000 08:01 2623322                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/faces/api/main/jboss-jsf-api_2.1_spec-2.1.28.Final-redhat-1.jar
+7f0ee6422000-7f0ee6424000 r--s 00014000 08:01 2622431                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/infinispan/cachestore/remote/main/infinispan-cachestore-remote-5.2.11.Final-redhat-2.jar
+7f0ee6424000-7f0ee6428000 r--s 0000a000 08:01 2623263                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/enterprise/api/main/cdi-api-1.0.0.SP4-redhat-5.jar
+7f0ee6529000-7f0ee652d000 r--s 00027000 08:01 2491715                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/io/main/commons-io-2.1.0.redhat-4.jar
+7f0ee652d000-7f0ee652e000 r--s 00004000 08:01 2623165                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/interceptor/api/main/jboss-interceptors-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0ee652e000-7f0ee6531000 r--s 00023000 08:01 2622445                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/infinispan/cachestore/jdbc/main/infinispan-cachestore-jdbc-5.2.11.Final-redhat-2.jar
+7f0ee6531000-7f0ee6533000 r--s 0000e000 08:01 2491250                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jsf/main/jboss-as-jsf-7.5.0.Final-redhat-21.jar
+7f0ee6533000-7f0ee6537000 r--s 0002a000 08:01 2491063                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jpa/main/jboss-as-jpa-7.5.0.Final-redhat-21.jar
+7f0ee6739000-7f0ee673c000 r--s 00014000 08:01 2490968                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jdr/main/jboss-as-jdr-7.5.0.Final-redhat-21.jar
+7f0ee683d000-7f0ee6840000 r--s 00011000 08:01 2491148                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jaxrs/main/jboss-as-jaxrs-7.5.0.Final-redhat-21.jar
+7f0ee6840000-7f0ee6841000 r--s 00004000 08:01 2623347                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/annotation/api/main/jboss-annotations-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0ee6841000-7f0ee685f000 r--s 001a2000 08:01 2491269                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/ejb3/main/jboss-as-ejb3-7.5.0.Final-redhat-21.jar
+7f0ee6960000-7f0ee6962000 r--s 00000000 08:01 2623520                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/net/jcip/main/jcip-annotations-1.0.0.redhat-7.jar
+7f0ee6962000-7f0ee696f000 r--s 000a4000 08:01 2490964                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/connector/main/jboss-as-connector-7.5.0.Final-redhat-21.jar
+7f0ee696f000-7f0ee6973000 r--s 00026000 08:01 2491297                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/deployment-scanner/main/jboss-as-deployment-scanner-7.5.0.Final-redhat-21.jar
+7f0ee727c000-7f0ee727d000 r--s 00003000 08:01 11538886                   /usr/lib/jvm/jre1.7.0_80/lib/ext/sunec.jar
+7f0ee727d000-7f0ee7281000 r--s 00037000 08:01 11538887                   /usr/lib/jvm/jre1.7.0_80/lib/ext/sunpkcs11.jar
+7f0ee7281000-7f0ee7284000 r--s 00019000 08:01 11538871                   /usr/lib/jvm/jre1.7.0_80/lib/jce.jar
+7f0ee7284000-7f0ee7294000 r--s 000b6000 08:01 2491090                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/cli/main/jboss-as-cli-7.5.0.Final-redhat-21.jar
+7f0ee7294000-7f0ee7297000 ---p 00000000 00:00 0 
+7f0ee7297000-7f0ee7395000 rw-p 00000000 00:00 0 
+7f0ee73fc000-7f0ee7403000 r--s 00037000 08:01 3802773                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/junit-4.10.jar-eba6e9ca11d2bdde/junit-4.10.jar
+7f0ee7403000-7f0ee740d000 r--s 0005c000 08:01 3802770                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jstl-1.2.jar-2bb6f3edbe3471ab/jstl-1.2.jar
+7f0ee740d000-7f0ee740f000 r--s 00011000 08:01 3802767                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/hamcrest-core-1.1.jar-b3c6f8c0de8a339d/hamcrest-core-1.1.jar
+7f0ee740f000-7f0ee7411000 r--s 00009000 08:01 3802764                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/powermock-reflect-1.5.1.jar-9c365d57f3c80fd4/powermock-reflect-1.5.1.jar
+7f0ee7411000-7f0ee7418000 r--s 0003f000 08:01 3802761                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpcore-4.3.3.jar-a17cbcadabd11cea/httpcore-4.3.3.jar
+7f0ee7418000-7f0ee7424000 r--s 00085000 08:01 3802758                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpclient-4.3.6.jar-ebacd9ab596b4306/httpclient-4.3.6.jar
+7f0ee7424000-7f0ee742b000 r--s 00037000 08:01 3802755                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/junit-4.10.jar-de2fafac5d04b27c/junit-4.10.jar
+7f0ee742b000-7f0ee7431000 r--s 00033000 08:01 3802752                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-codec-1.6.jar-46eed49522d35b26/commons-codec-1.6.jar
+7f0ee7431000-7f0ee743b000 r--s 0005c000 08:01 3802749                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jstl-1.2.jar-8eaaf3d343e854f2/jstl-1.2.jar
+7f0ee743b000-7f0ee743f000 r--s 00017000 08:01 3802746                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/togglz-core-2.2.0.Final.jar-676313d6f745675f/togglz-core-2.2.0.Final.jar
+7f0ee743f000-7f0ee7442000 r--s 00013000 08:01 3802743                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-io-1.3.2.jar-24e227f3ede508dd/commons-io-1.3.2.jar
+7f0ee7442000-7f0ee7448000 r--s 00035000 08:01 3802731                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalHomeService-1.1.jar-ff9cf9244bbf0220/HDIDigitalHomeService-1.1.jar
+7f0ee7448000-7f0ee7464000 r--s 001eb000 08:01 3802290                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalCotacaoService-1.1.jar-eb534a9376d2ffb0/HDIDigitalCotacaoService-1.1.jar
+7f0ee7465000-7f0ee7467000 r--s 00008000 08:01 3802740                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-logging-1.0.4.jar-c38236a1551c184c/commons-logging-1.0.4.jar
+7f0ee7467000-7f0ee746e000 r--s 0003f000 08:01 3802003                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpcore-4.3.3.jar-ee0697e755318c50/httpcore-4.3.3.jar
+7f0ee746e000-7f0ee747a000 r--s 00085000 08:01 3802000                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpclient-4.3.6.jar-406eee1756640721/httpclient-4.3.6.jar
+7f0ee747a000-7f0ee7486000 r--s 0009e000 08:01 3801992                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalBase-0.2.32-SNAPSHOT.jar-35468cfc62ae29d9/HDIDigitalBase-0.2.32-SNAPSHOT.jar
+7f0ee7486000-7f0ee7490000 r--s 0005c000 08:01 3801687                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jstl-1.2.jar-6e154e1a59d0fb99/jstl-1.2.jar
+7f0ee7490000-7f0ee7492000 r--s 00001000 08:01 11538885                   /usr/lib/jvm/jre1.7.0_80/lib/ext/dnsns.jar
+7f0ee7493000-7f0ee7495000 r--s 00009000 08:01 3802010                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/powermock-reflect-1.5.1.jar-62b1bafccc6e63a0/powermock-reflect-1.5.1.jar
+7f0ee7495000-7f0ee7498000 r--s 0001a000 08:01 3802007                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalHomeCommon-1.1.jar-4e1a8bcadcd8005c/HDIDigitalHomeCommon-1.1.jar
+7f0ee7498000-7f0ee749a000 r--s 00000000 08:01 3801997                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/togglz-cdi-2.2.0.Final.jar-1ee958ccb8cbdde6/togglz-cdi-2.2.0.Final.jar
+7f0ee749a000-7f0ee74a1000 r--s 00037000 08:01 3801981                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/junit-4.10.jar-f282cdfdf2a30d40/junit-4.10.jar
+7f0ee74a1000-7f0ee74a3000 r--s 0000f000 08:01 3801972                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDILegacyDispatcher-0.0.31-20180413.182822-5.jar-1e8d41e32ab3830c/HDILegacyDispatcher-0.0.31-20180413.182822-5.jar
+7f0ee74a3000-7f0ee74a7000 r--s 00017000 08:01 3801963                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/togglz-core-2.2.0.Final.jar-e9ffbbc898592e3/togglz-core-2.2.0.Final.jar
+7f0ee74a7000-7f0ee74a8000 r--s 00035000 08:01 3801957                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/org.apache.commons.codec-1.8.jar-c23671cddded6695/org.apache.commons.codec-1.8.jar
+7f0ee74a8000-7f0ee74aa000 r--s 00008000 08:01 3801949                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-logging-1.0.4.jar-eb99bb9b0b130725/commons-logging-1.0.4.jar
+7f0ee74aa000-7f0ee74b0000 r--s 00048000 08:01 3801943                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-lang3-3.1.jar-778f205413a1def0/commons-lang3-3.1.jar
+7f0ee74b0000-7f0ee74b2000 r--s 00011000 08:01 3801842                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/hamcrest-core-1.1.jar-370d4013765a5399/hamcrest-core-1.1.jar
+7f0ee74b2000-7f0ee74b9000 r--s 0003a000 08:01 3801834                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-codec-1.8.jar-33d30adc40282dc2/commons-codec-1.8.jar
+7f0ee74b9000-7f0ee74bb000 r--s 00007000 08:01 3801828                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/objenesis-1.2.jar-b017d6663046e5bb/objenesis-1.2.jar
+7f0ee74bc000-7f0ee74be000 r--s 00011000 08:01 3802737                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/hamcrest-core-1.1.jar-9b14a8926ebe8a0d/hamcrest-core-1.1.jar
+7f0ee74be000-7f0ee74c0000 r--s 00007000 08:01 3802734                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/objenesis-1.2.jar-a7853729a0571766/objenesis-1.2.jar
+7f0ee74c0000-7f0ee74c2000 r--s 00009000 08:01 3801752                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/powermock-reflect-1.5.1.jar-8f9a82b9587b4edb/powermock-reflect-1.5.1.jar
+7f0ee74c2000-7f0ee74c9000 r--s 0003f000 08:01 3801758                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpcore-4.3.3.jar-146127c3c7ea2344/httpcore-4.3.3.jar
+7f0ee74c9000-7f0ee74d5000 r--s 00085000 08:01 3801755                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/httpclient-4.3.6.jar-e438526b2768fd4e/httpclient-4.3.6.jar
+7f0ee74d5000-7f0ee74e6000 r--s 0011c000 08:01 3802095                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jackson-databind-2.8.2.jar-5baa4e9f7e0bc385/jackson-databind-2.8.2.jar
+7f0ee74e6000-7f0ee74f2000 r--s 0009e000 08:01 3802092                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalBase-0.2.32-SNAPSHOT.jar-e48c80ba9c11fad2/HDIDigitalBase-0.2.32-SNAPSHOT.jar
+7f0ee74f2000-7f0ee7509000 r--s 001ed000 08:01 3802089                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jgroups-3.4.1.Final.jar-cc574aa9fefa8536/jgroups-3.4.1.Final.jar
+7f0ee7509000-7f0ee750b000 r--s 0000c000 08:01 3802039                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jboss-logging-3.1.2.GA.jar-38bbc9998a2adc42/jboss-logging-3.1.2.GA.jar
+7f0ee750b000-7f0ee7512000 r--s 00037000 08:01 3802036                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/junit-4.10.jar-3df91b9f0b0a7fc9/junit-4.10.jar
+7f0ee7512000-7f0ee7516000 r--s 00018000 08:01 3802032                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jjwt-0.7.0.jar-594686ccdd884e7b/jjwt-0.7.0.jar
+7f0ee7516000-7f0ee7519000 r--s 0000b000 08:01 3801977                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jackson-annotations-2.8.0.jar-102e6bb445e46964/jackson-annotations-2.8.0.jar
+7f0ee7519000-7f0ee751d000 r--s 00041000 08:01 3801968                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jackson-core-2.8.2.jar-f21f73471f24ec8d/jackson-core-2.8.2.jar
+7f0ee751d000-7f0ee7522000 r--s 00030000 08:01 3801954                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jboss-marshalling-1.4.4.Final.jar-3cd3748f9cf47e2b/jboss-marshalling-1.4.4.Final.jar
+7f0ee7522000-7f0ee7524000 r--s 00005000 08:01 3801942                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jboss-transaction-api_1.1_spec-1.0.1.Final.jar-70c530c457d94b25/jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+7f0ee7524000-7f0ee7528000 r--s 00017000 08:01 3801750                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/togglz-core-2.2.0.Final.jar-7b1bcc8ca31acad0/togglz-core-2.2.0.Final.jar
+7f0ee7528000-7f0ee7536000 r--s 000bb000 08:01 3801747                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/HDIDigitalCotacaoCommon-1.1.jar-90b2eba8e6596539/HDIDigitalCotacaoCommon-1.1.jar
+7f0ee7536000-7f0ee7537000 r--s 00035000 08:01 3801744                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/org.apache.commons.codec-1.8.jar-6f64182f78b92658/org.apache.commons.codec-1.8.jar
+7f0ee7537000-7f0ee7539000 r--s 00004000 08:01 3801740                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/hdi-comunicador-client-8.0.0-20180312.195116-2.jar-852eb919be6fd5f5/hdi-comunicador-client-8.0.0-20180312.195116-2.jar
+7f0ee7539000-7f0ee753b000 r--s 00008000 08:01 3801732                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-logging-1.0.4.jar-d0e1dbe42f4e672f/commons-logging-1.0.4.jar
+7f0ee753b000-7f0ee7541000 r--s 00048000 08:01 3801725                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-lang3-3.1.jar-d08a8b5c78008be5/commons-lang3-3.1.jar
+7f0ee7541000-7f0ee7559000 r--s 00132000 08:01 3801722                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/freemarker-2.3.23.jar-d2abe9fd012d9f6e/freemarker-2.3.23.jar
+7f0ee7559000-7f0ee755c000 r--s 00012000 08:01 3801711                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/jboss-marshalling-river-1.4.4.Final.jar-9196d86d2a59e163/jboss-marshalling-river-1.4.4.Final.jar
+7f0ee755c000-7f0ee755e000 r--s 00011000 08:01 3801707                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/hamcrest-core-1.1.jar-c12628ebf3cb6c6a/hamcrest-core-1.1.jar
+7f0ee755e000-7f0ee7580000 r--s 001cb000 08:01 3801704                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/infinispan-core-6.0.2.Final.jar-e8c4ee10d044643/infinispan-core-6.0.2.Final.jar
+7f0ee7580000-7f0ee7587000 r--s 0003a000 08:01 3801701                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/commons-codec-1.8.jar-6be7adbe9cd2a581/commons-codec-1.8.jar
+7f0ee7587000-7f0ee7589000 r--s 00007000 08:01 3801698                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/objenesis-1.2.jar-235434fe67d5e6bc/objenesis-1.2.jar
+7f0ee7589000-7f0ee7593000 r--s 00067000 08:01 3801690                    /home/softvaro/workspace/EAP-6.4-digital-dev/standalone/tmp/vfs/deployment/deploymentfefeb873481ade49/infinispan-commons-6.0.2.Final.jar-9efa66dc62f4f620/infinispan-commons-6.0.2.Final.jar
+7f0ee7593000-7f0ee7596000 r--s 000f5000 08:01 11538889                   /usr/lib/jvm/jre1.7.0_80/lib/ext/localedata.jar
+7f0ee7596000-7f0ee7598000 r--s 00013000 08:01 2491489                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/xnio/nio/main/xnio-nio-3.0.13.GA-redhat-1.jar
+7f0ee7598000-7f0ee759b000 ---p 00000000 00:00 0 
+7f0ee759b000-7f0ee7699000 rw-p 00000000 00:00 0 
+7f0ee7699000-7f0ee769c000 ---p 00000000 00:00 0 
+7f0ee769c000-7f0ee779a000 rw-p 00000000 00:00 0 
+7f0ee779a000-7f0ee779d000 ---p 00000000 00:00 0 
+7f0ee779d000-7f0ee789b000 rw-p 00000000 00:00 0 
+7f0ee789b000-7f0ee789f000 r--s 00025000 08:01 2491246                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/threads/main/jboss-as-threads-7.5.0.Final-redhat-21.jar
+7f0ee789f000-7f0ee78a0000 r--s 0000a000 08:01 2491706                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/commons/cli/main/commons-cli-1.2.0.redhat-8.jar
+7f0ee78a0000-7f0ee78a2000 r--s 00006000 08:01 2491605                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-spnego-2.3.6.Final-redhat-1.jar
+7f0ee78a2000-7f0ee78a3000 r--s 00003000 08:01 2491601                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-ntlm-2.3.6.Final-redhat-1.jar
+7f0ee78a3000-7f0ee78a4000 r--s 00004000 08:01 2491602                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-net-2.3.6.Final-redhat-1.jar
+7f0ee78a4000-7f0ee78a6000 r--s 00009000 08:01 2491604                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-extras-2.3.6.Final-redhat-1.jar
+7f0ee78a6000-7f0ee78a8000 r--s 00009000 08:01 2491603                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/security/negotiation/main/jboss-negotiation-common-2.3.6.Final-redhat-1.jar
+7f0ee78a8000-7f0ee78ab000 r--s 0000e000 08:01 2491477                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ear-7.2.1.Final-redhat-1.jar
+7f0ee78ab000-7f0ee78b3000 r--s 00059000 08:01 2491475                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-web-7.2.1.Final-redhat-1.jar
+7f0ee78b3000-7f0ee78bd000 r--s 0007b000 08:01 2491476                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-ejb-7.2.1.Final-redhat-1.jar
+7f0ee78bd000-7f0ee78c6000 r--s 0005b000 08:01 2491473                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-common-7.2.1.Final-redhat-1.jar
+7f0ee78c6000-7f0ee78cf000 r--s 00072000 08:01 2490937                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/ee/main/jboss-as-ee-7.5.0.Final-redhat-21.jar
+7f0ee78cf000-7f0ee78f9000 r--s 00240000 08:01 2622461                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/infinispan/main/infinispan-core-5.2.11.Final-redhat-2.jar
+7f0ee78f9000-7f0ee78fc000 ---p 00000000 00:00 0 
+7f0ee78fc000-7f0ee79fa000 rw-p 00000000 00:00 0 
+7f0ee79fa000-7f0ee79fd000 ---p 00000000 00:00 0 
+7f0ee79fd000-7f0ee7afb000 rw-p 00000000 00:00 0 
+7f0ee7afb000-7f0ee7afe000 ---p 00000000 00:00 0 
+7f0ee7afe000-7f0ee7bfc000 rw-p 00000000 00:00 0 
+7f0ee7bfc000-7f0ee7bff000 ---p 00000000 00:00 0 
+7f0ee7bff000-7f0ee7cfd000 rw-p 00000000 00:00 0 
+7f0ee7cfd000-7f0ee7d00000 ---p 00000000 00:00 0 
+7f0ee7d00000-7f0ee7dfe000 rw-p 00000000 00:00 0 
+7f0ee7dfe000-7f0ee7e01000 ---p 00000000 00:00 0 
+7f0ee7e01000-7f0ee7eff000 rw-p 00000000 00:00 0 
+7f0ee7eff000-7f0ee7f02000 ---p 00000000 00:00 0 
+7f0ee7f02000-7f0ee8000000 rw-p 00000000 00:00 0 
+7f0ee8000000-7f0ee81cd000 rw-p 00000000 00:00 0 
+7f0ee81cd000-7f0eec000000 ---p 00000000 00:00 0 
+7f0eec000000-7f0eec2d1000 rw-p 00000000 00:00 0 
+7f0eec2d1000-7f0ef0000000 ---p 00000000 00:00 0 
+7f0ef0000000-7f0ef0287000 rw-p 00000000 00:00 0 
+7f0ef0287000-7f0ef4000000 ---p 00000000 00:00 0 
+7f0ef4000000-7f0ef41ba000 rw-p 00000000 00:00 0 
+7f0ef41ba000-7f0ef8000000 ---p 00000000 00:00 0 
+7f0ef8000000-7f0ef8101000 rw-p 00000000 00:00 0 
+7f0ef8101000-7f0efc000000 ---p 00000000 00:00 0 
+7f0efc000000-7f0efc721000 rw-p 00000000 00:00 0 
+7f0efc721000-7f0f00000000 ---p 00000000 00:00 0 
+7f0f00000000-7f0f00021000 rw-p 00000000 00:00 0 
+7f0f00021000-7f0f04000000 ---p 00000000 00:00 0 
+7f0f04000000-7f0f04198000 rw-p 00000000 00:00 0 
+7f0f04198000-7f0f08000000 ---p 00000000 00:00 0 
+7f0f08000000-7f0f08021000 rw-p 00000000 00:00 0 
+7f0f08021000-7f0f0c000000 ---p 00000000 00:00 0 
+7f0f0c000000-7f0f0c04d000 rw-p 00000000 00:00 0 
+7f0f0c04d000-7f0f10000000 ---p 00000000 00:00 0 
+7f0f10000000-7f0f10002000 r--s 00004000 08:01 2491472                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/metadata/main/jboss-metadata-appclient-7.2.1.Final-redhat-1.jar
+7f0f10002000-7f0f10006000 r--s 0002f000 08:01 2491241                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/transactions/main/jboss-as-transactions-7.5.0.Final-redhat-21.jar
+7f0f10006000-7f0f1000d000 r--s 0005d000 08:01 2361378                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/clustering/infinispan/main/jboss-as-clustering-infinispan-7.5.0.Final-redhat-21.jar
+7f0f1000d000-7f0f1000f000 r--s 00005000 08:01 2623411                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/transaction/api/main/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar
+7f0f1000f000-7f0f10012000 r--s 0002b000 08:01 2623229                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/servlet/api/main/jboss-servlet-api_3.0_spec-1.0.2.Final-redhat-2.jar
+7f0f10012000-7f0f10014000 r--s 0000d000 08:01 2623273                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/security/jacc/api/main/jboss-jacc-api_1.4_spec-1.0.3.Final-redhat-1.jar
+7f0f10014000-7f0f10018000 r--s 0007e000 08:01 11538878                   /usr/lib/jvm/jre1.7.0_80/lib/jsse.jar
+7f0f10018000-7f0f1001b000 ---p 00000000 00:00 0 
+7f0f1001b000-7f0f10119000 rw-p 00000000 00:00 0 
+7f0f10119000-7f0f1011c000 ---p 00000000 00:00 0 
+7f0f1011c000-7f0f1021a000 rw-p 00000000 00:00 0 
+7f0f1021a000-7f0f1021d000 ---p 00000000 00:00 0 
+7f0f1021d000-7f0f1031b000 rw-p 00000000 00:00 0 
+7f0f1031b000-7f0f1031e000 ---p 00000000 00:00 0 
+7f0f1031e000-7f0f1041c000 rw-p 00000000 00:00 0 
+7f0f1041c000-7f0f1041f000 ---p 00000000 00:00 0 
+7f0f1041f000-7f0f1051d000 rw-p 00000000 00:00 0 
+7f0f1051d000-7f0f10520000 ---p 00000000 00:00 0 
+7f0f10520000-7f0f1061e000 rw-p 00000000 00:00 0 
+7f0f1061e000-7f0f10621000 ---p 00000000 00:00 0 
+7f0f10621000-7f0f1071f000 rw-p 00000000 00:00 0 
+7f0f1071f000-7f0f10720000 r--s 00001000 08:01 2623355                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/javax/inject/api/main/javax.inject-1.0.0.redhat-5.jar
+7f0f10720000-7f0f10722000 r--s 00005000 08:01 2622844                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/picketbox/main/picketbox-infinispan-4.1.1.Final-redhat-1.jar
+7f0f10722000-7f0f10734000 r--s 000d1000 08:01 2622849                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/picketbox/main/picketbox-4.1.1.Final-redhat-1.jar
+7f0f10734000-7f0f1073a000 r--s 00045000 08:01 2491058                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/security/main/jboss-as-security-7.5.0.Final-redhat-21.jar
+7f0f1073a000-7f0f1073e000 r--s 0001b000 08:01 2491172                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/protocol/main/jboss-as-protocol-7.5.0.Final-redhat-21.jar
+7f0f1073e000-7f0f10740000 r--s 00001000 08:01 2491140                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/version/main/jboss-as-version-7.5.0.Final-redhat-21.jar
+7f0f10740000-7f0f10745000 r--s 00030000 08:01 2490960                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/process-controller/main/jboss-as-process-controller-7.5.0.Final-redhat-21.jar
+7f0f10745000-7f0f10749000 r--s 00029000 08:01 2491293                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/platform-mbean/main/jboss-as-platform-mbean-7.5.0.Final-redhat-21.jar
+7f0f10749000-7f0f10753000 r--s 00061000 08:01 2491015                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/patching/main/wildfly-patching-7.5.0.Final-redhat-21.jar
+7f0f10753000-7f0f10757000 r--s 00020000 08:01 2491202                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/domain-http-interface/main/jboss-as-domain-http-interface-7.5.0.Final-redhat-21.jar
+7f0f10757000-7f0f1075a000 r--s 0000a000 08:01 2491210                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/deployment-repository/main/jboss-as-deployment-repository-7.5.0.Final-redhat-21.jar
+7f0f1075a000-7f0f1075e000 r--s 0001a000 08:01 2491629                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/threads/main/jboss-threads-2.1.2.Final-redhat-1.jar
+7f0f1075e000-7f0f10760000 r--s 00015000 08:01 2491641                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/sasl/main/jboss-sasl-1.0.5.Final-redhat-1.jar
+7f0f10760000-7f0f10762000 r--s 00013000 08:01 2491596                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/marshalling/river/main/jboss-marshalling-river-1.4.10.Final-redhat-1.jar
+7f0f10762000-7f0f10764000 r--s 00012000 08:01 2491516                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/jandex/main/jandex-1.2.2.Final-redhat-1.jar
+7f0f10764000-7f0f10767000 r--s 00014000 08:01 2491504                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/invocation/main/jboss-invocation-1.1.2.Final-redhat-1.jar
+7f0f10767000-7f0f1076d000 r--s 00040000 08:01 2491137                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/naming/main/jboss-as-naming-7.5.0.Final-redhat-21.jar
+7f0f1076d000-7f0f10775000 r--s 00047000 08:01 2491656                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/remoting-jmx/main/remoting-jmx-1.1.3.Final-redhat-2.jar
+7f0f10775000-7f0f1077a000 r--s 00036000 08:01 2491485                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/xnio/main/xnio-api-3.0.13.GA-redhat-1.jar
+7f0f1077a000-7f0f10780000 r--s 00030000 08:01 2491592                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/marshalling/main/jboss-marshalling-1.4.10.Final-redhat-1.jar
+7f0f10780000-7f0f10786000 r--s 0003f000 08:01 2491551                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/remoting3/main/jboss-remoting-3.3.4.Final-redhat-1.jar
+7f0f10786000-7f0f1078a000 r--s 0002c000 08:01 2491113                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/remoting/main/jboss-as-remoting-7.5.0.Final-redhat-21.jar
+7f0f1078a000-7f0f1078d000 r--s 0000b000 08:01 2491238                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/network/main/jboss-as-network-7.5.0.Final-redhat-21.jar
+7f0f1078d000-7f0f1079d000 r--s 000bf000 08:01 2491126                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/domain-management/main/jboss-as-domain-management-7.5.0.Final-redhat-21.jar
+7f0f1079d000-7f0f1079f000 r--s 00000000 08:01 2491280                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/core-security-api/main/wildfly-core-security-api-7.5.0.Final-redhat-21.jar
+7f0f1079f000-7f0f107a1000 r--s 00004000 08:01 2491085                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/core-security/main/wildfly-core-security-7.5.0.Final-redhat-21.jar
+7f0f107a1000-7f0f107b1000 r-xp 00000000 08:01 11538810                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnio.so
+7f0f107b1000-7f0f109b1000 ---p 00010000 08:01 11538810                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnio.so
+7f0f109b1000-7f0f109b2000 rw-p 00010000 08:01 11538810                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnio.so
+7f0f109b2000-7f0f109be000 r--s 0007f000 08:01 2491493                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/common-core/main/jboss-common-core-2.2.17.GA-redhat-3.jar
+7f0f109be000-7f0f109de000 r--s 001b1000 08:01 2491117                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/controller/main/jboss-as-controller-7.5.0.Final-redhat-21.jar
+7f0f109de000-7f0f139df000 rw-p 00000000 00:00 0 
+7f0f139df000-7f0f139f6000 r-xp 00000000 08:01 11538842                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnet.so
+7f0f139f6000-7f0f13bf5000 ---p 00017000 08:01 11538842                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnet.so
+7f0f13bf5000-7f0f13bf6000 rw-p 00016000 08:01 11538842                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libnet.so
+7f0f13bf6000-7f0f13bfe000 r-xp 00000000 08:01 11538817                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libmanagement.so
+7f0f13bfe000-7f0f13dfd000 ---p 00008000 08:01 11538817                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libmanagement.so
+7f0f13dfd000-7f0f13dfe000 rw-p 00007000 08:01 11538817                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libmanagement.so
+7f0f13dfe000-7f0f13e01000 ---p 00000000 00:00 0 
+7f0f13e01000-7f0f13eff000 rw-p 00000000 00:00 0 
+7f0f13eff000-7f0f13f00000 ---p 00000000 00:00 0 
+7f0f13f00000-7f0f14000000 rw-p 00000000 00:00 0 
+7f0f14000000-7f0f17ffc000 rw-p 00000000 00:00 0 
+7f0f17ffc000-7f0f18000000 ---p 00000000 00:00 0 
+7f0f18000000-7f0f1bffc000 rw-p 00000000 00:00 0 
+7f0f1bffc000-7f0f1c000000 ---p 00000000 00:00 0 
+7f0f1c000000-7f0f1c021000 rw-p 00000000 00:00 0 
+7f0f1c021000-7f0f20000000 ---p 00000000 00:00 0 
+7f0f20000000-7f0f20052000 rw-p 00000000 00:00 0 
+7f0f20052000-7f0f24000000 ---p 00000000 00:00 0 
+7f0f24000000-7f0f24f38000 rw-p 00000000 00:00 0 
+7f0f24f38000-7f0f28000000 ---p 00000000 00:00 0 
+7f0f28000000-7f0f28276000 rw-p 00000000 00:00 0 
+7f0f28276000-7f0f2c000000 ---p 00000000 00:00 0 
+7f0f2c000000-7f0f2c0f5000 rw-p 00000000 00:00 0 
+7f0f2c0f5000-7f0f30000000 ---p 00000000 00:00 0 
+7f0f30000000-7f0f30001000 r--s 00005000 08:01 2622842                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/picketbox/main/picketbox-commons-1.0.0.final-redhat-3.jar
+7f0f30001000-7f0f30002000 r--s 00009000 08:01 2491310                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/stdio/main/jboss-stdio-1.0.2.GA-redhat-1.jar
+7f0f30002000-7f0f30005000 r--s 0000c000 08:01 2491513                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.1.4.GA-redhat-2.jar
+7f0f30005000-7f0f3000c000 r--s 00033000 08:01 2491180                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/controller-client/main/jboss-as-controller-client-7.5.0.Final-redhat-21.jar
+7f0f3000c000-7f0f30015000 r--s 00070000 08:01 2491614                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/log4j/logmanager/main/log4j-jboss-logmanager-1.1.1.Final-redhat-1.jar
+7f0f30015000-7f0f30018000 ---p 00000000 00:00 0 
+7f0f30018000-7f0f30116000 rw-p 00000000 00:00 0 
+7f0f30116000-7f0f30119000 ---p 00000000 00:00 0 
+7f0f30119000-7f0f30217000 rw-p 00000000 00:00 0 
+7f0f30217000-7f0f3021a000 ---p 00000000 00:00 0 
+7f0f3021a000-7f0f30318000 rw-p 00000000 00:00 0 
+7f0f30318000-7f0f3031b000 ---p 00000000 00:00 0 
+7f0f3031b000-7f0f30419000 rw-p 00000000 00:00 0 
+7f0f30419000-7f0f306f3000 r--p 00000000 08:01 14031797                   /usr/lib/locale/locale-archive
+7f0f306f3000-7f0f306f6000 ---p 00000000 00:00 0 
+7f0f306f6000-7f0f307f4000 rw-p 00000000 00:00 0 
+7f0f307f4000-7f0f307f7000 ---p 00000000 00:00 0 
+7f0f307f7000-7f0f308f5000 rw-p 00000000 00:00 0 
+7f0f308f5000-7f0f308f6000 ---p 00000000 00:00 0 
+7f0f308f6000-7f0f34000000 rw-p 00000000 00:00 0 
+7f0f34000000-7f0f34189000 rw-p 00000000 00:00 0 
+7f0f34189000-7f0f38000000 ---p 00000000 00:00 0 
+7f0f38000000-7f0f3810b000 rw-p 00000000 00:00 0 
+7f0f3810b000-7f0f3c000000 ---p 00000000 00:00 0 
+7f0f3c000000-7f0f3c0a7000 rw-p 00000000 00:00 0 
+7f0f3c0a7000-7f0f40000000 ---p 00000000 00:00 0 
+7f0f40000000-7f0f400cf000 rw-p 00000000 00:00 0 
+7f0f400cf000-7f0f44000000 ---p 00000000 00:00 0 
+7f0f44000000-7f0f4408e000 rw-p 00000000 00:00 0 
+7f0f4408e000-7f0f48000000 ---p 00000000 00:00 0 
+7f0f48000000-7f0f48320000 rw-p 00000000 00:00 0 
+7f0f48320000-7f0f4c000000 ---p 00000000 00:00 0 
+7f0f4c000000-7f0f4c108000 rw-p 00000000 00:00 0 
+7f0f4c108000-7f0f50000000 ---p 00000000 00:00 0 
+7f0f50000000-7f0f50007000 r--s 0005b000 08:01 2491213                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/logging/main/jboss-as-logging-7.5.0.Final-redhat-21.jar
+7f0f50007000-7f0f5000e000 r--s 00000000 08:01 1989                       /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f0f5000e000-7f0f5002f000 r--p 00000000 08:01 1836319                    /usr/share/locale-langpack/pt_BR/LC_MESSAGES/libc.mo
+7f0f5002f000-7f0f50033000 r--s 0003a000 08:01 2491633                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/msc/main/jboss-msc-1.1.5.Final-redhat-1.jar
+7f0f50033000-7f0f50042000 r--s 000e3000 08:01 2491121                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/server/main/jboss-as-server-7.5.0.Final-redhat-21.jar
+7f0f50042000-7f0f50048000 r--s 00041000 08:01 2490942                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/as/jmx/main/jboss-as-jmx-7.5.0.Final-redhat-21.jar
+7f0f50048000-7f0f5004f000 r--s 0004a000 08:01 2491563                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/logmanager/main/jboss-logmanager-1.5.4.Final-redhat-1.jar
+7f0f5004f000-7f0f50053000 r--s 0001e000 08:01 2491558                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/vfs/main/jboss-vfs-3.2.9.Final-redhat-1.jar
+7f0f50053000-7f0f50059000 r--s 0007b000 08:01 2361452                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/woodstox/main/woodstox-core-asl-4.2.0.redhat-4.jar
+7f0f50059000-7f0f50071000 r--s 00196000 08:01 2622390                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/xerces/main/xercesImpl-2.9.1.redhat-6.jar
+7f0f50071000-7f0f5008e000 r--s 0027f000 08:01 2491677                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/xalan/main/xalan-2.7.1.redhat-7.jar
+7f0f5008e000-7f0f51000000 rw-p 00000000 00:00 0 
+7f0f51000000-7f0f521d0000 rwxp 00000000 00:00 0 
+7f0f521d0000-7f0f5458c000 rw-p 00000000 00:00 0 
+7f0f5458c000-7f0f58000000 ---p 00000000 00:00 0 
+7f0f58000000-7f0f58004000 r--s 0002c000 08:01 2361453                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/codehaus/woodstox/main/stax2-api-3.1.3.redhat-1.jar
+7f0f58004000-7f0f5800e000 r--s 00253000 08:01 11538861                   /usr/lib/jvm/jre1.7.0_80/lib/resources.jar
+7f0f5800e000-7f0f58725000 rw-p 00000000 00:00 0 
+7f0f58725000-7f0f588e4000 r--s 031dd000 08:01 11538891                   /usr/lib/jvm/jre1.7.0_80/lib/rt.jar
+7f0f588e4000-7f0f58cde000 rw-p 00000000 00:00 0 
+7f0f58cde000-7f0f58cdf000 ---p 00000000 00:00 0 
+7f0f58cdf000-7f0f58ddf000 rw-p 00000000 00:00 0 
+7f0f58ddf000-7f0f58de0000 ---p 00000000 00:00 0 
+7f0f58de0000-7f0f58ee0000 rw-p 00000000 00:00 0 
+7f0f58ee0000-7f0f58ee1000 ---p 00000000 00:00 0 
+7f0f58ee1000-7f0f58fe1000 rw-p 00000000 00:00 0 
+7f0f58fe1000-7f0f58fe2000 ---p 00000000 00:00 0 
+7f0f58fe2000-7f0f590e2000 rw-p 00000000 00:00 0 
+7f0f590e2000-7f0f590e3000 ---p 00000000 00:00 0 
+7f0f590e3000-7f0f591e3000 rw-p 00000000 00:00 0 
+7f0f591e3000-7f0f591e4000 ---p 00000000 00:00 0 
+7f0f591e4000-7f0f592e4000 rw-p 00000000 00:00 0 
+7f0f592e4000-7f0f592e5000 ---p 00000000 00:00 0 
+7f0f592e5000-7f0f593e5000 rw-p 00000000 00:00 0 
+7f0f593e5000-7f0f593e6000 ---p 00000000 00:00 0 
+7f0f593e6000-7f0f595e6000 rw-p 00000000 00:00 0 
+7f0f595e6000-7f0f5983c000 rw-p 00000000 00:00 0 
+7f0f5983c000-7f0f59a3d000 rw-p 00000000 00:00 0 
+7f0f59a3d000-7f0f59a54000 r-xp 00000000 08:01 11538837                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libzip.so
+7f0f59a54000-7f0f59c54000 ---p 00017000 08:01 11538837                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libzip.so
+7f0f59c54000-7f0f59c55000 rw-p 00017000 08:01 11538837                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libzip.so
+7f0f59c55000-7f0f59c60000 r-xp 00000000 08:01 786528                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f0f59c60000-7f0f59e5f000 ---p 0000b000 08:01 786528                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f0f59e5f000-7f0f59e60000 r--p 0000a000 08:01 786528                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f0f59e60000-7f0f59e61000 rw-p 0000b000 08:01 786528                     /lib/x86_64-linux-gnu/libnss_files-2.23.so
+7f0f59e61000-7f0f59e67000 rw-p 00000000 00:00 0 
+7f0f59e67000-7f0f59e72000 r-xp 00000000 08:01 790991                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f0f59e72000-7f0f5a071000 ---p 0000b000 08:01 790991                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f0f5a071000-7f0f5a072000 r--p 0000a000 08:01 790991                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f0f5a072000-7f0f5a073000 rw-p 0000b000 08:01 790991                     /lib/x86_64-linux-gnu/libnss_nis-2.23.so
+7f0f5a073000-7f0f5a089000 r-xp 00000000 08:01 786446                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f0f5a089000-7f0f5a288000 ---p 00016000 08:01 786446                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f0f5a288000-7f0f5a289000 r--p 00015000 08:01 786446                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f0f5a289000-7f0f5a28a000 rw-p 00016000 08:01 786446                     /lib/x86_64-linux-gnu/libnsl-2.23.so
+7f0f5a28a000-7f0f5a28c000 rw-p 00000000 00:00 0 
+7f0f5a28c000-7f0f5a294000 r-xp 00000000 08:01 786523                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f0f5a294000-7f0f5a493000 ---p 00008000 08:01 786523                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f0f5a493000-7f0f5a494000 r--p 00007000 08:01 786523                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f0f5a494000-7f0f5a495000 rw-p 00008000 08:01 786523                     /lib/x86_64-linux-gnu/libnss_compat-2.23.so
+7f0f5a495000-7f0f5a4be000 r-xp 00000000 08:01 11538805                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libjava.so
+7f0f5a4be000-7f0f5a6be000 ---p 00029000 08:01 11538805                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libjava.so
+7f0f5a6be000-7f0f5a6c0000 rw-p 00029000 08:01 11538805                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libjava.so
+7f0f5a6c0000-7f0f5a6cd000 r-xp 00000000 08:01 11538830                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libverify.so
+7f0f5a6cd000-7f0f5a8cc000 ---p 0000d000 08:01 11538830                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libverify.so
+7f0f5a8cc000-7f0f5a8ce000 rw-p 0000c000 08:01 11538830                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/libverify.so
+7f0f5a8ce000-7f0f5a8d5000 r-xp 00000000 08:01 790992                     /lib/x86_64-linux-gnu/librt-2.23.so
+7f0f5a8d5000-7f0f5aad4000 ---p 00007000 08:01 790992                     /lib/x86_64-linux-gnu/librt-2.23.so
+7f0f5aad4000-7f0f5aad5000 r--p 00006000 08:01 790992                     /lib/x86_64-linux-gnu/librt-2.23.so
+7f0f5aad5000-7f0f5aad6000 rw-p 00007000 08:01 790992                     /lib/x86_64-linux-gnu/librt-2.23.so
+7f0f5aad6000-7f0f5abde000 r-xp 00000000 08:01 786437                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0f5abde000-7f0f5addd000 ---p 00108000 08:01 786437                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0f5addd000-7f0f5adde000 r--p 00107000 08:01 786437                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0f5adde000-7f0f5addf000 rw-p 00108000 08:01 786437                     /lib/x86_64-linux-gnu/libm-2.23.so
+7f0f5addf000-7f0f5b955000 r-xp 00000000 08:01 11670677                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/server/libjvm.so
+7f0f5b955000-7f0f5bb54000 ---p 00b76000 08:01 11670677                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/server/libjvm.so
+7f0f5bb54000-7f0f5bc18000 rw-p 00b75000 08:01 11670677                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/server/libjvm.so
+7f0f5bc18000-7f0f5bc59000 rw-p 00000000 00:00 0 
+7f0f5bc59000-7f0f5be19000 r-xp 00000000 08:01 786515                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0f5be19000-7f0f5c019000 ---p 001c0000 08:01 786515                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0f5c019000-7f0f5c01d000 r--p 001c0000 08:01 786515                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0f5c01d000-7f0f5c01f000 rw-p 001c4000 08:01 786515                     /lib/x86_64-linux-gnu/libc-2.23.so
+7f0f5c01f000-7f0f5c023000 rw-p 00000000 00:00 0 
+7f0f5c023000-7f0f5c026000 r-xp 00000000 08:01 786517                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0f5c026000-7f0f5c225000 ---p 00003000 08:01 786517                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0f5c225000-7f0f5c226000 r--p 00002000 08:01 786517                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0f5c226000-7f0f5c227000 rw-p 00003000 08:01 786517                     /lib/x86_64-linux-gnu/libdl-2.23.so
+7f0f5c227000-7f0f5c23c000 r-xp 00000000 08:01 11670674                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/jli/libjli.so
+7f0f5c23c000-7f0f5c43b000 ---p 00015000 08:01 11670674                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/jli/libjli.so
+7f0f5c43b000-7f0f5c43c000 rw-p 00014000 08:01 11670674                   /usr/lib/jvm/jre1.7.0_80/lib/amd64/jli/libjli.so
+7f0f5c43c000-7f0f5c454000 r-xp 00000000 08:01 786457                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0f5c454000-7f0f5c653000 ---p 00018000 08:01 786457                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0f5c653000-7f0f5c654000 r--p 00017000 08:01 786457                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0f5c654000-7f0f5c655000 rw-p 00018000 08:01 786457                     /lib/x86_64-linux-gnu/libpthread-2.23.so
+7f0f5c655000-7f0f5c659000 rw-p 00000000 00:00 0 
+7f0f5c659000-7f0f5c67f000 r-xp 00000000 08:01 786449                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0f5c67f000-7f0f5c680000 r--s 00008000 08:01 2491481                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/staxmapper/main/staxmapper-1.1.0.Final-redhat-3.jar
+7f0f5c680000-7f0f5c682000 r--s 00016000 08:01 2491638                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.2.2.Final-redhat-1.jar
+7f0f5c682000-7f0f5c6e9000 rw-p 00000000 00:00 0 
+7f0f5c6e9000-7f0f5c761000 rw-p 00000000 00:00 0 
+7f0f5c761000-7f0f5c764000 ---p 00000000 00:00 0 
+7f0f5c764000-7f0f5c867000 rw-p 00000000 00:00 0 
+7f0f5c867000-7f0f5c86a000 r--s 0000d000 08:01 2491589                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/jboss/common-beans/main/jboss-common-beans-1.1.0.Final-redhat-2.jar
+7f0f5c86a000-7f0f5c86e000 r--s 00048000 08:01 2491678                    /home/softvaro/workspace/EAP-6.4-digital-dev/modules/system/layers/base/org/apache/xalan/main/serializer-2.7.1.redhat-7.jar
+7f0f5c86e000-7f0f5c874000 r--s 00053000 08:01 12192394                   /home/softvaro/workspace/EAP-6.4-digital-dev/jboss-modules.jar
+7f0f5c874000-7f0f5c87c000 rw-s 00000000 08:01 6422655                    /tmp/hsperfdata_softvaro/7313
+7f0f5c87c000-7f0f5c87d000 rw-p 00000000 00:00 0 
+7f0f5c87d000-7f0f5c87e000 ---p 00000000 00:00 0 
+7f0f5c87e000-7f0f5c87f000 r--p 00025000 08:01 786449                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0f5c87f000-7f0f5c880000 rw-p 00026000 08:01 786449                     /lib/x86_64-linux-gnu/ld-2.23.so
+7f0f5c880000-7f0f5c881000 rw-p 00000000 00:00 0 
+7ffcbaa51000-7ffcbaa72000 rw-p 00000000 00:00 0                          [stack]
+7ffcbab95000-7ffcbab98000 r--p 00000000 00:00 0                          [vvar]
+7ffcbab98000-7ffcbab9a000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dprogram.name=JBossTools: Red Hat JBoss EAP 6.1+ Dev -Xms1024m -Xmx1024m -XX:MaxPermSize=512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=/home/softvaro/workspace/EAP-6.4-digital-dev/standalone/log/boot.log -Dlogging.configuration=file:/home/softvaro/workspace/EAP-6.4-digital-dev/standalone/configuration/logging.properties -Djboss.home.dir=/home/softvaro/workspace/EAP-6.4-digital-dev -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 
+java_command: org.jboss.modules.Main -mp /home/softvaro/workspace/EAP-6.4-digital-dev/modules -jaxpmodule javax.xml.jaxp-provider -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=/home/softvaro/workspace/EAP-6.4-digital-dev/standalone
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+PATH=native:/home/softvaro/bin:/home/softvaro/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x9a3b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x9a3b20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x81e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x81ffb0], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x8210d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:stretch/sid
+
+uname:Linux 4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu May 17 12:56:46 UTC 2018 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 30982, NOFILE 1048576, AS infinity
+load average:5,87 4,45 3,00
+
+/proc/meminfo:
+MemTotal:        7984492 kB
+MemFree:          340020 kB
+MemAvailable:    2002516 kB
+Buffers:          360448 kB
+Cached:          1646524 kB
+SwapCached:            0 kB
+Active:          6244756 kB
+Inactive:        1023592 kB
+Active(anon):    5155520 kB
+Inactive(anon):   340600 kB
+Active(file):    1089236 kB
+Inactive(file):   682992 kB
+Unevictable:          96 kB
+Mlocked:              96 kB
+SwapTotal:       6103036 kB
+SwapFree:        6103036 kB
+Dirty:             28716 kB
+Writeback:             0 kB
+AnonPages:       5261644 kB
+Mapped:           608812 kB
+Shmem:            265856 kB
+Slab:             248580 kB
+SReclaimable:     197216 kB
+SUnreclaim:        51364 kB
+KernelStack:       16464 kB
+PageTables:        54988 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    10095280 kB
+Committed_AS:   11481532 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      154364 kB
+DirectMap2M:     8048640 kB
+
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, ht, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.130
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.130
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.132
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.130
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.131
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.129
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.131
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i7-3632QM CPU @ 2.20GHz
+stepping	: 9
+microcode	: 0x1f
+cpu MHz		: 2594.129
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti retpoline spec_ctrl tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4390.06
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 7984492k(340020k free), swap 6103036k(6103036k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.80-b11) for linux-amd64 JRE (1.7.0_80-b15), built on Apr 10 2015 19:53:14 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri May 25 08:53:11 2018
+elapsed time: 1037 seconds
+

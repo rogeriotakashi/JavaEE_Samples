@@ -1,0 +1,8 @@
+package com.rogerio.ejbproject;
+
+import javax.ejb.Local;
+
+@HelloBeanLocal
+public interface HelloBeanLocal {
+
+}

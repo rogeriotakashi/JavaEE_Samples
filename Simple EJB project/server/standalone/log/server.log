@@ -1,0 +1,78 @@
+14:22:55,281 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.6.Final-redhat-1
+14:22:55,535 INFO  [org.jboss.msc] (main) JBoss MSC version 1.1.5.Final-redhat-1
+14:22:55,616 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: Iniciando JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21)
+14:22:56,509 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Encontrado MyEJBProjectEAR.ear no diretório da implantação. Crie um arquivo chamado MyEJBProjectEAR.ear.dodeploy para aplicar o trigger na implantação
+14:22:56,510 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Encontrado OutsideProject.ear no diretório da implantação. Crie um arquivo chamado OutsideProject.ear.dodeploy para aplicar o trigger na implantação
+14:22:56,533 INFO  [org.xnio] (MSC service thread 1-13) XNIO Version 3.0.13.GA-redhat-1
+14:22:56,539 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Criação de serviço de gerenciamento http usando o socket-binding (management-http)
+14:22:56,541 INFO  [org.xnio.nio] (MSC service thread 1-13) XNIO NIO Implementation Version 3.0.13.GA-redhat-1
+14:22:56,563 INFO  [org.jboss.remoting] (MSC service thread 1-13) JBoss Remoting version 3.3.4.Final-redhat-1
+14:22:56,596 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 29) JBAS010280: Ativação do subsistema Infinispan.
+14:22:56,604 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 35) JBAS012615: As seguintes implantações JSF foram ativadas: [main, 1.2]
+14:22:56,649 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 37) JBAS011800: Ativação do Subsistema de Nomeação
+14:22:56,653 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-6) JBAS010408: Inicialização JCA do Subsistema (IronJacamar 1.0.31.Final-redhat-1)
+14:22:56,654 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 44) JBAS010153: A propriedade de identificador do nó é configurado ao valor default. Por favor certifique-se de que isto é único.
+14:22:56,659 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 42) JBAS013371: Ativação do Subsistema de Segurança
+14:22:56,710 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 46) JBAS015537: Ativação da Extensão WebServices
+14:22:56,723 INFO  [org.jboss.as.security] (MSC service thread 1-7) JBAS013370: Versão =4.1.1.Final-redhat-1 PicketBox Atual
+14:22:56,724 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Iniciando o Serviço de Nomeação
+14:22:56,725 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) JBAS015400: Sessão de correio limitado [java:jboss/mail/Default]
+14:22:57,059 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-2) JBWEB003001: Coyote HTTP/1.1 initializing on : http-/0.0.0.0:8080
+14:22:57,114 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-2) JBWEB003000: Coyote HTTP/1.1 starting on: http-/0.0.0.0:8080
+14:22:57,207 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-9) JBAS015012: Foi iniciado o FileSystemDeploymentService para o diretório /home/softvaro/workspace/training/server/standalone/deployments
+14:22:57,209 INFO  [org.jboss.as.remoting] (MSC service thread 1-4) JBAS017100: Escutando no 127.0.0.1:9999
+14:22:57,211 INFO  [org.jboss.as.remoting] (MSC service thread 1-14) JBAS017100: Escutando no 0.0.0.0:4447
+14:22:57,213 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015876: Iniciando a implantação do "MyEJBProjectEAR.ear" (runtime-name: "MyEJBProjectEAR.ear")
+14:22:57,213 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-11) JBAS015876: Iniciando a implantação do "OutsideProject.ear" (runtime-name: "OutsideProject.ear")
+14:22:57,275 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015973: Inciando a subimplantação (runtime-name: "Pagina.war")
+14:22:57,277 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015973: Inciando a subimplantação (runtime-name: "OutsidePage.war")
+14:22:57,277 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-14) JBAS015973: Inciando a subimplantação (runtime-name: "MyEJBProject.jar")
+14:22:57,275 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015973: Inciando a subimplantação (runtime-name: "MyEJBProject.jar")
+14:22:57,280 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-14) JBAS015960: A entrada do Caminho de Classe MyEJBProjectClient.jar no /home/softvaro/workspace/training/server/standalone/deployments/OutsideProject.ear/MyEJBProject.jar não aponta a um jar válido para a referência do Class-Path
+14:22:57,403 INFO  [org.jboss.ws.common.management] (MSC service thread 1-12) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.4.Final-redhat-1
+14:22:57,507 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-4) JNDI bindings for session bean named HelloBean in deployment unit subdeployment "MyEJBProject.jar" of deployment "MyEJBProjectEAR.ear" are as follows:
+
+	java:global/MyEJBProjectEAR/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:global/MyEJBProjectEAR/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:jboss/exported/MyEJBProjectEAR/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:global/MyEJBProjectEAR/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBean
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBean
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBean
+
+14:22:57,509 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-1) JNDI bindings for session bean named HelloBean in deployment unit subdeployment "MyEJBProject.jar" of deployment "OutsideProject.ear" are as follows:
+
+	java:global/OutsideProject/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBeanLocal
+	java:global/OutsideProject/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:jboss/exported/OutsideProject/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBeanRemote
+	java:global/OutsideProject/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBean
+	java:app/MyEJBProject/HelloBean!com.rogerio.ejbproject.HelloBean
+	java:module/HelloBean!com.rogerio.ejbproject.HelloBean
+
+14:22:57,677 INFO  [org.jboss.web] (ServerService Thread Pool -- 52) JBAS018210: Registra o contexto da web: /OutsidePage
+14:22:57,746 INFO  [org.jboss.web] (ServerService Thread Pool -- 53) JBAS018210: Registra o contexto da web: /Pagina
+14:22:57,832 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 26) JBAS015859: Implantado "OutsideProject.ear" (runtime-name: "OutsideProject.ear")
+14:22:57,833 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 26) JBAS015859: Implantado "MyEJBProjectEAR.ear" (runtime-name: "MyEJBProjectEAR.ear")
+14:22:57,867 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: A interface do gerenciamento ouvindo no http://127.0.0.1:9990/management
+14:22:57,867 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: O console de administração ouvindo no http://127.0.0.1:9990
+14:22:57,868 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) iniciado em 2943ms - Iniciado 423 de serviços 461 (os serviços 72 são lazy, passivos ou em demanda)
+14:27:42,230 INFO  [org.jboss.ejb.client] (http-/0.0.0.0:8080-1) JBoss EJB Client version 1.0.30.Final-redhat-1
+14:37:26,843 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-7) JBWEB003075: Coyote HTTP/1.1 pausing on: http-/0.0.0.0:8080
+14:37:26,844 INFO  [org.apache.coyote.http11.Http11Protocol] (MSC service thread 1-7) JBWEB003077: Coyote HTTP/1.1 stopping on : http-/0.0.0.0:8080
+14:37:26,848 INFO  [org.apache.catalina.core] (MSC service thread 1-2) JBWEB001079: Container org.apache.catalina.core.ContainerBase.[jboss.web].[default-host].[/] has not been started
+14:37:26,859 INFO  [org.jboss.web] (ServerService Thread Pool -- 57) JBAS018224: Desregistra o contexto da web: /OutsidePage
+14:37:26,878 INFO  [org.jboss.web] (ServerService Thread Pool -- 59) JBAS018224: Desregistra o contexto da web: /Pagina
+14:37:26,943 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015974: Interrompendo a subimplantação (runtime-name: MyEJBProject.jar) em 88ms
+14:37:26,946 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-11) JBAS015974: Interrompendo a subimplantação (runtime-name: OutsidePage.war) em 91ms
+14:37:26,947 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015974: Interrompendo a subimplantação (runtime-name: MyEJBProject.jar) em 87ms
+14:37:26,947 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-15) JBAS015974: Interrompendo a subimplantação (runtime-name: Pagina.war) em 91ms
+14:37:26,958 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-15) JBAS015877: Implantação encerrada MyEJBProjectEAR.ear (runtime-name: MyEJBProjectEAR.ear) em 97ms
+14:37:26,961 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-13) JBAS015877: Implantação encerrada OutsideProject.ear (runtime-name: OutsideProject.ear) em 101ms
+14:37:26,976 INFO  [org.jboss.as] (MSC service thread 1-7) JBAS015950: JBoss EAP 6.4.0.GA (AS 7.5.0.Final-redhat-21) interrompido em 111ms
