@@ -1,37 +1,32 @@
 package com.example.togglz.TogglzExample.service;
 
-import java.io.File;
-
-import javax.inject.Inject;
-
 import org.springframework.stereotype.Service;
-import org.togglz.core.manager.FeatureManager;
+
 
 import com.example.togglz.TogglzExample.enums.MyFeatures;
 
 @Service
 public class FeaturesExampleService {
 	
-	@Inject
-	FeatureManager manager;
-
 	public String doFeatureOneService() {
-		System.out.println("inicio1");
-		if(manager.isActive(MyFeatures.FEATURE_ONE)) {		
-			System.out.println("teste1");
-			return "Hello, Feature one is active!";
+		
+		StringBuilder sb = new StringBuilder("Rogerio");
+		
+		if(MyFeatures.FEATURE_ONE.isActive()) {		
+			sb.append(" Takashi Hirata");
 		}
 		
-		return "Feature one is not active";
+		return sb.toString();
 	}
 	
 	public String doFeatureTwoService() {
-		System.out.println("inicio2");
+		
+		StringBuilder sb = new StringBuilder("Rogerio");
+		
 		if(MyFeatures.FEATURE_TWO.isActive()) {		
-			System.out.println("teste2");
-			return "Hi, Feature two is active!";
+			sb.append(" Takashi Hirata");
 		}
 		
-		return "Feature two is not active";
+		return sb.toString();
 	}
 }

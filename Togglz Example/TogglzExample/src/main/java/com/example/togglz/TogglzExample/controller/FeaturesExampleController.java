@@ -2,14 +2,11 @@ package com.example.togglz.TogglzExample.controller;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.togglz.core.manager.FeatureManager;
-import org.togglz.core.manager.FeatureManagerBuilder;
-
-import com.example.togglz.TogglzExample.enums.MyFeatures;
 import com.example.togglz.TogglzExample.service.FeaturesExampleService;
 
 @RestController
@@ -19,17 +16,17 @@ public class FeaturesExampleController {
 	@Inject
 	FeaturesExampleService featuresService;
 	
-	
-	
-	
+
 	@GetMapping("/featureone")
-	public String doFeatureOne() {
-		return featuresService.doFeatureOneService();
+	public ResponseEntity<String> doFeatureOne() {
+		String response = featuresService.doFeatureOneService();
+		return new ResponseEntity<String>(response,HttpStatus.OK);
 	}
 	
 	@GetMapping("/featuretwo")
-	public String doFeaturetwo() {
-		return featuresService.doFeatureTwoService();
+	public ResponseEntity<String> doFeaturetwo() {
+		String response = featuresService.doFeatureTwoService();
+		return new ResponseEntity<String>(response,HttpStatus.OK);
 	}
 	
 	
